@@ -8,7 +8,7 @@ dotenv.config();
 
 const seedAdmin = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/maana-pure-oil');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://vipul2626:V90ipul99@cluster0.48fkydl.mongodb.net/maana');
     console.log('✅ Connected to MongoDB\n');
 
     // Get database instance
@@ -41,14 +41,14 @@ const seedAdmin = async () => {
     const admin = new User({
       name: 'Admin',
       email: 'admin@maanapureoil.com',
-      password: 'V@ipul90',
+      password: 'V90ipul99@',
       role: 'admin'
     });
 
     await admin.save();
     console.log('✅ Admin user created');
     console.log('   📧 Email: admin@maanapureoil.com');
-    console.log('   🔑 Password: V@ipul90\n');
+    console.log('   🔑 Password: V90ipul99@\n');
 
     // Create categories ONE BY ONE (to trigger slug generation)
     console.log('📁 Creating categories...');
@@ -132,7 +132,7 @@ const seedAdmin = async () => {
     console.log('━'.repeat(60));
     console.log('\n📝 Admin Login Credentials:');
     console.log('   Email:    admin@maanapureoil.com');
-    console.log('   Password: V@ipul90');
+    console.log('   Password: V90ipul99@');
     console.log('\n🌐 Access Points:');
     console.log('   Frontend: http://localhost:3000');
     console.log('   Backend:  http://localhost:5000');
