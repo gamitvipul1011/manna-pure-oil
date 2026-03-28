@@ -4,14 +4,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import bcrypt from 'bcryptjs';
 
-// Models
-import User from './models/User.js';
-import Category from './models/Category.js';
-import Product from './models/Product.js';
-
-// Routes
+// Import routes
 import adminAuthRoutes from './routes/adminAuth.js';
 import userAuthRoutes from './routes/userAuth.js';
 import productRoutes from './routes/products.js';
@@ -25,153 +19,79 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// ✅ Middleware
+// Environment
+const PORT = process.env.PORT || 5000;
+const MONGODB_URI = process.env.MONGODB_URI;
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+
+// Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: FRONTEND_URL,
   credentials: true
 }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ Static
+// Serve uploaded files
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
-// ✅ Routes
+// Routes
 app.use('/api/admin/auth', adminAuthRoutes);
 app.use('/api/user/auth', userAuthRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/cart', cartRoutes);
 
-// ✅ Root
-app.get('/', (req, res) => {
-  res.send('API is running 🚀');
-});
-
-// ✅ Health
+// Health Check Route
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK' });
+  res.json({
+    status: 'OK',
+    message: 'Server is running',
+    time: new Date()
+  });
 });
 
-// ❌ 404
+// 404 Route
 app.use((req, res) => {
-  res.status(404).json({ message: 'Route not found' });
+  res.status(404).json({
+    success: false,
+    message: 'Route not found'
+  });
 });
 
-// ❌ Error handler
+// Error Handler
 app.use((err, req, res, next) => {
-  console.error(err.message);
-  res.status(500).json({ message: err.message });
+  console.error('Server Error:', err);
+
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || 'Internal Server Error'
+  });
 });
 
-// 🔥 AUTO SEED FUNCTION (SAFE)
-const seedData = async () => {
-  try {
-    console.log("🌱 Checking seed data...");
-
-    // ✅ Admin check
-    const existingAdmin = await User.findOne({ email: "admin@maanapureoil.com" });
-
-    if (!existingAdmin) {
-      const hashedPassword = await bcrypt.hash("V@ipul90", 10);
-
-      await User.create({
-        name: "Admin",
-        email: "admin@maanapureoil.com",
-        password: hashedPassword,
-        role: "admin"
-      });
-
-      console.log("✅ Admin created");
-    } else {
-      console.log("⚠️ Admin already exists");
-    }
-
-    // ✅ Categories
-    let oilCategory = await Category.findOne({ name: "Oils" });
-
-    if (!oilCategory) {
-      oilCategory = await Category.create({
-        name: "Oils",
-        description: "Pure oils"
-      });
-      console.log("✅ Oils category created");
-    }
-
-    let gheeCategory = await Category.findOne({ name: "Ghee" });
-
-    if (!gheeCategory) {
-      gheeCategory = await Category.create({
-        name: "Ghee",
-        description: "Pure ghee"
-      });
-      console.log("✅ Ghee category created");
-    }
-
-    // ✅ Products
-    const count = await Product.countDocuments();
-
-    if (count === 0) {
-      await Product.create([
-        {
-          name: 'Groundnut Oil',
-          price: 299,
-          unit: 'liter',
-          category: oilCategory._id,
-          inStock: true
-        },
-        {
-          name: 'Mustard Oil',
-          price: 249,
-          unit: 'liter',
-          category: oilCategory._id,
-          inStock: true
-        }
-      ]);
-
-      console.log("✅ Products added");
-    } else {
-      console.log("⚠️ Products already exist");
-    }
-
-  } catch (err) {
-    console.error("❌ Seed error:", err.message);
-  }
-};
-
-// ✅ PORT
-const PORT = process.env.PORT || 5000;
-
-// ✅ MongoDB
-const MONGODB_URI = process.env.MONGODB_URI;
-
-if (!MONGODB_URI) {
-  console.error("❌ MONGODB_URI missing");
-  process.exit(1);
-}
-
-// ✅ CONNECT + START
+// MongoDB Connect
 mongoose.connect(MONGODB_URI)
-  .then(async () => {
-    console.log("✅ MongoDB Connected");
+.then(() => {
 
-    // 🔥 AUTO SEED RUN
-    await seedData();
+  console.log('✅ MongoDB Connected');
 
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
-  })
-  .catch(err => {
-    console.error("❌ DB Error:", err.message);
-    process.exit(1);
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
   });
 
-// ✅ Graceful shutdown
-process.on('SIGTERM', () => {
-  mongoose.connection.close(() => {
-    console.log('MongoDB disconnected');
-    process.exit(0);
-  });
+})
+.catch((error) => {
+  console.error('❌ MongoDB connection failed:', error);
+  process.exit(1);
 });
+
+// Graceful Shutdown
+process.on('SIGINT', async () => {
+  console.log('Shutting down server...');
+  await mongoose.connection.close();
+  process.exit(0);
+});
+
+export default app;
