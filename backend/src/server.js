@@ -31,17 +31,17 @@ app.get('/create-admin', async (req, res) => {
   try {
     const bcrypt = (await import('bcryptjs')).default;
 
-    const existingAdmin = await User.findOne({ email: "admin@gmail.com" });
+    const existingAdmin = await User.findOne({ email: "admin@maanapureoil.com" });
 
     if (existingAdmin) {
       return res.send("⚠️ Admin already exists");
     }
 
-    const hashedPassword = await bcrypt.hash("123456", 10);
+    const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
 
     const admin = new User({
       name: "Admin",
-      email: "admin@gmail.com",
+      email: "admin@maanapureoil.com",
       password: hashedPassword
     });
 
