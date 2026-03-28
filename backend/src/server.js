@@ -31,25 +31,27 @@ app.get('/create-admin', async (req, res) => {
   try {
     const bcrypt = (await import('bcryptjs')).default;
 
-    const existingAdmin = await User.findOne({ email: "admin@maanapureoil.com" });
+    const email = req.query.email || "admin@gmail.com";
+    const password = req.query.password || "123456";
+
+    const existingAdmin = await User.findOne({ email });
 
     if (existingAdmin) {
       return res.send("⚠️ Admin already exists");
     }
 
-    const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
+    const hashedPassword = await bcrypt.hash(V90ipul99@, 10);
 
     const admin = new User({
       name: "Admin",
-      email: "admin@maanapureoil.com",
+      email:"admin@maanapureoil.com",
       password: hashedPassword
     });
 
     await admin.save();
 
-    res.send("✅ Admin created successfully");
+    res.send(`✅ Admin created: ${email}`);
   } catch (error) {
-    console.error("❌ ERROR:", error);
     res.status(500).send(error.message);
   }
 });
