@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import User from './models/User.js';
 
 // Import routes
 import adminAuthRoutes from './routes/adminAuth.js';
@@ -26,41 +27,29 @@ app.use(cors({
 }));
 
 app.use(express.json());
-// 🔥 TEMPORARY ADMIN CREATE ROUTE
-// 🔥 TEMP ADMIN CREATE ROUTE (DEBUG VERSION)
 app.get('/create-admin', async (req, res) => {
   try {
     const bcrypt = (await import('bcryptjs')).default;
 
-    // ⚠️ Check correct path (IMPORTANT)
-    const Admin = (await import('./controllers/adminAuthController.js')).default;
-    // 👆 change this if your file name is different
-
-    console.log("Step 1: Model loaded");
-
-    const existingAdmin = await Admin.findOne({ email: "admin@maanapureoil.com" });
+    const existingAdmin = await User.findOne({ email: "admin@gmail.com" });
 
     if (existingAdmin) {
       return res.send("⚠️ Admin already exists");
     }
 
-    console.log("Step 2: Creating new admin");
+    const hashedPassword = await bcrypt.hash("123456", 10);
 
-    const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
-
-    const admin = new Admin({
-      name: "Admin", 
-      email: "admin@maanapureoil.com",
+    const admin = new User({
+      name: "Admin",
+      email: "admin@gmail.com",
       password: hashedPassword
     });
 
     await admin.save();
 
-    console.log("Step 3: Admin saved");
-
     res.send("✅ Admin created successfully");
   } catch (error) {
-    console.error("❌ FULL ERROR:", error);
+    console.error("❌ ERROR:", error);
     res.status(500).send(error.message);
   }
 });
