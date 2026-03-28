@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import User from './models/User.js';
+import User from './controllers/adminAuthController.js';
 
 // Import routes
 import adminAuthRoutes from './routes/adminAuth.js';
