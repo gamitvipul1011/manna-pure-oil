@@ -27,18 +27,31 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.get('/delete-admin', async (req, res) => {
+app.get('/create-admin', async (req, res) => {
   try {
-    const email = req.query.email;
+    const bcrypt = (await import('bcryptjs')).default;
+    const Admin = (await import('./models/User.js')).default; // adjust if needed
 
-    const deleted = await User.findOneAndDelete({ email });
+    const existingAdmin = await Admin.findOne({ email: "admin@maanapureoil.com" });
 
-    if (!deleted) {
-      return res.send("❌ Admin not found");
+    if (existingAdmin) {
+      return res.send("⚠️ Admin already exists");
     }
 
-    res.send(`🗑️ Admin deleted: ${email}`);
+    const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
+
+    const admin = new Admin({
+      name: "Admin",   // ✅ ADD THIS LINE
+      email: "admin@maanapureoil.com",
+      password: hashedPassword,
+      role: "admin" 
+    });
+
+    await admin.save();
+
+    res.send("✅ Admin created successfully");
   } catch (error) {
+    console.error("❌ ERROR:", error);
     res.status(500).send(error.message);
   }
 });
