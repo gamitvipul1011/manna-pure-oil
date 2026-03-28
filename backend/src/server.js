@@ -4,9 +4,14 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import User from './controllers/adminAuthController.js';
+import bcrypt from 'bcryptjs';
 
-// Import routes
+// Models
+import User from './models/User.js';
+import Category from './models/Category.js';
+import Product from './models/Product.js';
+
+// Routes
 import adminAuthRoutes from './routes/adminAuth.js';
 import userAuthRoutes from './routes/userAuth.js';
 import productRoutes from './routes/products.js';
@@ -22,41 +27,14 @@ const app = express();
 
 // ✅ Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*', // production ma tame specific domain muki sako
+  origin: process.env.FRONTEND_URL,
   credentials: true
 }));
 
 app.use(express.json());
-app.get('/create-admin', async (req, res) => {
-  try {
-    const bcrypt = (await import('bcryptjs')).default;
-
-    const existingAdmin = await User.findOne({ email: "admin@maanapureoil.com" });
-
-    if (existingAdmin) {
-      return res.send("⚠️ Admin already exists");
-    }
-
-    const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
-
-    const admin = new User({
-      name: "Admin",
-      email: "admin@maanapureoil.com",
-      password: hashedPassword,
-       role: "admin",
-    });
-
-    await admin.save();
-
-    res.send("✅ Admin created successfully");
-  } catch (error) {
-    console.error("❌ ERROR:", error);
-    res.status(500).send(error.message);
-  }
-});
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ Static folder
+// ✅ Static
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // ✅ Routes
@@ -66,65 +44,132 @@ app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/cart', cartRoutes);
 
-// ✅ Root route (IMPORTANT for Render)
+// ✅ Root
 app.get('/', (req, res) => {
   res.send('API is running 🚀');
 });
 
-// ✅ Health check
+// ✅ Health
 app.get('/api/health', (req, res) => {
-  res.json({
-    status: 'OK',
-    message: 'Server is running',
-    time: new Date()
-  });
+  res.json({ status: 'OK' });
 });
 
-// ❌ 404 handler
+// ❌ 404
 app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    message: 'Route not found'
-  });
+  res.status(404).json({ message: 'Route not found' });
 });
 
 // ❌ Error handler
 app.use((err, req, res, next) => {
-  console.error('❌ Error:', err.message);
-  res.status(500).json({
-    success: false,
-    message: err.message || 'Internal Server Error'
-  });
+  console.error(err.message);
+  res.status(500).json({ message: err.message });
 });
+
+// 🔥 AUTO SEED FUNCTION (SAFE)
+const seedData = async () => {
+  try {
+    console.log("🌱 Checking seed data...");
+
+    // ✅ Admin check
+    const existingAdmin = await User.findOne({ email: "admin@maanapureoil.com" });
+
+    if (!existingAdmin) {
+      const hashedPassword = await bcrypt.hash("V@ipul90", 10);
+
+      await User.create({
+        name: "Admin",
+        email: "admin@maanapureoil.com",
+        password: hashedPassword,
+        role: "admin"
+      });
+
+      console.log("✅ Admin created");
+    } else {
+      console.log("⚠️ Admin already exists");
+    }
+
+    // ✅ Categories
+    let oilCategory = await Category.findOne({ name: "Oils" });
+
+    if (!oilCategory) {
+      oilCategory = await Category.create({
+        name: "Oils",
+        description: "Pure oils"
+      });
+      console.log("✅ Oils category created");
+    }
+
+    let gheeCategory = await Category.findOne({ name: "Ghee" });
+
+    if (!gheeCategory) {
+      gheeCategory = await Category.create({
+        name: "Ghee",
+        description: "Pure ghee"
+      });
+      console.log("✅ Ghee category created");
+    }
+
+    // ✅ Products
+    const count = await Product.countDocuments();
+
+    if (count === 0) {
+      await Product.create([
+        {
+          name: 'Groundnut Oil',
+          price: 299,
+          unit: 'liter',
+          category: oilCategory._id,
+          inStock: true
+        },
+        {
+          name: 'Mustard Oil',
+          price: 249,
+          unit: 'liter',
+          category: oilCategory._id,
+          inStock: true
+        }
+      ]);
+
+      console.log("✅ Products added");
+    } else {
+      console.log("⚠️ Products already exist");
+    }
+
+  } catch (err) {
+    console.error("❌ Seed error:", err.message);
+  }
+};
 
 // ✅ PORT
 const PORT = process.env.PORT || 5000;
 
-// ✅ MongoDB connection (ONLY ENV)
+// ✅ MongoDB
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
-  console.error('❌ MONGODB_URI not defined in environment variables');
+  console.error("❌ MONGODB_URI missing");
   process.exit(1);
 }
 
-// ✅ Connect DB
+// ✅ CONNECT + START
 mongoose.connect(MONGODB_URI)
-  .then(() => {
-    console.log('✅ MongoDB Connected');
+  .then(async () => {
+    console.log("✅ MongoDB Connected");
+
+    // 🔥 AUTO SEED RUN
+    await seedData();
 
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
     });
   })
-  .catch((error) => {
-    console.error('❌ MongoDB connection error:', error.message);
+  .catch(err => {
+    console.error("❌ DB Error:", err.message);
     process.exit(1);
   });
 
 // ✅ Graceful shutdown
 process.on('SIGTERM', () => {
-  console.log('SIGTERM received');
   mongoose.connection.close(() => {
     console.log('MongoDB disconnected');
     process.exit(0);
