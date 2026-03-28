@@ -27,21 +27,27 @@ app.use(cors({
 
 app.use(express.json());
 // 🔥 TEMPORARY ADMIN CREATE ROUTE
+// 🔥 TEMP ADMIN CREATE ROUTE (DEBUG VERSION)
 app.get('/create-admin', async (req, res) => {
   try {
     const bcrypt = (await import('bcryptjs')).default;
-    const Admin = (await import('./models/Admin.js')).default;
 
-    // check if admin already exists
+    // ⚠️ Check correct path (IMPORTANT)
+    const Admin = (await import('./models/adminModel.js')).default;
+    // 👆 change this if your file name is different
+
+    console.log("Step 1: Model loaded");
+
     const existingAdmin = await Admin.findOne({ email: "admin@maanapureoil.com" });
+
     if (existingAdmin) {
       return res.send("⚠️ Admin already exists");
     }
 
-    // hash password
+    console.log("Step 2: Creating new admin");
+
     const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
 
-    // create admin
     const admin = new Admin({
       email: "admin@maanapureoil.com",
       password: hashedPassword
@@ -49,10 +55,12 @@ app.get('/create-admin', async (req, res) => {
 
     await admin.save();
 
+    console.log("Step 3: Admin saved");
+
     res.send("✅ Admin created successfully");
   } catch (error) {
-    console.error(error);
-    res.status(500).send("❌ Error creating admin");
+    console.error("❌ FULL ERROR:", error);
+    res.status(500).send(error.message);
   }
 });
 app.use(express.urlencoded({ extended: true }));
