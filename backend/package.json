@@ -1,0 +1,33 @@
+{
+  "name": "maana-pure-oil-backend",
+  "version": "2.0.0",
+  "description": "Production-Ready Backend API for Maana Pure Oil E-Commerce",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node seed.js",
+    "seed:admin": "node seedAdmin.js"
+  },
+  "keywords": ["ecommerce", "api", "mongodb", "express", "jwt"],
+  "author": "Maana Pure Oil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "express-validator": "^7.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

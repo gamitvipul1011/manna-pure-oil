@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans Gujarati', 'Poppins', sans-serif;
+  @apply bg-gradient-to-br from-purple-50 to-purple-100;
+}
+
+.gujarati-text {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-purple-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-purple-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-purple-700;
+}
+
+/* Wooden Product Stand Effect */
+.wood-stand {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(180deg, #3505ac 0%, #b308d1 100%);
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.wood-stand::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, #8b6f47 20%, #8b6f47 80%, transparent);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Premium Button */
+.btn-premium {
+  @apply px-8 py-3 bg-gradient-to-r from-brand-orange-500 to-brand-orange-600 
+         text-white font-semibold rounded-full shadow-lg 
+         hover:shadow-xl hover:scale-105 transition-all duration-300
+         border-2 border-brand-orange-400;
+}
+
+/* Product Card Hover */
+.product-card {
+  @apply transform transition-all duration-300 hover:-translate-y-2 hover:shadow-premium;
+}
+
+/* Leaf Decoration */
+.leaf-decoration {
+  @apply text-brand-green-500 inline-block animate-pulse;
+}
