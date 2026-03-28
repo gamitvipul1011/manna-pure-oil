@@ -33,7 +33,7 @@ app.get('/create-admin', async (req, res) => {
     const bcrypt = (await import('bcryptjs')).default;
 
     // ⚠️ Check correct path (IMPORTANT)
-    const Admin = (await import('./models/adminModel.js')).default;
+    const Admin = (await import('./models/user.js')).default;
     // 👆 change this if your file name is different
 
     console.log("Step 1: Model loaded");
