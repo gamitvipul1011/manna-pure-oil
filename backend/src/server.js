@@ -26,6 +26,35 @@ app.use(cors({
 }));
 
 app.use(express.json());
+// 🔥 TEMPORARY ADMIN CREATE ROUTE
+app.get('/create-admin', async (req, res) => {
+  try {
+    const bcrypt = (await import('bcryptjs')).default;
+    const Admin = (await import('./models/Admin.js')).default;
+
+    // check if admin already exists
+    const existingAdmin = await Admin.findOne({ email: "admin@maanapureoil.com" });
+    if (existingAdmin) {
+      return res.send("⚠️ Admin already exists");
+    }
+
+    // hash password
+    const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
+
+    // create admin
+    const admin = new Admin({
+      email: "admin@maanapureoil.com",
+      password: hashedPassword
+    });
+
+    await admin.save();
+
+    res.send("✅ Admin created successfully");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("❌ Error creating admin");
+  }
+});
 app.use(express.urlencoded({ extended: true }));
 
 // ✅ Static folder
