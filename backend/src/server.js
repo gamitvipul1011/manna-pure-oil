@@ -66,7 +66,7 @@ app.use((err, req, res, next) => {
 
 // MongoDB Connection
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/maana-pure-oil';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://vipul2626:<db_password>@cluster0.48fkydl.mongodb.net/?appName=Cluster0';
 
 mongoose.connect(MONGODB_URI)
   .then(() => {
