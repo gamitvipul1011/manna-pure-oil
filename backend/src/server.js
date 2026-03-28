@@ -49,6 +49,7 @@ app.get('/create-admin', async (req, res) => {
     const hashedPassword = await bcrypt.hash("V90ipul99@", 10);
 
     const admin = new Admin({
+      name: "Admin", 
       email: "admin@maanapureoil.com",
       password: hashedPassword
     });
