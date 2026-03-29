@@ -20,7 +20,7 @@ const FooterSubscribe = ({ isGu }) => {
   const handleSub = (e) => {
     e.preventDefault();
 
-    if (!email || !email.includes("@")) {
+    if (!email || !email.includes("@")) { 
       toast.error(isGu ? "માન્ય ઈમેલ દાખલ કરો" : "Enter a valid email");
       return;
     }
