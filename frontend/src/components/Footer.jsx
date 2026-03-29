@@ -48,7 +48,7 @@ const FooterSubscribe = ({ isGu }) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder={isGu ? "તમારો ઈમેલ vvvvv" : "Enter your email"}
+          placeholder={isGu ? "તમારો ઈમેલ " : "Enter your email"}
           className="px-4 py-2 w-full text-sm text-black focus:outline-none"
         />
 
@@ -70,7 +70,7 @@ const Footer = () => {
 
   const links = [
     { en: "Home", gu: "હોમ", path: "/" },
-    { en: "About Us", gu: "અમારા વિશે", path: "/about" },
+    { en: "About Us nnnnnnn", gu: "અમારા વિશે", path: "/about" },
     { en: "Products", gu: "ઉત્પાદનો", path: "/products" },
     { en: "Blog", gu: "બ્લોગ", path: "/blogs" },
     { en: "Contact", gu: "સંપર્ક", path: "/contact" },
