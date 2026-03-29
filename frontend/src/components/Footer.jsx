@@ -20,7 +20,7 @@ const FooterSubscribe = ({ isGu }) => {
   const handleSub = (e) => {
     e.preventDefault();
 
-    if (!email || !email.includes("@")) { 
+    if (!email || !email.includes("@")) {
       toast.error(isGu ? "માન્ય ઈમેલ દાખલ કરો" : "Enter a valid email");
       return;
     }
@@ -48,7 +48,7 @@ const FooterSubscribe = ({ isGu }) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder={isGu ? "તમારો ઈમેલ " : "Enter your email"}
+          placeholder={isGu ? "તમારો ઈમેલ" : "Enter your email"}
           className="px-4 py-2 w-full text-sm text-black focus:outline-none"
         />
 
@@ -70,25 +70,26 @@ const Footer = () => {
 
   const links = [
     { en: "Home", gu: "હોમ", path: "/" },
-    { en: "About Us nnnnnnn", gu: "અમારા વિશે", path: "/about" },
+    { en: "About Us", gu: "અમારા વિશે", path: "/about" },
     { en: "Products", gu: "ઉત્પાદનો", path: "/products" },
     { en: "Blog", gu: "બ્લોગ", path: "/blogs" },
     { en: "Contact", gu: "સંપર્ક", path: "/contact" },
   ];
 
   return (
-    <footer className="relative bg-green-950 text-gray-100 pt-16 pb-8 overflow-hidden">
+    <footer className="relative bg-green-950 text-gray-100 pt-20 pb-16 min-h-[520px] overflow-hidden">
 
       {/* overlay */}
       <div className="absolute inset-0 bg-green-900/80"></div>
 
-      {/* illustration */}
-      <div className="absolute -bottom-20 left-0 w-full opacity-20">
-  <img
-    src="/images/footer01.jpg"
-    alt="farm"
-    className="w-full h-full object-cover object-[center_75%]"/>
-</div>
+      {/* background image */}
+      <div className="absolute -bottom-16 left-0 w-full opacity-20">
+        <img
+          src="/images/footer01.jpg"
+          alt="farm"
+          className="w-full h-full object-cover object-[center_75%]"
+        />
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 
@@ -96,7 +97,7 @@ const Footer = () => {
         <div>
           <h2 className="text-3xl font-bold flex items-center gap-3 mb-4">
             <FaLeaf className="text-brand-green-400" />
-            {isGu ? "માના પ્યોર ઓઈલ  uuuuuuu" : "Manna Pure Oil"}
+            {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
           </h2>
 
           <p className="text-sm text-gray-300 leading-relaxed">
@@ -135,7 +136,6 @@ const Footer = () => {
           </h3>
 
           <ul className="space-y-3 text-sm">
-
             <li>
               <Link to="/privacy-policy" className="hover:text-brand-green-300">
                 {isGu ? "ગોપનીયતા નીતિ" : "Privacy Policy"}
@@ -165,13 +165,11 @@ const Footer = () => {
                 FAQ
               </Link>
             </li>
-
           </ul>
         </div>
 
         {/* CONTACT */}
         <div>
-
           <h3 className="text-lg font-semibold mb-5 border-b border-white/20 pb-2">
             {isGu ? "સંપર્ક કરો" : "Contact Us"}
           </h3>
@@ -228,7 +226,6 @@ const Footer = () => {
             </a>
 
           </div>
-
         </div>
 
       </div>
