@@ -83,13 +83,13 @@ const Footer = () => {
       <div className="absolute inset-0 bg-green-900/80"></div>
 
       {/* illustration */}
-      <div className="absolute bottom-0 left-0 w-full opacity-20">
-        <img
-  src="/images/footer01.jpg"
-  alt="farm"
- className="w-full h-full object-cover object-[center_75%] md:object-[center_60%]"
-/>
-      </div>
+      <div className="absolute -bottom-20 left-0 w-full opacity-20">
+  <img
+    src="/images/footer01.jpg"
+    alt="farm"
+    className="w-full h-full object-cover object-[center_75%]"
+  />
+</div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
 
