@@ -96,7 +96,7 @@ const Footer = () => {
         <div>
           <h2 className="text-3xl font-bold flex items-center gap-3 mb-4">
             <FaLeaf className="text-brand-green-400" />
-            {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
+            {isGu ? "માના પ્યોર ઓઈલ  uuuuuuu" : "Manna Pure Oil"}
           </h2>
 
           <p className="text-sm text-gray-300 leading-relaxed">
