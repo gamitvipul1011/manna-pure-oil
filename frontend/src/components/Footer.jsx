@@ -48,7 +48,7 @@ const FooterSubscribe = ({ isGu }) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder={isGu ? "તમારો ઈમેલ" : "Enter your email"}
+          placeholder={isGu ? "તમારો ઈમેલ vvvvv" : "Enter your email"}
           className="px-4 py-2 w-full text-sm text-black focus:outline-none"
         />
 
@@ -87,8 +87,7 @@ const Footer = () => {
   <img
     src="/images/footer01.jpg"
     alt="farm"
-    className="w-full h-full object-cover object-[center_75%]"
-  />
+    className="w-full h-full object-cover object-[center_75%]"/>
 </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
