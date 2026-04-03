@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+mport { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
@@ -6,13 +6,15 @@ import 'swiper/css/pagination';
 
 /* DESKTOP IMAGES */
 
-import family1Desktop from '../assets/slider800.jpeg';
-import family2Desktop from '../assets/banner4.jpeg';
+import family1Desktop from '../assets/Family Ghee 1920 x 800.jpg';
+import family2Desktop from '../assets/Presentil oil 1920 x 800.jpg';
+import family3Desktop from '../assets/Ground nut oil 1920 x 800.jpg';
 
 /* MOBILE IMAGES */
 
-import family1Mobile from '../assets/slider4.jpeg';
-import family2Mobile from '../assets/slider5.jpeg';
+import family1Mobile from '../assets/Family Ghee 1920 x 800.jpg';
+import family2Mobile from '../assets/Presentil oil 1920 x 800.jpg';
+import family3Mobile from '../assets/Ground nut oil 1920 x 800.jpg';
 
 const slides = [
   
@@ -23,6 +25,12 @@ const slides = [
   {
     desktopImage: family2Desktop,
     mobileImage: family2Mobile
+  },
+
+  { 
+    desktopImage: family3Desktop,
+    mobileImage: family3Mobile
+    
   }
 ];
 
