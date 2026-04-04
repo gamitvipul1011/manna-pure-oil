@@ -60,13 +60,12 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-purple">
       {/* BANNER */}
-    <div className="relative w-full h-[220px] sm:h-[300px] md:h-[420px]  overflow-hidden">
-
+    <div className="relative w-full h-[480px] overflow-hidden">
   {/* Banner Image */}
   <img
     src={bannerImage}
     alt="Contact"
-     className="absolute inset-0 w-full h-full object-fill object-center"
+     className="absolute inset-0 w-full h-full object-cover"
   
   />
 
