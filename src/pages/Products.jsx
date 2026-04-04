@@ -28,20 +28,18 @@ const Products = () => {
   return (
     <div className="bg-gradient-purple min-h-screen">
       {/* Banner */}
-   <div className="relative w-full h-[220px] sm:h-[300px] md:h-[420px]  overflow-hidden">
-
-  {/* Banner Image */}
+   <div className="relative w-full h-[480px] overflow-hidden">
   <img
     src="/images/sunflower oil 1920 x 700.jpg"
-    alt="Sunflower Oil"
-    className="absolute inset-0 w-full h-full object-fill object-center"
+    alt="banner"
+    className="absolute inset-0 w-full h-full object-cover"
   />
 
   {/* Dark Overlay */}
   
 
   {/* Text Content */}
-  
+ 
 
 </div>
       <div className="max-w-7xl mx-auto px-4 py-10">
