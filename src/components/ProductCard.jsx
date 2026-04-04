@@ -35,11 +35,11 @@ const ProductCard = ({ product }) => {
 
       <Link to={`/product/${product._id}`}>
         {/* Image */}
-        <div className="w-full h-[280px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative">
+        <div className="w-full h-[320px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative">
           <img
             src={product.image}
             alt={product.name}
-            className={`w-full h-full object-contain p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
+            className={`w-full h-full object-cover p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
             onError={e => { e.target.src = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400'; }}
           />
           {!inStock && (
