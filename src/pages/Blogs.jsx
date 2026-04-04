@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
+
+import banner1 from "../assets/Blog Mustard oil 1920 x 700.jpg";
 import blog1 from "../assets/blog11.jpeg";
 import blog2 from "../assets/blog44.jpeg";
 import blog3 from "../assets/blog55.jpeg";
@@ -99,13 +101,28 @@ const Blogs = () => {
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
   return (
-    <div className="min-h-screen bg-gradient-purple py-16">
-
+    
+    
+    <div className="min-h-screen bg-gradient-purple">
+     
+      <div className="relative w-full h-[220px] sm:h-[300px] md:h-[420px]  overflow-hidden">
+        <img
+          src={banner1}
+           className="absolute inset-0 w-full h-full object-fill object-center"
+        
+        />
+      </div>
       <div className="max-w-6xl mx-auto text-center px-6 mb-16">
+        
+        
         <h1 className="text-5xl font-bold text-white mb-2">{t("latestBlogs")}</h1>
         <p className="text-brand-white text-lg mb-2">અમારા બ્લોગ્સ</p>
         <p className="text-yellow-500">{t("blogSubtitle")}</p>
       </div>
+      
+      
+      
+      
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {currentBlogs.map((blog) => (
