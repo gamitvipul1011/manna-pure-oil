@@ -28,15 +28,22 @@ const Products = () => {
   return (
     <div className="bg-gradient-purple min-h-screen">
       {/* Banner */}
-      <div className="relative h-[200px] md:h-[350px] flex flex-col items-center justify-center text-center overflow-hidden">
-        <img src="/images/p11.jpeg" alt="banner" className="absolute w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow">{t('products')}</h1>
-          <p className="text-white/80 mt-2">{isGu ? 'અમારા શુદ્ધ તેલ જુઓ' : 'Explore our pure oil collection'}</p>
-        </div>
-      </div>
+   <div className="relative w-full h-[220px] sm:h-[300px] md:h-[420px]  overflow-hidden">
 
+  {/* Banner Image */}
+  <img
+    src="/images/sunflower oil 1920 x 700.jpg"
+    alt="Sunflower Oil"
+    className="absolute inset-0 w-full h-full object-fill object-center"
+  />
+
+  {/* Dark Overlay */}
+  
+
+  {/* Text Content */}
+  
+
+</div>
       <div className="max-w-7xl mx-auto px-4 py-10">
         {/* Filters */}
         <div className="bg-white rounded-2xl shadow-md p-5 mb-8">
