@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import bannerImage from '../assets/contact1.jpeg';
+import bannerImage from '../assets/Sesame oil 1920 x 700.jpg';
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
@@ -60,35 +60,21 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-purple">
       {/* BANNER */}
-     <div className="relative h-[65vh] flex items-center justify-center text-center">
+    <div className="relative w-full h-[220px] sm:h-[300px] md:h-[420px]  overflow-hidden">
 
   {/* Banner Image */}
   <img
     src={bannerImage}
     alt="Contact"
-     className="absolute w-full h-full object-cover scale-105 hover:scale-110 transition duration-[5000ms]"
+     className="absolute inset-0 w-full h-full object-fill object-center"
   
   />
 
   {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/50"></div>
+  
 
   {/* Content */}
-  <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 text-white">
-
-    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-      {isGu ? "સંપર્ક કરો" : t("contactTitle")}
-    </h1>
-
-    <p className="text-lg md:text-xl text-green-100 mb-2">
-      {t("contactSubtitle")}
-    </p>
-
-    <p className="text-green-200 text-sm md:text-base">
-      Pure Cold Pressed Oil – 100% Natural
-    </p>
-
-  </div>
+  
 
 </div>
 
