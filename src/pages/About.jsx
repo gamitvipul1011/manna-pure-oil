@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import banner1 from "../assets/aboutus2.jpeg";
+import banner1 from "../assets/Coconut oil 1920 X 700.jpg";
 import aboutImg from "../assets/about.jpeg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -54,36 +54,13 @@ const About = () => {
     <div className="overflow-hidden bg-gradient-purple">
 
       {/* HERO */}
-    <div className="relative h-[65vh] flex items-center justify-center text-center">
+     <div className="relative w-full h-[220px] sm:h-[300px] md:h-[420px]  overflow-hidden">
   <img
     src={banner1}
-    className="absolute w-full h-full object-cover scale-105 hover:scale-110 transition duration-[5000ms]"
+     className="absolute inset-0 w-full h-full object-fill object-center"
+  
   />
-
-
-       
-
-        <div className="relative text-yellow-400 max-w-3xl px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
-            {isGu
-              ? "શુદ્ધ. પરંપરાગત. વિશ્વસનીય."
-              : "Pure. Traditional. Trusted."}
-          </h1>
-
-          <p className="text-lg text-yellow-400 mb-6">
-            {isGu
-              ? "શુદ્ધ કોલ્ડ પ્રેસ્ડ તેલનો અનુભવ કરો"
-              : "Experience the purity of cold-pressed oils"}
-          </p>
-
-              <button
-            onClick={() => navigate("/products")}
-            className="bg-gradient-to-r from-yellow-400 to-orange-500 px-10 py-3 rounded-full text-black font-semibold shadow-xl hover:scale-110 transition"
-          >
-            {isGu ? "હવે ખરીદો" : "Shop Now"}
-          </button>
-        </div>
-      </div>
+</div>
 
       {/* STORY */}
       <section className="py-24 bg-gradient-purple">
