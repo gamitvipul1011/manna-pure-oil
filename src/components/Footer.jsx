@@ -74,7 +74,7 @@ const Footer = () => {
 
       {/* ── FULL IMAGE — no crop, full height ── */}
       <img
-        src="/images/footer6.jpeg"
+        src="/images/Warli 1920 x 650.jpg"
         alt="footer background"
         className="w-full block"
         style={{ display: "block", width: "100%", height: "auto" }}
@@ -91,7 +91,7 @@ const Footer = () => {
       <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
 
         {/* TOP CONTENT AREA */}
-        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-36 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-10 grid grid-cols-1 md:grid-cols-4 gap-8">
 
           {/* COL 1: BRAND */}
           <div>
