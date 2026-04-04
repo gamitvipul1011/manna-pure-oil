@@ -54,10 +54,10 @@ const About = () => {
     <div className="overflow-hidden bg-gradient-purple">
 
       {/* HERO */}
-     <div className="relative w-full h-[220px] sm:h-[300px] md:h-[420px]  overflow-hidden">
+     <div className="relative w-full h-[480px] overflow-hidden">
   <img
     src={banner1}
-     className="absolute inset-0 w-full h-full object-fill object-center"
+      className="absolute inset-0 w-full h-full object-cover"
   
   />
 </div>
