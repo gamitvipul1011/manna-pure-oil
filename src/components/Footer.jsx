@@ -81,11 +81,12 @@ const Footer = () => {
       />
 
       {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
-      <div className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(to bottom, rgba(5,20,5,0.82) 0%, rgba(5,20,5,0.70) 55%, rgba(5,20,5,0.30) 78%, rgba(0,0,0,0.08) 100%)"
-        }}
-      />
+    <div className="absolute inset-0 pointer-events-none"
+  style={{
+    background: "linear-gradient(to bottom, rgba(12, 172, 158, 0.9), rgba(134,239,172,0.25) 50%,rgba(11, 221, 88, 0.35) 100%)"
+  }}
+/>
+
 
       {/* ── CONTENT — sits on top of image ── */}
       <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
