@@ -9,14 +9,15 @@ import TestimonialsSection from '../components/TestimonialsSection';
 import { categories } from '../data/products';
 
 // Category images from assets
-import groundnutImg  from '../assets/GROUND NUTOIL.jpg';
-import coconutImg    from '../assets/COCONUT_1L.jpg';
-import whiteSesamImg from '../assets/WHITE_Ltr.jpg';
-import blackSesamImg from '../assets/bl_sesam1l.jpeg';
-import mustardImg    from '../assets/musterd oil 1l.jpg';
-import sunflowerImg  from '../assets/sun flower 1l.jpg';
-import castorImg     from '../assets/castor.jpeg';
-import gheeImg       from '../assets/ghee1.jpeg';
+import groundnutImg  from '../assets/catagory/g1.png';
+import coconutImg    from '../assets/catagory/co1.png';
+import whiteSesamImg from '../assets/catagory/w1.png';
+import blackSesamImg from '../assets/catagory/bl1r.png';
+import mustardImg    from '../assets/catagory/m1.png';
+import sunflowerImg  from '../assets/catagory/sun1.png';
+import castorImg     from '../assets/catagory/cos2.png';
+import gheeImg       from '../assets/catagory/gh2.png';
+import honey         from '../assets/catagory/ho.png';
 
 const catImages = {
   cat1: groundnutImg,
@@ -27,16 +28,17 @@ const catImages = {
   cat6: sunflowerImg,
   cat7: castorImg,
   cat8: gheeImg,
+  cat9:honey,
 };
 
 const pastelBg = [
-  "bg-gradient-to-b from-[#FDBA74] via-[#F97316] to-[#7C2D12]",
+  "bg-gradient-to-b from-[#00AEEF] via-[#00AEEF] to-[#0072BC]",  
   "bg-gradient-to-b from-[#FFFFFF] via-[#F1F5F9] to-[#38BDF8]",
-  "bg-gradient-to-b from-[#FFFDF5] via-[#FDE68A] to-[#EAB308]",
+  "bg-gradient-to-b from-[#FFC107] via-[#FFC107] to-[#FFC107]",
   "bg-gradient-to-b from-[#2C2C2C] via-[#1A1A1A] to-[#000000]",
-  "bg-gradient-to-b from-[#FCD34D] via-[#FBBF24] to-[#B45309]",
-  "bg-gradient-to-b from-[#FEF08A] via-[#FACC15] to-[#CA8A04]",
-  "bg-gradient-to-b from-[#EAB308] via-[#CA8A04] to-[#78350F]",
+  "bg-gradient-to-b from-[#7C2D12] via-[#F97316] to-[#7C2D12]",
+  "bg-gradient-to-b from-[#166534] via-[#15803d] to-[#14532d]",
+  "bg-gradient-to-b from-[#8C5E34] via-[#A67C52] to-[#593A21]",
   "bg-gradient-to-b from-[#FFF7CC] via-[#FDE68A] to-[#F59E0B]",
 ];
 
