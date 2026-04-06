@@ -5,9 +5,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const products = [
+   { image: "/images/products/slider222.jpeg" },
+  { image: "/images/products/sl3.jpeg" },
   { image: "/images/products/sl1.jpeg" },
   { image: "/images/products/sl2.jpeg" },
-  { image: "/images/products/sl3.jpeg" },
+
 
   
   
