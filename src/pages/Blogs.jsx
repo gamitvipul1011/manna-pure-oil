@@ -101,11 +101,11 @@ const Blogs = () => {
         
         />
       </div>
-      <div className="max-w-6xl mx-auto text-center px-6 mb-16">
+      <div className="max-w-6xl mx-auto text-center px-8 mb-16 mt-10">
         
         
         <h1 className="text-5xl font-bold text-white mb-2">{t("latestBlogs")}</h1>
-        <p className="text-brand-white text-lg mb-2">અમારા બ્લોગ્સ</p>
+       
         <p className="text-yellow-500">{t("blogSubtitle")}</p>
       </div>
       
