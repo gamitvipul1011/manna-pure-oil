@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 
-import banner1 from "../assets/blog_masta.jpg";
+import banner1 from "../assets/Blog Mustard oil 1920 x 700.jpg";
 import blog1 from "../assets/History of Oil 1200 x 600.jpg";
 import blog2 from "../assets/journey of oil 1200 x 600.jpg";
 import blog3 from "../assets/father son 600.jpeg";
