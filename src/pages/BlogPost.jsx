@@ -2,328 +2,1175 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FaArrowLeft, FaCalendar, FaTag } from 'react-icons/fa';
-import blog1 from "../assets/blog1.jpeg";
-import blog2 from "../assets/blog44.jpeg";
-import blog3 from "../assets/blog55.jpeg";
-import blog4 from "../assets/blogs4.jpeg";
-import blog5 from "../assets/blogs5.jpeg";
-import blog6 from "../assets/blogs6.jpg";
+import blog1 from "../assets/History of Oil 1600 x 900.jpg";
+import blog2 from "../assets/journey of oil 1600 x 900.jpg";
+import blog3 from "../assets/father son 1600.jpeg";
+import blog4 from "../assets/Cold Pressed vs Refinend 1600 x 900.jpg";
+import blog5 from "../assets/different oil 1600 x 900.jpg";
+import blog6 from "../assets/Bilona Ghee 1600 x 900 .jpg";
 
 const blogData = [
   {
-    id: 1,
-    title: 'Benefits of Cold Pressed Groundnut Oil',
-    titleGu: 'કોલ્ડ-પ્રેસ્ડ સિંગ તેલના ફાયદા',
-    image: blog1,
-    date: '12 Feb 2026',
-    category: 'Health / સ્વાસ્થ્ય',
-    content: `Cold pressed groundnut oil is extracted using traditional wooden press methods without any heat, preserving all the natural goodness.
+  id: 1,
+  title: 'The History of Indian Cooking Oils: From Tradition to Today',
+  titleGu: 'ભારતીય રસોઈ તેલનો ઇતિહાસ: પરંપરાથી આજ સુધી',
+  image: blog1,
+  date: '06 Apr 2026',
+  category: 'Awareness / જાગૃતિ',
+  content: `In every Indian kitchen, oil is not just an ingredient—it’s a story of culture, tradition, health, and generations of wisdom.
 
-**Why Choose Cold Pressed?**
+**Ancient India: The Beginning of Pure Oils**
 
-Unlike refined oils, cold pressed oils retain vitamins E, B, and important minerals. The natural antioxidants present in the oil protect your body from free radical damage.
+Thousands of years ago, Indian cooking was rooted in Ayurveda and natural living. Oils were used not just for cooking but also for healing and rituals.
 
-**Heart Health Benefits**
-Cold pressed groundnut oil contains monounsaturated fatty acids (MUFA) which are known to reduce bad cholesterol levels. Regular use in cooking can contribute to better cardiovascular health.
+- Groundnut Oil was popular in western India for its rich taste and high heat tolerance
+- Mustard Oil was widely used in northern and eastern regions for its strong flavor
+- Sesame Oil was considered sacred and used in cooking and rituals
+- Coconut Oil was a staple in southern coastal regions
 
-**Cooking Benefits**
-- High smoke point makes it ideal for deep frying
-- Rich natural flavour enhances food taste
-- No chemical residue or bleaching agents
-- Retains natural vitamin E as a preservative
+These oils were extracted using traditional wood-pressed methods, preserving purity and nutrition.
 
-**Who Can Use It?**
-Suitable for all age groups. Especially beneficial for those with high cholesterol, diabetes, and digestive issues. Consult your doctor if you have a nut allergy.
+**Traditional Wisdom: Regional Oils**
 
-**Storage Tips**
-Store in a cool, dark place. Use within 3 months of opening. Keep lid tightly closed to preserve freshness.
+India’s diversity influenced oil choices based on climate and lifestyle:
 
-At Manna Pure Oil, we extract our groundnut oil using traditional cold press machines, ensuring maximum purity and nutrition in every drop.`,
-    contentGu: `Cold Pressed Groundnut Oil ની extraction traditional wooden press method વડે heat use વગર થાય છે, natural goodness preserve રહે છે.
+- South India → Coconut Oil for cooling
+- North India → Mustard Oil for warmth
+- Central & Western India → Groundnut & Sesame Oil for balance
 
-**Cold Pressed Oil ના ફાયદા**
+This was not random—it was science backed by tradition.
 
-Refined oils ની સરખામણીમાં cold pressed oils vitamins E, B, અને minerals retain કરે છે. Natural antioxidants body ને free radical damage થી protect કરે છે.
+**The Shift to Refined Oils**
 
-**Heart Health ના ફાયદા**
-Cold pressed groundnut oil ઉપર Monounsaturated fatty acids (MUFA) hoy che je bad cholesterol ઘટાડવામાં help kare. Daily use cardiovascular health improve kare.
+With industrialization, refined oils became popular due to longer shelf life and mass production.
 
-**Cooking Benefits**
-- High smoke point, deep frying ઉત્તમ
-- Natural flavour food ને better taste
-- Chemical residue/bleaching agents નહીં
-- Vitamin E natural preservative tarke
+However, this led to:
+- Loss of nutrients
+- Use of chemicals and high heat processing
+- Disconnection from traditional practices
 
-**Storage Tips**
-Cool, dark place ઉપર store karo. Open pachi 3 months ma use karo. Fresh rahe maaThe tight lid rakho.
+**The Revival of Cold Pressed Oils**
 
-Manna Pure Oil ઉપર traditional cold press machines vade extraction thaay che — purity maximum.`,
-  },
+Today, people are returning to cold pressed oils.
+
+**Why Choose Cold Pressed Oils?**
+- Retains natural nutrients
+- No chemicals or refining
+- Supports digestion and health
+- Brings authentic taste
+
+**Why It Matters**
+
+The oil you use daily impacts your health:
+
+- Better heart health
+- Stronger immunity
+- More natural lifestyle
+
+**Final Thought**
+
+India always had healthy cooking solutions.
+
+Sometimes, the best way forward is to go back.`,
+  
+  contentGu: `દરેક ભારતીય રસોડામાં તેલ માત્ર એક ingredient નથી — તે સંસ્કૃતિ, પરંપરા, સ્વાસ્થ્ય અને પેઢીઓની સમજણની વાર્તા છે.
+
+**પ્રાચીન ભારત: શુદ્ધ તેલની શરૂઆત**
+
+હજારો વર્ષ પહેલાં ભારતીય રસોઈ આયુર્વેદ અને કુદરતી જીવન પર આધારિત હતી. તેલનો ઉપયોગ માત્ર રસોઈમાં નહીં પરંતુ સારવાર અને ધાર્મિક વિધિમાં પણ થતો હતો.
+
+- સિંગ તેલ પશ્ચિમ ભારતમાં તેના સ્વાદ અને high heat માટે જાણીતું હતું
+- સરસવ તેલ ઉત્તર અને પૂર્વ ભારતમાં લોકપ્રિય હતું
+- તલ તેલ પવિત્ર માનવામાં આવતું અને વિધિમાં વપરાતું
+- નાળિયેર તેલ દક્ષિણ ભારતના વિસ્તારોમાં મુખ્ય હતું
+
+આ તેલો traditional wood press (ઘાણી) વડે બનાવવામાં આવતા હતા, જેથી purity અને nutrition જળવાતું.
+
+**પરંપરાગત સમજ: વિસ્તાર મુજબ તેલ**
+
+ભારતની વિવિધતા પ્રમાણે તેલ પસંદ કરાતાં:
+
+- દક્ષિણ ભારત → નાળિયેર તેલ (cooling માટે)
+- ઉત્તર ભારત → સરસવ તેલ (ગરમી માટે)
+- મધ્ય અને પશ્ચિમ ભારત → સિંગ અને તલ તેલ (balance માટે)
+
+આ બધું વૈજ્ઞાનિક રીતે યોગ્ય હતું.
+
+**Refined Oil નો પ્રભાવ**
+
+Industrialization પછી refined oils popular બન્યા.
+
+પણ તેમાં નુકસાન થયું:
+- Nutrients નો ઘટાડો
+- Chemicals અને high heat processing
+- પરંપરાથી દુરાવ
+
+**Cold Pressed Oil ની વાપસી**
+
+આજે લોકો ફરીથી cold pressed oils તરફ વળી રહ્યા છે.
+
+**Cold Pressed Oil કેમ પસંદ કરવું?**
+- Natural nutrients જળવાય
+- કોઈ chemical નથી
+- Digestion અને health માટે સારું
+- Natural taste આપે
+
+**આ કેમ મહત્વનું છે**
+
+તમે જે તેલ વાપરો છો તે તમારા સ્વાસ્થ્ય પર સીધી અસર કરે છે:
+
+- Heart health સુધરે
+- Immunity વધે
+- Natural lifestyle મળે
+
+**અંતિમ વિચાર**
+
+ભારત પાસે હંમેશા healthy cooking solutions હતા.
+
+ક્યારેક આગળ વધવાનો શ્રેષ્ઠ રસ્તો… પાછા ફરવામાં હોય છે.`,
+},
   {
-    id: 2,
-    title: 'Why 100% Natural Oil Matters',
-    titleGu: '૧૦૦% કુદરતી (કોલ્ડ-પ્રેસ્ડ) તેલ શા માટે મહત્વનું છે',
-    image: blog2,
-    date: '05 Feb 2026',
-    category: 'Nutrition / પોષણ',
-    content: `In today's market, most oils go through extensive refining processes that strip away natural nutrients and add chemical preservatives. Here's why choosing 100% natural oil makes a significant difference.
+  id: 2,
+  title: 'From Seed to Bottle: The Journey of Wooden Cold-Pressed Oils',
+  titleGu: 'બીજથી બોટલ સુધી: લાકડાની ઘાણીના કોલ્ડ-પ્રેસ્ડ તેલની સફર',
+  image: blog2,
+  date: '06 Apr 2026',
+  category: 'Process / પ્રક્રિયા',
+  content: `Every drop of oil you use tells a story — a story of nature, care, and tradition.
 
-**The Problem with Refined Oils**
+In today, s world of fast processing, wooden cold-pressed oils stand as a symbol of purity and authenticity.
 
-Refined oils are treated with solvents like hexane for extraction, then bleached and deodorized. This process destroys natural vitamins and adds chemical residues to your food.
+At Manna Pure Oil, we bring this journey to your kitchen — just the way it was meant to be.
 
-**Natural Oil Advantages**
-- No hexane or chemical solvents
-- No bleaching agents
-- No artificial preservatives
-- Natural colour, smell, and taste preserved
-- Full nutritional profile intact
+**Step 1: Sourcing the Finest Seeds**
 
-**Impact on Health**
-Studies show that populations consuming naturally extracted oils have lower rates of lifestyle diseases. The natural vitamin E in cold pressed oils acts as a natural antioxidant, prolonging shelf life without chemicals.
+The journey begins with selecting high-quality natural seeds:
 
-**For Your Family**
-When you choose natural oil, you choose health for your entire family. Children and elderly family members especially benefit from chemical-free food.
+- Groundnuts, sesame, mustard, coconut, and more
+- Carefully chosen for freshness and purity
+- Sourced from trusted farmers
 
-At Manna Pure Oil, our promise is simple: what we sell is exactly what nature intended — pure, natural, and honest.`,
-    contentGu: `Market ઉપર majority oils extensive refining process ma thi pass thay che je natural nutrients ane chemicals add kare che. 100% natural oil choose karva na faydao.
+👉 Great oil always starts with great seeds
 
-**Refined Oils ni samassya**
+**Step 2: Cleaning & Natural Preparation**
 
-Refined oils hexane jeva solvents vade extract thay, phir bleach ane deodorize thay. Natural vitamins destroy thay ane chemical residues add thay.
+Before extraction, seeds are properly prepared:
 
-**Natural Oil ना ફaayda**
-- Hexane ya chemical solvents nathi
-- Bleaching agents nathi
-- Artificial preservatives nathi
-- Natural colour, smell, taste preserved
-- Full nutrition intact
+- Dust and impurities removed
+- Sun-dried naturally
+- No chemicals used
 
-**Health ઉppar असर**
-Natural oils use karnar populations lifestyle diseases na rates occha dikhava che. Natural Vitamin E chemical vinaa shelf life vadhare.
+👉 Ensures purity from the beginning
 
-**Tamara parivar maaThe**
-Natural oil choose karvo = health choose karvi. Children ane elderly ne chemical-free food especially benefit kare.
+**Step 3: Wooden Cold Pressing (Ghani Method)**
 
-Manna Pure Oil ni guarantee — pure, natural, ane honest.`,
-  },
-  {
-    id: 3,
-    title: 'How We Make Pure Cold Pressed Oil',
-    titleGu: 'અમે શુદ્ધ કોલ્ડ-પ્રેસ્ડ (લાકડાની ઘાણીનું) તેલ કેવી રીતે બનાવીએ છીએ',
-    image: blog3,
-    date: '28 Jan 2026',
-    category: 'Process / પ્રક્રિયા',
-    content: `At Manna Pure Oil, we follow traditional ghani (wooden press) methods combined with modern hygiene standards to produce the purest oil possible.
+The most important step:
 
-**Step 1: Seed Selection**
-We source only premium quality seeds — groundnut, sesame, mustard, and coconut — directly from verified farmers. Seeds are cleaned and sun-dried to remove moisture.
+- Seeds are crushed slowly using wooden press
+- No heat generated
+- No chemicals used
+- Slow and natural extraction
 
-**Step 2: Cold Press Extraction**
-Seeds are loaded into our traditional wooden press machine. The press operates at low speed, generating minimal heat (below 45°C) to preserve all nutrients.
+👉 Preserves nutrients, aroma, and taste
 
-**Step 3: Natural Settling**
-Freshly pressed oil is allowed to settle naturally for 12-24 hours. No centrifuge, no chemicals — just gravity and time.
+**Step 4: Natural Settling & Filtration**
 
-**Step 4: Filtration**
-Oil passes through natural cotton cloth filters to remove seed particles. No chemical filtration or bleaching.
+After extraction:
 
-**Step 5: Packaging**
-Oil is bottled in food-grade containers and sealed for freshness. Each batch is checked for quality before dispatch.
+- Oil is left to settle naturally
+- Impurities separate without chemicals
+- Light filtration for clarity
 
-**Our Commitment**
-We believe food should be as close to nature as possible. Every bottle of Manna Pure Oil represents our commitment to traditional wisdom and modern quality standards.`,
-    contentGu: `Manna Pure Oil ઉppar traditional ghani (wooden press) methods ane modern hygiene standards combine kari ne purest oil banavaay che.
+👉 No refining, only pure oil
 
-**Step 1: Seed Selection**
-Premium quality groundnut, sesame, mustard, coconut seeds verified farmers thi direct. Saaf ane sun-dried.
+**Step 5: Hygienic Packaging**
 
-**Step 2: Cold Press Extraction**
-Traditional wooden press machine upa seeds load thay. Low speed operation, minimal heat (45°C thi ochi) — nutrients preserved.
+Final step ensures safety:
 
-**Step 3: Natural Settling**
-Pressed oil 12-24 kalaak natural settle thaay. No centrifuge, no chemicals — gravity ane time.
+- Stored in food-safe bottles
+- Protected from contamination
+- Sealed to maintain freshness
 
-**Step 4: Filtration**
-Natural cotton cloth filters through particles remove thay. Chemical filtration ya bleaching nathi.
+👉 Same purity reaches your home
 
-**Step 5: Packaging**
-Food-grade containers ma bottle karvaay, freshness maaThe seal. Har batch quality check pachi dispatch.
+**What Makes Cold Pressed Oil Special?**
 
-**Amari commitment**
-Food possible teshu natural hovu joye. Manna Pure Oil ni har bottle traditional wisdom ane modern quality ni guarantee.`,
-  },
+- Retains natural nutrients
+- Rich in healthy fats
+- Strong aroma and authentic taste
+- Chemical-free and unrefined
+
+👉 It is health in its purest form
+
+**Traditional vs Modern Oils**
+
+Wooden Cold Pressed Oil:
+- Natural and slow process
+- Nutrient-rich
+- No chemicals
+- Full flavor
+
+Refined Oil:
+- High heat processing
+- Chemical treatments
+- Loss of nutrients
+- Artificial changes
+
+**Why It Matters**
+
+Choosing the right oil means:
+
+- Better health
+- Safer cooking
+- Natural nutrition
+- Connection to tradition
+
+**Final Thoughts**
+
+From seed to bottle, every step matters.
+
+Choosing cold-pressed oil means choosing purity, health, and tradition.`,
+  
+  contentGu: `તમે જે તેલ વાપરો છો તેની દરેક બુંદ એક વાર્તા કહે છે — કુદરત, કાળજી અને પરંપરાની વાર્તા.
+
+આજના ઝડપી સમયમાં લાકડાની ઘાણીનું કોલ્ડ-પ્રેસ્ડ તેલ શુદ્ધતા અને વિશ્વાસનું પ્રતિક છે.
+
+Manna Pure Oil આ સફરને તમારા રસોડા સુધી પહોંચાડે છે — જેમ હોવું જોઈએ તેમ.
+
+**Step 1: શ્રેષ્ઠ બીજની પસંદગી**
+
+સફર શરૂ થાય છે ઉત્તમ ગુણવત્તાવાળા બીજથી:
+
+- સિંગ, તલ, સરસવ, નાળિયેર વગેરે
+- શુદ્ધતા અને તાજગી માટે પસંદ કરેલ
+- વિશ્વસનીય ખેડૂતો પાસેથી મેળવેલ
+
+👉 સારું તેલ હંમેશા સારા બીજથી બને છે
+
+**Step 2: સફાઈ અને કુદરતી તૈયારી**
+
+Extraction પહેલા:
+
+- ધૂળ અને ગંદકી દૂર કરવામાં આવે છે
+- કુદરતી રીતે સૂર્યપ્રકાશમાં સુકવાય છે
+- કોઈ chemical નો ઉપયોગ નથી
+
+👉 શરૂઆતથી જ શુદ્ધતા જળવાય
+
+**Step 3: લાકડાની ઘાણી (Cold Press Method)**
+
+મુખ્ય પ્રક્રિયા:
+
+- લાકડાની ઘાણીમાં ધીમે દબાવવામાં આવે છે
+- કોઈ heat ઉત્પન્ન થતો નથી
+- કોઈ chemical નો ઉપયોગ નથી
+- ધીમું અને કુદરતી extraction
+
+👉 Nutrients, સુગંધ અને સ્વાદ જળવાય
+
+**Step 4: કુદરતી સેટલિંગ અને ફિલ્ટરિંગ**
+
+Extraction પછી:
+
+- તેલને કુદરતી રીતે સ્થિર થવા દેવામાં આવે છે
+- અશુદ્ધિઓ અલગ થાય છે
+- હળવું ફિલ્ટરિંગ થાય છે
+
+👉 કોઈ refining નહીં, ફક્ત શુદ્ધ તેલ
+
+**Step 5: સ્વચ્છ પેકેજિંગ**
+
+છેલ્લું સ્ટેપ:
+
+- Food-safe બોટલમાં ભરી શકાય છે
+- Contamination થી સુરક્ષિત
+- Freshness માટે સીલ કરવામાં આવે છે
+
+👉 એ જ શુદ્ધતા તમારા ઘરે પહોંચે છે
+
+**Cold Pressed Oil કેમ ખાસ છે?**
+
+- Natural nutrients જળવાય
+- Healthy fats થી ભરપૂર
+- Natural સુગંધ અને સ્વાદ
+- Chemical-free અને unrefined
+
+👉 આ શુદ્ધ સ્વાસ્થ્ય છે
+
+**Traditional vs Modern Oil**
+
+લાકડાની ઘાણીનું તેલ:
+- ધીમું અને કુદરતી process
+- Nutrient-rich
+- કોઈ chemical નહીં
+- સંપૂર્ણ સ્વાદ
+
+Refined Oil:
+- High heat process
+- Chemical treatment
+- Nutrients નો ઘટાડો
+- Artificial ફેરફાર
+
+**આ કેમ મહત્વનું છે**
+
+યોગ્ય તેલ પસંદ કરવાથી:
+
+- સ્વાસ્થ્ય સુધરે
+- સુરક્ષિત રસોઈ
+- કુદરતી પોષણ
+- પરંપરા સાથે જોડાણ
+
+**અંતિમ વિચાર**
+
+બીજથી બોટલ સુધી દરેક સ્ટેપ મહત્વનો છે.
+
+Cold pressed oil પસંદ કરવું એટલે શુદ્ધતા, સ્વાસ્થ્ય અને પરંપરા પસંદ કરવી.`,
+},
+ {
+  id: 3,
+  title: 'Understanding Good Fats vs Bad Fats in Cooking Oil',
+  titleGu: 'રસોઈ તેલમાં સારા ફેટ્સ અને ખરાબ ફેટ્સ સમજીએ',
+  image: blog3,
+  date: '06 Apr 2026',
+  category: 'Health / સ્વાસ્થ્ય',
+  content: `In every Indian kitchen, oil is the foundation of every meal. But not all fats are the same. Understanding good fats and bad fats can improve your family’s health.
+
+**What Are Fats in Cooking Oil?**
+
+Fats are essential nutrients needed for:
+
+- Energy
+- Cell growth
+- Nutrient absorption
+
+👉 The type of fat you consume matters most
+
+**What Are Good Fats?**
+
+Good fats support overall health.
+
+**Types of Good Fats**
+
+Monounsaturated Fats (MUFA):
+- Helps reduce bad cholesterol
+- Supports heart health
+- Found in groundnut oil and mustard oil
+
+Polyunsaturated Fats (PUFA):
+- Contains Omega-3 and Omega-6
+- Supports brain function
+- Helps body development
+
+**Benefits of Good Fats**
+
+- Keeps heart healthy
+- Improves cholesterol balance
+- Boosts immunity
+- Supports skin and hair health
+
+👉 Cold pressed oils are rich in good fats
+
+**What Are Bad Fats?**
+
+Bad fats can harm your health if consumed regularly.
+
+**Types of Bad Fats**
+
+Trans Fats:
+- Found in processed and refined oils
+- Created during industrial processing
+
+Excess Saturated Fats:
+- Can increase bad cholesterol
+- Linked to heart problems
+
+**Effects of Bad Fats**
+
+- Increases risk of heart disease
+- Raises LDL cholesterol
+- Causes weight gain
+- Leads to lifestyle diseases
+
+**Cold Pressed Oil vs Refined Oil**
+
+Cold Pressed Oil:
+- Naturally extracted
+- Retains nutrients and antioxidants
+- Rich in good fats
+- Chemical-free
+
+Refined Oil:
+- Processed with chemicals
+- Nutrients lost
+- May contain trans fats
+- Less natural value
+
+**Why It Matters**
+
+Oil is used daily in cooking, frying, and dressing.
+
+👉 Small changes in oil can create big health impacts over time
+
+**Tips for Choosing the Right Oil**
+
+- Choose cold pressed oils
+- Avoid refined oils
+- Use in balanced quantity
+- Rotate oils for better nutrition
+
+**Final Thoughts**
+
+Not all fats are bad — the right fats are essential.
+
+Choose wisely:
+- Good fats → Better health
+- Bad fats → Health risks
+
+Make the switch to healthier oils today.`,
+  
+  contentGu: `દરેક ભારતીય રસોડામાં તેલ દરેક ભોજનનો આધાર છે. પરંતુ બધા ફેટ્સ એકસરખા નથી. સારા અને ખરાબ ફેટ્સ સમજવાથી પરિવારનું સ્વાસ્થ્ય સુધરી શકે છે.
+
+**રસોઈ તેલમાં ફેટ્સ શું છે?**
+
+ફેટ્સ શરીર માટે જરૂરી પોષક તત્વો છે:
+
+- Energy માટે
+- Cell growth માટે
+- Nutrient absorption માટે
+
+👉 તમે કયો ફેટ લો છો તે મહત્વનું છે
+
+**સારા ફેટ્સ શું છે?**
+
+સારા ફેટ્સ શરીરને મદદ કરે છે અને સ્વાસ્થ્ય સુધારે છે.
+
+**સારા ફેટ્સના પ્રકાર**
+
+Monounsaturated Fats (MUFA):
+- Bad cholesterol ઘટાડે
+- Heart health સુધારે
+- સિંગ તેલ અને સરસવ તેલમાં મળે
+
+Polyunsaturated Fats (PUFA):
+- Omega-3 અને Omega-6 થી ભરપૂર
+- Brain function માટે સારું
+- Body development માં મદદરૂપ
+
+**સારા ફેટ્સના ફાયદા**
+
+- Heart healthy રાખે
+- Cholesterol balance સુધારે
+- Immunity વધારે
+- Skin અને hair માટે સારું
+
+👉 Cold pressed oils માં આ ફેટ્સ ભરપૂર હોય છે
+
+**ખરાબ ફેટ્સ શું છે?**
+
+ખરાબ ફેટ્સ શરીરને નુકસાન પહોંચાડે છે.
+
+**ખરાબ ફેટ્સના પ્રકાર**
+
+Trans Fats:
+- Processed અને refined oil માં મળે
+- Industrial processing દરમિયાન બને
+
+Excess Saturated Fats:
+- Bad cholesterol વધારે
+- Heart problems સાથે જોડાયેલ
+
+**ખરાબ ફેટ્સના અસર**
+
+- Heart disease નો જોખમ વધારે
+- LDL cholesterol વધારે
+- Weight gain કરે
+- Lifestyle diseases લાવે
+
+**Cold Pressed vs Refined Oil**
+
+Cold Pressed Oil:
+- કુદરતી રીતે બને
+- Nutrients અને antioxidants જળવાય
+- Good fats થી ભરપૂર
+- Chemical-free
+
+Refined Oil:
+- Chemicals થી process થાય
+- Nutrients નો ઘટાડો
+- Trans fats હોઈ શકે
+- Natural value ઓછી
+
+**આ કેમ મહત્વનું છે**
+
+તેલ દરરોજ cooking, frying અને dressing માં વપરાય છે.
+
+👉 નાનું બદલાવ પણ લાંબા ગાળે મોટો ફરક પાડે છે
+
+**યોગ્ય તેલ પસંદ કરવા માટે ટિપ્સ**
+
+- Cold pressed oil પસંદ કરો
+- Refined oil ટાળો
+- સંતુલિત માત્રામાં વાપરો
+- Oil rotation કરો
+
+**અંતિમ વિચાર**
+
+બધા ફેટ્સ ખરાબ નથી — સાચા ફેટ્સ જરૂરી છે.
+
+સમજદારીથી પસંદ કરો:
+- સારા ફેટ્સ → સારું સ્વાસ્થ્ય
+- ખરાબ ફેટ્સ → જોખમ
+
+આજે જ health માટે યોગ્ય પસંદગી કરો.`,
+},
   {
   id: 4,
-  title: 'Groundnut Oil for Heart Health',
-  titleGu: 'હૃદયના આરોગ્ય માટે સિંગ તેલ',
+  title: 'Cold Pressed Oil vs Refined Oil: What You Must Know',
+  titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલ vs રિફાઇન્ડ તેલ: શું જાણવું જરૂરી છે',
   image: blog4,
-  date: '20 Feb 2026',
-  category: 'Health / સ્વાસ્થ્ય',
+  date: '06 Apr 2026',
+  category: 'Awareness / જાગૃતિ',
+  content: `In today’s health-conscious world, choosing the right cooking oil is very important. Many Indian households are now becoming aware of what they consume daily.
 
-  content: `Groundnut oil is widely known for its heart-friendly nutritional profile. When extracted through the cold-pressed method, it preserves healthy fats and essential nutrients that support cardiovascular wellness.
+The biggest question is: Cold Pressed Oil vs Refined Oil.
 
-**Healthy Fats for the Heart**
+**What is Cold Pressed Oil?**
 
-Cold pressed groundnut oil contains a high amount of monounsaturated fatty acids (MUFA) and polyunsaturated fats (PUFA). These fats help reduce LDL (bad cholesterol) while increasing HDL (good cholesterol).
+Cold pressed oil is extracted using traditional wooden or mechanical methods at low temperatures:
 
-**Why It Is Good for the Heart**
+- No heat
+- No chemicals
+- No refining
 
-- Helps maintain healthy cholesterol levels  
-- Supports proper blood circulation  
-- Reduces risk of heart disease  
-- Contains antioxidants that protect arteries
+👉 This keeps the oil pure and natural
 
-**Best Way to Use**
+**What is Refined Oil?**
 
-Using cold pressed groundnut oil in daily cooking like vegetables, frying snacks, and Indian dishes can help improve overall heart health.
+Refined oil goes through industrial processing:
 
-**Natural and Chemical-Free**
+- High heat treatment
+- Chemical processing
+- Bleaching and deodorizing
 
-Unlike refined oils that go through heavy chemical processing, cold pressed oil is extracted naturally without high heat, ensuring maximum nutrition and purity.
+👉 Improves shelf life but reduces quality
 
-At Manna Pure Oil, we believe healthy cooking starts with pure oil. Our cold pressed groundnut oil supports a balanced and heart-friendly lifestyle.`,
+**Key Differences**
 
-  contentGu: `Groundnut Oil હૃદય માટે ખૂબ લાભદાયક માનવામાં આવે છે. Cold-Pressed method થી બનાવેલું oil healthy fats અને nutrients જાળવી રાખે છે જે heart health માટે મહત્વપૂર્ણ છે.
+**1. Nutritional Value**
 
-**Heart માટે Healthy Fats**
+Cold Pressed Oil:
+- Rich in vitamins and antioxidants
+- Retains natural nutrients
+- Contains healthy fats
 
-Cold pressed groundnut oil માં Monounsaturated Fatty Acids (MUFA) અને Polyunsaturated fats હોય છે. આ fats bad cholesterol ઘટાડવામાં અને good cholesterol વધારવામાં મદદ કરે છે.
+Refined Oil:
+- Nutrients lost during processing
+- Lower nutritional value
 
-**Heart Health માટે ફાયદા**
+**2. Health Impact**
 
-- Cholesterol balance રાખે છે  
-- Blood circulation સુધારે છે  
-- Heart disease નો risk ઘટાડે છે  
-- Antioxidants arteries protect કરે છે  
+Cold Pressed Oil:
+- Supports heart health
+- Balances cholesterol
+- Boosts immunity
 
-**Cooking માટે ઉપયોગ**
+Refined Oil:
+- May increase bad cholesterol
+- Linked to lifestyle diseases
 
-Daily cooking માં vegetables, frying અને Indian dishes માટે groundnut oil ઉપયોગી છે.
+**3. Processing Method**
 
-**Natural Oil**
+Cold Pressed Oil:
+- Minimal processing
+- Traditional extraction
 
-Refined oil chemical process થી બને છે, જ્યારે cold pressed oil natural process થી બને છે જેથી nutrition જળવાઈ રહે.
+Refined Oil:
+- Heavy industrial processing
+- Use of chemicals
 
-Manna Pure Oil પર અમે traditional cold press method વડે શુદ્ધ અને nutritious oil બનાવીએ છીએ.`,
+**4. Taste & Aroma**
+
+Cold Pressed Oil:
+- Natural aroma
+- Enhances food taste
+
+Refined Oil:
+- Odorless and tasteless
+- Less authentic
+
+**5. Environmental Impact**
+
+Cold Pressed Oil:
+- Eco-friendly
+- Supports farmers
+
+Refined Oil:
+- High energy usage
+- Industrial impact
+
+**Hidden Truth About Refined Oils**
+
+Many believe refined oils are healthier, but:
+
+- Chemical residues may remain
+- Natural nutrients are lost
+- Long-term use may harm health
+
+**Why People Are Switching**
+
+Modern families are choosing:
+
+- Purity over processing
+- Nutrition over appearance
+- Health over convenience
+
+👉 Cold pressed oils are becoming the preferred choice
+
+**Final Thoughts**
+
+Cooking oil is a daily health decision.
+
+Choose wisely:
+- Natural vs Processed
+- Nourishing vs Empty
+- Traditional vs Industrial
+
+Make the switch to cold pressed oils for a healthier life.`,
+  
+  contentGu: `આજના health-conscious સમયમાં યોગ્ય રસોઈ તેલ પસંદ કરવું ખૂબ જ મહત્વનું છે. ઘણા ભારતીય પરિવારો હવે તેઓ શું ખાય છે તેની જાગૃતિ રાખી રહ્યા છે.
+
+મુખ્ય પ્રશ્ન છે: Cold Pressed Oil vs Refined Oil.
+
+**Cold Pressed Oil શું છે?**
+
+Cold pressed oil પરંપરાગત લાકડાની ઘાણી અથવા મશીન દ્વારા low temperature પર બનાવવામાં આવે છે:
+
+- કોઈ heat નહીં
+- કોઈ chemical નહીં
+- કોઈ refining નહીં
+
+👉 આ તેલને શુદ્ધ અને કુદરતી રાખે છે
+
+**Refined Oil શું છે?**
+
+Refined oil industrial processમાંથી પસાર થાય છે:
+
+- High heat
+- Chemical processing
+- Bleaching અને deodorizing
+
+👉 Shelf life વધે છે પરંતુ ગુણવત્તા ઘટે છે
+
+**મુખ્ય તફાવત**
+
+**1. Nutritional Value**
+
+Cold Pressed Oil:
+- Vitamins અને antioxidants થી ભરપૂર
+- Natural nutrients જળવાય
+- Healthy fats હોય
+
+Refined Oil:
+- Nutrients નો ઘટાડો
+- ઓછું પોષણ
+
+**2. Health Impact**
+
+Cold Pressed Oil:
+- Heart health માટે સારું
+- Cholesterol balance કરે
+- Immunity વધારે
+
+Refined Oil:
+- Bad cholesterol વધારી શકે
+- Lifestyle diseases સાથે જોડાયેલ
+
+**3. Processing Method**
+
+Cold Pressed Oil:
+- ઓછું processing
+- Traditional method
+
+Refined Oil:
+- Heavy industrial process
+- Chemicals નો ઉપયોગ
+
+**4. Taste & Aroma**
+
+Cold Pressed Oil:
+- Natural સુગંધ
+- Food નો સ્વાદ વધારે
+
+Refined Oil:
+- સુગંધ વગર
+- Natural taste ઓછું
+
+**5. Environmental Impact**
+
+Cold Pressed Oil:
+- Eco-friendly
+- ખેડૂતોને support કરે
+
+Refined Oil:
+- વધુ energy use
+- Industrial અસર
+
+**Refined Oil વિશે સત્ય**
+
+ઘણા લોકો માને છે કે refined oil healthy છે, પરંતુ:
+
+- Chemical residues રહી શકે
+- Natural nutrients નષ્ટ થાય
+- લાંબા ગાળે નુકસાનકારક
+
+**લોકો કેમ બદલાઈ રહ્યા છે**
+
+આજે લોકો પસંદ કરે છે:
+
+- શુદ્ધતા over processing
+- પોષણ over દેખાવ
+- સ્વાસ્થ્ય over convenience
+
+👉 Cold pressed oil વધુ પસંદ બની રહ્યું છે
+
+**અંતિમ વિચાર**
+
+રસોઈ તેલ રોજની health decision છે.
+
+સમજદારીથી પસંદ કરો:
+- Natural vs Processed
+- Nourishing vs Empty
+- Traditional vs Industrial
+
+આજે જ cold pressed oil તરફ બદલાવ લાવો.`,
 },
 {
   id: 5,
-  title: 'Cold Pressed Oil vs Refined Oil',
-  titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલ અને રિફાઈન્ડ તેલમાં તફાવત',
+  title: 'Cold Pressed Oil Benefits: Why Every Indian Kitchen is Switching Today',
+  titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલના ફાયદા: કેમ દરેક ભારતીય રસોડું આજે બદલાઈ રહ્યું છે',
   image: blog5,
-  date: '15 Feb 2026',
-  category: 'Knowledge / માહિતી',
+  date: '06 Apr 2026',
+  category: 'Health / સ્વાસ્થ્ય',
+  content: `In today’s fast-moving world, Indian families are slowly returning to natural and healthier choices. One major shift is the use of cold pressed oils in daily cooking.
+At Manna Pure Oil, we believe what you cook with matters as much as what you cook.
 
-  content: `Many people use refined oils without knowing how they are processed. Understanding the difference between cold pressed oil and refined oil can help you make healthier cooking choices.
+**What is Cold Pressed Oil?**
 
-**Cold Pressed Oil**
+Cold pressed oil is extracted at low temperatures without heat or chemicals:
 
-Cold pressed oil is extracted naturally using mechanical pressure without applying high heat. This process keeps the oil rich in nutrients and natural flavor.
+- No refining
+- No chemicals
+- No nutrient loss
 
-Benefits of Cold Pressed Oil:
-- Retains vitamins and antioxidants
-- No chemicals used
-- Natural aroma and taste
-- Better nutritional value
+👉 Keeps oil natural, pure, and nutritious
 
-**Refined Oil**
+**1. Rich in Nutrients & Antioxidants**
 
-Refined oil goes through heavy processing which includes bleaching, deodorizing, and chemical treatment.
+Cold pressed oils contain:
 
-Problems with Refined Oil:
-- Nutrients destroyed during high heat processing
-- Chemical residues may remain
-- Artificially processed taste
-- Lower nutritional value
+- Vitamin E
+- Omega fatty acids
+- Natural antioxidants
 
-**Healthier Choice**
+Benefits:
+- Boosts immunity
+- Improves skin health
+- Supports heart health
 
-Cold pressed oils are a better alternative for everyday cooking because they are natural, minimally processed, and nutritionally richer.
+👉 Every drop is pure and powerful
 
-Choosing cold pressed oil means choosing purity, nutrition, and better health.`,
+**2. Supports Heart Health**
 
-  contentGu: `ઘણા લોકો refined oil નો ઉપયોગ કરે છે પણ તેની processing વિશે જાણતા નથી. Cold pressed oil અને refined oil વચ્ચે મોટો તફાવત છે.
+Cold pressed oils contain good fats (MUFA & PUFA) that:
 
-**Cold Pressed Oil**
+- Reduce bad cholesterol (LDL)
+- Increase good cholesterol (HDL)
+- Improve blood circulation
 
-Cold pressed oil mechanical pressure વડે heat વગર બનાવવામાં આવે છે. આથી oil માં nutrients અને natural flavour જળવાય છે.
+👉 A simple step toward a healthy heart
 
-Cold Pressed Oil ના ફાયદા:
-- Vitamins અને antioxidants રહે છે  
-- કોઈ chemicals નહીં  
-- Natural aroma અને taste  
-- High nutrition value  
+**3. Free from Harmful Chemicals**
 
-**Refined Oil**
+Refined oils undergo chemical processing.
 
-Refined oil bleaching, deodorizing અને chemical processing વડે બનાવવામાં આવે છે.
+Cold pressed oils are:
+- Chemical-free
+- Preservative-free
+- Naturally processed
 
-Refined Oil ની સમસ્યાઓ:
-- High heat થી nutrients નાશ થાય  
-- Chemical residue રહી શકે  
-- Artificial taste  
-- Nutrition ઓછું  
+👉 Pure and safe for consumption
 
-Healthy lifestyle માટે cold pressed oil વધુ સારું વિકલ્પ છે.`,
+**4. Safe for Your Family**
+
+Cooking with cold pressed oil ensures:
+
+- Safe for children
+- Easy to digest
+- Supports overall health
+
+👉 Nourishes your loved ones daily
+
+**5. Enhances Taste & Aroma**
+
+Cold pressed oils bring authentic flavor:
+
+- Natural aroma
+- Rich taste
+- Perfect for Indian cooking
+
+👉 Makes every dish more delicious
+
+**6. Eco-Friendly Choice**
+
+Cold pressed oils are:
+
+- Minimally processed
+- Energy efficient
+- Support local farmers
+
+👉 Better for you and the environment
+
+**Why People Are Switching**
+
+People now prefer:
+- Natural over processed
+- Nutrition over convenience
+- Health over shortcuts
+
+👉 Cold pressed oils are becoming essential
+
+**Final Thoughts**
+
+Your cooking oil impacts your health daily.
+
+Switching to cold pressed oil means:
+- Better health
+- Better taste
+- Better lifestyle
+
+Make the smart choice today.`,
+  
+  contentGu: `આજના ઝડપી સમયમાં ભારતીય પરિવારો ફરીથી કુદરતી અને સ્વસ્થ પસંદગી તરફ વળી રહ્યા છે. તેમાં સૌથી મોટો બદલાવ છે cold pressed oil નો ઉપયોગ.
+
+Manna Pure Oil માં અમે માનીએ છીએ કે તમે શું બનાવો છો એટલું જ મહત્વનું છે કે તમે કયા તેલથી બનાવો છો.
+
+**Cold Pressed Oil શું છે?**
+
+Cold pressed oil low temperature પર heat અને chemical વગર બનાવવામાં આવે છે:
+
+- કોઈ refining નહીં
+- કોઈ chemical નહીં
+- કોઈ nutrient loss નહીં
+
+👉 તેલને શુદ્ધ અને કુદરતી રાખે છે
+
+**1. Nutrients અને Antioxidants થી ભરપૂર**
+
+Cold pressed oil માં હોય છે:
+
+- Vitamin E
+- Omega fatty acids
+- Natural antioxidants
+
+ફાયદા:
+- Immunity વધારે
+- Skin health સુધારે
+- Heart health માટે સારું
+
+👉 દરેક બુંદ શક્તિશાળી અને શુદ્ધ
+
+**2. Heart Health માટે સારું**
+
+Cold pressed oil માં good fats (MUFA & PUFA) હોય છે:
+
+- Bad cholesterol ઘટાડે
+- Good cholesterol વધારે
+- Blood circulation સુધારે
+
+👉 સ્વસ્થ હૃદય માટે સરળ પગલું
+
+**3. Chemical-Free**
+
+Refined oil માં chemicals વપરાય છે.
+
+Cold pressed oil:
+- Chemical-free
+- Preservative-free
+- Natural process
+
+👉 સંપૂર્ણ સુરક્ષિત
+
+**4. પરિવાર માટે સુરક્ષિત**
+
+Cold pressed oil:
+
+- બાળકો માટે safe
+- સરળ પચન
+- Overall health સુધારે
+
+👉 પરિવારને પોષણ આપે
+
+**5. Taste અને Aroma વધારે**
+
+Cold pressed oil:
+
+- Natural સુગંધ
+- Rich taste
+- Indian cooking માટે ઉત્તમ
+
+👉 ભોજન વધુ સ્વાદિષ્ટ બને
+
+**6. Eco-Friendly પસંદગી**
+
+Cold pressed oil:
+
+- ઓછું processing
+- Energy efficient
+- ખેડૂતોને support કરે
+
+👉 પર્યાવરણ માટે સારું
+
+**લોકો કેમ બદલાઈ રહ્યા છે**
+
+આજે લોકો પસંદ કરે છે:
+
+- Natural over processed
+- Nutrition over convenience
+- Health over shortcuts
+
+👉 Cold pressed oil જરૂરી બની રહ્યું છે
+
+**અંતિમ વિચાર**
+
+તમે જે તેલ વાપરો છો તે તમારા સ્વાસ્થ્ય પર અસર કરે છે.
+
+Cold pressed oil તરફ બદલાવ એટલે:
+- સારું સ્વાસ્થ્ય
+- સારું સ્વાદ
+- સારું જીવન
+
+આજે જ સમજદારીથી પસંદ કરો.`,
 },
 {
   id: 6,
-  title: 'Best Cooking Uses of Groundnut Oil',
-  titleGu: 'રસોઈમાં સિંગ તેલના શ્રેષ્ઠ ઉપયોગ',
+  title: 'Why Gir Cow Bilona Ghee is the Healthiest Choice for Your Family',
+  titleGu: 'ગિર ગાયનું બિલોના ઘી કેમ તમારા પરિવાર માટે સૌથી સ્વસ્થ પસંદગી છે',
   image: blog6,
-  date: '10 Feb 2026',
-  category: 'Cooking / રસોઈ',
+  date: '06 Apr 2026',
+  category: 'Health / સ્વાસ્થ્ય',
+  content: `In every Indian household, ghee is more than just an ingredient — it represents health, tradition, and care.
 
-  content: `Groundnut oil is one of the most versatile cooking oils used in Indian kitchens. Its natural nutty flavour and high smoke point make it ideal for various cooking methods.
+But the real question is:
+Is the ghee you use truly healthy?
 
-**Why Groundnut Oil Is Perfect for Cooking**
+The answer depends on:
+- Quality of milk (Gir Cow A2 milk)
+- Method of preparation (Bilona process)
 
-- High smoke point makes it suitable for frying  
-- Enhances natural taste of food  
-- Light texture that does not overpower dishes  
-- Naturally rich in vitamin E
+👉 Together, they create pure and nourishing Bilona Ghee
 
-**Best Cooking Uses**
+**What is Gir Cow Bilona Ghee?**
 
-Groundnut oil works perfectly for:
+- Made from A2 milk of Gir cows
+- Prepared using traditional bilona method
+- Natural, chemical-free, and authentic
 
-- Deep frying snacks like samosa, pakoda, and bhajiya  
-- Cooking vegetables and curries  
-- Making traditional Gujarati and Indian dishes  
-- Stir-frying and sautéing
+👉 More beneficial than regular ghee
 
-**Healthy Cooking Choice**
+**What is the Bilona Method?**
 
-Cold pressed groundnut oil contains healthy fats and antioxidants that support digestion and overall health.
+- Milk is converted into curd
+- Curd is hand-churned using wooden bilona
+- Butter is slowly heated to make ghee
 
-Using pure oil in daily cooking not only improves taste but also contributes to a healthier lifestyle.
+👉 Slow process ensures maximum nutrition
 
-Manna Pure Oil ensures that every bottle delivers traditional purity, natural taste, and nutritional benefits.`,
+**1. Rich in A2 Nutrition**
 
-  contentGu: `Groundnut Oil ભારતીય રસોઈમાં સૌથી વધુ ઉપયોગ થતું oil છે. તેનો natural nutty flavour અને high smoke point તેને cooking માટે ઉત્તમ બનાવે છે.
+- Contains A2 protein, easy to digest
+- Supports metabolism
+- Suitable for all age groups
 
-**Cooking માટે કેમ સારું છે**
+**2. Retains Maximum Nutrients**
 
-- High smoke point હોવાથી frying માટે perfect  
-- Food નો natural taste વધે  
-- Light texture હોવાથી heavy લાગતું નથી  
-- Vitamin E natural રીતે મળે  
+- Preserves vitamins A, D, E, K
+- Keeps antioxidants intact
+- More nutritious than machine-made ghee
 
-**Cooking Uses**
+**3. Improves Digestion**
 
-Groundnut oil નો ઉપયોગ:
+- Made from curd, not cream
+- Supports gut health
+- Helps nutrient absorption
 
-- Samosa, pakoda, bhajiya frying  
-- Vegetables અને curries cooking  
-- Traditional Gujarati recipes  
-- Stir-fry અને sauté cooking  
+**4. Boosts Immunity**
 
-**Healthy Choice**
+- Strengthens immunity
+- Helps fight illnesses
+- Supports overall health
 
-Cold pressed groundnut oil માં healthy fats અને antioxidants હોય છે જે digestion અને health માટે સારું છે.
+**5. Supports Brain Development**
 
-Manna Pure Oil પર અમે traditional method વડે pure oil બનાવીએ છીએ જેથી taste અને nutrition બંને મળે.`,
+- Healthy fats nourish brain
+- Improves memory and focus
+- Beneficial for children
+
+**6. Heart-Friendly (in moderation)**
+
+- Contains balanced fats
+- Helps maintain cholesterol
+- Better than refined oils
+
+**7. 100% Natural**
+
+- No preservatives
+- No refining
+- Safe for daily use
+
+**8. Rich Taste & Aroma**
+
+- Authentic flavor
+- Natural fragrance
+- Traditional taste
+
+**Bilona Ghee vs Regular Ghee**
+
+Bilona Ghee:
+- Made from curd
+- Nutrient-rich
+- Easy to digest
+- Traditional process
+
+Regular Ghee:
+- Made from cream
+- Less nutrients
+- Heavier to digest
+- Industrial process
+
+**Why Choose Manna Pure Oil?**
+
+- Made from Gir cow A2 milk
+- Authentic bilona method
+- No chemicals or shortcuts
+- Made with care
+
+**Final Thoughts**
+
+Choosing the right ghee means choosing better health.
+
+Bilona ghee offers:
+- Better nutrition
+- Better digestion
+- Better lifestyle
+
+👉 A true return to purity and tradition`,
+  
+  contentGu: `દરેક ભારતીય ઘરમાં ઘી માત્ર એક ingredient નથી — તે સ્વાસ્થ્ય, પરંપરા અને પ્રેમનું પ્રતિક છે.
+
+પરંતુ મુખ્ય પ્રશ્ન છે:
+શું તમે જે ઘી વાપરો છો તે ખરેખર સ્વસ્થ છે?
+
+જવાબ બે બાબતો પર આધારિત છે:
+- દૂધની ગુણવત્તા (ગિર ગાયનું A2 દૂધ)
+- બનાવવાની રીત (બિલોના પદ્ધતિ)
+
+👉 આ બંને સાથે મળે ત્યારે શુદ્ધ બિલોના ઘી બને છે
+
+**Gir Cow Bilona Ghee શું છે?**
+
+- ગિર ગાયના A2 દૂધથી બનેલું
+- પરંપરાગત બિલોના પદ્ધતિથી બનાવેલું
+- કુદરતી અને chemical-free
+
+👉 સામાન્ય ઘી કરતા વધુ ફાયદાકારક
+
+**બિલોના પદ્ધતિ શું છે?**
+
+- દૂધમાંથી દહીં બનાવવામાં આવે છે
+- દહીંને લાકડાની રવડીથી મથવામાં આવે છે
+- માખણને ધીમે ગરમ કરીને ઘી બનાવવામાં આવે છે
+
+👉 ધીમું process વધુ nutrition આપે છે
+
+**1. A2 Nutrition થી ભરપૂર**
+
+- A2 protein પચવામાં સરળ
+- Metabolism સુધારે
+- દરેક વય માટે યોગ્ય
+
+**2. વધુ Nutrients જળવાય**
+
+- Vitamins A, D, E, K જળવાય
+- Antioxidants રહે
+- Machine ghee કરતાં વધુ પોષણ
+
+**3. પાચન સુધારે**
+
+- દહીંમાંથી બનેલું
+- Gut health માટે સારું
+- Nutrient absorption વધારે
+
+**4. Immunity વધારે**
+
+- શરીરની રક્ષણ શક્તિ વધારે
+- બીમારીઓ સામે લડે
+- Overall health સુધારે
+
+**5. Brain Development માટે સારું**
+
+- Brain cells ને પોષણ આપે
+- Memory અને focus સુધારે
+- બાળકો માટે લાભદાયક
+
+**6. Heart-Friendly (મર્યાદામાં)**
+
+- સંતુલિત ફેટ્સ
+- Cholesterol balance રાખે
+- Refined oil કરતા સારું
+
+**7. 100% Natural**
+
+- કોઈ preservatives નહીં
+- કોઈ refining નહીં
+- દૈનિક ઉપયોગ માટે સુરક્ષિત
+
+**8. સ્વાદ અને સુગંધ**
+
+- Authentic taste
+- Natural સુગંધ
+- Traditional flavor
+
+**Bilona Ghee vs Regular Ghee**
+
+Bilona Ghee:
+- દહીંથી બનેલું
+- Nutrient-rich
+- સરળ પચન
+- Traditional process
+
+Regular Ghee:
+- ક્રીમથી બનેલું
+- ઓછું પોષણ
+- ભારે પચન
+- Industrial process
+
+**Manna Pure Oil કેમ પસંદ કરવું?**
+
+- ગિર ગાયના A2 દૂધથી બનેલું
+- સાચી બિલોના પદ્ધતિ
+- કોઈ chemical નહીં
+- કાળજીપૂર્વક બનાવેલું
+
+**અંતિમ વિચાર**
+
+યોગ્ય ઘી પસંદ કરવું એટલે સ્વસ્થ જીવન પસંદ કરવું.
+
+Bilona ghee આપે:
+- વધુ પોષણ
+- સારું પાચન
+- સારું જીવન
+
+👉 શુદ્ધતા અને પરંપરાની સાચી ઓળખ`,
 },
     
 ];
@@ -366,7 +1213,7 @@ const BlogPost = () => {
     <div className="min-h-screen bg-gradient-purple py-12">
       <div className="max-w-4xl mx-auto px-6">
         {/* Back */}
-        <Link to="/blogs" className="inline-flex items-center gap-2 text-brand-purple-700 hover:text-brand-orange-500 font-semibold mb-8 transition">
+        <Link to="/blogs" className="inline-flex items-center gap-2 text-white hover:text-brand-orange-500 font-semibold mb-8 transition">
           <FaArrowLeft /> {isGu ? 'blogs ઉppar jaao' : 'Back to Blogs'}
         </Link>
 
@@ -375,7 +1222,7 @@ const BlogPost = () => {
   <img
     src={blog.image}
     alt={blog.title}
-    className="w-full h-64 md:h-96 object-cover"
+    className="w-full h-full object-fil"
   />
 </div>
 
