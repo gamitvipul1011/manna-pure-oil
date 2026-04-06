@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import banner1 from "../assets/Coconut oil 1920 X 700.jpg";
-import aboutImg from "../assets/about.jpeg";
+import aboutImg from "../assets/Father son 756 x 540.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
