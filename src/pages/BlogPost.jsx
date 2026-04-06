@@ -5,7 +5,7 @@ import { FaArrowLeft, FaCalendar, FaTag } from 'react-icons/fa';
 import blog1 from "../assets/History of Oil 1600 x 900.jpg";
 import blog2 from "../assets/journey of oil 1600 x 900.jpg";
 import blog3 from "../assets/father son 1600.jpeg";
-import blog4 from "../assets/Cold Pressed vs Refinend 1600 x 900.jpg";
+import blog4 from "../assets/Cold Pressed vs Refinend 1600 x 900.jpg"; 
 import blog5 from "../assets/different oil 1600 x 900.jpg";
 import blog6 from "../assets/Bilona Ghee 1600 x 900 .jpg";
 
