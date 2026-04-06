@@ -15,6 +15,7 @@ export const categories = [
   { _id: 'cat6', name: 'Sunflower Oil',    nameGu: 'સૂરજમુખી તેલ', image: '/images/cat_sunflower.jpg' },
   { _id: 'cat7', name: 'Castor Oil',       nameGu: 'દિવેલ',          image: '/images/cat_castor.jpg' },
   { _id: 'cat8', name: 'Gir Cow Ghee',    nameGu: 'ગીર ગાય ઘી',   image: '/images/cat_ghee.jpg' },
+  { _id: 'cat9', name: 'Pure Natural Honey',nameGu: 'શુદ્ધ કુદરતી મધ', image: '../assets/catagory/ho.png' },
 ];
 
 export const products = [
