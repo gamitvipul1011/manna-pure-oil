@@ -5,12 +5,15 @@ import { useTranslation } from "react-i18next";
 
 
 import banner1 from "../assets/Blog Mustard oil 1920 x 700.jpg";
-import blog1 from "../assets/History of Oil 1200 x 600.jpg";
-import blog2 from "../assets/journey of oil 1200 x 600.jpg";
-import blog3 from "../assets/father son 600.jpeg";
-import blog4 from "../assets/Cold Pressed vs Refinend 1200 x 600.jpg";
-import blog5 from "../assets/different oil 1200 x 600.jpg";
-import blog6 from "../assets/Bilona Ghee 1200 x 600.jpg";
+import blog1 from "../assets/blog1 600.jpeg";
+
+import blog2 from "../assets/Cold Pressed vs Refinend 1200 x 600.jpg";
+import blog3 from "../assets/journey of oil 1200 x 600.jpg";
+
+import blog4 from "../assets/History of Oil 1200 x 600.jpg";
+import blog5 from "../assets/blog55 600.jpeg";
+import blog6 from "../assets/different oil 1200 x 600.jpg";
+import blog7 from "../assets/Bilona Ghee 1200 x 600.jpg";
 const Blogs = () => {
   const { t, i18n } = useTranslation();
   const isGu = i18n.language === "gu";
@@ -20,10 +23,40 @@ const Blogs = () => {
 
   const blogs = [
     {
-      id: 1,
+        id: 1,
+        title: 'Cold Pressed Oil Benefits: Why Every Indian Kitchen is Switching Today',
+        titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલના ફાયદા: કેમ દરેક ભારતીય રસોડું આજે બદલાઈ રહ્યું છે',
+        image: blog1,
+        date: '06 Apr 2026',
+        category: 'Health / સ્વાસ્થ્ય',
+        description: "In today,s fast-moving world, Indian families are slowly returning to natural and healthier choices. One major shift is the use of cold pressed oils in daily cooking.At Manna Pure Oil, we believe what you cook with matters as much as what you cook.",
+        descGu: "આજના ઝડપી સમયમાં ભારતીય પરિવારો ફરીથી કુદરતી અને સ્વસ્થ પસંદગી તરફ વળી રહ્યા છે. તેમાં સૌથી મોટો બદલાવ છે cold pressed oil નો ઉપયોગ.Manna Pure Oil માં અમે માનીએ છીએ કે તમે શું બનાવો છો એટલું જ મહત્વનું છે કે તમે કયા તેલથી બનાવો છો.",
+    },
+    {
+     id: 2,
+       title: 'Cold Pressed Oil vs Refined Oil: What You Must Know',
+       titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલ vs રિફાઇન્ડ તેલ: શું જાણવું જરૂરી છે',
+       image: blog2,
+       date: '06 Apr 2026',
+       category: "Awareness / જાગૃતિ",
+       description: "In today,s health-conscious world, choosing the right cooking oil is very important. Many Indian households are now becoming aware of what they consume daily.The biggest question is: Cold Pressed Oil vs Refined Oil.",
+        descGu: "આજના health-conscious સમયમાં યોગ્ય રસોઈ તેલ પસંદ કરવું ખૂબ જ મહત્વનું છે. ઘણા ભારતીય પરિવારો હવે તેઓ શું ખાય છે તેની જાગૃતિ રાખી રહ્યા છે.મુખ્ય પ્રશ્ન છે: Cold Pressed Oil vs Refined Oil.",
+    },
+    {
+      id: 3,
+       title: 'From Seed to Bottle: The Journey of Wooden Cold-Pressed Oils',
+       titleGu: 'બીજથી બોટલ સુધી: લાકડાની ઘાણીના કોલ્ડ-પ્રેસ્ડ તેલની સફર',
+       image: blog3,
+       date: '06 Apr 2026',
+       category: 'Process / પ્રક્રિયા',
+       description:"Every drop of oil you use tells a story — a story of nature, care, and tradition",
+       descGu: "તમે જે તેલ વાપરો છો તેની દરેક બુંદ એક વાર્તા કહે છે — કુદરત, કાળજી અને પરંપરાની વાર્તા"
+    },
+     {
+      id: 4,
   title: "The History of Indian Cooking Oils: From Tradition to Today",
   titleGu: 'ભારતીય રસોઈ તેલનો ઇતિહાસ: પરંપરાથી આજ સુધી',
-  image: blog1,
+  image: blog4,
   date: '06 Apr 2026',
   category: 'Awareness / જાગૃતિ',
   description: "In every Indian kitchen, oil is not just an ingredient—it, s a story of culture, tradition, health, and generations of wisdom." ,
@@ -31,50 +64,32 @@ const Blogs = () => {
       
     },
     {
-      id: 2,
-       title: 'From Seed to Bottle: The Journey of Wooden Cold-Pressed Oils',
-       titleGu: 'બીજથી બોટલ સુધી: લાકડાની ઘાણીના કોલ્ડ-પ્રેસ્ડ તેલની સફર',
-       image: blog2,
-       date: '06 Apr 2026',
-       category: 'Process / પ્રક્રિયા',
-       description:"Every drop of oil you use tells a story — a story of nature, care, and tradition",
-       descGu: "તમે જે તેલ વાપરો છો તેની દરેક બુંદ એક વાર્તા કહે છે — કુદરત, કાળજી અને પરંપરાની વાર્તા"
-    },
-    {
-     id: 3,
+     id: 5,
        title: 'Understanding Good Fats vs Bad Fats in Cooking Oil',
        titleGu: 'રસોઈ તેલમાં સારા ફેટ્સ અને ખરાબ ફેટ્સ સમજીએ',
-       image: blog3,
+       image: blog5,
        date: '06 Apr 2026',
        category: 'Health / સ્વાસ્થ્ય',
        description: "In every Indian kitchen, oil is the foundation of every meal. But not all fats are the same. Understanding good fats and bad fats can improve your family’s health",
        descGu: "દરેક ભારતીય રસોડામાં તેલ દરેક ભોજનનો આધાર છે. પરંતુ બધા ફેટ્સ એકસરખા નથી. સારા અને ખરાબ ફેટ્સ સમજવાથી પરિવારનું સ્વાસ્થ્ય સુધરી શકે છે.",
     },
     {
-     id: 4,
-       title: 'Cold Pressed Oil vs Refined Oil: What You Must Know',
-       titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલ vs રિફાઇન્ડ તેલ: શું જાણવું જરૂરી છે',
-       image: blog4,
-       date: '06 Apr 2026',
-       category: "Awareness / જાગૃતિ",
-       description: "In today,s health-conscious world, choosing the right cooking oil is very important. Many Indian households are now becoming aware of what they consume daily.The biggest question is: Cold Pressed Oil vs Refined Oil.",
-        descGu: "આજના health-conscious સમયમાં યોગ્ય રસોઈ તેલ પસંદ કરવું ખૂબ જ મહત્વનું છે. ઘણા ભારતીય પરિવારો હવે તેઓ શું ખાય છે તેની જાગૃતિ રાખી રહ્યા છે.મુખ્ય પ્રશ્ન છે: Cold Pressed Oil vs Refined Oil.",
-    },
-    {
-        id: 5,
-        title: 'Cold Pressed Oil Benefits: Why Every Indian Kitchen is Switching Today',
-        titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલના ફાયદા: કેમ દરેક ભારતીય રસોડું આજે બદલાઈ રહ્યું છે',
-        image: blog5,
-        date: '06 Apr 2026',
-        category: 'Health / સ્વાસ્થ્ય',
-        description: "In today,s fast-moving world, Indian families are slowly returning to natural and healthier choices. One major shift is the use of cold pressed oils in daily cooking.At Manna Pure Oil, we believe what you cook with matters as much as what you cook.",
-        descGu: "આજના ઝડપી સમયમાં ભારતીય પરિવારો ફરીથી કુદરતી અને સ્વસ્થ પસંદગી તરફ વળી રહ્યા છે. તેમાં સૌથી મોટો બદલાવ છે cold pressed oil નો ઉપયોગ.Manna Pure Oil માં અમે માનીએ છીએ કે તમે શું બનાવો છો એટલું જ મહત્વનું છે કે તમે કયા તેલથી બનાવો છો.",
-    },
-    {
       id: 6,
+      title: 'Different Uses of Oils: Choose the Right Oil for the Right Purpose',
+      titleGu: 'વિવિધ તેલનો ઉપયોગ: યોગ્ય કામ માટે યોગ્ય તેલ પસંદ કરો',
+      image: blog6,
+      date: '06 Apr 2026',
+      category: 'Guide / માર્ગદર્શન',
+      description:  "In every Indian kitchen, oil is not just an ingredient — it plays a key role in taste, nutrition, and tradition. Each oil has unique properties and specific uses.At Manna Pure Oil, we help you choose the right oil for the right purpose.",
+       descGu: "દરેક ભારતીય રસોડામાં તેલ માત્ર ingredient નથી — તે સ્વાદ, પોષણ અને પરંપરાનો મહત્વનો ભાગ છે. દરેક તેલની પોતાની ખાસિયત અને ઉપયોગ હોય છે.Manna Pure Oil તમને યોગ્ય કામ માટે યોગ્ય તેલ પસંદ કરવામાં મદદ કરે છે.",
+    },
+   
+    
+    {
+      id: 7,
         title: "Why Gir Cow Bilona Ghee is the Healthiest Choice for Your Family",
         titleGu: "ગિર ગાયનું બિલોના ઘી કેમ તમારા પરિવાર માટે સૌથી સ્વસ્થ પસંદગી છે",
-        image: blog6,
+        image: blog7,
         date: '06 Apr 2026',
         category: "Health / સ્વાસ્થ્ય",
         description: "In every Indian household, ghee is more than just an ingredient — it represents health, tradition, and care.But the real question is:Is the ghee you use truly healthy?",
@@ -101,6 +116,7 @@ const Blogs = () => {
         
         />
       </div>
+      
       <div className="max-w-6xl mx-auto text-center px-8 mb-16 mt-10">
         
         
