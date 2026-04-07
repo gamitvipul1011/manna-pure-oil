@@ -5,11 +5,15 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const products = [
-   { image: "/images/products/slider222.jpeg" },
-  { image: "/images/products/sl3.jpeg" },
-  { image: "/images/products/sl1.jpeg" },
-  { image: "/images/products/sl2.jpeg" },
-
+  
+  { image: "/images/products/slider1 (1).jpeg" },
+  { image: "/images/products/slider1 (2).jpeg" },
+  { image: "/images/products/slider1 (3).jpeg" },
+  { image: "/images/products/slider1 (4).jpeg" },
+  { image: "/images/products/slider1 (5).jpeg" },
+  { image: "/images/products/slider1 (6).jpeg" },
+  { image: "/images/products/slider1 (7).jpeg" },
+  
 
   
   
@@ -17,7 +21,7 @@ const products = [
 
 const ProductBannerSection = () => {
   return (
-    <section className="w-full h-[400px]">
+    <section className="w-full h-[500px]">
 
       <Swiper
         modules={[Autoplay, Pagination]}
@@ -28,7 +32,7 @@ const ProductBannerSection = () => {
       >
         {products.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full h-[400px]">
+            <div className="w-full h-[500px]">
               <img
                 src={item.image}
                 alt="product"
