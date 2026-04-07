@@ -15,7 +15,7 @@ import whiteSesamImg from '../assets/catagory/w1.png';
 import blackSesamImg from '../assets/catagory/bl1r.png';
 import mustardImg    from '../assets/catagory/m1.png';
 import sunflowerImg  from '../assets/catagory/sun1.png';
-import castorImg     from '../assets/catagory/cos2.png';
+import castorImg     from '../assets/catagory/cos04.png';
 import gheeImg       from '../assets/catagory/gh2.png';
 import honey         from '../assets/catagory/ho.png';
 
@@ -39,7 +39,7 @@ const pastelBg = [
   "bg-gradient-to-b from-[#7C2D12] via-[#F97316] to-[#7C2D12]",
   "bg-gradient-to-b from-[#166534] via-[#15803d] to-[#14532d]",
   "bg-gradient-to-b from-[#8C5E34] via-[#A67C52] to-[#593A21]",
-  "bg-gradient-to-b from-[#FFF7CC] via-[#FDE68A] to-[#F59E0B]",
+  "bg-gradient-to-b from-[#65A30D] via-[#A3E635] to-[#65A30D]",
 ];
 
 const Home = () => {
@@ -136,10 +136,15 @@ const Home = () => {
                         {isGu ? 'હવે ખરીદો' : 'Shop Now'}
                       </button>
                     </div>
-                    <div className="w-24 h-24 flex-shrink-0">
-                      <img src={img} alt={cat.name}
-                        className={`w-full h-full object-contain drop-shadow-md transition-all duration-500 ${isHovered ? 'scale-125 -rotate-6' : 'scale-100'}`} />
-                    </div>
+                    <div className="w-32 h-32 flex items-center justify-center flex-shrink-0">
+  <img
+    src={img}
+    alt={cat.name}
+    className={`max-w-full max-h-full object-contain drop-shadow-md transition-all duration-500 ${
+      isHovered ? "scale-125 " : "scale-100"
+    }`}
+  />
+</div>
                   </div>
                   <div className={`h-0.5 bg-gradient-to-r from-orange-400 to-green-500 transition-all duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
                 </div>
