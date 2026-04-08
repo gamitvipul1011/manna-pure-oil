@@ -39,7 +39,9 @@ const pastelBg = [
   "bg-gradient-to-b from-[#7C2D12] via-[#F97316] to-[#7C2D12]",
   "bg-gradient-to-b from-[#166534] via-[#15803d] to-[#14532d]",
   "bg-gradient-to-b from-[#8C5E34] via-[#A67C52] to-[#593A21]",
-  "bg-gradient-to-b from-[#65A30D] via-[#A3E635] to-[#65A30D]",
+  "bg-gradient-to-b from-[#8C5E34] via-[#A67C52] to-[#593A21]",
+  "bg-[#8EE000] ",
+  "bg-[#FFD700] ",
 ];
 
 const Home = () => {
