@@ -44,7 +44,7 @@ const Products = () => {
 </div>
       <div className="max-w-7xl mx-auto px-4 py-10">
         {/* Filters */}
-        <div className="bg-white rounded-2xl shadow-md p-5 mb-8">
+        <div className="bg-[#D0F0C0] rounded-2xl shadow-md p-5 mb-8">
           <div className="grid md:grid-cols-2 gap-4">
             <div className="relative">
               <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
