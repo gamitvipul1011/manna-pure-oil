@@ -81,7 +81,7 @@ window.scrollTo(0,0);
     <div className="min-h-screen bg-gradient-purple">
       <div className="max-w-7xl mx-auto px-4 pt-8">
         <button onClick={() => navigate("/products")}
-          className="flex items-center gap-2 text-purple-700 hover:text-orange-500 transition font-semibold group mb-6">
+          className="flex items-center gap-2 text-orange-100 hover:text-orange-400 transition font-semibold group mb-6">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           {isGu ? "ઉત્પાદનો પર જાઓ" : "Back to Products"}
         </button>
@@ -90,20 +90,16 @@ window.scrollTo(0,0);
   <div className="grid lg:grid-cols-2 gap-12">
 
     {/* IMAGE SECTION */}
-   {/* IMAGE SECTION */}
-{/* IMAGE SECTION */}
-{/* IMAGE SECTION */}
-{/* IMAGE SECTION */}
+  
 <div className="space-y-4">
 
   {/* MAIN IMAGE */}
-  <div className="rounded-3xl flex items-center justify-center shadow-lg overflow-hidden mx-auto
-  w-[260px] sm:w-[320px] md:w-[380px] lg:w-[420px]">
+  <div className="rounded-3xl shadow-lg overflow-hidden mx-auto w-fit">
 
     <img
       src={displayImage}
       alt={product.name}
-      className="max-h-[350px] sm:max-h-[420px] md:max-h-[450px] object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-105"
+      className="max-h-[450px] w-auto object-contain drop-shadow-2xl transition-transform duration-300 hover:scale-105"
     />
 
   </div>
@@ -184,7 +180,7 @@ window.scrollTo(0,0);
           className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all border 
           ${selectedSizeIdx === idx
             ? "bg-emerald-500 border-emerald-500 text-white shadow-lg scale-105"
-            : "bg-white border-gray-300 text-gray-700 hover:border-emerald-400"
+            : "bg-[#D0F0C0] border-gray-300 text-gray-700 hover:border-emerald-400"
           }`}
         >
           {sv.size}
@@ -205,7 +201,7 @@ window.scrollTo(0,0);
     {isGu ? "જથ્થો" : "Quantity"}
   </p>
 
-  <div className="flex items-center border border-white/30 rounded-xl overflow-hidden bg-white">
+  <div className="flex items-center border border-white/30 rounded-xl overflow-hidden bg-[#D0F0C0]">
     <button
       onClick={() => setQuantity(Math.max(1, quantity - 1))}
       className="px-5 py-3 hover:bg-gray-100 font-bold"
@@ -306,15 +302,29 @@ window.scrollTo(0,0);
 {/* DESCRIPTION */}
 {activeTab === "description" && (
 
-<div className="flex gap-4 bg-emerald-50 border border-emerald-100  p-6 rounded-xl">
+<div className="flex gap-4 bg-emerald-50 border border-emerald-100 p-6 rounded-xl">
 
-<div className="w-10 h-10 bg-purple-200 rounded-xl flex items-center justify-center shrink-0">
-<GiOilDrum className="text-purple-700 text-xl"/>
-</div>
+  <div className="w-10 h-10 bg-purple-200 rounded-xl flex items-center justify-center shrink-0">
+    <GiOilDrum className="text-purple-700 text-xl"/>
+  </div>
 
-<p className="text-gray-700 leading-relaxed text-sm md:text-base">
-{isGu && product.descriptionGu ? product.descriptionGu : product.description}
-</p>
+  <div className="space-y-4">
+
+    {(isGu && product.descriptionGu ? product.descriptionGu : product.description)
+      .split("\n")
+      .map((line, i) => (
+
+        <p
+          key={i}
+          className="text-gray-700 leading-relaxed text-sm md:text-base"
+        >
+          {line}
+        </p>
+
+      ))
+    }
+
+  </div>
 
 </div>
 )}
