@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import banner1 from "../assets/Coconut oil 1920 X 700.jpg";
+import banner1 from "../assets/about_coco.jpg";
 import aboutImg from "../assets/Father son 756 x 540.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -51,15 +51,25 @@ const About = () => {
   ];
 
   return (
-    <div className="overflow-hidden bg-gradient-purple">
+   <div className="bg-gradient-purple min-h-screen">
 
-      {/* HERO */}
-     <div className="relative w-full h-[480px] overflow-hidden">
-  <img
-    src={banner1}
-      className="absolute inset-0 w-full h-full object-cover"
-  
-  />
+  {/* Banner */}
+  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
+
+    <picture>
+      {/* Mobile Image */}
+      <source
+        media="(max-width: 768px)"
+        srcSet={banner1}
+      />
+
+      {/* Desktop Image */}
+      <img
+        src={banner1}
+        alt="banner"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+    </picture>
 </div>
 
       {/* STORY */}
