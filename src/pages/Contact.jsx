@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import bannerImage from '../assets/Sesame oil 1920 x 700.jpg';
 
 
 const Contact = () => {
@@ -58,25 +59,26 @@ const Contact = () => {
   ];
 
   return (
-    <div className="bg-gradient-purple min-h-screen">
+   <div className="bg-gradient-purple min-h-screen">
 
   {/* Banner */}
-  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
+  <div className="relative w-full h-[220px] sm:h-[320px] md:h-[420px] lg:h-[500px] overflow-hidden">
 
     <picture>
       {/* Mobile Image */}
       <source
         media="(max-width: 768px)"
-        srcSet="/images/Coconut oil 1920 X 700.jpg"
+        srcSet={bannerImage}
       />
 
       {/* Desktop Image */}
       <img
-        src="/images/Coconut oil 1920 X 700.jpg"
+       src={bannerImage}
         alt="banner"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
     </picture>
+    
 
 
   {/* Dark Overlay */}
