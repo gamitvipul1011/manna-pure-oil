@@ -26,16 +26,25 @@ const Products = () => {
   });
 
   return (
-      <div className="bg-gradient-purple min-h-screen">
-  
+    <div className="bg-gradient-purple min-h-screen">
+
   {/* Banner */}
-  <div className="relative w-full h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
-    
-    <img
-      src="/images/sunflower oil 1920 x 700.jpg"
-      alt="banner"
-      className="absolute inset-0 w-full h-full object-cover object-center"
-    />
+  <div className="relative w-full h-[220px] sm:h-[320px] md:h-[420px] lg:h-[500px] overflow-hidden">
+
+    <picture>
+      {/* Mobile Image */}
+      <source
+        media="(max-width: 768px)"
+        srcSet="/images/sunflower oil 1920 x 700.jpg"
+      />
+
+      {/* Desktop Image */}
+      <img
+        src="/images/sunflower oil 1920 x 700.jpg"
+        alt="banner"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+    </picture>
 
   {/* Dark Overlay */}
   
