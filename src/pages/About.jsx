@@ -55,9 +55,9 @@ const About = () => {
   <div className="bg-gradient-purple min-h-screen -mt-16 md:mt-0">
 
   {/* Banner */}
-<div className="relative w-full overflow-hidden">
+<div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
 
-  <picture className="block w-full">
+  <picture className="block w-full h-full">
 
     {/* Mobile */}
     <source media="(max-width:768px)" srcSet={banner1} />
@@ -66,14 +66,12 @@ const About = () => {
     <img
       src={banner1}
       alt="banner"
-      className="w-full h-[220px] sm:h-[300px] md:h-[380px] lg:h-[500px] 
-      object-contain md:object-cover object-center"
+      className="w-full h-full object-contain md:object-cover object-center"
     />
 
   </picture>
 
 </div>
-
 
 
 
