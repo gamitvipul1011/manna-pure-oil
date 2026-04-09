@@ -56,7 +56,7 @@ const About = () => {
   {/* Banner */}
  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
 
-  <picture className="block w-full h-full">
+ <picture>
 
     {/* Mobile Image */}
     <source
@@ -68,7 +68,7 @@ const About = () => {
     <img
       src={banner1}
       alt="banner"
-      className="w-full h-full object-cover"
+       className="absolute inset-0 w-full h-full object-cover object-center"
     />
 
   </picture>
