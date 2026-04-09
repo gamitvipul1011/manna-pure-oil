@@ -21,29 +21,29 @@ const products = [
 
 const ProductBannerSection = () => {
   return (
-    <section className="w-full h-[500px]">
+    <section className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]">
 
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        loop
-        className="w-full h-full"
-      >
-        {products.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="w-full h-[500px]">
-              <img
-                src={item.image}
-                alt="product"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+  <Swiper
+    modules={[Autoplay, Pagination]}
+    autoplay={{ delay: 4000, disableOnInteraction: false }}
+    pagination={{ clickable: true }}
+    loop
+    className="w-full h-full"
+  >
+    {products.map((item, index) => (
+      <SwiperSlide key={index}>
+        <div className="w-full h-full flex items-center justify-center">
+          <img
+            src={item.image}
+            alt="product"
+            className="w-full h-full object-contain md:object-cover"
+          />
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
 
-    </section>
+</section>
   );
 };
 
