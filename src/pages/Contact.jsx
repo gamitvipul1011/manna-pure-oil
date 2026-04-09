@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import bannerImage from '../assets/Sesame oil 1920 x 700.jpg';
+import contactImage from '../assets/contact_sesa.jpg';
 
 
 const Contact = () => {
@@ -68,13 +68,13 @@ const Contact = () => {
       {/* Mobile Image */}
       <source
         media="(max-width: 768px)"
-        srcSet={bannerImage}
+        srcSet={contactImage}
       />
 
       {/* Desktop Image */}
       <img
-       src={bannerImage}
-        alt="banner"
+       src={contactImage}
+        alt="contactImage"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
     </picture>
