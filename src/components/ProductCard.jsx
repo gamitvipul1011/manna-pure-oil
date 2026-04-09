@@ -23,25 +23,25 @@ const ProductCard = ({ product }) => {
 
       {/* Stock Badge */}
       <div className={`absolute top-3 left-3 z-20 flex items-center gap-1 px-2 py-1 rounded-full text-xs font-bold shadow ${inStock ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>
-        {inStock ? <><FaCheckCircle /><span>{isGu ? 'ઉppar' : 'In Stock'}</span></> : <><FaTimesCircle /><span>{isGu ? 'નથી' : 'Out'}</span></>}
+        {inStock ? <><FaCheckCircle /><span>{isGu ? 'ઉપલબ્ધ' : 'In Stock'}</span></> : <><FaTimesCircle /><span>{isGu ? 'નથી' : 'Out'}</span></>}
       </div>
 
       {/* Featured */}
       {product.featured && (
         <div className="absolute top-3 right-3 z-20 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-bold">
-          {isGu ? 'ખaas' : 'Featured'}
+          {isGu ? 'ખાસ' : 'Featured'}
         </div>
       )}
 
-     <Link to={`/product/${product._id}`}>
+      <Link to={`/product/${product._id}`}>
         {/* Image */}
-        <div className="w-full h-[220px] sm:h-[260px] md:h-[320px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative flex items-center justify-center">
+        <div className="w-full h-[220px] sm:h-[260px] md:h-[320px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative">
           <img
-      src={product.image}
-      alt={product.name}
-      className={`w-full h-full object-cover sm:object-cover p-2 sm:p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
-      onError={e => { e.target.src = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400'; }}
-    />
+            src={product.image}
+            alt={product.name}
+            className={`w-full h-full object-cover p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
+            onError={e => { e.target.src = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400'; }}
+          />
           {!inStock && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/30">
               <span className="bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full rotate-[-12deg]">
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
           {/* Quick View */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/10">
             <span className="bg-white/90 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow">
-              <FaEye />  {isGu ? 'જુઓ' : 'View'}
+              <FaEye /> {isGu ? 'જુઓ' : 'View'}
             </span>
           </div>
         </div>
@@ -75,13 +75,13 @@ const ProductCard = ({ product }) => {
 
           <div className="flex items-center justify-between pt-3 border-t border-gray-200">
             <div>
-              <p className="text-xs text-gray-400">{isGu ? 'શrooaAt' : 'From'}</p>
+              <p className="text-xs text-gray-400">{isGu ? 'થી શરૂ' : 'From'}</p>
               <p className="text-xl font-black text-gray-800">₹{product.sizes?.[0]?.price || 0}</p>
             </div>
             <button onClick={handleAddToCart} disabled={!inStock}
               className={`px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1.5 transition ${inStock ? 'bg-orange-500 text-white hover:scale-105 hover:shadow-lg' : 'bg-gray-200 text-gray-400'}`}>
               <FaShoppingCart className="text-xs" />
-              {isGu ? 'ઉmaro' : 'Add'}
+              {isGu ? 'ઉમેરો' : 'Add'}
             </button>
           </div>
         </div>
