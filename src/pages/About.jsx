@@ -95,9 +95,12 @@ const About = () => {
         <div className="absolute -inset-4 bg-green-100 rounded-3xl blur-2xl opacity-40"></div>
 
         <img
-          src={aboutImg}
-          className="relative rounded-3xl shadow-2xl object-cover w-full h-[420px] hover:scale-105 transition duration-500"
-        />
+  src={aboutImg}
+  alt="about"
+  className="relative rounded-3xl shadow-2xl object-cover w-full 
+  h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] 
+  hover:scale-105 transition duration-500"
+/>
       </motion.div>
 
       {/* TEXT SIDE */}
