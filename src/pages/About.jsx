@@ -54,26 +54,15 @@ const About = () => {
    <div className="bg-gradient-purple min-h-screen">
 
   {/* Banner */}
-        <div className="relative w-full overflow-hidden">
+  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden bg-black">
 
-  <picture>
-
-    {/* Mobile Banner */}
-    <source
-      media="(max-width:768px)"
-      srcSet={banner1}
-    />
-
-    {/* Desktop Banner */}
     <img
       src={banner1}
-      alt="About Banner"
-      className="w-full h-[200px] sm:h-[280px] md:h-[380px] lg:h-[500px] object-cover"
+      alt="banner"
+      className="absolute inset-0 w-full h-full object-contain md:object-cover"
     />
 
-  </picture>
-
-</div>
+  </div>
 
       {/* STORY */}
       <section className="py-24 bg-gradient-purple">
