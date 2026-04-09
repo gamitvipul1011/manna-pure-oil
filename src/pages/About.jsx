@@ -51,7 +51,8 @@ const About = () => {
   ];
 
   return (
-   <div className="bg-gradient-purple min-h-screen ">
+  
+    <div className="bg-gradient-purple min-h-screen ">
 
   {/* Banner */}
   <div className="relative w-full overflow-hidden -mt-1">
@@ -68,13 +69,25 @@ const About = () => {
 
 </div>
 
+
+
+
+
+  {/* Banner */}
+  
+
       {/* STORY */}
-    
-     <section className="pt-8 md:pt-24 pb-24 bg-gradient-purple">
+      <section className="pt-8 md:pt-24 pb-24 bg-gradient-purple">
+
        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
 
       {/* IMAGE SIDE */}
-      
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative"
+      >
         <div className="absolute -inset-4 bg-green-100 rounded-3xl blur-2xl opacity-40"></div>
 
         <img
@@ -84,7 +97,12 @@ const About = () => {
       </motion.div>
 
       {/* TEXT SIDE */}
-     
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="bg-[#D0F0C0] backdrop-blur-xl p-10 rounded-3xl shadow-xl border border-green-100"
+      >
 
         <h2 className="text-4xl font-bold text-green-800 mb-6">
           {isGu ? "અમારી કહાની" : "Our Story"}
@@ -189,8 +207,8 @@ const About = () => {
 
   </div>
 
+</section>
 
-  </section>
       {/* ABOUT DETAILS */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4">
