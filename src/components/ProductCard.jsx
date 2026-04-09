@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
           <img
       src={product.image}
       alt={product.name}
-      className={`w-full h-full object-contain sm:object-cover p-2 sm:p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
+      className={`w-full h-full object-cover sm:object-cover p-2 sm:p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
       onError={e => { e.target.src = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400'; }}
     />
           {!inStock && (
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
           {/* Quick View */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/10">
             <span className="bg-white/90 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow">
-              <FaEye /> {isGu ? 'જuO' : 'View'}
+              <FaEye />  {isGu ? 'જુઓ' : 'View'}
             </span>
           </div>
         </div>
