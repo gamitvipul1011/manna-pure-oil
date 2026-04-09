@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import bannerImage from '../assets/Sesame oil 1920 x 700.jpg';
+
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
@@ -58,16 +58,26 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-purple">
-      {/* BANNER */}
-    <div className="relative w-full h-[480px] overflow-hidden">
-  {/* Banner Image */}
-  <img
-    src={bannerImage}
-    alt="Contact"
-     className="absolute inset-0 w-full h-full object-cover"
-  
-  />
+    <div className="bg-gradient-purple min-h-screen">
+
+  {/* Banner */}
+  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
+
+    <picture>
+      {/* Mobile Image */}
+      <source
+        media="(max-width: 768px)"
+        srcSet="/images/Coconut oil 1920 X 700.jpg"
+      />
+
+      {/* Desktop Image */}
+      <img
+        src="/images/Coconut oil 1920 X 700.jpg"
+        alt="banner"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+    </picture>
+
 
   {/* Dark Overlay */}
   
