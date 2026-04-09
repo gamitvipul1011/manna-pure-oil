@@ -42,7 +42,7 @@ const HeroBanner = () => {
         pagination={{ clickable: true }}
         loop
         speed={900}
-        className="w-full h-auto md:h-[85vh] lg:h-[95vh]"
+        className="w-full h-auto md:h-[85vh] "
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
