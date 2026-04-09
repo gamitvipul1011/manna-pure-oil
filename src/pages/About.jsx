@@ -69,7 +69,7 @@ const About = () => {
 </div>
 
       {/* STORY */}
-     <section className="pt-8 md:pt-24 pb-24 bg-gradient-purple">
+    
 
        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
 
@@ -199,7 +199,7 @@ const About = () => {
 
   </div>
 
-</section>
+
 
       {/* ABOUT DETAILS */}
       <section className="py-20">
