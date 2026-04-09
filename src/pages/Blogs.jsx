@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 
-import banner1 from "../assets/Blog Mustard oil 1920 x 700.jpg";
+import banner1 from "../assets/blog_masta.jpg";
 import blog1 from "../assets/blog1 600.jpeg";
 
 import blog2 from "../assets/Cold Pressed vs Refinend 1200 x 600.jpg";
@@ -105,16 +105,25 @@ const Blogs = () => {
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
 
   return (
+   <div className="bg-gradient-purple min-h-screen">
     
+      {/* Banner */}
+      <div className="relative w-full h-[220px] sm:h-[320px] md:h-[420px] lg:h-[500px] overflow-hidden">
     
-    <div className="min-h-screen bg-gradient-purple">
-     
-      <div className="relative w-full h-[500px] overflow-hidden">
-        <img
-          src={banner1}
-           className="absolute inset-0 w-full h-full object-cover"
-        
-        />
+        <picture>
+          {/* Mobile Image */}
+          <source
+            media="(max-width: 768px)"
+            srcSet={banner1}
+          />
+    
+          {/* Desktop Image */}
+          <img
+           src={banner1}
+            alt="banner"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </picture>
       </div>
       
       <div className="max-w-6xl mx-auto text-center px-8 mb-16 mt-10">
