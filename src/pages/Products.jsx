@@ -26,14 +26,16 @@ const Products = () => {
   });
 
   return (
-    <div className="bg-gradient-purple min-h-screen">
-      {/* Banner */}
-   <div className="relative w-full h-[500px] overflow-hidden">
-  <img
-    src="/images/sunflower oil 1920 x 700.jpg"
-    alt="banner"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+      <div className="bg-gradient-purple min-h-screen">
+  
+  {/* Banner */}
+  <div className="relative w-full h-[220px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
+    
+    <img
+      src="/images/sunflower oil 1920 x 700.jpg"
+      alt="banner"
+      className="absolute inset-0 w-full h-full object-cover object-center"
+    />
 
   {/* Dark Overlay */}
   
