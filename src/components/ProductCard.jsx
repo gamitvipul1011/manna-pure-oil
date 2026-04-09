@@ -33,59 +33,36 @@ const ProductCard = ({ product }) => {
         </div>
       )}
 
-      <Link to={`/product/${product._id}`}>
-        {/* Image */}
-        <div className="w-full h-[320px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative">
-          <img
-            src={product.image}
-            alt={product.name}
-            className={`w-full h-full object-cover p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
-            onError={e => { e.target.src = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400'; }}
-          />
-          {!inStock && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-              <span className="bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full rotate-[-12deg]">
-                {isGu ? 'સ્ટૉક નથી' : 'Out of Stock'}
-              </span>
-            </div>
-          )}
-          {/* Quick View */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/10">
-            <span className="bg-white/90 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow">
-              <FaEye /> {isGu ? 'જuO' : 'View'}
-            </span>
-          </div>
-        </div>
+     <Link to={`/product/${product._id}`}>
 
-        {/* Info */}
-        <div className="p-4">
-          <h3 className="text-base font-bold text-gray-800 mb-1 line-clamp-1 flex items-center justify-between">
-            <span>{isGu && product.nameGu ? product.nameGu : product.name}</span>
-            <FaLeaf className="text-green-500 ml-1 shrink-0" />
-          </h3>
+  {/* Image */}
+  <div className="w-full h-[220px] sm:h-[260px] md:h-[320px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative flex items-center justify-center">
 
-          <div className="flex items-center mb-2">
-            {[...Array(5)].map((_, i) => <FaStar key={i} className="text-yellow-400 text-xs" />)}
-            <span className="text-xs text-gray-400 ml-1">(4.8)</span>
-          </div>
+    <img
+      src={product.image}
+      alt={product.name}
+      className={`w-full h-full object-contain sm:object-cover p-2 sm:p-4 transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
+      onError={e => { e.target.src = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400'; }}
+    />
 
-          <p className="text-gray-600 text-xs mb-3 line-clamp-2">
-            {isGu && product.descriptionGu ? product.descriptionGu : product.description}
-          </p>
+    {!inStock && (
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+        <span className="bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full rotate-[-12deg]">
+          {isGu ? 'સ્ટૉક નથી' : 'Out of Stock'}
+        </span>
+      </div>
+    )}
 
-          <div className="flex items-center justify-between pt-3 border-t border-gray-200">
-            <div>
-              <p className="text-xs text-gray-400">{isGu ? 'શrooaAt' : 'From'}</p>
-              <p className="text-xl font-black text-gray-800">₹{product.sizes?.[0]?.price || 0}</p>
-            </div>
-            <button onClick={handleAddToCart} disabled={!inStock}
-              className={`px-4 py-2 rounded-full text-sm font-bold flex items-center gap-1.5 transition ${inStock ? 'bg-orange-500 text-white hover:scale-105 hover:shadow-lg' : 'bg-gray-200 text-gray-400'}`}>
-              <FaShoppingCart className="text-xs" />
-              {isGu ? 'ઉmaro' : 'Add'}
-            </button>
-          </div>
-        </div>
-      </Link>
+    {/* Quick View */}
+    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-black/10">
+      <span className="bg-white/90 px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow">
+        <FaEye /> {isGu ? 'જુઓ' : 'View'}
+      </span>
+    </div>
+
+  </div>
+
+</Link>
 
       {/* WhatsApp Button */}
       {inStock && (
