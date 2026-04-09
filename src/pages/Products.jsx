@@ -34,12 +34,12 @@ const Products = () => {
       {/* Mobile Image */}
       <source
         media="(max-width: 768px)"
-        srcSet="/images/sunflower oil 1920 x 700.jpg"
+        srcSet="/images/product_sun.jpg"
       />
 
       {/* Desktop Image */}
       <img
-        src="/images/sunflower oil 1920 x 700.jpg"
+        src="/images/product_sun.jpg"
         alt="banner"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
