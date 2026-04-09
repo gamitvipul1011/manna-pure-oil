@@ -113,7 +113,7 @@ const Blogs = () => {
         <picture>
           {/* Mobile Image */}
           <source
-            media="(max-width: 768px)"
+            media="(max-width: 700px)"
             srcSet={banner1}
           />
     
