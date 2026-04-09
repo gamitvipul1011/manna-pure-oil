@@ -52,7 +52,7 @@ const About = () => {
 
   return (
   
-    <div className="bg-gradient-purple min-h-screen ">
+  <div className="bg-gradient-purple min-h-screen -mt-16 md:mt-0">
 
   {/* Banner */}
   <div className="relative w-full overflow-hidden">
