@@ -1,13 +1,14 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 /* DESKTOP IMAGES */
-import family1Desktop from "../assets/Ground nut oil 1920 x 800.jpg";
-import family2Desktop from "../assets/Presentil oil 1920 x 800.jpg";
-import family3Desktop from "../assets/Family Ghee 1920 x 800.jpg";
+
+import family1Desktop from '../assets/Ground nut oil 1920 x 800.jpg';
+import family2Desktop from '../assets/Presentil oil 1920 x 800.jpg';
+import family3Desktop from '../assets/Family Ghee 1920 x 800.jpg';
 
 /* MOBILE IMAGES */
 import family1Mobile from "../assets/mo_b_gro.jpeg";
@@ -15,47 +16,48 @@ import family2Mobile from "../assets/mo_b_pre.jpeg";
 import family3Mobile from "../assets/mo_b_ghee.jpeg";
 
 const slides = [
+  
   {
     desktopImage: family1Desktop,
-    mobileImage: family1Mobile,
+    mobileImage: family1Mobile
   },
   {
     desktopImage: family2Desktop,
-    mobileImage: family2Mobile,
+    mobileImage: family2Mobile
   },
-  {
+
+  { 
     desktopImage: family3Desktop,
-    mobileImage: family3Mobile,
-  },
+    mobileImage: family3Mobile
+    
+  }
 ];
 
 const HeroBanner = () => {
   return (
-    <section className="w-full">
-
+    <section className="relative">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop
         speed={900}
-        className="w-full h-screen md:h-[85vh] lg:h-[95vh]"
+        className="h-[60vh] md:h-[90vh]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full h-full overflow-hidden">
+            <div className="relative w-full h-full overflow-hidden">
 
-              {/* Desktop Image */}
+              {/* DESKTOP IMAGE */}
               <img
                 src={slide.desktopImage}
                 alt="banner"
                 className="hidden md:block w-full h-full object-cover object-center"
               />
-
-              {/* Mobile Image */}
+              {/* MOBILE IMAGE */}
               <img
                 src={slide.mobileImage}
-                alt="banner"
+                alt="Banner"
                 className="block md:hidden w-full h-full object-cover object-center"
               />
 
@@ -63,9 +65,8 @@ const HeroBanner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
     </section>
   );
 };
 
-export default HeroBanner;
+export default HeroBanner;    
