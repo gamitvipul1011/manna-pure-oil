@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
 
       <Link to={`/product/${product._id}`}>
         {/* Image */}
-        <div className="w-full h-[300px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative">
+        <div className="w-full h-[350px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative">
           <img
             src={product.image}
             alt={product.name}
