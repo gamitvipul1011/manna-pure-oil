@@ -11,9 +11,9 @@ import family2Desktop from '../assets/Presentil oil 1920 x 800.jpg';
 import family3Desktop from '../assets/Family Ghee 1920 x 800.jpg';
 
 /* MOBILE IMAGES */
-import family1Mobile from "../assets/mo_b_gro.jpeg";
-import family2Mobile from "../assets/mo_b_pre.jpeg";
-import family3Mobile from "../assets/mo_b_ghee.jpeg";
+import family1Mobile from "../assets/mo_500gro.jpeg";
+import family2Mobile from "../assets/mo_500pri.jpeg";
+import family3Mobile from "../assets/mo_ghee500.jpeg";
 
 const slides = [
   
@@ -42,7 +42,7 @@ const HeroBanner = () => {
         pagination={{ clickable: true }}
         loop
         speed={900}
-       className="h-[60vh] md:h-[90vh]"
+        className="h-[50vh] md:h-[90vh]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
