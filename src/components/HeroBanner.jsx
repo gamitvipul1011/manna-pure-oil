@@ -10,9 +10,9 @@ import family2Desktop from "../assets/Presentil oil 1920 x 800.jpg";
 import family3Desktop from "../assets/Family Ghee 1920 x 800.jpg";
 
 /* MOBILE IMAGES */
-import family1Mobile from "../assets/Ground nut oil 1920 x 800.jpg";
-import family2Mobile from "../assets/Presentil oil 1920 x 800.jpg";
-import family3Mobile from "../assets/Family Ghee 1920 x 800.jpg";
+import family1Mobile from "../assets/mo_b_gro.jpeg";
+import family2Mobile from "../assets/mo_b_pre.jpeg";
+import family3Mobile from "../assets/mo_b_ghee.jpeg";
 
 const slides = [
   {
