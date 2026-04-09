@@ -17,16 +17,16 @@ import family3Mobile from "../assets/mo_b_ghee.jpeg";
 const slides = [
   {
     desktopImage: family1Desktop,
-    mobileImage: family1Mobile
+    mobileImage: family1Mobile,
   },
   {
     desktopImage: family2Desktop,
-    mobileImage: family2Mobile
+    mobileImage: family2Mobile,
   },
   {
     desktopImage: family3Desktop,
-    mobileImage: family3Mobile
-  }
+    mobileImage: family3Mobile,
+  },
 ];
 
 const HeroBanner = () => {
@@ -39,11 +39,11 @@ const HeroBanner = () => {
         pagination={{ clickable: true }}
         loop
         speed={900}
-        className="w-full h-[70vh] md:h-[85vh] lg:h-[95vh]"
+        className="w-full h-screen md:h-[85vh] lg:h-[95vh]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full h-full flex items-center justify-center bg-black">
+            <div className="w-full h-full overflow-hidden">
 
               {/* Desktop Image */}
               <img
@@ -56,7 +56,7 @@ const HeroBanner = () => {
               <img
                 src={slide.mobileImage}
                 alt="banner"
-                className="block md:hidden w-full h-full object-contain"
+                className="block md:hidden w-full h-full object-cover object-center"
               />
 
             </div>
