@@ -42,7 +42,7 @@ const HeroBanner = () => {
         pagination={{ clickable: true }}
         loop
         speed={900}
-        className="h-[50vh] md:h-[90vh]"
+        className="w-full h-auto md:h-[85vh] lg:h-[95vh]"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -55,11 +55,11 @@ const HeroBanner = () => {
                 className="hidden md:block w-full h-full object-cover object-center"
               />
               {/* MOBILE IMAGE */}
-              <img
-                src={slide.mobileImage}
-                alt="Banner"
-                className="block md:hidden w-full h-full object-cover object-center"
-              />
+               <img
+  src={slide.mobileImage}
+  alt="banner"
+  className="block md:hidden w-full h-auto"
+/>
 
             </div>
           </SwiperSlide>
