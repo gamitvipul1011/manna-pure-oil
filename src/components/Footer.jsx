@@ -73,7 +73,7 @@ const Footer = () => {
      <footer className="relative h-[650px] text-gray-100 overflow-hidden bg-green-900/40">
       {/* ── FULL IMAGE — no crop, full height ── */}
        <img
-  src="/images/Warli 1920 x 650.jpg"
+  src="/images/Warli 1920 x 651.jpg"
   alt="footer background"
   className="w-full h-full object-contain object-bottom"
 />
