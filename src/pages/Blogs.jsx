@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 
 import banner1 from "../assets/blog_masta.jpg";
+import banner_mo from "../assets/mo_blog.jpeg";
 import blog1 from "../assets/blog1 600.jpeg";
 
 import blog2 from "../assets/Cold Pressed vs Refinend 1200 x 600.jpg";
@@ -110,20 +111,22 @@ const Blogs = () => {
       {/* Banner */}
       <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
     
-        <picture>
-          {/* Mobile Image */}
-          <source
-            media="(max-width: 700px)"
-            srcSet={banner1}
-          />
-    
-          {/* Desktop Image */}
-          <img
-           src={banner1}
-            alt="banner"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-        </picture>
+       <picture>
+
+    {/* Mobile Image */}
+    <source
+      media="(max-width: 768px)"
+      srcSet={banner_mo}
+    />
+
+    {/* Desktop Image */}
+    <img
+      src={banner1}
+      alt="banner"
+      className="absolute inset-0 w-full h-full object-cover object-center"
+    />
+
+  </picture>
       </div>
       
       <div className="max-w-6xl mx-auto text-center px-8 mb-16 mt-10">
