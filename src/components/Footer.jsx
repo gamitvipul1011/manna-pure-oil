@@ -70,32 +70,26 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative min-h-[650px] text-gray-100 overflow-hidden">
+    <footer className="relative text-gray-100 overflow-hidden">
 
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/Warli 1920 x 651.jpg"
+          src="/images/Warli 1920 x 650.jpg"
           alt="footer background"
-          className="w-full h-full object-cover object-bottom"
-  />
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(5,20,5,0.82) 0%, rgba(5,20,5,0.70) 55%, rgba(5,20,5,0.30) 78%, rgba(0,0,0,0.08) 100%)",
-        }}
-      />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-green-900/70"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 md:grid-cols-4 gap-10">
 
-        {/* BRAND */}
+        {/* Brand */}
         <div>
-          <h2 className="text-3xl font-bold flex items-center gap-3 mb-4">
+          <h2 className="text-3xl font-semibold flex items-center gap-3 mb-4">
             <FaLeaf className="text-green-400" />
             {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
           </h2>
@@ -109,13 +103,13 @@ const Footer = () => {
           <FooterSubscribe isGu={isGu} />
         </div>
 
-        {/* QUICK LINKS */}
+        {/* Quick Links */}
         <div>
           <h3 className="text-lg font-semibold mb-4 border-b border-white/20 pb-2">
             {isGu ? "ઝડપી લિંક્સ" : "Quick Links"}
           </h3>
 
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-2 text-sm">
             {links.map((link, i) => (
               <li key={i}>
                 <Link
@@ -129,13 +123,13 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* POLICIES */}
+        {/* Policies */}
         <div>
           <h3 className="text-lg font-semibold mb-4 border-b border-white/20 pb-2">
             {isGu ? "નીતિઓ" : "Policies"}
           </h3>
 
-          <ul className="space-y-3 text-sm">
+          <ul className="space-y-2 text-sm">
             <li>
               <Link to="/privacy-policy" className="hover:text-green-300">
                 {isGu ? "ગોપનીયતા નીતિ" : "Privacy Policy"}
@@ -168,13 +162,13 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* CONTACT */}
+        {/* Contact */}
         <div>
           <h3 className="text-lg font-semibold mb-4 border-b border-white/20 pb-2">
             {isGu ? "સંપર્ક કરો" : "Contact Us"}
           </h3>
 
-          <ul className="space-y-4 text-sm text-gray-200">
+          <ul className="space-y-3 text-sm text-gray-200">
 
             <li className="flex items-center gap-3">
               <FaPhone className="text-green-400" />
@@ -195,14 +189,14 @@ const Footer = () => {
 
           </ul>
 
-          {/* SOCIAL */}
-          <div className="flex gap-4 mt-6">
+          {/* Social */}
+          <div className="flex gap-4 mt-5">
 
             <a
               href="https://www.facebook.com/share/1DHTPMPegK/"
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600 transition"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600 transition"
             >
               <FaFacebookF />
             </a>
@@ -211,7 +205,7 @@ const Footer = () => {
               href="https://www.instagram.com/mannapureoil"
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600 transition"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600 transition"
             >
               <FaInstagram />
             </a>
@@ -220,7 +214,7 @@ const Footer = () => {
               href="https://youtube.com/@mannapureoil"
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600 transition"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-green-600 transition"
             >
               <FaYoutube />
             </a>
@@ -230,8 +224,8 @@ const Footer = () => {
 
       </div>
 
-      {/* COPYRIGHT */}
-      <div className="border-t border-white/20 text-center py-4 text-sm text-gray-200">
+      {/* Bottom Copyright */}
+      <div className="relative border-t border-white/20 text-center py-4 text-sm text-gray-200">
         © {new Date().getFullYear()} Manna Pure Oil
         {isGu ? " | સર્વ અધિકાર સુરક્ષિત." : " | All Rights Reserved."}
       </div>
@@ -241,4 +235,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
