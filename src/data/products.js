@@ -650,9 +650,9 @@ Highly concentrated, so a small amount is enough`,
     usesGu: 'વાળ|ત્વચા|સાંધા|આયુર્વેદ',
      sizes: [
        { size: '1 Litre', price: 250, 
-        images: new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href, 
+        images: new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href, 
          images: [
-          new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href,
+          new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href,
       new URL('../assets/product all/castor/back.jpeg', import.meta.url).href,
       
     ],
