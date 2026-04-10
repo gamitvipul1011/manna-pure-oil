@@ -60,7 +60,7 @@ const Navbar = ({ cartCount = 0 }) => {
             <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden 
            
             transition-all duration-300 ease-out 
-            group-hover:scale-110">
+            group-hover:scale-110  border-2 border-green-400">
 
               <div className="absolute inset-0 rounded-full 
               bg-green-400/10 opacity-0 
