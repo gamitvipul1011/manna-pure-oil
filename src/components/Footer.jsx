@@ -71,20 +71,19 @@ const Footer = () => {
 
   return (
      <footer className="relative w-full">
-
-  <div
-    className="w-full min-h-[420px] sm:min-h-[520px] md:min-h-[650px] bg-no-repeat bg-center bg-contain"
-    style={{
-      backgroundImage: "url('/images/Warli 1920 x 651.jpg')"
-    }}
-  >
+<div
+  className="w-full min-h-[500px] md:min-h-[650px] bg-no-repeat bg-center bg-contain"
+  style={{
+    backgroundImage: "url('/images/Warli 1920 x 651.jpg')"
+  }}
+>
+</div>
 
       {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
    <div className="absolute inset-0 bg-green-900/40"></div>
 
       {/* ── CONTENT — sits on top of image ── */}
-     <div className="relative z-10">
-
+      <div className="absolute inset-0 flex flex-col justify-between">
         {/* TOP CONTENT AREA */}
         <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-4 grid grid-cols-1 md:grid-cols-4 gap-8">
 
