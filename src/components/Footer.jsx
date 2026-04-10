@@ -70,7 +70,7 @@ const Footer = () => {
   const creamText = { color: "#FFFDE7", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
 
   return (
-     <footer className="relative w-full bg-green-950/40 text-white">
+     <footer className="relative min-h-[650px] text-gray-100 overflow-hidden bg-green-950/40">
       {/* ── FULL IMAGE — no crop, full height ── */}
        <img
     src="/images/Warli 1920 x 651.jpg"
@@ -181,7 +181,7 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM COPYRIGHT — exactly at bottom of image */}
-        <div className="pointer-events-auto w-full text-center py-2 text-xs font-bold"
+        <div className="relative border-t border-white/20 text-center py-4 text-sm text-gray-200 mt-10 pointer-events-auto w-full text-center py-2 text-xs font-bold"
           style={{
             color: "#FFD700",
             textShadow: "0 1px 6px rgba(0,0,0,0.95)",
