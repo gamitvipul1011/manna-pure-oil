@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import banner1 from "../assets/about_coco.jpg";
+import mo_banner from "../assets/mo_about.jpeg";
 import aboutImg from "../assets/Father son 756 x 540.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -52,7 +53,7 @@ const About = () => {
 
   return (
   
-  <div className="bg-gradient-purple min-h-screen ">
+   <div className="bg-gradient-purple min-h-screen -mt-16 md:mt-0">
 
   {/* Banner */}
  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
@@ -60,7 +61,7 @@ const About = () => {
   <picture className="block w-full h-full">
 
     {/* Mobile */}
-    <source media="(max-width:768px)" srcSet="../assets/mo_about.jpeg" />
+    <source media="(max-width:768px)" srcSet={mo_banner}/>
 
     {/* Desktop */}
     <img
@@ -72,6 +73,8 @@ const About = () => {
   </picture>
 
 </div>
+
+
 
 
 
@@ -92,7 +95,7 @@ const About = () => {
       >
         <div className="absolute -inset-4 bg-green-100 rounded-3xl blur-2xl opacity-40"></div>
 
-        <img
+      <img
   src={aboutImg}
   alt="about"
   className="relative rounded-3xl shadow-2xl object-cover w-full 
