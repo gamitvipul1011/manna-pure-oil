@@ -72,11 +72,13 @@ const Footer = () => {
   return (
      <footer className="relative min-h-[650px] text-gray-100 overflow-hidden">
       {/* ── FULL IMAGE — no crop, full height ── */}
-       <img
-  src="/images/Warli 1920 x 651.jpg"
-  alt="footer background"
-  className="w-full h-full object-contain object-bottom"
-/>
+       <div className="absolute inset-0">
+  <img
+    src="/images/Warli 1920 x 650.jpg"
+    alt="footer background"
+    className="w-full h-full object-cover object-bottom"
+  />
+</div>
 
       {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
    <div className="absolute inset-0 bg-green-900/40"></div>
