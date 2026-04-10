@@ -46,9 +46,10 @@ const Navbar = ({ cartCount = 0 }) => {
     <>
       {/* ✅ UPDATED HEADER */}
       <header
+       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-black/70 border-b border-white/10 "
+            ? "bg-black/70 backdrop-blur-lg border-b border-white/10 shadow-lg"
             : "bg-gradient-to-r from-brand-purple-800 via-brand-purple-700 to-brand-purple-800"
         }`}
       >
@@ -58,7 +59,7 @@ const Navbar = ({ cartCount = 0 }) => {
      <Link to="/" className="flex items-center gap-3 group">
 
   <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden
-  border-2 border-green-400
+  border-2 border-white
   transition-all duration-300 ease-out">
 
     <img
