@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import contactImage from '../assets/contact_sesa.jpg';
+import banner_mo from '../assets/mo_contact.jpeg';
 
 
 const Contact = () => {
@@ -68,7 +69,7 @@ const Contact = () => {
       {/* Mobile Image */}
       <source
         media="(max-width: 768px)"
-        srcSet={contactImage}
+        srcSet={banner_mo}
       />
 
       {/* Desktop Image */}
