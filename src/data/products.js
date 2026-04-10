@@ -395,6 +395,13 @@ Known for its intense nutrients and traditional wellness benefits.
       new URL('../assets/product all/WHITE SESAME/back.jpg', import.meta.url).href,  
     ],
       },
+      { size: '5 Litre', price: 2450, 
+        images: new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href, 
+         images: [
+      new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href,
+      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,  
+    ],
+      },
       
     ],
     inStock: true,
@@ -472,8 +479,17 @@ Stimulates appetite and supports better digestion`,
       },
       
       { size: '500ml', price: 150, 
-         images: new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href, 
+         images: new URL('../assets/product all/MUSTARD/500ml.jpeg', import.meta.url).href, 
          images: [
+          new URL('../assets/product all/MUSTARD/500ml.jpeg', import.meta.url).href,
+      new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,
+      
+    ],
+      },
+      { size: '5 Litre', price: 1250, 
+         images: new URL('../assets/product all/MUSTARD/500ml.jpeg', import.meta.url).href, 
+         images: [
+          new URL('../assets/product all/MUSTARD/500ml.jpeg', import.meta.url).href,
       new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,
       
     ],
@@ -562,6 +578,14 @@ Perfect for everyday cooking without heaviness`,
       
     ],
       },
+       { size: '15 Litre', price: 3450, 
+         images: new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
+         images: [
+          new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
+      new URL('../assets/product all/SUNFLOWER/back5.jpg', import.meta.url).href,
+      
+    ],
+      },
       
     ],
     inStock: true,
@@ -574,8 +598,8 @@ Perfect for everyday cooking without heaviness`,
     name: 'Cold Pressed Castor Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ દિવેલ તેલ ',
     category: { _id: 'cat7', name: 'Castor Oil' },
-    image: new URL('../assets/product all/castor/cost2.jpeg', import.meta.url).href,
-    images: [new URL('../assets/product all/castor/cost2.jpeg', import.meta.url).href],
+    image: new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href,
+    images: [new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href],
     description: `🌿 Cold Pressed Castor Oil
 
 Pure. Intensive. Deeply Restorative.
@@ -624,14 +648,38 @@ Highly concentrated, so a small amount is enough`,
     benefitsGu: 'વાળ વૃદ્ધિ|ત્વચા hydration|સાંધા|કબજિયાત|Anti-fungal',
     uses: 'Hair care|Skin care|Joint massage|Ayurvedic medicine',
     usesGu: 'વાળ|ત્વચા|સાંધા|આયુર્વેદ',
-    sizes: [
-       { size: '500ml', price: 130, images: [new URL('../assets/product all/castor/cost2.jpeg', import.meta.url).href] },
-      { size: '250ml', price: 70, images: [new URL('../assets/product all/castor/cost2.jpeg', import.meta.url).href] },
-     
+     sizes: [
+       { size: '1 Litre', price: 250, 
+        images: new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href, 
+         images: [
+          new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href,
+      new URL('../assets/product all/castor/back.jpeg', import.meta.url).href,
+      
+    ],
+      },
+      
+      { size: '500 ML', price: 130, 
+         images: new URL('../assets/product all/castor/500ml.jpeg', import.meta.url).href, 
+         images: [
+          new URL('../assets/product all/castor/500ml.jpeg', import.meta.url).href, 
+      new URL('../assets/product all/castor/back.jpeg', import.meta.url).href,
+      
+    ],
+      },
+       { size: '250 ML', price: 70, 
+         images: new URL('../assets/product all/castor/250ml.jpeg', import.meta.url).href, 
+         images: [
+          new URL('../assets/product all/castor/250ml.jpeg', import.meta.url).href, 
+      new URL('../assets/product all/castor/back.jpeg', import.meta.url).href,
+      
+    ],
+      },
+      
     ],
     inStock: true,
     featured: false,
   },
+   
 
   // ──────── GIR COW GHEE ────────
   {
@@ -639,9 +687,9 @@ Highly concentrated, so a small amount is enough`,
     name: 'Gir Cow Ghee (A2)',
     nameGu: 'ગીર ગાય ઘી (A2)',
     category: { _id: 'cat8', name: 'Gir Cow Ghee' },
-    image: new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href,
+    image: new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href,
     images: [
-      new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href,
+      new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href,
      
     ],
     description: `🌿 Gir Cow Ghee (Bilona Method)
@@ -694,14 +742,14 @@ A2 દૂધમાંથી બનેલું, જે સરળ પચન અ�
     usesGu: 'રસોઈ|Dal tadka|ચપાટી|આયુર્વેદ|Baby food',
     sizes: [
        { size: '1 KG', price: 2400, 
-        images: new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href, 
+        images: new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href, 
          images: [
-          new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href,
+          new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href,
      
     ],
       },
       
-      { size: '500 GRAM', price: 1230, 
+      { size: '500 GRAM', price: 1250, 
          images: new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href, 
          images: [
           new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href, 
