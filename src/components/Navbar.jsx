@@ -55,19 +55,22 @@ const Navbar = ({ cartCount = 0 }) => {
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
 
           {/* LOGO */}
-       <Link to="/" className="flex items-center gap-3 group">
+      <Link to="/" className="flex items-center gap-3 group">
 
   <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden
-  border-2 border-green-400
-  shadow-lg shadow-green-400/40
+  bg-gradient-to-br from-green-400 to-green-600
+  p-[2px]
   transition-all duration-300 group-hover:scale-110">
 
-    <img
-      src={logoImg}
-      alt="Manna Pure Oil"
-      className="w-full h-full object-cover"
-    />
+    <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
 
+      <img
+        src={logoImg}
+        alt="Manna Pure Oil"
+        className="w-[85%] h-[85%] object-contain"
+      />
+
+    </div>
   </div>
 
   <div className="hidden sm:block leading-tight">
@@ -78,7 +81,6 @@ const Navbar = ({ cartCount = 0 }) => {
   </div>
 
 </Link>
-
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-6 font-semibold text-sm">
             {navLinks.map((item) => (
