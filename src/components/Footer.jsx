@@ -70,24 +70,22 @@ const Footer = () => {
   const creamText = { color: "#FFFDE7", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
 
   return (
-    <footer className="relative w-full overflow-hidden">
-
+      <footer className="relative w-full text-white">
       {/* ── FULL IMAGE — no crop, full height ── */}
-      <img
-        src="/images/Warli 1920 x 650.jpg"
-        alt="footer background"
-        className="w-full block"
-        style={{ display: "block", width: "100%", height: "auto" }}
-      />
+       <img
+    src="/images/Warli 1920 x 651.jpg"
+    alt="footer bg"
+    className="w-full h-auto block"
+  />
 
       {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
-      <div className="absolute inset-0 bg-green-900/60"></div>
+   <div className="absolute inset-0 bg-green-900/40"></div>
 
       {/* ── CONTENT — sits on top of image ── */}
       <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
 
         {/* TOP CONTENT AREA */}
-        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-4 grid grid-cols-1 md:grid-cols-4 gap-8">
 
           {/* COL 1: BRAND */}
           <div>
@@ -199,4 +197,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
