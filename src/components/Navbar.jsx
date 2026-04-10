@@ -55,37 +55,34 @@ const Navbar = ({ cartCount = 0 }) => {
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
 
           {/* LOGO */}
-          <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
 
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden 
-           
-            transition-all duration-300 ease-out 
-            group-hover:scale-110">
+  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden
+  border-2 border-green-400
+  transition-all duration-300 ease-out 
+  group-hover:scale-110">
 
-              <div className="absolute inset-0 rounded-full 
-              bg-green-400/10 opacity-0 
-              group-hover:opacity-100 transition duration-300"></div>
+    <img
+      src={logoImg}
+      alt="Manna Pure Oil"
+      className="w-full h-full object-cover"
+    />
 
-              <img
-                src={logoImg}
-                alt="Manna Pure Oil"
-                className="relative w-full h-full object-contain p-1 z-10"
-              />
-            </div>
+  </div>
 
-            <div className="hidden sm:block leading-tight">
+  <div className="hidden sm:block leading-tight">
 
-  <h1 className="text-lg sm:text-xl font-bold tracking-wide 
-  text-white">
-    Manna <span className="text-green-400">Pure Oil</span>
-  </h1>
+    <h1 className="text-lg sm:text-xl font-bold tracking-wide text-white">
+      Manna <span className="text-green-400">Pure Oil</span>
+    </h1>
 
-  <p className="text-xs text-gray-300 tracking-wider font-medium">
-    100% Natural & Pure
-  </p>
+    <p className="text-xs text-gray-300 tracking-wider font-medium">
+      100% Natural & Pure
+    </p>
 
-</div>
-          </Link>
+  </div>
+
+</Link>
 
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-6 font-semibold text-sm">
