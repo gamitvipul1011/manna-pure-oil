@@ -2,54 +2,43 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import logoImg from "../assets/logo.jpeg";
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaLeaf,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaArrowRight,
+  FaFacebookF, FaInstagram, FaYoutube,
+  FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowRight,
 } from "react-icons/fa";
 
 const FooterSubscribe = ({ isGu }) => {
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSub = (e) => {
     e.preventDefault();
-
     if (!email || !email.includes("@")) {
       toast.error(isGu ? "માન્ય ઈમેલ દાખલ કરો" : "Enter a valid email");
       return;
     }
-
-    toast.success(isGu ? "સફળતાપૂર્વક સબ્સ્ક્રાઇબ થયું!" : "Subscribed successfully!");
-    setEmail("");
+    setLoading(true);
+    setTimeout(() => {
+      toast.success(isGu ? "સફળતાપૂર્વક સબ્સ્ક્રાઇબ થયું!" : "Subscribed successfully!");
+      setEmail("");
+      setLoading(false);
+    }, 800);
   };
 
   return (
-    <div className="mt-6">
-      <p className="text-sm text-gray-200 mb-3">
+    <div className="mt-5">
+      <p className="text-xs font-bold mb-2" style={{ color: "#FFD700", textShadow: "0 1px 6px rgba(0,0,0,0.9)" }}>
         {isGu ? "નવી માહિતી માટે સબ્સ્ક્રાઇબ કરો" : "Subscribe for latest updates"}
       </p>
-
-      <form
-        onSubmit={handleSub}
-        className="flex bg-white rounded-full overflow-hidden shadow-md"
-      >
+      <form onSubmit={handleSub} className="flex rounded-full overflow-hidden shadow-xl border border-yellow-400/40">
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="email" value={email} onChange={(e) => setEmail(e.target.value)}
           placeholder={isGu ? "તમારો ઈમેલ" : "Enter your email"}
-          className="px-4 py-2 w-full text-sm text-black focus:outline-none"
+          className="px-4 py-2 w-full text-sm text-black focus:outline-none bg-white/90"
         />
-
-        <button
-          type="submit"
-          className="bg-green-600 hover:bg-green-700 px-4 text-white transition"
-        >
+        <button type="submit" disabled={loading}
+          className="bg-yellow-500 hover:bg-orange-500 px-4 text-white transition-all duration-300">
           <FaArrowRight />
         </button>
       </form>
@@ -62,34 +51,45 @@ const Footer = () => {
   const isGu = i18n.language === "gu";
 
   const links = [
-    { en: "Home", gu: "હોમ", path: "/" },
+    { en: "Home",     gu: "હોમ",        path: "/" },
     { en: "About Us", gu: "અમારા વિશે", path: "/about" },
-    { en: "Products", gu: "ઉત્પાદનો", path: "/products" },
-    { en: "Blog", gu: "બ્લોગ", path: "/blogs" },
-    { en: "Contact", gu: "સંપર્ક", path: "/contact" },
+    { en: "Products", gu: "ઉત્પાદનો",   path: "/products" },
+    { en: "Blog",     gu: "બ્લોગ",      path: "/blogs" },
+    { en: "Contact",  gu: "સંપર્ક",     path: "/contact" },
   ];
 
+  const policies = [
+    { path: "/privacy-policy",       en: "Privacy Policy",     gu: "ગોપનીયતા નીતિ" },
+    { path: "/terms-and-conditions", en: "Terms & Conditions", gu: "નિયમો અને શરતો" },
+    { path: "/refund-policy",        en: "Refund Policy",      gu: "રિફંડ નીતિ" },
+    { path: "/shipping-policy",      en: "Shipping Policy",    gu: "શિપિંગ નીતિ" },
+    { path: "/faq",                  en: "FAQ",                gu: "FAQ" },
+  ];
+
+  const goldText = { color: "#FFD700", textShadow: "0 2px 8px rgba(0,0,0,0.95)" };
+  const creamText = { color: "#FFFDE7", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
+
   return (
-    <footer className="relative h-[650px] text-gray-100 overflow-hidden">
+      <footer className="relative w-full text-white bg-green-900/40">
+      {/* ── FULL IMAGE — no crop, full height ── */}
+       <img
+    src="/images/Warli 1920 x 651.jpg"
+    alt="footer bg"
+    className="w-full h-auto block"
+  />
 
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/Warli 1920 x 651.jpg"
-          alt="footer background"
-          className="w-full h-full object-contain object-bottom"
-        />
-      </div>
+      {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
+   <div className="absolute inset-0 bg-green-900/40"></div>
 
-      {/* Gradient Overlay */}
-     <div className="absolute inset-0 bg-green-900/40"></div>
+      {/* ── CONTENT — sits on top of image ── */}
+      <div className="absolute inset-0 flex flex-col justify-between">
+        
 
+        {/* TOP CONTENT AREA */}
+        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-4 grid grid-cols-1 md:grid-cols-4 gap-8">
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 md:grid-cols-4 gap-10">
-
-        {/* BRAND */}
-        <div>
+          {/* COL 1: BRAND */}
+          <div>
             <div className="flex items-center gap-3 mb-3">
               <img src={logoImg} alt="Manna Pure Oil"
                 className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400 shadow-lg flex-shrink-0" />
@@ -198,4 +198,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
