@@ -77,8 +77,8 @@ const Footer = () => {
         <img
           src="/images/Warli 1920 x 651.jpg"
           alt="footer background"
-          className="w-full h-full object-cover object-top"
-        />
+          className="w-full h-full object-cover object-bottom"
+  />
       </div>
 
       {/* Gradient Overlay */}
