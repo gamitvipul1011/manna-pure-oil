@@ -46,7 +46,6 @@ const Navbar = ({ cartCount = 0 }) => {
     <>
       {/* ✅ UPDATED HEADER */}
       <header
-       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
             ? "bg-black/70 backdrop-blur-lg border-b border-white/10 shadow-lg"
@@ -56,33 +55,38 @@ const Navbar = ({ cartCount = 0 }) => {
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
 
           {/* LOGO */}
-     <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
 
-  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden
-  border-2 border-white
-  transition-all duration-300 ease-out">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden 
+           
+            transition-all duration-300 ease-out 
+            group-hover:scale-110">
 
-    <img
-      src={logoImg}
-      alt="Manna Pure Oil"
-      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-    />
+              <div className="absolute inset-0 rounded-full 
+              bg-green-400/10 opacity-0 
+              group-hover:opacity-100 transition duration-300"></div>
 
-  </div>
+              <img
+                src={logoImg}
+                alt="Manna Pure Oil"
+                className="relative w-full h-full object-contain p-1 z-10"
+              />
+            </div>
 
-  <div className="hidden sm:block leading-tight">
+            <div className="hidden sm:block leading-tight">
 
-    <h1 className="text-lg sm:text-xl font-bold tracking-wide text-white">
-      Manna <span className="text-green-400">Pure Oil</span>
-    </h1>
+  <h1 className="text-lg sm:text-xl font-bold tracking-wide 
+  text-white">
+    Manna <span className="text-green-400">Pure Oil</span>
+  </h1>
 
-    <p className="text-xs text-gray-300 tracking-wider font-medium">
-      100% Natural & Pure
-    </p>
+  <p className="text-xs text-gray-300 tracking-wider font-medium">
+    100% Natural & Pure
+  </p>
 
-  </div>
+</div>
+          </Link>
 
-</Link>
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-6 font-semibold text-sm">
             {navLinks.map((item) => (
