@@ -69,8 +69,10 @@ const Navbar = ({ cartCount = 0 }) => {
               <img
                 src={logoImg}
                 alt="Manna Pure Oil"
-                className="relative w-full h-full object-contain p-1 z-10"
-              />
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+
+           
             </div>
 
             <div className="hidden sm:block leading-tight">
