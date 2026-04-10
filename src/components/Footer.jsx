@@ -195,7 +195,7 @@ const Footer = () => {
           {isGu ? " | સર્વ અધિકાર સુરક્ષિત." : " | All Rights Reserved."}
         </div>
 
-      </div>
+     
 
     </footer>
   );
