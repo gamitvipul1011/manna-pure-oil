@@ -82,7 +82,7 @@ const Footer = () => {
    <div className="absolute inset-0 bg-green-900/40"></div>
 
       {/* ── CONTENT — sits on top of image ── */}
-      <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+      <div className="absolute inset-0 flex flex-col justify-between">
 
         {/* TOP CONTENT AREA */}
         <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-4 grid grid-cols-1 md:grid-cols-4 gap-8">
