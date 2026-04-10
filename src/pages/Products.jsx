@@ -34,7 +34,7 @@ const Products = () => {
       {/* Mobile Image */}
       <source
         media="(max-width: 768px)"
-        srcSet="/images/product_sun.jpg"
+        srcSet="/images/mo_product1.jpeg"
       />
 
       {/* Desktop Image */}
