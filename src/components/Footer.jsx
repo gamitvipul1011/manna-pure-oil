@@ -70,7 +70,7 @@ const Footer = () => {
   const creamText = { color: "#FFFDE7", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
 
   return (
-      <footer className="relative w-full text-gray-100  bg-green-900/40">
+     <footer className="relative h-[650px] text-gray-100 overflow-hidden bg-green-900/30">
       {/* ── FULL IMAGE — no crop, full height ── */}
        <img
     src="/images/Warli 1920 x 651.jpg"
@@ -79,10 +79,10 @@ const Footer = () => {
   />
 
       {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
-   <div className="absolute inset-0 bg-green-900/40"></div>
+   <div className="absolute inset-0 bg-green-900/30"></div>
 
       {/* ── CONTENT — sits on top of image ── */}
-      <div className="absolute inset-0 flex flex-col justify-between  bg-green-900/40">
+      <div className="absolute inset-0 flex flex-col justify-between">
         
 
         {/* TOP CONTENT AREA */}
