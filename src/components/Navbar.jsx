@@ -48,7 +48,7 @@ const Navbar = ({ cartCount = 0 }) => {
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-black/70 backdrop-blur-lg border-b border-white/10 shadow-lg"
+            ? "bg-black/70 border-b border-white/10 "
             : "bg-gradient-to-r from-brand-purple-800 via-brand-purple-700 to-brand-purple-800"
         }`}
       >
