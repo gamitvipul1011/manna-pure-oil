@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import banner1 from "../assets/about_coco.jpg";
-import mo_banner from "../assets/mo_about.jpeg";
+import mo_banner from "../assets/mo_ab1.jpeg";
 import aboutImg from "../assets/Father son 756 x 540.jpg";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
