@@ -35,14 +35,16 @@ const ProductCard = ({ product }) => {
 
       <Link to={`/product/${product._id}`}>
         {/* Image */}
-       <div className="w-full h-[220px] sm:h-[260px] md:h-[320px] overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative flex items-center justify-center">
+       <div className="w-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 relative">
 
   <img
     src={product.image}
     alt={product.name}
-    className={`w-full h-full object-contain transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
+    className={`w-full h-auto sm:h-[260px] md:h-[320px] object-cover transition duration-500 group-hover:scale-110 ${inStock ? '' : 'grayscale opacity-60'}`}
     onError={e => { e.target.src = 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400'; }}
   />
+
+
           {!inStock && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/30">
               <span className="bg-red-500 text-white text-sm font-bold px-4 py-2 rounded-full rotate-[-12deg]">
