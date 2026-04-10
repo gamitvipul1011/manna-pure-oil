@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logoImg from "../assets/logo.jpeg";
 import {
-  FaFacebookF, FaInstagram, FaYoutube,
+  FaFacebookF, FaInstagram, FaYoutube, 
   FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowRight,
 } from "react-icons/fa";
 
