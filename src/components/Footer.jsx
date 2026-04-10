@@ -82,13 +82,8 @@ const Footer = () => {
       </div>
 
       {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(5,20,5,0.82) 0%, rgba(5,20,5,0.70) 55%, rgba(5,20,5,0.30) 78%, rgba(0,0,0,0.08) 100%)",
-        }}
-      />
+     <div className="absolute inset-0 bg-green-900/40"></div>
+
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 md:grid-cols-4 gap-10">
