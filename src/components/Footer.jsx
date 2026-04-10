@@ -82,7 +82,7 @@ const Footer = () => {
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-green-900/70"></div>
+      <div className="absolute inset-0 bg-green-900/40"></div>
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 md:grid-cols-4 gap-10">
