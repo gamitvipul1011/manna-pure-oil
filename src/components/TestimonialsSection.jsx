@@ -39,16 +39,16 @@ const currentLang = i18n.language;
 
 return (
 
-<section className="py-15">
-<div className="max-w-5xl mx-auto px-4 text-center">
+<section className="py-15 ">
+<div className="max-w-5xl mx-auto px-4 text-center ">
 
 {/* TITLE */}
 
-<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-14">
+<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-14 ">
 
 {currentLang === "gu" ? "ગ્રાહકોના અનુભવ" : "Customer Experiences"}
 
-<span className="block text-lg text-purple-100 mt-3">
+<span className="block text-lg text-purple-100 mt-3 ">
 
 {currentLang === "gu"
 ? "અમારા ગ્રાહકો શું કહે છે"
@@ -65,15 +65,14 @@ modules={[Autoplay, Pagination]}
 autoplay={{ delay: 4000, disableOnInteraction: false }}
 pagination={{ clickable: true }}
 loop
-className="max-w-3xl mx-auto"
->
+className="max-w-3xl mx-auto ">
 
 {testimonials.map((item, index) => (
 
 <SwiperSlide key={index}>
 
-<div className="bg-purple-50 px-10 py-12 rounded-3xl shadow-xl max-w-3xl mx-auto
-hover:scale-[1.03] transition duration-300">
+<div className="bg-[#D0F0C0] px-10 py-12 rounded-3xl shadow-xl max-w-3xl mx-auto
+hover:scale-[1.03] transition duration-300 ">
 
 {/* IMAGE */}
 
