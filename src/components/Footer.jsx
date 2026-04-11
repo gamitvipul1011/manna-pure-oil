@@ -74,10 +74,10 @@ const Footer = () => {
 
   {/* Background Image */}
   <img
-    src="/images/Warli 1920 x 651.jpg"
-    alt="footer bg"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+  src="/images/Warli 1920 x 651.jpg"
+  alt="footer bg"
+  className="w-full h-auto block  bg-[#14532d]"
+/>
 
   {/* Overlay */}
   <div
