@@ -67,10 +67,10 @@ const Footer = () => {
   ];
 
   const goldText = { color: "#FFD700", textShadow: "0 2px 8px rgba(0,0,0,0.95)" };
-   const creamText = { color: "#000300", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
+  const creamText = { color: "rgb(235, 235, 235)", textShadow: "0 1px 6px rgb(3, 3, 3)" };
 
   return (
-      <footer className="relative w-full text-white">
+      <footer className="relative w-full text-white bg-green-900/40">
       {/* ── FULL IMAGE — no crop, full height ── */}
        <img
     src="/images/Warli 1920 x 651.jpg"
@@ -79,29 +79,55 @@ const Footer = () => {
   />
 
       {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
-   <div className="absolute inset-0 bg-green-900/40"></div>
+<div
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    background:
+      "linear-gradient(to bottom, rgba(20,83,45,0.40) 0%, rgba(20,83,45,0.35) 55%, rgba(20,83,45,0.20) 78%, rgba(0,0,0,0.08) 100%)",
+  }}
+/>
 
       {/* ── CONTENT — sits on top of image ── */}
       <div className="absolute inset-0 flex flex-col justify-between">
         
 
         {/* TOP CONTENT AREA */}
-        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-4 grid grid-cols-1 md:grid-cols-4 gap-8 ">
 
           {/* COL 1: BRAND */}
           <div>
-            <div className="flex items-center gap-3 mb-3">
-              <img src={logoImg} alt="Manna Pure Oil"
-                className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400 shadow-lg flex-shrink-0" />
-              <span className="text-lg font-black leading-tight" style={goldText}>
-                {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
-              </span>
-            </div>
-            <p className="text-xs font-semibold leading-relaxed" style={creamText}>
-              {isGu
-                ? "લાકડાની ઘાણીથી કઢેલું શુદ્ધ કોલ્ડ-પ્રેસ્ડ તેલ — ૧૦૦% કુદરતી, કોઈ રસાયણ નહીં."
-                : "Wood-pressed cold extracted pure oil — 100% natural, no chemicals, no heat."}
-            </p>
+           
+
+  <div className="flex items-center gap-3 mb-3 group">
+
+  <div className="relative">
+    <img
+      src={logoImg}
+      alt="Manna Pure Oil"
+      className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full 
+      object-contain border-2 border-yellow-400 shadow-lg flex-shrink-0
+      transition-all duration-500 ease-out group-hover:scale-110"
+    />
+
+    {/* Glow Effect */}
+    <div className="absolute inset-0 rounded-full  blur-md opacity-0 
+    group-hover:opacity-100 transition duration-500"></div>
+  </div>
+
+  <span className="text-lg font-black leading-tight" style={goldText}>
+    {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
+  </span>
+
+</div>
+            <p
+  className="text-xs font-semibold leading-relaxed transition-all duration-300 
+  hover:scale-[1.03] hover:tracking-wide"
+  style={creamText}
+>
+  {isGu
+    ? "લાકડાની ઘાણીથી કઢેલું શુદ્ધ કોલ્ડ-પ્રેસ્ડ તેલ — ૧૦૦% કુદરતી, કોઈ રસાયણ નહીં."
+    : "Wood-pressed cold extracted pure oil — 100% natural, no chemicals, no heat."}
+</p>
             <FooterSubscribe isGu={isGu} />
           </div>
 
@@ -145,22 +171,35 @@ const Footer = () => {
 
           {/* COL 4: CONTACT */}
           <div>
-            <h3 className="text-sm font-black mb-3 pb-1 border-b border-yellow-400/40 tracking-widest uppercase" style={goldText}>
-              {isGu ? "સંપર્ક કરો" : "Contact Us"}
-            </h3>
-            <ul className="space-y-2.5">
-              {[
-                { icon: <FaPhone className="shrink-0" style={{ color: "#FFD700" }} />, text: "+91 78742 39595" },
-                { icon: <FaEnvelope className="shrink-0" style={{ color: "#FFD700" }} />, text: "mannapureoil@gmail.com" },
-                { icon: <FaMapMarkerAlt className="shrink-0 mt-0.5" style={{ color: "#FFD700" }} />,
-                  text: isGu ? "ડોલારા, વ્યારા, તાપી, ગુજરાત 394655" : "Dolara, Vyara, Tapi, Gujarat 394655" },
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2 text-xs font-bold" style={creamText}>
-                  {item.icon}
-                  <span>{item.text}</span>
-                </li>
-              ))}
-            </ul>
+  <h3
+    className="text-sm font-black mb-3 pb-1 border-b border-yellow-400/40 tracking-widest uppercase"
+    style={goldText}
+  >
+    {isGu ? "સંપર્ક કરો" : "Contact Us"}
+  </h3>
+
+  <ul className="space-y-2.5">
+    {[
+      { icon: <FaPhone className="shrink-0" style={{ color: "#FFD700" }} />, text: "+91 78742 39595" },
+      { icon: <FaEnvelope className="shrink-0" style={{ color: "#FFD700" }} />, text: "mannapureoil@gmail.com" },
+      {
+        icon: <FaMapMarkerAlt className="shrink-0 mt-0.5" style={{ color: "#FFD700" }} />,
+        text: isGu ? "ડોલારા, વ્યારા, તાપી, ગુજરાત 394655" : "Dolara, Vyara, Tapi, Gujarat 394655",
+      },
+    ].map((item, i) => (
+      <li
+        key={i}
+        className="flex items-start gap-2 text-xs font-bold transition-all duration-300 hover:translate-x-1 hover:text-yellow-300 cursor-pointer"
+        style={creamText}
+      >
+        <span className="transition-transform duration-300 group-hover:scale-110">
+          {item.icon}
+        </span>
+        <span className="transition-colors duration-300">{item.text}</span>
+      </li>
+    ))}
+  </ul>
+
 
             {/* Social Icons */}
             <div className="flex gap-3 mt-4">
