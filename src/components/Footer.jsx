@@ -67,7 +67,7 @@ const Footer = () => {
   ];
 
   const goldText = { color: "#FFD700", textShadow: "0 2px 8px rgba(0,0,0,0.95)" };
-  const creamText = { color: "#FFFDE7", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
+   const creamText = { color: "#000300", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
 
   return (
       <footer className="relative w-full text-white">
