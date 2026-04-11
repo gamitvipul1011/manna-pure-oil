@@ -21,7 +21,7 @@ const products = [
 
 const ProductBannerSection = () => {
   return (
-    <section className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px]  bg-[#D0F0C0]">
+    <section className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] ">
 
   <Swiper
     modules={[Autoplay, Pagination]}
