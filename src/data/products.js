@@ -346,7 +346,7 @@ Comforting in nature and supports smooth digestion`,
     images: [
       new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href,
       new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,
-      new URL('../assets/bl_back.jpeg', import.meta.url).href,
+    
     ],
    description: `🌿 Cold Pressed Black Sesame Oil
 
