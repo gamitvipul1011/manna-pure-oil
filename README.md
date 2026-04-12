@@ -1,6 +1,6 @@
-# 🫙 Manna Pure Oil — Static Frontend
+# 🫙 Manna Pure Oil —
 
-100% Frontend-only React app — **No backend needed**.
+100% Frontend-only React app manna pure oil— 
 All product data is hardcoded. WhatsApp order working.
 
 ## 🚀 Deploy on Render (Free)
@@ -22,7 +22,7 @@ npm run dev
 ## 📦 Update Products
 
 Edit: `src/data/products.js`
-- Products, prices, images, sizes — sab same file ma
+- Products, prices, images, sizes
 
 ## 📱 WhatsApp Order
 
@@ -35,7 +35,7 @@ WhatsApp: +91 78742 39595
 
 ```bash
 npm run build
-# dist/ folder GitHub Pages par deploy karo
+# dist/ folder 
 ```
 
 `public/_redirects` file already added for SPA routing.
