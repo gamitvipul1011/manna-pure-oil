@@ -599,8 +599,8 @@ Perfect for everyday cooking without heaviness`,
     name: 'Cold Pressed Castor Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ દિવેલ તેલ ',
     category: { _id: 'cat7', name: 'Castor Oil' },
-    image: new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href,
-    images: [new URL('../assets/product all/castor/1l.jpeg', import.meta.url).href],
+    image: new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href,
+    images: [new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href],
     description: `🌿 Cold Pressed Castor Oil
 
 Pure. Intensive. Deeply Restorative.
