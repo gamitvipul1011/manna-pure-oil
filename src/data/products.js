@@ -384,6 +384,7 @@ Known for its intense nutrients and traditional wellness benefits.
       { size: '250ml', price: 140, 
         images: new URL('../assets/product all/BLACK SESAME/250ml.jpg', import.meta.url).href, 
          images: [
+           new URL('../assets/product all/BLACK SESAME/250ml.jpg', import.meta.url).href,
       new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,
        
     ],  
@@ -391,7 +392,7 @@ Known for its intense nutrients and traditional wellness benefits.
       { size: '500ml', price: 270, 
          images: new URL('../assets/product all/BLACK SESAME/500ml.jpg', import.meta.url).href, 
          images: [
-      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,
+      new URL('../assets/product all/BLACK SESAME/500ml.jpg', import.meta.url).href,
       new URL('../assets/product all/WHITE SESAME/back.jpg', import.meta.url).href,  
     ],
       },
