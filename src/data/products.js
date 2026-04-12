@@ -482,15 +482,15 @@ Stimulates appetite and supports better digestion`,
       { size: '500ml', price: 150, 
          images: new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href, 
          images: [
-          new URL('../assets/product all/MUSTARD/500ml.jpeg', import.meta.url).href,
+          new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href,
       new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,
       
     ],
       },
       { size: '5 Litre', price: 1250, 
-         images: new URL('../assets/product all/MUSTARD/500ml.jpeg', import.meta.url).href, 
+         images: new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href, 
          images: [
-          new URL('../assets/product all/MUSTARD/500ml.jpeg', import.meta.url).href,
+          new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href,
       new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,
       
     ],
