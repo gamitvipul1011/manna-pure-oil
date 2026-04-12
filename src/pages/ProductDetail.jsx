@@ -297,12 +297,12 @@ window.scrollTo(0,0);
               </button>
             ))}
           </div>
-         <div className="bg-white/95 backdrop-blur rounded-b-3xl rounded-tr-3xl shadow-xl p-8 border border-purple-200 min-h-48">
+         <div className="bg-[#D0F0C0] backdrop-blur rounded-b-3xl rounded-tr-3xl shadow-xl p-8 border border-purple-200 min-h-48">
 
 {/* DESCRIPTION */}
 {activeTab === "description" && (
 
-<div className="flex gap-4 bg-emerald-50 border border-emerald-100 p-6 rounded-xl">
+<div className="flex gap-4 bg-[#D0F0C0] border border-emerald-100 p-6 rounded-xl">
 
   <div className="w-10 h-10 bg-purple-200 rounded-xl flex items-center justify-center shrink-0">
     <GiOilDrum className="text-purple-700 text-xl"/>
@@ -316,7 +316,7 @@ window.scrollTo(0,0);
 
         <p
           key={i}
-          className="text-gray-700 leading-relaxed text-sm md:text-base"
+          className="Text-black leading-relaxed text-sm md:text-base"
         >
           {line}
         </p>
