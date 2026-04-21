@@ -94,8 +94,8 @@ window.scrollTo(0,0);
 <div className="space-y-4">
 
   {/* MAIN IMAGE */}
-  <div className="rounded-3xl shadow-lg overflow-hidden mx-auto w-fit">
-
+  
+<div className="rounded-3xl shadow-lg overflow-hidden mx-auto w-full flex justify-center">
     <img
       src={displayImage}
       alt={product.name}
