@@ -76,7 +76,7 @@ const Footer = () => {
   <img
   src="/images/Warli 1920 x 651.jpg"
   alt="footer bg"
-  className="w-full h-auto block bg-green-900/40"
+  className="w-full h-auto block bg-green-950/40"
 />
 
   {/* Overlay */}
