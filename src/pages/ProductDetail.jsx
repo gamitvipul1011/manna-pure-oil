@@ -276,7 +276,7 @@ window.scrollTo(0,0);
   >
     <span className="text-2xl">{b.icon}</span>
 
-    <span className="text-xs font-semibold text-gray-700">
+    <span className="text-xs font-semibold text-white">
       {isGu ? b.gu : b.en}
     </span>
   </div>
