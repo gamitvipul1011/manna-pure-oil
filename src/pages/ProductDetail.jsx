@@ -276,7 +276,7 @@ window.scrollTo(0,0);
   >
     <span className="text-2xl">{b.icon}</span>
 
-    <span className="text-xs font-semibold text-white">
+    <span className="text-xs font-semibold text-purple-800">
       {isGu ? b.gu : b.en}
     </span>
   </div>
@@ -292,7 +292,7 @@ window.scrollTo(0,0);
           <div className="flex gap-2 border-b-2 border-gray-100">
             {tabs.map(tab => (
               <button key={tab.key} onClick={() => setActiveTab(tab.key)}
-                className={`px-8 py-4 font-bold text-base rounded-t-2xl transition-all ${activeTab === tab.key ? "bg-white text-purple-700 shadow-md border-2 border-b-0 border-gray-100" : "text-gray-400 hover:text-purple-600"}`}>
+                className={`px-8 py-4 font-bold text-base rounded-t-2xl transition-all ${activeTab === tab.key ? "bg-white text-green-700 shadow-md border-2 border-b-0 border-gray-100" : "text-gray-400 hover:text-purple-600"}`}>
                 {isGu ? tab.gu : tab.en}
               </button>
             ))}
@@ -390,7 +390,7 @@ className="flex items-start gap-3 rounded-xl p-5 bg-amber-50 border border-amber
         {/* RELATED PRODUCTS */}
         {related.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-purple-800 mb-8">{isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}</h2>
+            <h2 className="text-3xl font-bold text-white mb-8">{isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}</h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
               {related.map(item => (
                 <ProductCard key={item._id} product={item} />
