@@ -51,7 +51,7 @@ window.scrollTo(0,0);
 }, [id]);
 
   if (!product) return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-purple overflow-x-hidden">
       <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-purple-600"></div>
     </div>
   );
