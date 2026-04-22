@@ -70,7 +70,7 @@ const Footer = () => {
   const creamText = { color: "rgb(235, 235, 235)", textShadow: "0 1px 6px rgb(3, 3, 3)" };
 
   return (
-      <footer className="relative w-full text-white bg-[#14532d] overflow-hidden">
+      <footer className="relative w-full text-white bg-green-950/40 overflow-hidden">
 
   {/* Background Image */}
   <img
