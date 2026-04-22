@@ -79,14 +79,7 @@ const Footer = () => {
   className="w-full h-auto block "
 />
 
-  {/* Overlay */}
-  <div
-  className="absolute inset-0 pointer-events-none"
-  style={{
-    background:
-      "linear-gradient(to bottom, rgba(20,83,45,0.40) 0%, rgba(20,83,45,0.35) 55%, rgba(20,83,45,0.20) 78%, rgba(0,0,0,0.08) 100%)",
-  }}
-/>
+  
 
   {/* Content */}
   <div className="relative z-10 max-w-7xl mx-auto px-6 pt-8 pb-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
