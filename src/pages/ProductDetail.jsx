@@ -327,6 +327,8 @@ className="flex items-center justify-center gap-3 w-full py-3 rounded-xl text-wh
 </a>
 
 </div>
+  {/* TRUST BADGES */} 
+  <div className="grid grid-cols-3 gap-3">  {[   { icon: "🌿", en: "100% Natural", gu: "100% Natural" },   { icon: "🏭", en: "Cold Pressed", gu: "Cold Pressed" },   { icon: "✅", en: "FSSAI Certified", gu: "સર્ટિફાઇડ" }, ].map((b, i) => (    <div     key={i}     className="flex flex-col items-center bg-[#D0F0C0] backdrop-blur rounded-xl p-3 text-center shadow"   >     <span className="text-2xl">{b.icon}</span>      <span className="text-xs font-semibold text-purple-800">       {isGu ? b.gu : b.en}     </span>   </div>  ))} </div> 
 
 </div>
 
