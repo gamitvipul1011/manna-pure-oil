@@ -33,7 +33,7 @@ const catImages = {
 
 const pastelBg = [
  "bg-gradient-to-b from-[#00AEEF] via-[#00AEEF] to-[#0072BC]",  
-  "bg-gradient-to-b from-[#FFFFFF] via-[#F1F5F9] to-[#38BDF8]",
+  "bg-[#38BDF8]",
   "bg-gradient-to-b from-[#FFC107] via-[#FFC107] to-[#FFC107]",
   "bg-gradient-to-b from-[#2C2C2C] via-[#1A1A1A] to-[#000000]",
   "bg-gradient-to-b from-[#7C2D12] via-[#F97316] to-[#7C2D12]",
