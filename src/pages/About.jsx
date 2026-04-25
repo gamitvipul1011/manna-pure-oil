@@ -18,11 +18,35 @@ const About = () => {
   const isGu = i18n.language === "gu";
 
   const values = [
-    { icon: <FaLeaf />, title: isGu ? "શુદ્ધતા" : "Purity" },
-    { icon: <FaHeart />, title: isGu ? "ગુણવત્તા" : "Quality" },
-    { icon: <FaSeedling />, title: isGu ? "પરંપરા" : "Tradition" },
-    { icon: <FaHandHoldingHeart />, title: isGu ? "કાળજી" : "Care" },
-  ];
+  {
+    icon: <FaLeaf />,
+    title: isGu ? "શુદ્ધતા" : "Purity",
+    desc: isGu
+      ? "૧૦૦% કુદરતી અને રસાયણમુક્ત તેલ"
+      : "100% Natural & Chemical-Free Oil",
+  },
+  {
+    icon: <FaHeart />,
+    title: isGu ? "ગુણવત્તા" : "Quality",
+    desc: isGu
+      ? "શ્રેષ્ઠ તેલ માટે ઉત્તમ ગુણવત્તાના બીજ"
+      : "Premium Quality Seeds for the Best Oil",
+  },
+  {
+    icon: <FaSeedling />,
+    title: isGu ? "પરંપરા" : "Tradition",
+    desc: isGu
+      ? "પેઢી દર પેઢી ચાલતી લાકડાની ઘાણી પદ્ધતિ"
+      : "Wood-Pressed Method Passed Through Generations",
+  },
+  {
+    icon: <FaHandHoldingHeart />,
+    title: isGu ? "કાળજી" : "Care",
+    desc: isGu
+      ? "તમારા પરિવારના આરોગ્ય માટે કાળજીપૂર્વક બનાવેલું"
+      : "Made with Care for Your Family’s Health",
+  },
+];
 
   const process = [
     {
