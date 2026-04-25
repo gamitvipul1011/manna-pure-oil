@@ -482,32 +482,42 @@ Through quality, transparency, and dedication, our mission is to make healthy li
 
       {/* VALUES */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+  <div className="max-w-7xl mx-auto px-4 text-center">
 
-          <h2 className="text-4xl font-bold text-white mb-12">
-            {isGu ? "અમારી મૂલ્યો" : "Our Values"}
-          </h2>
+    <h2 className="text-4xl font-bold text-white mb-12">
+      {isGu ? "અમારી મૂલ્યો" : "Our Values"}
+    </h2>
 
-          <div className="grid md:grid-cols-4 gap-8">
+    <div className="grid md:grid-cols-4 gap-8">
 
-            {values.map((v, i) => (
+      {values.map((v, i) => (
 
-              <div
-                key={i}
-                className="bg-[#D0F0C0] backdrop-blur-md p-6 rounded-xl shadow-xl hover:scale-105 hover:-translate-y-2 transition"
-              >
-                <div className="text-3xl text-green-600 mb-3 flex justify-center">
-                  {v.icon}
-                </div>
-                <h3>{v.title}</h3>
-              </div>
-
-            ))}
-
+        <div
+          key={i}
+          className="bg-[#D0F0C0] backdrop-blur-md p-6 rounded-xl shadow-xl hover:scale-105 hover:-translate-y-2 transition"
+        >
+          <div className="text-3xl text-green-600 mb-3 flex justify-center">
+            {v.icon}
           </div>
 
+          {/* Title */}
+          <h3 className="text-lg font-bold text-gray-800">
+            {v.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-sm text-gray-700 mt-2">
+            {v.desc}
+          </p>
+
         </div>
-      </section>
+
+      ))}
+
+    </div>
+
+  </div>
+</section>
 
     </div>
   );
