@@ -484,6 +484,6 @@ activeTab === tab.key
     </div>
 
   </div>
-)};
+)}
 
 export default ProductDetail;
