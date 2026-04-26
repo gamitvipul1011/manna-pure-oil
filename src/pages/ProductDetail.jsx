@@ -437,37 +437,53 @@ activeTab === tab.key
 </div>
 
 {/* RELATED PRODUCTS */}
+{/* RELATED PRODUCTS */}
 
 {related.length > 0 && (
+  <div className="mt-20">
 
-<div className="mt-16">
+    <h2 className="text-3xl font-bold text-white mb-10 text-center">
+      {isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}
+    </h2>
 
-<h2 className="text-3xl font-bold text-white mb-8">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
 
-{isGu
-? "સંબંધિત ઉત્પાદનો"
-: "Related Products"}
+      {related.map(item => (
 
-</h2>
+        <div
+          key={item._id}
+          className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+        >
 
-<div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Product Image */}
+          <div className="h-28 flex items-center justify-center bg-gray-100">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="h-20 object-contain"
+            />
+          </div>
 
-{related.map(item => (
-<ProductCard key={item._id} product={item} />
-))}
+          {/* Product Info */}
+          <div className="p-3 text-center">
 
-</div>
+            <h3 className="text-sm font-semibold text-gray-800 line-clamp-2">
+              {item.name}
+            </h3>
 
-</div>
+            <p className="text-green-600 font-bold mt-1">
+              ₹{item.price}
+            </p>
 
-)}
+          </div>
 
-</div>
+        </div>
 
-</div>
+      ))}
 
-);
+    </div>
 
-};
+  </div>
+)};
 
 export default ProductDetail;
