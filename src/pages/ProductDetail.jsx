@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { useCart } from "../context/CartContext";
 import { products, getWhatsAppOrderUrl } from "../data/products";
-import ProductCard from "../components/ProductCard";
 
 const ProductDetail = () => {
 
@@ -116,7 +115,7 @@ className="flex items-center gap-2 text-orange-100 hover:text-orange-400 transit
 
 <div className="grid lg:grid-cols-2 gap-10">
 
-{/* IMAGE SECTION */}
+{/* IMAGE */}
 
 <div className="space-y-4">
 
@@ -129,8 +128,6 @@ className="max-h-[380px] w-full object-contain transition duration-300 hover:sca
 />
 
 </div>
-
-{/* THUMBNAILS */}
 
 {currentImages.length > 1 && (
 
@@ -234,6 +231,7 @@ selectedSizeIdx === idx
 >
 
 {sv.size}
+
 <span className="block text-xs">
 ₹{sv.price}
 </span>
@@ -327,163 +325,62 @@ className="flex items-center justify-center gap-3 w-full py-3 rounded-xl text-wh
 </a>
 
 </div>
-  {/* TRUST BADGES */} 
-  <div className="grid grid-cols-3 gap-3">  {[   { icon: "🌿", en: "100% Natural", gu: "100% Natural" },   { icon: "🏭", en: "Cold Pressed", gu: "Cold Pressed" },   { icon: "✅", en: "FSSAI Certified", gu: "સર્ટિફાઇડ" }, ].map((b, i) => (    <div     key={i}     className="flex flex-col items-center bg-[#D0F0C0] backdrop-blur rounded-xl p-3 text-center shadow"   >     <span className="text-2xl">{b.icon}</span>      <span className="text-xs font-semibold text-purple-800">       {isGu ? b.gu : b.en}     </span>   </div>  ))} </div> 
 
 </div>
 
-{/* TABS */}
-
-<div className="mt-16">
-
-<div className="flex gap-2 border-b overflow-x-auto">
-
-{tabs.map(tab => (
-
-<button
-key={tab.key}
-onClick={() => setActiveTab(tab.key)}
-className={`px-6 py-3 font-bold ${
-activeTab === tab.key
-? "bg-white text-green-700"
-: "text-gray-400"
-}`}
->
-
-{isGu ? tab.gu : tab.en}
-
-</button>
-
-))}
-
-</div>
-
-<div className="bg-[#D0F0C0] rounded-b-3xl shadow-xl p-4 md:p-8">
-
-{/* DESCRIPTION */}
-
-{activeTab === "description" && (
-
-<div className="flex gap-4">
-
-<GiOilDrum className="text-purple-700 text-xl"/>
-
-<div>
-
-{(isGu && product.descriptionGu
-? product.descriptionGu
-: product.description)
-.split("\n")
-.map((line, i) => (
-
-<p key={i} className="text-gray-700 text-sm md:text-base">
-{line}
-</p>
-
-))}
-
-</div>
-
-</div>
-
-)}
-
-{/* BENEFITS */}
-
-{activeTab === "benefits" && (
-
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-{parseLines(isGu ? product.benefitsGu : product.benefits).map((b, i) => (
-
-<div key={i} className="flex gap-2 p-4 bg-emerald-50 rounded-xl">
-
-<FaLeaf className="text-emerald-500"/>
-
-<span className="text-sm">{b}</span>
-
-</div>
-
-))}
-
-</div>
-
-)}
-
-{/* USES */}
-
-{activeTab === "uses" && (
-
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-{parseLines(isGu ? product.usesGu : product.uses).map((u, i) => (
-
-<div key={i} className="flex gap-2 p-4 bg-amber-50 rounded-xl">
-
-<span className="font-bold">{i+1}.</span>
-
-<span className="text-sm">{u}</span>
-
-</div>
-
-))}
-
-</div>
-
-)}
-
-</div>
-
-</div>
-
-{/* RELATED PRODUCTS */}
 {/* RELATED PRODUCTS */}
 
 {related.length > 0 && (
-  <div className="mt-20">
+<div className="mt-20">
 
-    <h2 className="text-3xl font-bold text-white mb-10 text-center">
-      {isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}
-    </h2>
+<h2 className="text-3xl font-bold text-white mb-10 text-center">
+{isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}
+</h2>
 
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+<div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
 
-      {related.map(item => (
+{related.map(item => (
 
-        <div
-          key={item._id}
-          className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
-        >
+<div
+key={item._id}
+className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+>
 
-          {/* Product Image */}
-          <div className="h-28 flex items-center justify-center bg-gray-100">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="h-20 object-contain"
-            />
-          </div>
+<div className="h-28 flex items-center justify-center bg-gray-100">
+<img
+src={item.image}
+alt={item.name}
+className="h-20 object-contain"
+/>
+</div>
 
-          {/* Product Info */}
-          <div className="p-3 text-center">
+<div className="p-3 text-center">
 
-            <h3 className="text-sm font-semibold text-gray-800 line-clamp-2">
-              {item.name}
-            </h3>
+<h3 className="text-sm font-semibold text-gray-800 line-clamp-2">
+{item.name}
+</h3>
 
-            <p className="text-green-600 font-bold mt-1">
-              ₹{item.price}
-            </p>
+<p className="text-green-600 font-bold mt-1">
+₹{item.price}
+</p>
 
-          </div>
+</div>
 
-        </div>
+</div>
 
-      ))}
+))}
 
-    </div>
+</div>
 
-  </div>
-)};
+</div>
+)}
+
+</div>
+
+</div>
+
+);
+
+};
 
 export default ProductDetail;
