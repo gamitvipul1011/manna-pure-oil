@@ -368,6 +368,27 @@ Known for its intense nutrients and traditional wellness benefits.
 ✔ Traditional Cooking
 ✔ Hair Massage
 ✔ Winter Wellness`,
+    
+  descriptionGu:  `🌿 કોલ્ડ પ્રેસ્ડ કાળા તલનું તેલ
+
+સમૃદ્ધ. શક્તિશાળી. ઊંડું પોષણ આપનાર.
+
+તેમાં ભરપૂર પોષક તત્વો અને પરંપરાગત આરોગ્ય લાભો છે.
+
+✨ શા માટે પસંદ કરો?
+
+🟡 શક્તિશાળી પોષણ આપે  
+🟡 ખનિજ તત્વોમાં સમૃદ્ધ  
+🟡 હાડકાંની તંદુરસ્તી માટે સહાયક  
+🟡 ઘાટા અને સ્વસ્થ વાળ માટે લાભદાયક  
+🟡 ત્વચાની ઊંડાણથી સંભાળ કરે  
+
+🌿 માટે સંપૂર્ણ
+
+✔ આયુર્વેદિક ઉપયોગ માટે  
+✔ પરંપરાગત રસોઈ માટે  
+✔ વાળની મસાજ માટે  
+✔ શિયાળામાં આરોગ્ય માટે `, 
 
     benefits: 'Powerful antioxidants|Hair darkening|Bone strength|Ayurvedic healing|Anti-aging',
     benefitsGu: 'Powerful antioxidants|વાળ કાળા|હાડકા|આયુર્વેદ|Anti-aging',
