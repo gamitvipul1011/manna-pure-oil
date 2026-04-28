@@ -325,10 +325,26 @@ className="flex items-center justify-center gap-3 w-full py-3 rounded-xl text-wh
 : "Order on WhatsApp"}
 
 </a>
+  <div className="grid grid-cols-3 gap-3">
+              {[
+                { icon: "🌿", en: "100% Natural", gu: "100% Natural" },
+                { icon: "🏭", en: "Cold Pressed",  gu: "Cold Pressed" },
+                { icon: "✅", en: "FSSAI Certified", gu: "સર્ટિફાઇડ" },
+              ].map((b, i) => (
+                <div key={i} className="flex flex-col items-center bg-green-50 rounded-xl p-3 text-center">
+                  <span className="text-2xl mb-1">{b.icon}</span>
+                  <span className="text-xs font-semibold text-green-700">{isGu ? b.gu : b.en}</span>
 
-</div>
+          
+                </div>
 
-</div>
+               
+              ))}
+            </div>
+          </div>
+        </div>
+
+
 
 {/* TABS */}
 
