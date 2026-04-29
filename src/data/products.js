@@ -414,7 +414,7 @@ Known for its intense nutrients and traditional wellness benefits.
          images: new URL('../assets/product all/BLACK SESAME/500ml.jpg', import.meta.url).href, 
          images: [
       new URL('../assets/product all/BLACK SESAME/500ml.jpg', import.meta.url).href,
-      new URL('../assets/product all/WHITE SESAME/back.jpg', import.meta.url).href,  
+      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,  
     ],
       },
       { size: '5 Litre', price: 2450, 
