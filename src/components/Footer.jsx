@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logoImg from "../assets/logo.jpeg";
+import warli from "../assets/Warli11.jpeg";
 import {
   FaFacebookF, FaInstagram, FaYoutube,
   FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowRight,
@@ -74,7 +75,7 @@ const Footer = () => {
 
       {/* ── FULL IMAGE — no crop, full height ── */}
       <img
-        src="../assets/Warli11.jpg"
+        src={warli}
         alt="footer background"
         className="w-full block"
         style={{ display: "block", width: "100%", height: "auto" }}
