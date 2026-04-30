@@ -96,7 +96,12 @@ const Footer = () => {
   zIndex: 0,
 }} />
         <div className="max-w-7xl mx-auto w-full px-5 pt-2 pb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
-          style={{ position: "relative", zIndex: 1 }}>
+          style={{
+    position: "relative",
+    zIndex: 1,
+    transform: "translateY(-10px)"
+  }}
+>
 
           {/* COL 1: BRAND */}
           <div>
@@ -222,7 +227,7 @@ const Footer = () => {
         </div>
 
         {/* Warli image clearly visible strip below info grid */}
-        <div style={{ position: "relative", zIndex: 1 }} />
+        <div style={{ minHeight: "140px", position: "relative", zIndex: 1 }} />
       </div>
 
       {/* ── BOTTOM SECTION: Copyright — alag solid section ── */}
