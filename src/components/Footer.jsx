@@ -95,11 +95,11 @@ const Footer = () => {
   pointerEvents: "none",
   zIndex: 0,
 }} />
-        <div className="max-w-7xl mx-auto w-full px-5 pt-2 pb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+        <div className="max-w-7xl mx-auto w-full px-5 pt-4 pb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
           style={{
     position: "relative",
     zIndex: 1,
-    transform: "translateY(-20px)"
+    transform: "translateY(-10px)"
   }}
 >
 
