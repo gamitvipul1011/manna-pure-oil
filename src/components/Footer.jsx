@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logoImg from "../assets/logo5.jpeg";
-import warliImg from "../assets/Warli11.jpg"; // ← આ file તમારી assets folder માં મૂકો
+import logoImg from "../assets/logo.jpeg";
 import {
   FaFacebookF, FaInstagram, FaYoutube,
   FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowRight,
 } from "react-icons/fa";
 
-/* ── Subscribe mini-form ───────────────────────────────────────── */
 const FooterSubscribe = ({ isGu }) => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -29,23 +27,18 @@ const FooterSubscribe = ({ isGu }) => {
   };
 
   return (
-    <div className="mt-4">
-      <p className="text-xs font-bold mb-2 text-yellow-300 drop-shadow">
+    <div className="mt-5">
+      <p className="text-xs font-bold mb-2" style={{ color: "#FFD700", textShadow: "0 1px 6px rgba(0,0,0,0.9)" }}>
         {isGu ? "નવી માહિતી માટે સબ્સ્ક્રાઇબ કરો" : "Subscribe for latest updates"}
       </p>
-      <form onSubmit={handleSub} className="flex rounded-full overflow-hidden shadow-lg border border-yellow-400/50">
+      <form onSubmit={handleSub} className="flex rounded-full overflow-hidden shadow-xl border border-yellow-400/40">
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="email" value={email} onChange={(e) => setEmail(e.target.value)}
           placeholder={isGu ? "તમારો ઈમેલ" : "Enter your email"}
           className="px-4 py-2 w-full text-sm text-black focus:outline-none bg-white/90"
         />
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-yellow-500 hover:bg-orange-500 px-4 text-white transition-all duration-300"
-        >
+        <button type="submit" disabled={loading}
+          className="bg-yellow-500 hover:bg-orange-500 px-4 text-white transition-all duration-300">
           <FaArrowRight />
         </button>
       </form>
@@ -53,7 +46,6 @@ const FooterSubscribe = ({ isGu }) => {
   );
 };
 
-/* ── Main Footer ───────────────────────────────────────────────── */
 const Footer = () => {
   const { i18n } = useTranslation();
   const isGu = i18n.language === "gu";
@@ -74,71 +66,62 @@ const Footer = () => {
     { path: "/faq",                  en: "FAQ",                gu: "FAQ" },
   ];
 
+  const goldText = { color: "#FFD700", textShadow: "0 2px 8px rgba(0,0,0,0.95)" };
+  const creamText = { color: "#FFFDE7", textShadow: "0 1px 6px rgba(0,0,0,0.95)" };
+
   return (
-    <footer className="relative w-full overflow-hidden bg-[#14532d]">
+    <footer className="relative w-full overflow-hidden">
 
-      {/*
-       * ── Warli image = absolute background, fills entire footer ──
-       * object-bottom keeps the figures (bottom of image) always visible
-       */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none select-none">
-        <img
-          src={warliImg}
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover object-bottom"
-          style={{ filter: "brightness(0.50) saturate(0.85)" }}
-        />
-        {/* dark gradient top→bottom so top text is easy to read */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(5,30,10,0.88) 0%, rgba(5,30,10,0.68) 55%, rgba(5,30,10,0.35) 100%)",
-          }}
-        />
-      </div>
+      {/* ── FULL IMAGE — no crop, full height ── */}
+      <img
+        src="/images/warli11.jpg"
+        alt="footer background"
+        className="w-full block"
+        style={{ display: "block", width: "100%", height: "auto" }}
+      />
 
-      {/* ── All content on top (z-10) ── */}
-      <div className="relative z-10">
+      {/* ── OVERLAY ON TOP OF IMAGE — absolute, covers whole footer ── */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, rgba(5,20,5,0.82) 0%, rgba(5,20,5,0.70) 55%, rgba(5,20,5,0.30) 78%, rgba(0,0,0,0.08) 100%)"
+        }}
+      />
 
-        <div className="max-w-7xl mx-auto px-5 pt-8 pb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* ── CONTENT — sits on top of image ── */}
+      <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
 
-          {/* ── 1. BRAND ── */}
+        {/* TOP CONTENT AREA */}
+        <div className="pointer-events-auto max-w-7xl mx-auto w-full px-6 pt-20 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+          {/* COL 1: BRAND */}
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <img
-                src={logoImg}
-                alt="Manna Pure Oil"
-                className="w-14 h-14 rounded-full border-2 border-yellow-400 shadow-lg object-cover"
-              />
-              <span className="text-lg font-black text-yellow-400 drop-shadow-lg leading-tight">
+              <img src={logoImg} alt="Manna Pure Oil"
+                className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400 shadow-lg flex-shrink-0" />
+              <span className="text-lg font-black leading-tight" style={goldText}>
                 {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
               </span>
             </div>
-
-            <p className="text-xs font-semibold text-gray-100 leading-relaxed drop-shadow">
+            <p className="text-xs font-semibold leading-relaxed" style={creamText}>
               {isGu
                 ? "લાકડાની ઘાણીથી કઢેલું શુદ્ધ કોલ્ડ-પ્રેસ્ડ તેલ — ૧૦૦% કુદરતી, કોઈ રસાયણ નહીં."
                 : "Wood-pressed cold extracted pure oil — 100% natural, no chemicals, no heat."}
             </p>
-
             <FooterSubscribe isGu={isGu} />
           </div>
 
-          {/* ── 2. QUICK LINKS ── */}
+          {/* COL 2: QUICK LINKS */}
           <div>
-            <h3 className="text-sm font-black mb-3 border-b border-yellow-400/50 pb-1 uppercase tracking-widest text-yellow-400 drop-shadow">
+            <h3 className="text-sm font-black mb-3 pb-1 border-b border-yellow-400/40 tracking-widest uppercase" style={goldText}>
               {isGu ? "ઝડપી લિંક્સ" : "Quick Links"}
             </h3>
             <ul className="space-y-2">
               {links.map((link, i) => (
                 <li key={i}>
-                  <Link
-                    to={link.path}
-                    className="flex items-center gap-2 text-xs font-bold text-gray-100 hover:text-yellow-300 transition drop-shadow"
-                  >
-                    <span className="text-yellow-400">➜</span>
+                  <Link to={link.path}
+                    className="flex items-center gap-2 text-xs font-bold transition-all duration-300 hover:text-orange-400 hover:translate-x-1"
+                    style={creamText}>
+                    <span style={{ color: "#FFD700" }}>➜</span>
                     {isGu ? link.gu : link.en}
                   </Link>
                 </li>
@@ -146,19 +129,18 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* ── 3. POLICIES ── */}
+          {/* COL 3: POLICIES */}
           <div>
-            <h3 className="text-sm font-black mb-3 border-b border-yellow-400/50 pb-1 uppercase tracking-widest text-yellow-400 drop-shadow">
+            <h3 className="text-sm font-black mb-3 pb-1 border-b border-yellow-400/40 tracking-widest uppercase" style={goldText}>
               {isGu ? "નીતિઓ" : "Policies"}
             </h3>
             <ul className="space-y-2">
               {policies.map((p, i) => (
                 <li key={i}>
-                  <Link
-                    to={p.path}
-                    className="flex items-center gap-2 text-xs font-bold text-gray-100 hover:text-yellow-300 transition drop-shadow"
-                  >
-                    <span className="text-yellow-400">➜</span>
+                  <Link to={p.path}
+                    className="flex items-center gap-2 text-xs font-bold transition-all duration-300 hover:text-orange-400 hover:translate-x-1"
+                    style={creamText}>
+                    <span style={{ color: "#FFD700" }}>➜</span>
                     {isGu ? p.gu : p.en}
                   </Link>
                 </li>
@@ -166,55 +148,56 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* ── 4. CONTACT ── */}
+          {/* COL 4: CONTACT */}
           <div>
-            <h3 className="text-sm font-black mb-3 border-b border-yellow-400/50 pb-1 uppercase tracking-widest text-yellow-400 drop-shadow">
+            <h3 className="text-sm font-black mb-3 pb-1 border-b border-yellow-400/40 tracking-widest uppercase" style={goldText}>
               {isGu ? "સંપર્ક કરો" : "Contact Us"}
             </h3>
-            <ul className="space-y-2 text-xs font-bold text-gray-100">
-              <li className="flex gap-2 items-center drop-shadow">
-                <FaPhone className="text-yellow-400 shrink-0" />
-                +91 78742 39595
-              </li>
-              <li className="flex gap-2 items-center drop-shadow">
-                <FaEnvelope className="text-yellow-400 shrink-0" />
-                mannapureoil@gmail.com
-              </li>
-              <li className="flex gap-2 items-start drop-shadow">
-                <FaMapMarkerAlt className="text-yellow-400 mt-0.5 shrink-0" />
-                {isGu
-                  ? "ડોલારા, વ્યારા, તાપી, ગુજરાત 394655"
-                  : "Dolara, Vyara, Tapi, Gujarat 394655"}
-              </li>
+            <ul className="space-y-2.5">
+              {[
+                { icon: <FaPhone className="shrink-0" style={{ color: "#FFD700" }} />, text: "+91 78742 39595" },
+                { icon: <FaEnvelope className="shrink-0" style={{ color: "#FFD700" }} />, text: "mannapureoil@gmail.com" },
+                { icon: <FaMapMarkerAlt className="shrink-0 mt-0.5" style={{ color: "#FFD700" }} />,
+                  text: isGu ? "ડોલારા, વ્યારા, તાપી, ગુજરાત 394655" : "Dolara, Vyara, Tapi, Gujarat 394655" },
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-xs font-bold" style={creamText}>
+                  {item.icon}
+                  <span>{item.text}</span>
+                </li>
+              ))}
             </ul>
 
-            {/* Social */}
+            {/* Social Icons */}
             <div className="flex gap-3 mt-4">
               {[
-                { href: "https://www.facebook.com/share/1DHTPMPegK/", Icon: FaFacebookF },
-                { href: "https://www.instagram.com/mannapureoil",       Icon: FaInstagram },
-                { href: "https://youtube.com/@mannapureoil",            Icon: FaYoutube },
-              ].map(({ href, Icon }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-8 h-8 flex items-center justify-center rounded-full bg-black/40 border border-yellow-400 text-yellow-400 hover:bg-yellow-500 hover:text-black transition"
-                >
-                  <Icon />
+                { icon: <FaFacebookF />, link: "https://www.facebook.com/share/1DHTPMPegK/" },
+                { icon: <FaInstagram />, link: "https://www.instagram.com/mannapureoil?igsh=MXFlems3Ynd2a2pldg==" },
+                { icon: <FaYoutube />,   link: "https://youtube.com/@mannapureoil?si=5fhVsw1HQxbd6eQQ" },
+              ].map((s, i) => (
+                <a key={i} href={s.link} target="_blank" rel="noreferrer"
+                  className="w-8 h-8 flex items-center justify-center rounded-full border border-yellow-400/60 bg-black/30 hover:bg-orange-500 hover:scale-110 hover:border-orange-400 transition-all duration-300"
+                  style={{ color: "#FFD700" }}>
+                  {s.icon}
                 </a>
               ))}
             </div>
           </div>
+
         </div>
 
-        {/* Copyright */}
-        <div className="text-center py-3 text-xs font-bold text-yellow-400 bg-black/50">
+        {/* BOTTOM COPYRIGHT — exactly at bottom of image */}
+        <div className="pointer-events-auto w-full text-center py-2 text-xs font-bold"
+          style={{
+            color: "#FFD700",
+            textShadow: "0 1px 6px rgba(0,0,0,0.95)",
+            background: "rgba(0,0,0,0.35)"
+          }}>
           © {new Date().getFullYear()} Manna Pure Oil
           {isGu ? " | સર્વ અધિકાર સુરક્ષિત." : " | All Rights Reserved."}
         </div>
+
       </div>
+
     </footer>
   );
 };
