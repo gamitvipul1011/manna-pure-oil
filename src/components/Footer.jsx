@@ -88,13 +88,13 @@ const Footer = () => {
       }}>
         {/* gradient overlay: dark on top (info readable), light on bottom (image clearly visible) */}
         <div style={{
-          position: "absolute",
-          inset: 0,
-  
-          pointerEvents: "none",
-          zIndex: 0,
-        }} />
-        <div className="max-w-7xl mx-auto w-full px-5 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+  position: "absolute",
+  inset: 0,
+  background: "linear-gradient(to bottom, rgba(2,26,14,0.85) 0%, rgba(2,26,14,0.5) 40%, rgba(2,26,14,0.1) 70%, rgba(2,26,14,0) 100%)",
+  pointerEvents: "none",
+  zIndex: 0,
+}} />
+        <div className="max-w-7xl mx-auto w-full px-5 pt-6 pb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
           style={{ position: "relative", zIndex: 1 }}>
 
           {/* COL 1: BRAND */}
@@ -232,7 +232,7 @@ const Footer = () => {
           padding: "14px 1rem",
           fontSize: "0.75rem",
           fontWeight: "700",
-          color: "#FFD700",
+          color: "green950/40",
           textShadow: "0 1px 8px rgba(0,0,0,0.99)",
           borderTop: "1px solid rgba(255, 215, 0, 0.25)",
         }}
