@@ -74,7 +74,7 @@ const Footer = () => {
 
   {/* Background Image */}
   <img
-  src="/images/Varli12.jpg"
+  src="/images/Warli 12.jpg"
   alt="footer bg"
   className="w-full h-auto block "
 />
