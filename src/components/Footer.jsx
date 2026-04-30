@@ -90,11 +90,11 @@ const Footer = () => {
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to bottom, rgba(5,46,22,0.88) 60%, rgba(5,46,22,0.35) 100%)",
+  
           pointerEvents: "none",
           zIndex: 0,
         }} />
-        <div className="max-w-7xl mx-auto w-full px-5 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+        <div className="max-w-7xl mx-auto w-full px-5 pt-8 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
           style={{ position: "relative", zIndex: 1 }}>
 
           {/* COL 1: BRAND */}
