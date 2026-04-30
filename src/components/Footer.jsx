@@ -94,7 +94,7 @@ const Footer = () => {
           pointerEvents: "none",
           zIndex: 0,
         }} />
-        <div className="max-w-7xl mx-auto w-full px-5 pt-0 pb-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+        <div className="max-w-7xl mx-auto w-full px-5 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
           style={{ position: "relative", zIndex: 1 }}>
 
           {/* COL 1: BRAND */}
