@@ -94,7 +94,7 @@ const Footer = () => {
   pointerEvents: "none",
   zIndex: 0,
 }} />
-        <div className="max-w-7xl mx-auto w-full px-5 pt-6 pb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+        <div className="max-w-7xl mx-auto w-full px-5 pt-4 pb-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
           style={{ position: "relative", zIndex: 1 }}>
 
           {/* COL 1: BRAND */}
@@ -232,7 +232,7 @@ const Footer = () => {
           padding: "14px 1rem",
           fontSize: "0.75rem",
           fontWeight: "700",
-          color: "white",
+          color: "green-950/40",
           textShadow: "0 1px 8px rgba(0,0,0,0.99)",
           borderTop: "1px solid rgba(255, 215, 0, 0.25)",
         }}
