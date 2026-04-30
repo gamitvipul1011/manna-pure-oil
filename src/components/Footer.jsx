@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import logoImg from "../assets/logo.jpeg";
-import warli from "../assets/Warli11.jpeg";
+import warli from "../assets/Warli11.jpg";
 import {
   FaFacebookF, FaInstagram, FaYoutube,
   FaPhone, FaEnvelope, FaMapMarkerAlt, FaArrowRight,
