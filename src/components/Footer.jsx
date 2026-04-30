@@ -90,7 +90,7 @@ const Footer = () => {
         <div style={{
   position: "absolute",
   inset: 0,
-  background: "linear-gradient(to bottom, rgba(2,26,14,0.85) 0%, rgba(2,26,14,0.5) 40%, rgba(2,26,14,0.1) 70%, rgba(2,26,14,0) 100%)",
+  background: "green-950/40",
   pointerEvents: "none",
   zIndex: 0,
 }} />
@@ -227,12 +227,12 @@ const Footer = () => {
       {/* ── BOTTOM SECTION: Copyright — alag solid section ── */}
       <div
         style={{
-          backgroundColor: "#021a0e", /* green-950 karta thoda darker */
+          backgroundColor: "green-950/40", /* green-950 karta thoda darker */
           textAlign: "center",
           padding: "14px 1rem",
           fontSize: "0.75rem",
           fontWeight: "700",
-          color: "green950/40",
+          color: "white",
           textShadow: "0 1px 8px rgba(0,0,0,0.99)",
           borderTop: "1px solid rgba(255, 215, 0, 0.25)",
         }}
