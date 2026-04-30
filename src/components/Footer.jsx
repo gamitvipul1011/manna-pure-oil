@@ -99,7 +99,7 @@ const Footer = () => {
           style={{
     position: "relative",
     zIndex: 1,
-    transform: "translateY(-10px)"
+    transform: "translateY(-20px)"
   }}
 >
 
