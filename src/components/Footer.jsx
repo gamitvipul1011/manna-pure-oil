@@ -78,9 +78,24 @@ const Footer = () => {
   return (
     <footer className="w-full">
 
-      {/* ── TOP SECTION: dark green-950 background — Info Grid ── */}
-      <div style={{ backgroundColor: "#052e16" /* green-950 */ }}>
-        <div className="max-w-7xl mx-auto w-full px-5 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      {/* ── TOP SECTION: Warli image + green-950/40 overlay — Info Grid upar ── */}
+      <div style={{
+        position: "relative",
+        backgroundImage: `url(${warli})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+      }}>
+        {/* gradient overlay: dark on top (info readable), light on bottom (image clearly visible) */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to bottom, rgba(5,46,22,0.88) 60%, rgba(5,46,22,0.35) 100%)",
+          pointerEvents: "none",
+          zIndex: 0,
+        }} />
+        <div className="max-w-7xl mx-auto w-full px-5 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          style={{ position: "relative", zIndex: 1 }}>
 
           {/* COL 1: BRAND */}
           <div>
@@ -204,28 +219,9 @@ const Footer = () => {
           </div>
 
         </div>
-      </div>
 
-      {/* ── MIDDLE SECTION: Warli image only — clearly visible ── */}
-      <div
-        style={{
-          position: "relative",
-          backgroundImage: `url(${warli})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          minHeight: "160px",
-        }}
-      >
-        {/* light green tint overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundColor: "rgba(5, 46, 22, 0.45)",
-            pointerEvents: "none",
-          }}
-        />
+        {/* Warli image clearly visible strip below info grid */}
+        <div style={{ minHeight: "140px", position: "relative", zIndex: 1 }} />
       </div>
 
       {/* ── BOTTOM SECTION: Copyright — alag solid section ── */}
