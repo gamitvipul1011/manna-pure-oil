@@ -222,7 +222,7 @@ const Footer = () => {
         </div>
 
         {/* Warli image clearly visible strip below info grid */}
-        <div style={{ minHeight: "140px", position: "relative", zIndex: 1 }} />
+        <div style={{ position: "relative", zIndex: 1 }} />
       </div>
 
       {/* ── BOTTOM SECTION: Copyright — alag solid section ── */}
