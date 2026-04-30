@@ -73,9 +73,24 @@ const Footer = () => {
   return (
     <footer className="w-full">
 
-      {/* ── 1. INFORMATION — bilkul upar, green-950 solid bg ── */}
-      <div style={{ backgroundColor: "rgba(5, 46, 22, 0.97)" }}>
-        <div className="max-w-7xl mx-auto w-full px-5 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      {/* ── SINGLE BLOCK — warli image background, content upar ── */}
+      <div style={{
+        position: "relative",
+        backgroundImage: `url(${warli})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+        overflow: "hidden",
+      }}>
+        {/* green-950/40 overlay */}
+        <div style={{
+          position: "absolute", inset: 0,
+          backgroundColor: "rgba(5, 46, 22, 0.40)",
+          pointerEvents: "none", zIndex: 0,
+        }} />
+
+        <div className="max-w-7xl mx-auto w-full px-5 pt-10 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          style={{ position: "relative", zIndex: 1 }}>
 
           {/* COL 1: BRAND */}
           <div>
@@ -165,45 +180,18 @@ const Footer = () => {
           </div>
 
         </div>
-      </div>
 
-      {/* ── 2. WARLI IMAGE — niche, clearly visible ── */}
-      {/* position:relative is required so copyright absolute works inside */}
-      <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
-
-        {/* Warli image — full width, natural height, slightly dark */}
-        <img
-          src={warli}
-          alt="Warli Art"
-          style={{
-            display: "block",
-            width: "100%",
-            height: "auto",
-            filter: "brightness(0.55) contrast(1.1)",
-          }}
-        />
-
-        {/* green-950/40 overlay on image */}
+        {/* COPYRIGHT — image na bottom thi jarak upar */}
         <div style={{
-          position: "absolute",
-          inset: 0,
-          backgroundColor: "rgba(5, 46, 22, 0.40)",
-          pointerEvents: "none",
-        }} />
-
-        {/* COPYRIGHT — jarak upar thi, image ni andar float kare che */}
-        <div style={{
-          position: "absolute",
-          left: 0,
-          right: 0,
-          bottom: "clamp(24px, 5%, 48px)",   /* responsive: mobile 24px, desktop 48px upar */
+          position: "relative", zIndex: 1,
           textAlign: "center",
+          padding: "0 1rem",
+          paddingBottom: "clamp(24px, 5%, 48px)",
+          paddingTop: "clamp(16px, 3%, 32px)",
           fontSize: "0.75rem",
           fontWeight: "700",
           color: "#FFD700",
           textShadow: "0 1px 8px rgba(0,0,0,0.99)",
-          zIndex: 2,
-          padding: "0 1rem",
         }}>
           © {new Date().getFullYear()} Manna Pure Oil
           {isGu ? " | સર્વ અધિકાર સુરક્ષિત." : " | All Rights Reserved."}
