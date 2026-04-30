@@ -79,14 +79,14 @@ const Footer = () => {
     <footer className="w-full">
 
       {/* ── TOP SECTION: Warli image + green-950/40 overlay — Info Grid upar ── */}
-      style={{
+    <div style={{
   position: "relative",
   backgroundImage: `url(${warli})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   filter: "contrast(1.1) brightness(1.05)",
-}}
+}}>
         {/* gradient overlay: dark on top (info readable), light on bottom (image clearly visible) */}
        <div style={{
   position: "absolute",
