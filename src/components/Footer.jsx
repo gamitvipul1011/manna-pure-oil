@@ -76,7 +76,11 @@ const Footer = () => {
       {/* ══════════════════════════════════════════════════════
           SECTION 1 — INFORMATION (upar, dark solid background)
       ══════════════════════════════════════════════════════ */}
-      <div style={{ background: "linear-gradient(135deg, #0a1a08 0%, #0f2a0c 50%, #0a1a08 100%)" }}>
+      {/*
+        Warli image na colors: earthy brown #3b2010, warm tan #7a4a1e, muted cream #c9a06a
+        Same tones use karya che so information section image sathe seamlessly blend thay
+      */}
+      <div style={{ background: "linear-gradient(135deg, #2a1608 0%, #3d2010 40%, #4a2812 60%, #2a1608 100%)" }}>
         <div className="max-w-7xl mx-auto w-full px-5 pt-12 pb-10
                         grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
@@ -203,12 +207,7 @@ const Footer = () => {
 
         </div>
 
-        {/* Golden divider line — info section ane image vachhe */}
-        <div style={{
-          height: "2px",
-          background: "linear-gradient(to right, transparent, #FFD700 20%, #FFD700 80%, transparent)",
-          opacity: 0.5,
-        }} />
+
       </div>
 
       {/* ══════════════════════════════════════════════════════
@@ -246,10 +245,9 @@ const Footer = () => {
       <div
         className="w-full text-center py-3 text-xs font-bold"
         style={{
-          background: "#050f05",
+          background: "#1e0e04",
           color: "#FFD700",
           textShadow: "0 1px 6px rgba(0,0,0,0.95)",
-          borderTop: "1px solid rgba(255,215,0,0.25)",
         }}
       >
         © {new Date().getFullYear()} Manna Pure Oil
