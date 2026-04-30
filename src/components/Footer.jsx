@@ -79,18 +79,19 @@ const Footer = () => {
     <footer className="w-full">
 
       {/* ── TOP SECTION: Warli image + green-950/40 overlay — Info Grid upar ── */}
-      <div style={{
-        position: "relative",
-        backgroundImage: `url(${warli})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center top",
-        backgroundRepeat: "no-repeat",
-      }}>
+      style={{
+  position: "relative",
+  backgroundImage: `url(${warli})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  filter: "contrast(1.1) brightness(1.05)",
+}}
         {/* gradient overlay: dark on top (info readable), light on bottom (image clearly visible) */}
-        <div style={{
+       <div style={{
   position: "absolute",
   inset: 0,
-  background: "green-950/40",
+  backgroundColor: "rgba(2, 26, 14, 0.25)", // green-950/40 equivalent
   pointerEvents: "none",
   zIndex: 0,
 }} />
@@ -226,17 +227,17 @@ const Footer = () => {
 
       {/* ── BOTTOM SECTION: Copyright — alag solid section ── */}
       <div
-        style={{
-          backgroundColor: "green-950/40", /* green-950 karta thoda darker */
-          textAlign: "center",
-          padding: "14px 1rem",
-          fontSize: "0.75rem",
-          fontWeight: "700",
-          color: "green-950/40",
-          textShadow: "0 1px 8px rgba(0,0,0,0.99)",
-          borderTop: "1px solid rgba(255, 215, 0, 0.25)",
-        }}
-      >
+  style={{
+    backgroundColor: "#064e3b",
+    textAlign: "center",
+    padding: "14px 1rem",
+    fontSize: "0.75rem",
+    fontWeight: "700",
+    color: "#FFD700",
+    textShadow: "0 1px 8px rgba(0,0,0,0.9)",
+    borderTop: "1px solid rgba(255, 215, 0, 0.3)",
+  }}
+>
         © {new Date().getFullYear()} Manna Pure Oil
         {isGu ? " | સર્વ અધિકાર સુરક્ષિત." : " | All Rights Reserved."}
       </div>
