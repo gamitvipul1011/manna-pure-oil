@@ -74,7 +74,7 @@ const Footer = () => {
 
       {/* ── FULL IMAGE — no crop, full height ── */}
       <img
-        src="/images/warli11.jpg"
+        src="../assets/Warli11.jpg"
         alt="footer background"
         className="w-full block"
         style={{ display: "block", width: "100%", height: "auto" }}
