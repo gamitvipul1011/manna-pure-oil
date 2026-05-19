@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 const testimonials = [
 {
-nameGu: "રમેશ પટેલ",
+nameGu: "મેહુલ વસાવા",
 nameEn: "Mehul Vasava",
 image: "/images/mehul.jpg",
 textGu: "ઉત્તમ……ગુણવત્તા…..👌 .",
