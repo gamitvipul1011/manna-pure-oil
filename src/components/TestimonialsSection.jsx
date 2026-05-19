@@ -10,7 +10,7 @@ const testimonials = [
 {
 nameGu: "મેહુલ વસાવા",
 nameEn: "Mehul Vasava",
-image: "/images/mehul.jpg",
+image: "/images/Mehul.jpg",
 textGu: "ઉત્તમ……ગુણવત્તા…..👌 .",
 textEn: "Excellent……Quality…..👌."
 },
