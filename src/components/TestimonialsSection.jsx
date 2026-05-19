@@ -9,10 +9,10 @@ import "swiper/css/pagination";
 const testimonials = [
 {
 nameGu: "રમેશ પટેલ",
-nameEn: "Ramesh Patel",
-image: "/images/user1.jpeg",
-textGu: "મન્ના પ્યોર ઓઈલ ખરેખર શુદ્ધ અને સ્વાદિષ્ટ છે. હવે અમે બીજું તેલ વાપરતા નથી.",
-textEn: "Manna Pure Oil is truly pure and tasty. We no longer use any other oil."
+nameEn: "Mehul Vasava",
+image: "/images/mehul.jpg",
+textGu: "ઉત્તમ……ગુણવત્તા…..👌 .",
+textEn: "Excellent……Quality…..👌."
 },
 
 {
