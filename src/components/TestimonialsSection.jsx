@@ -18,7 +18,7 @@ textEn: "Excellent……Quality…..👌."
 {
 nameGu: " તરુણ ચૌધરી",
 nameEn: "Tarun Chaudhari",
-image: "/images/user2.jpeg",
+image: "/images/Tarun.jpg",
 textGu: "શુદ્ધ ઠંડુ દબાયેલું તેલ અને શુદ્ધ કુદરતી રીત.",
 textEn: "Pure cold pressed oil and pure naturally."
 },
@@ -26,21 +26,21 @@ textEn: "Pure cold pressed oil and pure naturally."
 {
 nameGu: "ભાવિન રાઠોડ",
 nameEn: "BHAVIN RATHOD",
-image: "/images/user2.jpeg",
+image: "/images/Bhavin.jpg",
 textGu: "ઘર માટે સલામત અને આરોગ્યપ્રદ તેલ. બાળકો માટે ખૂબ જ સારું.",
 textEn: "Safe and healthy oil for family. Very good for children."
 },
   {
 nameGu: " સની",
 nameEn: " sunny",
-image: "/images/user2.jpeg",
+image: "/images/sunny.jpg",
 textGu: "સારા સ્વાસ્થ્ય માટે ઉત્તમ ઉત્પાદન.",
 textEn: "Great product for good health."
 },
   {
 nameGu: "વાસુદેવ પ્રજાપતિ",
 nameEn: "vasudev Prajapati",
-image: "/images/user2.jpeg",
+image: "/images/Vasu.jpg",
 textGu: "ઘર માટે સલામત અને આરોગ્યપ્રદ તેલ. બાળકો માટે ખૂબ જ સારું.",
 textEn: "Safe and healthy oil for family. Very good for children."
 },
