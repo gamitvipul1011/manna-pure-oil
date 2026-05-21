@@ -33,7 +33,7 @@ textEn: "Safe and healthy oil for family. Very good for children."
   {
 nameGu: " સની",
 nameEn: " sunny",
-image: "/images/sunny.jpg",
+image: "/images/Sunny.jpg",
 textGu: "સારા સ્વાસ્થ્ય માટે ઉત્તમ ઉત્પાદન.",
 textEn: "Great product for good health."
 },
