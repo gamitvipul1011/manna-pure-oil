@@ -16,20 +16,35 @@ textEn: "Excellent……Quality…..👌."
 },
 
 {
-nameGu: "નીતા શાહ",
-nameEn: "Neeta Shah",
+nameGu: " તરુણ ચૌધરી",
+nameEn: "Tarun Chaudhari",
+image: "/images/user2.jpeg",
+textGu: "શુદ્ધ ઠંડુ દબાયેલું તેલ અને શુદ્ધ કુદરતી રીત.",
+textEn: "Pure cold pressed oil and pure naturally."
+},
+  
+{
+nameGu: "ભાવિન રાઠોડ",
+nameEn: "BHAVIN RATHOD",
+image: "/images/user2.jpeg",
+textGu: "ઘર માટે સલામત અને આરોગ્યપ્રદ તેલ. બાળકો માટે ખૂબ જ સારું.",
+textEn: "Safe and healthy oil for family. Very good for children."
+},
+  {
+nameGu: " સની",
+nameEn: " sunny",
+image: "/images/user2.jpeg",
+textGu: "ઘર માટે સલામત અને આરોગ્યપ્રદ તેલ. બાળકો માટે ખૂબ જ સારું.",
+textEn: "Safe and healthy oil for family. Very good for children."
+},
+  {
+nameGu: "વાસુદેવ પ્રજાપતિ",
+nameEn: "vasudev Prajapati",
 image: "/images/user2.jpeg",
 textGu: "ઘર માટે સલામત અને આરોગ્યપ્રદ તેલ. બાળકો માટે ખૂબ જ સારું.",
 textEn: "Safe and healthy oil for family. Very good for children."
 },
 
-{
-nameGu: "અજય દેસાઈ",
-nameEn: "Ajay Desai",
-image: "/images/user3.jpeg",
-textGu: "કોલ્ડ પ્રેસ્ડ તેલનો સાચો અનુભવ મન્ના પ્યોર ઓઈલ સાથે થયો.",
-textEn: "Experienced real cold-pressed oil with Manna Pure Oil."
-}
 ];
 
 const TestimonialsSection = () => {
