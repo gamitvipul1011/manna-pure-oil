@@ -34,8 +34,8 @@ textEn: "Safe and healthy oil for family. Very good for children."
 nameGu: " સની",
 nameEn: " sunny",
 image: "/images/user2.jpeg",
-textGu: "ઘર માટે સલામત અને આરોગ્યપ્રદ તેલ. બાળકો માટે ખૂબ જ સારું.",
-textEn: "Safe and healthy oil for family. Very good for children."
+textGu: "સારા સ્વાસ્થ્ય માટે ઉત્તમ ઉત્પાદન.",
+textEn: "Great product for good health."
 },
   {
 nameGu: "વાસુદેવ પ્રજાપતિ",
