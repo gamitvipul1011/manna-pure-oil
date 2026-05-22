@@ -41,7 +41,7 @@ Crafted from the finest handpicked groundnuts, this cold pressed oil is extracte
 
 <br/><br/>
   ✨ Why Choose It
-
+<br/> <br/>
 
 🟡 Heart-Caring Goodness
 Rich in healthy fats that support a balanced and active lifestyle
@@ -60,6 +60,7 @@ Easy to digest, perfect for everyday family meals
 <br/><br/>
 
   🌿 Perfect For
+  <br/><br/>
 
 ✔ Everyday Cooking – Frying, sautéing, and traditional recipes
 
@@ -79,8 +80,7 @@ Easy to digest, perfect for everyday family meals
 
 <br/><br/>
   ✨ શા માટે પસંદ કરશો?
-
-
+<br/><br/>
 
 🟡 હૃદય માટે લાભદાયક
 સારા ફેટથી ભરપૂર, જે હેલ્ધી લાઈફસ્ટાઈલ માટે મદદરૂપ
@@ -98,8 +98,8 @@ Easy to digest, perfect for everyday family meals
 દૈનિક ખોરાક માટે ઉત્તમ.
 
 <br/><br/>
-
-  🌿 ઉપયોગ માટે યોગ્ય
+🌿 ઉપયોગ માટે યોગ્ય
+<br/><br/>
 
 ✔ દૈનિક રસોઈ
 ✔ પરંપરાગત વાનગીઓ
