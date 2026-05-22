@@ -73,9 +73,14 @@ const ProductCard = ({ product }) => {
           </div>
 
            
-<p className="text-gray-600 text-xs mb-3 line-clamp-2">
-  {isGu && product.descriptionGu ? product.descriptionGu : product.description}
-</p>
+<div
+  className="text-gray-600 text-xs mb-3 whitespace-pre-line"
+  dangerouslySetInnerHTML={{
+    __html: isGu && product.descriptionGu
+      ? product.descriptionGu
+      : product.description,
+  }}
+></div>
           <div className="flex items-center justify-between pt-3 border-t border-gray-200">
             <div>
               <p className="text-xs text-gray-400">{isGu ? 'થી શરૂ' : 'From'}</p>
