@@ -72,9 +72,14 @@ const ProductCard = ({ product }) => {
             <span className="text-xs text-gray-400 ml-1">(4.8)</span>
           </div>
 
-          <p className="text-gray-600 text-xs mb-3 line-clamp-2">
-            {isGu && product.descriptionGu ? product.descriptionGu : product.description}
-          </p>
+          <div
+  className="text-gray-600 text-xs mb-3 line-clamp-2"
+  dangerouslySetInnerHTML={{
+    __html: isGu && product.descriptionGu
+      ? product.descriptionGu
+      : product.description,
+  }}
+/>
 
           <div className="flex items-center justify-between pt-3 border-t border-gray-200">
             <div>
