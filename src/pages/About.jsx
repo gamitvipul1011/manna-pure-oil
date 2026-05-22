@@ -579,7 +579,7 @@ Through quality, transparency, and dedication, our mission is to make healthy li
       >
         <div className="h-64 flex items-center justify-center bg-white p-6">
           <img
-            src="/images/Msme.jpg"
+            src="/images/Msme.png"
             alt="MSME"
             className="h-full object-contain hover:scale-105 transition duration-500"
           />
@@ -604,7 +604,7 @@ Through quality, transparency, and dedication, our mission is to make healthy li
       >
         <div className="h-64 flex items-center justify-center bg-white p-6">
           <img
-            src="/images/Fssa.jpg"
+            src="/images/Fssai.png"
             alt="FSSAI"
             className="h-full object-contain hover:scale-105 transition duration-500"
           />
@@ -629,7 +629,7 @@ Through quality, transparency, and dedication, our mission is to make healthy li
       >
         <div className="h-64 flex items-center justify-center bg-white p-6">
           <img
-            src="/images/Trade.jpg"
+            src="/images/Trade.png"
             alt="Trademark"
             className="h-full object-contain hover:scale-105 transition duration-500"
           />
