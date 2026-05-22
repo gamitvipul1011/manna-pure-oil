@@ -39,9 +39,9 @@ Pure. Natural. Nourishing.
 
 Crafted from the finest handpicked groundnuts, this cold pressed oil is extracted using traditional methods that preserve its natural goodness. Free from heat and chemicals, it retains its rich aroma, golden color, and essential nutrients—just as nature intended.
 
-<div className="mt-6">
+<br/><br/>
   ✨ Why Choose It
-</div>
+
 
 🟡 Heart-Caring Goodness
 Rich in healthy fats that support a balanced and active lifestyle
@@ -57,10 +57,9 @@ Nourishes skin deeply and promotes healthy, shiny hair
 
 🟡 Gentle & Wholesome
 Easy to digest, perfect for everyday family meals
+<br/><br/>
 
-<div className="mt-6">
   🌿 Perfect For
-</div>
 
 ✔ Everyday Cooking – Frying, sautéing, and traditional recipes
 
@@ -78,9 +77,9 @@ Easy to digest, perfect for everyday family meals
 
 શ્રેષ્ઠ ગુણવત્તાની મગફળીમાંથી પરંપરાગત કોલ્ડ પ્રેસ પદ્ધતિથી બનાવવામાં આવેલ આ તેલ તેની કુદરતી ગુણવત્તા જાળવી રાખે છે. ગરમી અને કેમિકલ વગર તૈયાર થયેલું આ તેલ તેની સુગંધ, સોનેરી રંગ અને પોષક તત્વોને સાચવે છે — બિલકુલ કુદરત પ્રમાણે.
 
-<div className="mt-6">
+<br/><br/>
   ✨ શા માટે પસંદ કરશો?
-</div>
+
 
 
 🟡 હૃદય માટે લાભદાયક
@@ -98,10 +97,10 @@ Easy to digest, perfect for everyday family meals
 🟡 હળવું અને પાચનમાં સરળ
 દૈનિક ખોરાક માટે ઉત્તમ.
 
+<br/><br/>
 
-<div className="mt-6">
   🌿 ઉપયોગ માટે યોગ્ય
-</div>
+
 ✔ દૈનિક રસોઈ
 ✔ પરંપરાગત વાનગીઓ
 ✔ સ્વસ્થ જીવનશૈલી
