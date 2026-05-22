@@ -39,7 +39,7 @@ Pure. Natural. Nourishing.
 
 Crafted from the finest handpicked groundnuts, this cold pressed oil is extracted using traditional methods that preserve its natural goodness. Free from heat and chemicals, it retains its rich aroma, golden color, and essential nutrients—just as nature intended.
 
-\n \n
+\n \n \n
   ✨ Why Choose It
 \n\n
 
