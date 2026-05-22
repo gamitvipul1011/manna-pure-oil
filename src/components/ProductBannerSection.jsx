@@ -22,7 +22,7 @@ const ProductBannerSection = () => {
 
   <Swiper
     modules={[Autoplay, Pagination]}
-    autoplay={{ delay: 4000, disableOnInteraction: false }}
+    autoplay={{ delay: 6000, disableOnInteraction: false }}
     pagination={{ clickable: true }}
     loop
     className="w-full h-full"
