@@ -554,7 +554,7 @@ Through quality, transparency, and dedication, our mission is to make healthy li
       >
         <div className="h-64 flex items-center justify-center bg-white p-6">
           <img
-            src="/images/makeindia.jpg"
+            src="/images/Makeindia.jpg"
             alt="Make In India"
             className="h-full object-contain hover:scale-105 transition duration-500"
           />
