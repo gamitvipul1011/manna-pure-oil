@@ -518,7 +518,136 @@ Through quality, transparency, and dedication, our mission is to make healthy li
 
   </div>
 </section>
+     
+{/* CERTIFICATES SECTION */}
+<section className="py-24">
+  <div className="max-w-7xl mx-auto px-4 text-center">
 
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+
+      <h2 className="text-4xl font-bold text-white mb-4">
+        🏆 {isGu ? "પ્રમાણપત્રો" : "Our Certifications"}
+      </h2>
+
+      <p className="text-gray-200 max-w-2xl mx-auto mb-14 text-lg">
+        {isGu
+          ? "સરકારી માન્યતા અને વિશ્વાસ સાથે ગુણવત્તા પ્રત્યે અમારી પ્રતિબદ્ધતા."
+          : "Our commitment to quality backed by trusted government certifications."}
+      </p>
+
+    </motion.div>
+
+    {/* CERTIFICATE CARDS */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      {/* CARD 1 */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        whileHover={{ y: -10 }}
+        className="bg-[#D0F0C0] rounded-3xl overflow-hidden shadow-2xl border border-green-100"
+      >
+        <div className="h-64 flex items-center justify-center bg-white p-6">
+          <img
+            src="/images/makeindia.jpg"
+            alt="Make In India"
+            className="h-full object-contain hover:scale-105 transition duration-500"
+          />
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-green-900">
+            Make In India
+          </h3>
+
+          <div className="w-16 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+      </motion.div>
+
+      {/* CARD 2 */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        whileHover={{ y: -10 }}
+        className="bg-[#D0F0C0] rounded-3xl overflow-hidden shadow-2xl border border-green-100"
+      >
+        <div className="h-64 flex items-center justify-center bg-white p-6">
+          <img
+            src="/images/Msme.jpg"
+            alt="MSME"
+            className="h-full object-contain hover:scale-105 transition duration-500"
+          />
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-green-900">
+            MSME Registered
+          </h3>
+
+          <div className="w-16 h-1 bg-green-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+      </motion.div>
+
+      {/* CARD 3 */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        whileHover={{ y: -10 }}
+        className="bg-[#D0F0C0] rounded-3xl overflow-hidden shadow-2xl border border-green-100"
+      >
+        <div className="h-64 flex items-center justify-center bg-white p-6">
+          <img
+            src="/images/Fssa.jpg"
+            alt="FSSAI"
+            className="h-full object-contain hover:scale-105 transition duration-500"
+          />
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-green-900">
+            FSSAI Certified
+          </h3>
+
+          <div className="w-16 h-1 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+      </motion.div>
+
+      {/* CARD 4 */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        whileHover={{ y: -10 }}
+        className="bg-[#D0F0C0] rounded-3xl overflow-hidden shadow-2xl border border-green-100"
+      >
+        <div className="h-64 flex items-center justify-center bg-white p-6">
+          <img
+            src="/images/Trade.jpg"
+            alt="Trademark"
+            className="h-full object-contain hover:scale-105 transition duration-500"
+          />
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-green-900">
+            Trademark Registered
+          </h3>
+
+          <div className="w-16 h-1 bg-red-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+      </motion.div>
+
+    </div>
+
+  </div>
+</section>
     </div>
   );
 };
