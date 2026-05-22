@@ -390,8 +390,15 @@ activeTab === tab.key
 .split("\n")
 .map((line, i) => (
 
-<p key={i} className="text-gray-700 text-sm md:text-base">
-{line}
+<p
+  key={i}
+  className={`text-gray-700 text-sm md:text-base ${
+    line.includes("✨") || line.includes("🌿")
+      ? "mt-6 font-bold text-lg"
+      : "mt-2"
+  }`}
+>
+  {line}
 </p>
 
 ))}
