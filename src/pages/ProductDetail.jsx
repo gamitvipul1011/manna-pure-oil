@@ -382,21 +382,15 @@ activeTab === tab.key
 
 <GiOilDrum className="text-purple-700 text-xl"/>
 
-<div>
-
-{(isGu && product.descriptionGu
-? product.descriptionGu
-: product.description)
-.split("\n")
-.map((line, i) => (
-
-<p key={i} className="text-gray-700 text-sm md:text-base">
-{line}
-</p>
-
-))}
-
-</div>
+<div
+  className="text-gray-700 text-sm md:text-base leading-7"
+  dangerouslySetInnerHTML={{
+    __html:
+      isGu && product.descriptionGu
+        ? product.descriptionGu
+        : product.description,
+  }}
+></div>
 
 </div>
 
