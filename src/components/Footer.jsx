@@ -113,7 +113,7 @@ const Footer = () => {
 
   return (
     <footer className="w-full mt-12">
-      {/* Main Footer with Full Warli Background */}
+      {/* Main Footer Background Section */}
       <div
         className="relative overflow-hidden"
         style={{
@@ -123,16 +123,14 @@ const Footer = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-green-950/60 to-black/60 z-0" />
-
-        {/* Optional extra soft overlay */}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-green-950/55 to-black/50 z-0" />
         <div className="absolute inset-0 bg-black/20 z-0" />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
+        {/* Footer Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 lg:pt-14 pb-6 sm:pb-8 lg:pb-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-            {/* COL 1: BRAND */}
+            {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img
@@ -154,7 +152,7 @@ const Footer = () => {
               <FooterSubscribe isGu={isGu} />
             </div>
 
-            {/* COL 2: QUICK LINKS */}
+            {/* Quick Links */}
             <div>
               <h3 className="text-sm sm:text-base font-black mb-4 pb-2 border-b border-yellow-400/40 tracking-widest uppercase text-yellow-300">
                 {isGu ? "ઝડપી લિંક્સ" : "Quick Links"}
@@ -177,7 +175,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* COL 3: POLICIES */}
+            {/* Policies */}
             <div>
               <h3 className="text-sm sm:text-base font-black mb-4 pb-2 border-b border-yellow-400/40 tracking-widest uppercase text-yellow-300">
                 {isGu ? "નીતિઓ" : "Policies"}
@@ -200,7 +198,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* COL 4: CONTACT */}
+            {/* Contact */}
             <div>
               <h3 className="text-sm sm:text-base font-black mb-4 pb-2 border-b border-yellow-400/40 tracking-widest uppercase text-yellow-300">
                 {isGu ? "સંપર્ક કરો" : "Contact Us"}
@@ -251,15 +249,17 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Decorative spacing so Warli image feels full in footer */}
-          <div className="h-10 sm:h-14 lg:h-20" />
+          {/* Image visible spacing */}
+          <div className="h-6 sm:h-8 lg:h-10" />
         </div>
       </div>
 
-      {/* Bottom copyright */}
-      <div className="bg-emerald-900 text-center px-4 py-4 text-xs sm:text-sm font-bold text-yellow-300 border-t border-yellow-400/30">
-        © {new Date().getFullYear()} Manna Pure Oil{" "}
-        {isGu ? "| સર્વ અધિકાર સુરક્ષિત." : "| All Rights Reserved."}
+      {/* Bottom Copyright - Separate solid section */}
+      <div className="relative z-30 w-full bg-[#064e3b] border-t border-yellow-400/30 shadow-[0_-2px_10px_rgba(0,0,0,0.25)]">
+        <p className="m-0 text-center px-4 py-3 text-[11px] sm:text-sm font-bold text-yellow-300 leading-none -translate-y-[1px]">
+          © {new Date().getFullYear()} Manna Pure Oil{" "}
+          {isGu ? "| સર્વ અધિકાર સુરક્ષિત." : "| All Rights Reserved."}
+        </p>
       </div>
     </footer>
   );
