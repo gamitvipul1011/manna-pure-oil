@@ -229,8 +229,8 @@ const Footer = () => {
                   <FaMapMarkerAlt className="shrink-0 mt-1 text-[#FACC15]" />
                   <span>
                     {isGu
-                      ? "ડોલારા, વ્યારા, તાપી, ગુજરાત 394655"
-                      : "Dolara, Vyara, Tapi, Gujarat 394655"}
+                      ? "ડોલારા, વ્યારા-આહવા રોડ, તા-વ્યારા, જિ-તાપી,૩૯૪૬૫૫"
+                      : "Dolara, Vyara-Ahwa Road,Ta-Vyara, Di-Tapi,394655"}
                   </span>
                 </li>
               </ul>
