@@ -139,14 +139,15 @@ const ProductDetail = () => {
         </div>
       )}
 
-      <img
-        src={displayImage}
-        alt={product.name}
-        onLoad={() => setImgLoaded(true)}
-        className={`transition-all duration-500 hover:scale-[1.02]
-        object-contain w-full
-        h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]
-        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+     <img
+  src={displayImage}
+  alt={product.name}
+  onLoad={() => setImgLoaded(true)}
+  className={`transition-all duration-500 hover:scale-[1.02]
+  object-contain
+  w-auto max-w-full
+  h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px]
+  ${imgLoaded ? "opacity-100" : "opacity-0"}`}
       />
     </div>
   </div>
