@@ -123,16 +123,16 @@ const Footer = () => {
   return (
     <footer className="w-full mt-12">
       {/* TOP SECTION: Warli image full visible */}
-      <div
-        className="relative overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.62), rgba(6,78,59,0.35), rgba(0,0,0,0.28)), url(${warli})`,
-          backgroundSize: "cover, contain",
-          backgroundPosition: "center, center bottom",
-          backgroundRepeat: "no-repeat, no-repeat",
-          backgroundColor: "#052e24",
-        }}
-      >
+     <div
+  className="relative overflow-hidden"
+  style={{
+    backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.58), rgba(6,78,59,0.32), rgba(0,0,0,0.22)), url(${warli})`,
+    backgroundSize: "cover, 100% auto",
+    backgroundPosition: "center, center bottom",
+    backgroundRepeat: "no-repeat, no-repeat",
+    backgroundColor: "#052e24",
+  }}
+>
         <div
           className="max-w-7xl mx-auto w-full px-5 pt-8 sm:pt-10 lg:pt-12 pb-10 sm:pb-14 lg:pb-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
           style={{ position: "relative", zIndex: 1 }}
