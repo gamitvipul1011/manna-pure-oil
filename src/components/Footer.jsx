@@ -12,7 +12,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
-import logoImg from "../assets/logo.jpeg";
+import logoImg from "../assets/logo5.jpeg";
 import warli from "../assets/Warli11.jpg";
 
 const FooterSubscribe = ({ isGu }) => {
