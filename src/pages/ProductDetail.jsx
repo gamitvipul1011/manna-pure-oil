@@ -108,51 +108,51 @@ const ProductDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-          {/* ========== IMAGE SECTION ========== */}
-          <div className="space-y-4">
-            {/* MAIN IMAGE - BIGGER */}
-            <div className="relative rounded-2xl sm:rounded-3xl shadow-lg overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50 mx-auto w-full">
-              {!imgLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-purple-600"></div>
-                </div>
-              )}
-              <img
-                src={displayImage}
-                alt={product.name}
-                onLoad={() => setImgLoaded(true)}
-                className={`w-full object-contain transition-all duration-500 hover:scale-105 
-                  h-[320px] sm:h-[420px] md:h-[480px] lg:h-[520px] xl:h-[560px]
-                  ${imgLoaded ? "opacity-100" : "opacity-0"}`}
-              />
-            </div>
+         {/* ========== IMAGE SECTION ========== */}
+<div className="space-y-4">
+  {/* MAIN IMAGE - Transparent BG to match website */}
+  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden mx-auto w-full flex items-center justify-center">
+    {!imgLoaded && (
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
+      </div>
+    )}
+    <img
+      src={displayImage}
+      alt={product.name}
+      onLoad={() => setImgLoaded(true)}
+      className={`w-full object-contain transition-all duration-500 hover:scale-105 drop-shadow-2xl
+        h-[320px] sm:h-[420px] md:h-[480px] lg:h-[520px] xl:h-[560px]
+        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+    />
+  </div>
 
-            {/* THUMBNAILS */}
-            {currentImages.length > 1 && (
-              <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
-                {currentImages.map((img, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setSelectedImageIdx(idx);
-                      setImgLoaded(false);
-                    }}
-                    className={`w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 flex-shrink-0 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all duration-200 ${
-                      selectedImageIdx === idx
-                        ? "border-orange-500 shadow-md shadow-orange-200 scale-105"
-                        : "border-gray-200 hover:border-orange-300"
-                    }`}
-                  >
-                    <img
-                      src={img}
-                      alt=""
-                      className="w-full h-full object-contain bg-amber-50"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+  {/* THUMBNAILS */}
+  {currentImages.length > 1 && (
+    <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
+      {currentImages.map((img, idx) => (
+        <button
+          key={idx}
+          onClick={() => {
+            setSelectedImageIdx(idx);
+            setImgLoaded(false);
+          }}
+          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 flex-shrink-0 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
+            selectedImageIdx === idx
+              ? "border-orange-500 shadow-md shadow-orange-200 scale-105"
+              : "border-purple-300/30 hover:border-orange-300"
+          }`}
+        >
+          <img
+            src={img}
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </button>
+      ))}
+    </div>
+  )}
+</div>
 
           {/* ========== PRODUCT INFO ========== */}
           <div className="space-y-5 sm:space-y-6">
