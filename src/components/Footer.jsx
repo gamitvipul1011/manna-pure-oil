@@ -128,22 +128,23 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 items-start">
             {/* COL 1: BRAND */}
             <div className="rounded-2xl bg-black/20 backdrop-blur-[2px] border border-white/10 p-4 sm:p-5 shadow-lg self-start">
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={logoImg}
-                  alt="Manna Pure Oil"
-                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-[#FACC15] shadow-[0_0_18px_rgba(250,204,21,0.25)] flex-shrink-0"
-                />
+             <div className="flex items-center gap-2.5 mb-4">
+  <img
+    src={logoImg}
+    alt="Manna Pure Oil"
+    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-[#FACC15] shadow-[0_0_18px_rgba(250,204,21,0.25)] flex-shrink-0"
+  />
 
-                <div>
-                  <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#FACC15] leading-tight drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
-                    {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
-                  </h2>
-                  <p className="text-[11px] sm:text-xs font-medium tracking-wide text-[#FEF3C7] uppercase mt-1">
-                    {isGu ? "શુદ્ધ કોલ્ડ પ્રેસ્ડ ઓઈલ" : "Pure Cold Pressed Oil"}
-                  </p>
-                </div>
-              </div>
+  <div className="min-w-0">
+    <h2 className="text-[18px] sm:text-[20px] lg:text-[22px] font-extrabold tracking-tight text-[#FACC15] leading-none whitespace-nowrap drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
+      {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
+    </h2>
+
+    <p className="text-[10px] sm:text-[11px] font-medium tracking-wide text-[#FEF3C7] uppercase mt-1 whitespace-nowrap">
+      {isGu ? "શુદ્ધ કોલ્ડ પ્રેસ્ડ ઓઈલ" : "Pure Cold Pressed Oil"}
+    </p>
+  </div>
+</div>
 
               <p className="text-sm sm:text-[15px] font-medium leading-relaxed text-[#FFFBEB] drop-shadow-[0_1px_4px_rgba(0,0,0,0.75)]">
                 {isGu
