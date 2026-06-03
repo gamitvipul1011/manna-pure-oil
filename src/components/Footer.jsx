@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 import logoImg from "../assets/logo5.jpeg";
-import warli from "../images/Warli 1920 x 651.jpg";
+const warli = "/images/warli-1920x651.jpg";
 
 const FooterSubscribe = ({ isGu }) => {
   const [email, setEmail] = useState("");
