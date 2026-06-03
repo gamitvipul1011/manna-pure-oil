@@ -230,7 +230,7 @@ const Footer = () => {
                   <span>
                     {isGu
                       ? "ડોલારા, વ્યારા-આહવા રોડ, તા-વ્યારા, જિ-તાપી,૩૯૪૬૫૫"
-                      : "Dolara, Vyara-Ahwa Road,Ta-Vyara, Di-Tapi,394655"}
+                      : "Dolara, Vyara-Ahwa Road,  Ta-Vyara, Di-Tapi,394655"}
                   </span>
                 </li>
               </ul>
