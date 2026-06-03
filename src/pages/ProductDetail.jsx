@@ -108,26 +108,39 @@ const ProductDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-         {/* ========== IMAGE SECTION ========== */}
+      {/* ========== IMAGE SECTION ========== */}
 <div className="space-y-4">
-  {/* MAIN IMAGE - Transparent BG to match website */}
-  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden mx-auto w-full flex items-center justify-center">
-    {!imgLoaded && (
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
-      </div>
-    )}
-    <img
-      src={displayImage}
-      alt={product.name}
-      onLoad={() => setImgLoaded(true)}
-      className={`w-full object-contain transition-all duration-500 hover:scale-105 drop-shadow-2xl
-        h-[320px] sm:h-[420px] md:h-[480px] lg:h-[520px] xl:h-[560px]
-        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
-    />
+  {/* MAIN IMAGE - Blob shape with glow */}
+  <div className="relative mx-auto w-full flex items-center justify-center">
+    
+    {/* Decorative glow background */}
+    <div 
+      className="absolute inset-0 bg-gradient-to-br from-orange-400/30 via-pink-400/20 to-purple-400/30 blur-3xl"
+      style={{ borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%' }}
+    ></div>
+
+    {/* Image container with soft blob shape */}
+    <div 
+      className="relative overflow-hidden w-full flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10"
+      style={{ borderRadius: '40px 40px 40px 40px' }}
+    >
+      {!imgLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
+        </div>
+      )}
+      <img
+        src={displayImage}
+        alt={product.name}
+        onLoad={() => setImgLoaded(true)}
+        className={`w-full object-contain transition-all duration-500 hover:scale-105 drop-shadow-2xl
+          h-[320px] sm:h-[420px] md:h-[480px] lg:h-[520px] xl:h-[560px]
+          ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+      />
+    </div>
   </div>
 
-  {/* THUMBNAILS */}
+  {/* THUMBNAILS - matching style */}
   {currentImages.length > 1 && (
     <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
       {currentImages.map((img, idx) => (
@@ -137,11 +150,12 @@ const ProductDetail = () => {
             setSelectedImageIdx(idx);
             setImgLoaded(false);
           }}
-          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 flex-shrink-0 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
+          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
             selectedImageIdx === idx
-              ? "border-orange-500 shadow-md shadow-orange-200 scale-105"
+              ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-110"
               : "border-purple-300/30 hover:border-orange-300"
           }`}
+          style={{ borderRadius: '18px' }}
         >
           <img
             src={img}
