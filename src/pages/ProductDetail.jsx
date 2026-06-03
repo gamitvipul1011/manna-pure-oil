@@ -117,10 +117,15 @@ const ProductDetail = () => {
   <div className="relative mx-auto flex items-center justify-center max-w-[500px]">
 
     {/* Glow */}
-    <div
-      className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-pink-400/10 to-purple-400/20 blur-3xl"
-      style={{ borderRadius: "30px" }}
-    ></div>
+  <div
+  className="relative overflow-hidden flex items-center justify-center
+  bg-transparent mx-auto"
+  style={{
+    borderRadius: "28px",
+    width: "fit-content",
+    maxWidth: "100%",
+  }}
+> </div>
 
     {/* Image Container */}
     <div
