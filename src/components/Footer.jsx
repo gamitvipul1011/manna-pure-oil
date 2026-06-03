@@ -120,7 +120,7 @@ const Footer = () => {
           backgroundSize: "cover, 100% auto",
           backgroundPosition: "center, center bottom",
           backgroundRepeat: "no-repeat, no-repeat",
-          backgroundColor: "#052e24",
+          backgroundColor: "#9dccc1",
         }}
       >
         {/* content ne ekdam upar set karva mate pt ochhu ane niche image mate pb vadhu */}
