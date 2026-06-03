@@ -13,6 +13,8 @@ const products = [
   { image: "/images/products/slider1 (5).jpeg" },
   { image: "/images/products/slider1 (6).jpeg" },
   { image: "/images/products/slider1 (7).jpeg" },
+   { image: "/images/products/slider7.jpeg" },
+    
  
 ];
 
