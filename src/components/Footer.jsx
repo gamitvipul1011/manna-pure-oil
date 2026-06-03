@@ -121,7 +121,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full mt-12">
+    <footer className="w-full">
       {/* TOP SECTION: Warli image full visible */}
      <div
   className="relative overflow-hidden"
