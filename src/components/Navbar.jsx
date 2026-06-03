@@ -124,7 +124,7 @@ const Navbar = ({ cartCount = 0 }) => {
                     ? 'bg-brand-orange-500 text-white'
                     : 'text-white hover:text-green-400'
                 }`}>
-                GU
+               ગુજ
               </button>
             </div>
 
