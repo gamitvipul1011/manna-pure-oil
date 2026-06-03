@@ -116,7 +116,7 @@ const Footer = () => {
       <div
         className="relative overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(3,27,20,0.55), rgba(6,78,59,0.22), rgba(3,27,20,0.12)), url(${warli})`,
+          backgroundImage: `url(${warli})`,
           backgroundSize: "cover, 100% auto",
           backgroundPosition: "center, center bottom",
           backgroundRepeat: "no-repeat, no-repeat",
