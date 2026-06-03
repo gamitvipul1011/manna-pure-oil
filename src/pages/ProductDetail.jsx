@@ -108,7 +108,9 @@ const ProductDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-  {/* ========== IMAGE SECTION ========== */}
+
+
+{/* ========== IMAGE SECTION ========== */}
 <div className="space-y-4">
   {/* MAIN IMAGE */}
   <div className="relative mx-auto flex items-center justify-center max-w-[480px]">
