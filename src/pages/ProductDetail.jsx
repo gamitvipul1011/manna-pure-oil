@@ -114,40 +114,33 @@ const ProductDetail = () => {
 <div className="space-y-4">
 
   {/* MAIN IMAGE */}
-  <div className="relative mx-auto flex items-center justify-center max-w-[500px]">
+  <div className="relative flex justify-center items-center">
 
     {/* Glow */}
-  <div
-  className="relative overflow-hidden flex items-center justify-center
-  bg-transparent mx-auto"
-  style={{
-    borderRadius: "28px",
-    width: "fit-content",
-    maxWidth: "100%",
-  }}
-> </div>
-
-    {/* Image Container */}
     <div
-      className="relative overflow-hidden w-full flex items-center justify-center
-      bg-white/5 backdrop-blur-sm border border-white/10 p-2"
-      style={{ borderRadius: "28px" }}
-    >
+      className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-pink-400/10 to-purple-400/20 blur-3xl"
+      style={{ borderRadius: "30px" }}
+    />
+
+    {/* Image Wrapper */}
+    <div className="relative inline-flex justify-center items-center overflow-hidden rounded-[28px]">
+
       {!imgLoaded && (
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
         </div>
       )}
 
-     <img
-  src={displayImage}
-  alt={product.name}
-  onLoad={() => setImgLoaded(true)}
-  className={`transition-all duration-500 hover:scale-[1.02]
-  object-contain
-  w-auto max-w-full
-  h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px]
-  ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+      <img
+        src={displayImage}
+        alt={product.name}
+        onLoad={() => setImgLoaded(true)}
+        className={`transition-all duration-500 hover:scale-[1.02]
+        object-contain
+        max-w-full
+        h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px]
+        w-auto
+        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
       />
     </div>
   </div>
@@ -162,12 +155,11 @@ const ProductDetail = () => {
             setSelectedImageIdx(idx);
             setImgLoaded(false);
           }}
-          className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
+          className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 ${
             selectedImageIdx === idx
-              ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-105"
+              ? "border-orange-500 shadow-lg scale-105"
               : "border-purple-300/30 hover:border-orange-300"
-          }`}
-          style={{ borderRadius: "16px" }}
+          } rounded-xl`}
         >
           <img
             src={img}
