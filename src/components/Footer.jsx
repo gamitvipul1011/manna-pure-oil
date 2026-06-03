@@ -59,6 +59,7 @@ const FooterSubscribe = ({ isGu }) => {
           placeholder={isGu ? "તમારો ઈમેલ" : "Enter your email"}
           className="px-4 py-2.5 w-full text-sm text-black bg-white/95 focus:outline-none"
         />
+
         <button
           type="submit"
           disabled={loading}
@@ -102,7 +103,8 @@ const Footer = () => {
     },
     {
       icon: <FaInstagram />,
-      link: "https://www.instagram.com/mannapureoil?igsh=MXFlems3Ynd2a2pldg==",
+      link:
+        "https://www.instagram.com/mannapureoil?igsh=MXFlems3Ynd2a2pldg==",
     },
     {
       icon: <FaYoutube />,
@@ -113,40 +115,34 @@ const Footer = () => {
   return (
     <footer className="w-full">
       {/* TOP SECTION */}
-      <div
-        className="relative overflow-hidden"
-        style={{
-          backgroundImage: `url(${warli})`,
-          backgroundSize: "cover, 100% auto",
-          backgroundPosition: "center, center bottom",
-          backgroundRepeat: "no-repeat, no-repeat",
-          backgroundColor: "#c3dbd5",
-        }}
-      >
-        {/* content ne ekdam upar set karva mate pt ochhu ane niche image mate pb vadhu */}
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5 lg:pt-6 pb-24 sm:pb-28 lg:pb-32">
+      <div className="relative overflow-hidden bg-[#c3dbd5]">
+        {/* CONTENT */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5 lg:pt-6 pb-32 sm:pb-36 lg:pb-44">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 items-start">
-            {/* COL 1: BRAND */}
-            <div className="rounded-2xl bg-black/20 backdrop-blur-[2px] border border-white/10 p-4 sm:p-5 shadow-lg self-start">
-             <div className="flex items-center gap-2.5 mb-4">
-  <img
-    src={logoImg}
-    alt="Manna Pure Oil"
-    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-[#FACC15] shadow-[0_0_18px_rgba(250,204,21,0.25)] flex-shrink-0"
-  />
+            
+            {/* COL 1 */}
+            <div className="rounded-2xl bg-black/20 backdrop-blur-[2px] border border-white/10 p-4 sm:p-5 shadow-lg">
+              <div className="flex items-center gap-2.5 mb-4">
+                <img
+                  src={logoImg}
+                  alt="Manna Pure Oil"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-[#FACC15]"
+                />
 
-  <div className="min-w-0">
-    <h2 className="text-[18px] sm:text-[20px] lg:text-[22px] font-extrabold tracking-tight text-[#FACC15] leading-none whitespace-nowrap drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
-      {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
-    </h2>
+                <div>
+                  <h2 className="text-[18px] sm:text-[20px] lg:text-[22px] font-extrabold text-[#FACC15] whitespace-nowrap">
+                    {isGu ? "માના પ્યોર ઓઈલ" : "Manna Pure Oil"}
+                  </h2>
 
-    <p className="text-[10px] sm:text-[11px] font-medium tracking-wide text-[#FEF3C7] uppercase mt-1 whitespace-nowrap">
-      {isGu ? "શુદ્ધ કોલ્ડ પ્રેસ્ડ ઓઈલ" : "Pure Cold Pressed Oil"}
-    </p>
-  </div>
-</div>
+                  <p className="text-[10px] sm:text-[11px] text-[#FEF3C7] uppercase mt-1">
+                    {isGu
+                      ? "શુદ્ધ કોલ્ડ પ્રેસ્ડ ઓઈલ"
+                      : "Pure Cold Pressed Oil"}
+                  </p>
+                </div>
+              </div>
 
-              <p className="text-sm sm:text-[15px] font-medium leading-relaxed text-[#FFFBEB] drop-shadow-[0_1px_4px_rgba(0,0,0,0.75)]">
+              <p className="text-sm text-[#FFFBEB]">
                 {isGu
                   ? "લાકડાની ઘાણીથી કઢેલું શુદ્ધ કોલ્ડ-પ્રેસ્ડ તેલ — ૧૦૦% કુદરતી, કોઈ રસાયણ નહીં."
                   : "Wood-pressed cold extracted pure oil — 100% natural, no chemicals, no heat."}
@@ -155,9 +151,9 @@ const Footer = () => {
               <FooterSubscribe isGu={isGu} />
             </div>
 
-            {/* COL 2: QUICK LINKS */}
-            <div className="rounded-2xl bg-black/20 backdrop-blur-[2px] border border-white/10 p-4 sm:p-5 shadow-lg self-start">
-              <h3 className="text-sm sm:text-base font-extrabold mb-4 pb-2 border-b border-yellow-300/30 tracking-[0.18em] uppercase text-[#FACC15] drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
+            {/* QUICK LINKS */}
+            <div className="rounded-2xl bg-black/20 border border-white/10 p-4 sm:p-5 shadow-lg">
+              <h3 className="text-base font-bold mb-4 text-[#FACC15]">
                 {isGu ? "ઝડપી લિંક્સ" : "Quick Links"}
               </h3>
 
@@ -166,21 +162,18 @@ const Footer = () => {
                   <li key={i}>
                     <Link
                       to={link.path}
-                      className="group flex items-center gap-2 text-sm sm:text-[15px] font-semibold text-[#FFFDF4] hover:text-[#FDBA74] transition-all duration-300"
+                      className="flex items-center gap-2 text-white hover:text-[#FDBA74]"
                     >
-                      <span className="text-[#FACC15] group-hover:translate-x-1 transition-transform duration-300">
-                        ➜
-                      </span>
-                      {isGu ? link.gu : link.en}
+                      ➜ {isGu ? link.gu : link.en}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* COL 3: POLICIES */}
-            <div className="rounded-2xl bg-black/20 backdrop-blur-[2px] border border-white/10 p-4 sm:p-5 shadow-lg self-start">
-              <h3 className="text-sm sm:text-base font-extrabold mb-4 pb-2 border-b border-yellow-300/30 tracking-[0.18em] uppercase text-[#FACC15] drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
+            {/* POLICIES */}
+            <div className="rounded-2xl bg-black/20 border border-white/10 p-4 sm:p-5 shadow-lg">
+              <h3 className="text-base font-bold mb-4 text-[#FACC15]">
                 {isGu ? "નીતિઓ" : "Policies"}
               </h3>
 
@@ -189,53 +182,40 @@ const Footer = () => {
                   <li key={i}>
                     <Link
                       to={p.path}
-                      className="group flex items-center gap-2 text-sm sm:text-[15px] font-semibold text-[#FFFDF4] hover:text-[#FDBA74] transition-all duration-300"
+                      className="flex items-center gap-2 text-white hover:text-[#FDBA74]"
                     >
-                      <span className="text-[#FACC15] group-hover:translate-x-1 transition-transform duration-300">
-                        ➜
-                      </span>
-                      {isGu ? p.gu : p.en}
+                      ➜ {isGu ? p.gu : p.en}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* COL 4: CONTACT */}
-            <div className="rounded-2xl bg-black/20 backdrop-blur-[2px] border border-white/10 p-4 sm:p-5 shadow-lg self-start">
-              <h3 className="text-sm sm:text-base font-extrabold mb-4 pb-2 border-b border-yellow-300/30 tracking-[0.18em] uppercase text-[#FACC15] drop-shadow-[0_2px_6px_rgba(0,0,0,0.65)]">
+            {/* CONTACT */}
+            <div className="rounded-2xl bg-black/20 border border-white/10 p-4 sm:p-5 shadow-lg">
+              <h3 className="text-base font-bold mb-4 text-[#FACC15]">
                 {isGu ? "સંપર્ક કરો" : "Contact Us"}
               </h3>
 
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3 text-sm sm:text-[15px] font-semibold text-[#FFFDF4]">
-                  <FaPhone className="shrink-0 mt-1 text-[#FACC15]" />
-                  <a href="tel:+917874239595" className="hover:text-[#FDBA74]">
-                    +91 78742 39595
-                  </a>
+              <ul className="space-y-3 text-white">
+                <li className="flex gap-3">
+                  <FaPhone className="text-[#FACC15]" />
+                  +91 78742 39595
                 </li>
 
-                <li className="flex items-start gap-3 text-sm sm:text-[15px] font-semibold text-[#FFFDF4] break-all">
-                  <FaEnvelope className="shrink-0 mt-1 text-[#FACC15]" />
-                  <a
-                    href="mailto:mannapureoil@gmail.com"
-                    className="hover:text-[#FDBA74]"
-                  >
-                    mannapureoil@gmail.com
-                  </a>
+                <li className="flex gap-3">
+                  <FaEnvelope className="text-[#FACC15]" />
+                  mannapureoil@gmail.com
                 </li>
 
-                <li className="flex items-start gap-3 text-sm sm:text-[15px] font-semibold text-[#FFFDF4]">
-                  <FaMapMarkerAlt className="shrink-0 mt-1 text-[#FACC15]" />
-                  <span>
-                    {isGu
-                      ? "ડોલારા, વ્યારા-આહવા રોડ, તા-વ્યારા, જિ-તાપી,૩૯૪૬૫૫"
-                      : "Dolara, Vyara-Ahwa Road,  Ta-Vyara, Di-Tapi,394655"}
-                  </span>
+                <li className="flex gap-3">
+                  <FaMapMarkerAlt className="text-[#FACC15]" />
+                  {isGu
+                    ? "ડોલારા, વ્યારા-આહવા રોડ, તા-વ્યારા, જિ-તાપી"
+                    : "Dolara, Vyara-Ahwa Road, Ta-Vyara, Di-Tapi"}
                 </li>
               </ul>
 
-              {/* Social Icons */}
               <div className="flex gap-3 mt-5">
                 {socialLinks.map((s, i) => (
                   <a
@@ -243,7 +223,7 @@ const Footer = () => {
                     href={s.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-yellow-300/50 bg-black/25 text-[#FACC15] hover:bg-[#EA580C] hover:text-white hover:scale-110 hover:border-[#FB923C] transition-all duration-300"
+                    className="w-10 h-10 flex items-center justify-center rounded-full border border-yellow-300/50 text-[#FACC15] hover:bg-[#EA580C] hover:text-white transition"
                   >
                     {s.icon}
                   </a>
@@ -253,13 +233,19 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* niche warli image clearly dekhay */}
-        <div className="h-16 sm:h-20 lg:h-24" />
+        {/* WARLI IMAGE BOTTOM */}
+        <div className="absolute bottom-0 left-0 w-full z-0 pointer-events-none">
+          <img
+            src={warli}
+            alt="Warli Pattern"
+            className="w-full object-cover object-bottom"
+          />
+        </div>
       </div>
 
       {/* COPYRIGHT */}
       <div className="w-full bg-[#064E3B] border-t border-yellow-300/20">
-        <p className="m-0 text-center px-4 py-3 text-[11px] sm:text-sm font-bold text-[#FACC15] leading-none">
+        <p className="text-center px-4 py-3 text-[11px] sm:text-sm font-bold text-[#FACC15]">
           © {new Date().getFullYear()} Manna Pure Oil{" "}
           {isGu ? "| સર્વ અધિકાર સુરક્ષિત." : "| All Rights Reserved."}
         </p>
