@@ -108,39 +108,45 @@ const ProductDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-      {/* ========== IMAGE SECTION ========== */}
+     {/* ========== IMAGE SECTION ========== */}
 <div className="space-y-4">
-  {/* MAIN IMAGE - Blob shape with glow */}
-  <div className="relative mx-auto w-full flex items-center justify-center">
-    
-    {/* Decorative glow background */}
-    <div 
-      className="absolute inset-0 bg-gradient-to-br from-orange-400/30 via-pink-400/20 to-purple-400/30 blur-3xl"
-      style={{ borderRadius: '60% 40% 55% 45% / 50% 60% 40% 50%' }}
+  {/* MAIN IMAGE */}
+  <div className="relative mx-auto flex items-center justify-center max-w-[500px]">
+
+    {/* Glow Background */}
+    <div
+      className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-pink-400/10 to-purple-400/20 blur-3xl"
+      style={{
+        borderRadius: "30px",
+      }}
     ></div>
 
-    {/* Image container with soft blob shape */}
-    <div 
-      className="relative overflow-hidden w-full flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10"
-      style={{ borderRadius: '40px 40px 40px 40px' }}
+    {/* Image Container */}
+    <div
+      className="relative overflow-hidden w-full bg-white/5 backdrop-blur-sm border border-white/10"
+      style={{
+        borderRadius: "28px",
+      }}
     >
       {!imgLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
         </div>
       )}
+
       <img
         src={displayImage}
         alt={product.name}
         onLoad={() => setImgLoaded(true)}
-        className={`w-full object-contain transition-all duration-500 hover:scale-105 drop-shadow-2xl
-          h-[320px] sm:h-[420px] md:h-[480px] lg:h-[520px] xl:h-[560px]
-          ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+        className={`w-full transition-all duration-500 hover:scale-105
+        object-cover
+        h-[280px] sm:h-[360px] md:h-[420px] lg:h-[460px]
+        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
       />
     </div>
   </div>
 
-  {/* THUMBNAILS - matching style */}
+  {/* THUMBNAILS */}
   {currentImages.length > 1 && (
     <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
       {currentImages.map((img, idx) => (
@@ -150,24 +156,23 @@ const ProductDetail = () => {
             setSelectedImageIdx(idx);
             setImgLoaded(false);
           }}
-          className={`w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
+          className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
             selectedImageIdx === idx
               ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-110"
               : "border-purple-300/30 hover:border-orange-300"
           }`}
-          style={{ borderRadius: '18px' }}
+          style={{ borderRadius: "16px" }}
         >
           <img
             src={img}
             alt=""
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
           />
         </button>
       ))}
     </div>
   )}
 </div>
-
           {/* ========== PRODUCT INFO ========== */}
           <div className="space-y-5 sm:space-y-6">
             {/* CATEGORY & NAME */}
