@@ -6,34 +6,90 @@
 
 export const WHATSAPP_NUMBER = '917874239595';
 
+// ──────────────────────────────────────────────
+// CATEGORIES
+// ──────────────────────────────────────────────
 export const categories = [
-  { _id: 'cat1', name: 'Groundnut Oil',    nameGu: 'મગફળી તેલ',    image: '../assets/catagory/g1.png' },
-  { _id: 'cat2', name: 'Coconut Oil',      nameGu: 'નારિયેળ તેલ',  image: '../assets/catagory/co1.png' },
-  { _id: 'cat3', name: 'White Sesame Oil', nameGu: 'સફેદ તલ તેલ',  image: '../assets/catagory/w1.png' },
-  { _id: 'cat4', name: 'Black Sesame Oil', nameGu: 'કાળા તલ તેલ',  image: '../assets/catagory/bl1r.png' },
-  { _id: 'cat5', name: 'Mustard Oil',      nameGu: 'રાઈ તેલ',       image: '../assets/catagory/m1.png' },
-  { _id: 'cat6', name: 'Sunflower Oil',    nameGu: 'સૂરજમુખી તેલ', image: '../assets/catagory/sun1.png' },
-  { _id: 'cat7', name: 'Castor Oil',       nameGu: 'દિવેલ તેલ',    image: '../assets/catagory/cos04.png' },
-  { _id: 'cat8', name: 'Gir Cow Ghee',    nameGu: 'ગીર ગાય ઘી',   image: '../assets/catagory/gh2.png' },
-  { _id: 'cat9', name: 'Pure Natural Honey',nameGu: 'શુદ્ધ કુદરતી મધ', image: '../assets/catagory/ho.png' },
+  { _id: 'cat1', name: 'Groundnut Oil',      nameGu: 'મગફળી તેલ',      image: '../assets/catagory/g1.png' },
+  { _id: 'cat2', name: 'Coconut Oil',        nameGu: 'નારિયેળ તેલ',    image: '../assets/catagory/co1.png' },
+  { _id: 'cat3', name: 'White Sesame Oil',   nameGu: 'સફેદ તલ તેલ',    image: '../assets/catagory/w1.png' },
+  { _id: 'cat4', name: 'Black Sesame Oil',   nameGu: 'કાળા તલ તેલ',    image: '../assets/catagory/bl1r.png' },
+  { _id: 'cat5', name: 'Mustard Oil',        nameGu: 'રાઈ તેલ',         image: '../assets/catagory/m1.png' },
+  { _id: 'cat6', name: 'Sunflower Oil',      nameGu: 'સૂરજમુખી તેલ',   image: '../assets/catagory/sun1.png' },
+  { _id: 'cat7', name: 'Castor Oil',         nameGu: 'દિવેલ તેલ',      image: '../assets/catagory/cos04.png' },
+  { _id: 'cat8', name: 'Gir Cow Ghee',       nameGu: 'ગીર ગાય ઘી',     image: '../assets/catagory/gh2.png' },
+  { _id: 'cat9', name: 'Pure Natural Honey', nameGu: 'શુદ્ધ કુદરતી મધ', image: '../assets/catagory/ho.png' },
 ];
 
+// ──────────────────────────────────────────────
+// IMAGE HELPERS  (pre-resolve URLs once)
+// ──────────────────────────────────────────────
+
+// Groundnut
+const GO_1L      = new URL('../assets/product all/groundnut/1l.jpg',       import.meta.url).href;
+const GO_1LB     = new URL('../assets/product all/groundnut/1lbac.jpg',    import.meta.url).href;
+const GO_5LF     = new URL('../assets/product all/groundnut/GO5LF.jpeg',   import.meta.url).href;
+const GO_5LB     = new URL('../assets/product all/groundnut/5lb.jpg',      import.meta.url).href;
+const GO_15L     = new URL('../assets/product all/groundnut/15l.jpg',      import.meta.url).href;
+
+// Coconut
+const CO_1L      = new URL('../assets/product all/coconut/1l.jpg',    import.meta.url).href;
+const CO_1LB     = new URL('../assets/product all/coconut/1lb.jpg',   import.meta.url).href;
+const CO_250     = new URL('../assets/product all/coconut/250ml.jpg', import.meta.url).href;
+const CO_500     = new URL('../assets/product all/coconut/500ml.jpg', import.meta.url).href;
+
+// White Sesame
+const WS_1L      = new URL('../assets/product all/WHITE SESAME/1l.jpg',    import.meta.url).href;
+const WS_BACK    = new URL('../assets/product all/WHITE SESAME/back.jpg',  import.meta.url).href;
+const WS_250     = new URL('../assets/product all/WHITE SESAME/250ml.jpg', import.meta.url).href;
+const WS_500     = new URL('../assets/product all/WHITE SESAME/500ml.jpg', import.meta.url).href;
+const WS_5L      = new URL('../assets/product all/WHITE SESAME/5l.jpg',    import.meta.url).href;
+const WS_5BACK   = new URL('../assets/product all/WHITE SESAME/5back.jpg', import.meta.url).href;
+
+// Black Sesame
+const BS_1L      = new URL('../assets/product all/BLACK SESAME/1l.jpg',    import.meta.url).href;
+const BS_BACK    = new URL('../assets/product all/BLACK SESAME/back.jpg',  import.meta.url).href;
+const BS_250     = new URL('../assets/product all/BLACK SESAME/250ml.jpg', import.meta.url).href;
+const BS_500     = new URL('../assets/product all/BLACK SESAME/500ml.jpg', import.meta.url).href;
+
+// Mustard
+const MU_1L      = new URL('../assets/product all/MUSTARD/1l.jpg',     import.meta.url).href;
+const MU_BACK    = new URL('../assets/product all/MUSTARD/back.jpg',   import.meta.url).href;
+const MU_500     = new URL('../assets/product all/MUSTARD/500ml.png',  import.meta.url).href;
+
+// Sunflower
+const SF_1L      = new URL('../assets/product all/SUNFLOWER/1l.jpg',    import.meta.url).href;
+const SF_BACK    = new URL('../assets/product all/SUNFLOWER/back.jpg',  import.meta.url).href;
+const SF_5L      = new URL('../assets/product all/SUNFLOWER/5l.jpg',    import.meta.url).href;
+const SF_5BACK   = new URL('../assets/product all/SUNFLOWER/back5.jpg', import.meta.url).href;
+
+// Castor
+const CA_1L      = new URL('../assets/product all/castor/ca1l.jpeg',  import.meta.url).href;
+const CA_BACK    = new URL('../assets/product all/castor/back.jpeg',  import.meta.url).href;
+const CA_500     = new URL('../assets/product all/castor/500ml.jpeg', import.meta.url).href;
+const CA_250     = new URL('../assets/product all/castor/250ml.jpeg', import.meta.url).href;
+
+// Gir Cow Ghee
+const GH_1L      = new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href;
+const GH_500     = new URL('../assets/product all/GIR COW/1l.png',  import.meta.url).href;
+
+// ──────────────────────────────────────────────
+// PRODUCTS
+// ──────────────────────────────────────────────
 export const products = [
-  // ──────── GROUNDNUT OIL ────────
- {
-  _id: 'p1',
-  name: 'Cold Pressed Groundnut Oil',
-  nameGu: 'કોલ્ડ પ્રેસ્ડ મગફળી તેલ',
-  category: { _id: 'cat1', name: 'Groundnut Oil' },
 
-  image: new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
+  // ════════════════════════════════════════════
+  // 1. GROUNDNUT OIL
+  // ════════════════════════════════════════════
+  {
+    _id: 'p1',
+    name: 'Cold Pressed Groundnut Oil',
+    nameGu: 'કોલ્ડ પ્રેસ્ડ મગફળી તેલ',
+    category: { _id: 'cat1', name: 'Groundnut Oil' },
+    image: GO_1L,
+    images: [GO_1L, GO_1LB],
 
-  images: [
-    new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
-    new URL('../assets/product all/groundnut/1lbac.jpg', import.meta.url).href,
-  ],
-
- description: `🌿 Cold Pressed Groundnut Oil
+    description: `🌿 Cold Pressed Groundnut Oil
 
 Pure. Natural. Nourishing.
 
@@ -65,10 +121,8 @@ Easy to digest, perfect for everyday family meals
 ✔ Healthy Living – A natural choice for conscious families
 
 ✔ Skin & Hair Care – A timeless ingredient for natural care rituals`,
-    
 
-  descriptionGu:
-    `🌿 કોલ્ડ પ્રેસ્ડ મગફળી તેલ
+    descriptionGu: `🌿 કોલ્ડ પ્રેસ્ડ મગફળી તેલ
 
 શુદ્ધ. કુદરતી. પોષણસભર.
 
@@ -98,74 +152,48 @@ Easy to digest, perfect for everyday family meals
 ✔ સ્વસ્થ જીવનશૈલી
 ✔ સ્કિન અને હેર કેર`,
 
-  benefits:
-    'Heart-Caring Goodness|Naturally Nutritious|Strengthens from Within|Beauty Beyond Cooking|Gentle & Wholesome',
+    benefits: 'Heart-Caring Goodness|Naturally Nutritious|Strengthens from Within|Beauty Beyond Cooking|Gentle & Wholesome',
+    benefitsGu: 'હૃદય માટે લાભદાયક|કુદરતી પોષણ|શરીરને મજબૂત બનાવે છે|ચામડી અને વાળ માટે સારું|પાચનમાં સરળ',
+    uses: 'Everyday Cooking|Frying & Sautéing|Traditional Recipes|Skin Care|Hair Care',
+    usesGu: 'દૈનિક રસોઈ|તળવું અને સાંતળવું|પરંપરાગત વાનગીઓ|સ્કિન કેર|હેર કેર',
 
-  benefitsGu:
-    'હૃદય માટે લાભદાયક|કુદરતી પોષણ|શરીરને મજબૂત બનાવે છે|ચામડી અને વાળ માટે સારું|પાચનમાં સરળ',
+    sizes: [
+      {
+        size: '1 Litre',
+        price: 300,
+        image: GO_1L,
+        images: [GO_1L, GO_1LB],
+      },
+      {
+        size: '5 Litre',
+        price: 1350,
+        image: GO_5LF,
+        images: [GO_5LF, GO_5LB],
+      },
+      {
+        size: '15 Litre',
+        price: 3750,
+        image: GO_15L,
+        images: [GO_15L],
+      },
+    ],
 
-  uses:
-    'Everyday Cooking|Frying & Sautéing|Traditional Recipes|Skin Care|Hair Care',
+    inStock: true,
+    featured: true,
+  },
 
-  usesGu:
-    'દૈનિક રસોઈ|તળવું અને સાંતળવું|પરંપરાગત વાનગીઓ|સ્કિન કેર|હેર કેર',
-
-  sizes: [
-    {
-      size: '1 Litre',
-      price: 300,
-       image: new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
-      images: [
-        new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
-        new URL('../assets/product all/groundnut/1lbac.jpg', import.meta.url).href,
-      ],
-      
-    },
-    
-        {
-      size: '5 Litre',
-      price: 1350,
-      images: 
-        new URL('../assets/product all/groundnut/GO5LF.jpeg', import.meta.url).href,
-        images: [
-           new URL('../assets/product all/groundnut/GO5LF.jpeg', import.meta.url).href,
-        new URL('../assets/product all/groundnut/5lb.jpg', import.meta.url).href,
-        
-      ],
-      
-    },
-    {
-      size: '15 Litre',
-      price: 3750,
-      images: 
-        new URL('../assets/product all/groundnut/15l.jpg', import.meta.url).href,
-         images: [
-        new URL('../assets/product all/groundnut/15l.jpg', import.meta.url).href,
-        
-      ],
-       
-      
-    },
-  ],
-
-  inStock: true,
-  featured: true,
-},
-  
-
-  // ──────── COCONUT OIL ────────
+  // ════════════════════════════════════════════
+  // 2. COCONUT OIL
+  // ════════════════════════════════════════════
   {
     _id: 'p2',
     name: 'Cold Pressed Coconut Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ નારિયેળ તેલ',
     category: { _id: 'cat2', name: 'Coconut Oil' },
-    image: new URL('../assets/product all/coconut/1l.jpg', import.meta.url).href,
-    images: [
-      new URL('../assets/product all/coconut/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/coconut/1lb.jpg', import.meta.url).href,
-     
-    ],
-   description:`🌿 Cold Pressed Coconut Oil
+    image: CO_1L,
+    images: [CO_1L, CO_1LB],
+
+    description: `🌿 Cold Pressed Coconut Oil
 
 Pure. Gentle. Naturally Revitalizing.
 
@@ -187,7 +215,8 @@ Hydrates skin deeply and strengthens hair from root to tip
 
 🟡 Light & Easy to Digest
 Gentle on the stomach, perfect for daily use`,
-   descriptionGu:`🌿 કોલ્ડ પ્રેસ્ડ નાળિયેર તેલ
+
+    descriptionGu: `🌿 કોલ્ડ પ્રેસ્ડ નાળિયેર તેલ
 
 શુદ્ધ. નરમ. કુદરતી તાજગી.
 
@@ -209,52 +238,48 @@ Gentle on the stomach, perfect for daily use`,
 
 🟡 હળવું અને સરળ પાચન
 દૈનિક ઉપયોગ માટે યોગ્ય અને પેટ માટે હળવું`,
+
     benefits: 'Boosts metabolism|Skin moisturizer|Hair growth|Antimicrobial|Cooking & beauty',
     benefitsGu: 'Metabolism વધારે|ત્વચા moisturizer|વાળ વૃદ્ધિ|Antimicrobial|રસોઈ અને beauty',
     uses: 'Cooking|Skin care|Hair oil|Baby massage|Oil pulling',
     usesGu: 'રસોઈ|ત્વચા|વાળ|બાળ મસાજ|Oil pulling',
+
     sizes: [
-      { size: '1 Litre', price: 600,
-         images: new URL('../assets/product all/coconut/1l.jpg', import.meta.url).href,
-         images: [
-        new URL('../assets/product all/coconut/1l.jpg', import.meta.url).href,
-        new URL('../assets/product all/coconut/1lb.jpg', import.meta.url).href,
-        
-      ],
+      {
+        size: '250ml',
+        price: 170,
+        image: CO_250,
+        images: [CO_250, CO_1LB],
       },
-      { size: '250ml', price: 170,  images: new URL('../assets/product all/coconut/250ml.jpg', import.meta.url).href,
-         images: [
-        new URL('../assets/product all/coconut/250ml.jpg', import.meta.url).href,
-        new URL('../assets/product all/coconut/1lb.jpg', import.meta.url).href,
-        
-      ],
-    },
-      { size: '500ml', price: 320,
-         images: new URL('../assets/product all/coconut/500ml.jpg', import.meta.url).href,
-         images: [
-        new URL('../assets/product all/coconut/500ml.jpg', import.meta.url).href,
-        new URL('../assets/product all/coconut/1lb.jpg', import.meta.url).href,
-        
-      ], },
-      
+      {
+        size: '500ml',
+        price: 320,
+        image: CO_500,
+        images: [CO_500, CO_1LB],
+      },
+      {
+        size: '1 Litre',
+        price: 600,
+        image: CO_1L,
+        images: [CO_1L, CO_1LB],
+      },
     ],
+
     inStock: true,
     featured: true,
   },
 
-  // ──────── WHITE SESAME OIL ────────
+  // ════════════════════════════════════════════
+  // 3. WHITE SESAME OIL
+  // ════════════════════════════════════════════
   {
     _id: 'p3',
     name: 'Cold Pressed White Sesame Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ સફેદ તલ તેલ',
     category: { _id: 'cat3', name: 'White Sesame Oil' },
-    image: new URL('../assets/product all/WHITE SESAME/1l.jpg', import.meta.url).href,
-    images: [
-      new URL('../assets/product all/WHITE SESAME/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/WHITE SESAME/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/WHITE SESAME/1l.jpg', import.meta.url).href,
-      
-    ],
+    image: WS_1L,
+    images: [WS_1L, WS_BACK],
+
     description: `🌿 Cold Pressed White Sesame Oil
 
 Pure. Traditional. Deeply Nourishing.
@@ -277,6 +302,7 @@ Deeply nourishes skin and promotes healthy hair
 
 🟡 Warm & Easy to Digest
 Comforting in nature and supports smooth digestion`,
+
     descriptionGu: `🌿 કોલ્ડ પ્રેસ્ડ સફેદ તલનું તેલ
 
 શુદ્ધ. પરંપરાગત. ઊંડું પોષણ.
@@ -299,57 +325,55 @@ Comforting in nature and supports smooth digestion`,
 
 🟡 ગરમ તાસીર અને પાચનમાં સરળ
 પાચન સુધારે છે અને શરીરને આરામ આપે છે`,
+
     benefits: 'Rich in Calcium|Anti-inflammatory|Skin nourishment|Bone health|Heart healthy',
     benefitsGu: 'Calcium ભરપૂર|Anti-inflammatory|ત્વચા poshan|હાડકા|હૃદય',
     uses: 'Cooking|Ayurvedic massage|Skin care|Traditional medicine',
     usesGu: 'રસોઈ|આયુર્વેદ|ત્વચા|પ્રાચીન ઉપચાર',
+
     sizes: [
-       { size: '1 Litre', price: 480, 
-        images: new URL('../assets/product all/WHITE SESAME/1l.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/WHITE SESAME/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/WHITE SESAME/back.jpg', import.meta.url).href,  
-    ],
+      {
+        size: '250ml',
+        price: 130,
+        image: WS_250,
+        images: [WS_250, WS_BACK],
       },
-      { size: '250ml', price: 130, 
-        images: new URL('../assets/product all/WHITE SESAME/250ml.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/WHITE SESAME/250ml.jpg', import.meta.url).href,
-      new URL('../assets/product all/WHITE SESAME/back.jpg', import.meta.url).href,  
-    ],  
+      {
+        size: '500ml',
+        price: 250,
+        image: WS_500,
+        images: [WS_500, WS_BACK],
       },
-      { size: '500ml', price: 250, 
-         images: new URL('../assets/product all/WHITE SESAME/500ml.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/WHITE SESAME/500ml.jpg', import.meta.url).href,
-      new URL('../assets/product all/WHITE SESAME/back.jpg', import.meta.url).href,  
-    ],
+      {
+        size: '1 Litre',
+        price: 480,
+        image: WS_1L,
+        images: [WS_1L, WS_BACK],
       },
-      { size: '5 Litre', price: 2250,
-          images: new URL('../assets/product all/WHITE SESAME/5l.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/WHITE SESAME/5l.jpg', import.meta.url).href,
-      new URL('../assets/product all/WHITE SESAME/5back.jpg', import.meta.url).href,  
-    ], 
-        },
+      {
+        size: '5 Litre',
+        price: 2250,
+        image: WS_5L,
+        images: [WS_5L, WS_5BACK],
+      },
     ],
+
     inStock: true,
     featured: false,
   },
 
-  // ──────── BLACK SESAME OIL ────────
+  // ════════════════════════════════════════════
+  // 4. BLACK SESAME OIL
+  // ════════════════════════════════════════════
   {
     _id: 'p4',
     name: 'Cold Pressed Black Sesame Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ કાળા તલ તેલ',
     category: { _id: 'cat4', name: 'Black Sesame Oil' },
-    image: new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href,
-    images: [
-      new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,
-    
-    ],
-   description: `🌿 Cold Pressed Black Sesame Oil
+    image: BS_1L,
+    images: [BS_1L, BS_BACK],
+
+    description: `🌿 Cold Pressed Black Sesame Oil
 
 Rich. Powerful. Deeply Restorative.
 
@@ -369,8 +393,8 @@ Known for its intense nutrients and traditional wellness benefits.
 ✔ Traditional Cooking
 ✔ Hair Massage
 ✔ Winter Wellness`,
-    
-  descriptionGu:  `🌿 કોલ્ડ પ્રેસ્ડ કાળા તલનું તેલ
+
+    descriptionGu: `🌿 કોલ્ડ પ્રેસ્ડ કાળા તલનું તેલ
 
 સમૃદ્ધ. શક્તિશાળી. ઊંડું પોષણ આપનાર.
 
@@ -389,61 +413,56 @@ Known for its intense nutrients and traditional wellness benefits.
 ✔ આયુર્વેદિક ઉપયોગ માટે  
 ✔ પરંપરાગત રસોઈ માટે  
 ✔ વાળની મસાજ માટે  
-✔ શિયાળામાં આરોગ્ય માટે `, 
+✔ શિયાળામાં આરોગ્ય માટે`,
 
     benefits: 'Powerful antioxidants|Hair darkening|Bone strength|Ayurvedic healing|Anti-aging',
     benefitsGu: 'Powerful antioxidants|વાળ કાળા|હાડકા|આયુર્વેદ|Anti-aging',
     uses: 'Ayurvedic massage|Hair care|Cooking|Traditional medicine',
     usesGu: 'આયુર્વેદ|વાળ|રસોઈ|ઉપચાર',
+
     sizes: [
-       { size: '1 Litre', price: 520, 
-        images: new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,  
-    ],
+      {
+        size: '250ml',
+        price: 140,
+        image: BS_250,
+        images: [BS_250, BS_BACK],
       },
-      { size: '250ml', price: 140, 
-        images: new URL('../assets/product all/BLACK SESAME/250ml.jpg', import.meta.url).href, 
-         images: [
-           new URL('../assets/product all/BLACK SESAME/250ml.jpg', import.meta.url).href,
-      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,
-       
-    ],  
+      {
+        size: '500ml',
+        price: 270,
+        image: BS_500,
+        images: [BS_500, BS_BACK],
       },
-      { size: '500ml', price: 270, 
-         images: new URL('../assets/product all/BLACK SESAME/500ml.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/BLACK SESAME/500ml.jpg', import.meta.url).href,
-      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,  
-    ],
+      {
+        size: '1 Litre',
+        price: 520,
+        image: BS_1L,
+        images: [BS_1L, BS_BACK],
       },
-      { size: '5 Litre', price: 2450, 
-        images: new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/BLACK SESAME/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/BLACK SESAME/back.jpg', import.meta.url).href,  
-    ],
+      {
+        size: '5 Litre',
+        price: 2450,
+        image: BS_1L,
+        images: [BS_1L, BS_BACK],
       },
-      
     ],
+
     inStock: true,
     featured: false,
   },
 
-  // ──────── MUSTARD OIL ────────
+  // ════════════════════════════════════════════
+  // 5. MUSTARD OIL
+  // ════════════════════════════════════════════
   {
     _id: 'p5',
     name: 'Cold Pressed Mustard Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ રાઈ તેલ',
     category: { _id: 'cat5', name: 'Mustard Oil' },
-    image: new URL('../assets/product all/MUSTARD/1l.jpg', import.meta.url).href,
-    images: [
-      new URL('../assets/product all/MUSTARD/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,
-      
-    ],
-     description: `🌿 Cold Pressed Black Mustard Oil
+    image: MU_1L,
+    images: [MU_1L, MU_BACK],
+
+    description: `🌿 Cold Pressed Black Mustard Oil
 
 Bold. Pure. Traditionally Powerful.
 
@@ -465,6 +484,7 @@ Nourishes scalp, promotes strong hair, and healthy skin
 
 🟡 Warming & Digestive-Friendly
 Stimulates appetite and supports better digestion`,
+
     descriptionGu: `🌿 કોલ્ડ પ્રેસ્ડ કાળી સરસવનું તેલ
 
 મજબૂત. શુદ્ધ. પરંપરાગત શક્તિ.
@@ -492,50 +512,44 @@ Stimulates appetite and supports better digestion`,
     benefitsGu: 'Omega-3 ભરપૂર|Antibacterial|વાળ વૃદ્ધિ|પાચન|શરદી ઉપચાર',
     uses: 'Cooking|Pickles|Body massage|Hair care|Ayurvedic treatment',
     usesGu: 'રસોઈ|Pickles|Body massage|વાળ|આયુર્વેદ',
+
     sizes: [
-       { size: '1 Litre', price: 280, 
-        images: new URL('../assets/product all/MUSTARD/1l.jpg', import.meta.url).href, 
-         images: [
-      new URL('../assets/product all/MUSTARD/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,  
-    ],
+      {
+        size: '500ml',
+        price: 150,
+        image: MU_500,
+        images: [MU_500, MU_BACK],
       },
-      
-      { size: '500ml', price: 150, 
-         images: new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href,
-      new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,
-      
-    ],
+      {
+        size: '1 Litre',
+        price: 280,
+        image: MU_1L,
+        images: [MU_1L, MU_BACK],
       },
-      { size: '5 Litre', price: 1250, 
-         images: new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/MUSTARD/500ml.png', import.meta.url).href,
-      new URL('../assets/product all/MUSTARD/back.jpg', import.meta.url).href,
-      
-    ],
+      {
+        size: '5 Litre',
+        price: 1250,
+        image: MU_500,
+        images: [MU_500, MU_BACK],
       },
-      
     ],
+
     inStock: true,
     featured: false,
   },
 
-  // ──────── SUNFLOWER OIL ────────
+  // ════════════════════════════════════════════
+  // 6. SUNFLOWER OIL
+  // ════════════════════════════════════════════
   {
     _id: 'p6',
     name: 'Cold Pressed Sunflower Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ સૂરજમુખી તેલ',
     category: { _id: 'cat6', name: 'Sunflower Oil' },
-    image: new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href,
-    images: [
-      new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/SUNFLOWER/back.jpg', import.meta.url).href,
-     
-    ],
-     description: `🌿 Cold Pressed Sunflower Oil
+    image: SF_1L,
+    images: [SF_1L, SF_BACK],
+
+    description: `🌿 Cold Pressed Sunflower Oil
 
 Light. Pure. Naturally Nourishing.
 
@@ -557,6 +571,7 @@ Nourishes skin and helps maintain healthy hair
 
 🟡 Light & Easy to Digest
 Perfect for everyday cooking without heaviness`,
+
     descriptionGu: `🌿 કોલ્ડ પ્રેસ્ડ સનફ્લાવર તેલ
 
 હળવું. શુદ્ધ. કુદરતી પોષણ.
@@ -579,50 +594,48 @@ Perfect for everyday cooking without heaviness`,
 
 🟡 હળવું અને સરળ પાચન
 દૈનિક રસોઈ માટે યોગ્ય અને પેટ માટે હળવું`,
+
     benefits: 'High Vitamin E|Light texture|High smoke point|Heart healthy|Chemical free',
     benefitsGu: 'Vitamin E ભરપૂર|Light texture|High smoke point|હૃદય|Chemical free',
     uses: 'Daily cooking|Frying|Salad dressing|Skin care',
     usesGu: 'રોજ રસોઈ|Frying|Salad|ત્વચા',
+
     sizes: [
-       { size: '1 Litre', price: 270, 
-        images: new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/SUNFLOWER/back.jpg', import.meta.url).href,
-      
-    ],
+      {
+        size: '1 Litre',
+        price: 270,
+        image: SF_1L,
+        images: [SF_1L, SF_BACK],
       },
-      
-      { size: '5 Litre', price: 1230, 
-         images: new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-      new URL('../assets/product all/SUNFLOWER/back5.jpg', import.meta.url).href,
-      
-    ],
+      {
+        size: '5 Litre',
+        price: 1230,
+        image: SF_5L,
+        images: [SF_5L, SF_5BACK],
       },
-       { size: '15 Litre', price: 3450, 
-         images: new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-      new URL('../assets/product all/SUNFLOWER/back5.jpg', import.meta.url).href,
-      
-    ],
+      {
+        size: '15 Litre',
+        price: 3450,
+        image: SF_5L,
+        images: [SF_5L, SF_5BACK],
       },
-      
     ],
+
     inStock: true,
     featured: false,
   },
 
-  // ──────── CASTOR OIL ────────
+  // ════════════════════════════════════════════
+  // 7. CASTOR OIL
+  // ════════════════════════════════════════════
   {
     _id: 'p7',
     name: 'Cold Pressed Castor Oil',
-    nameGu: 'કોલ્ડ પ્રેસ્ડ દિવેલ તેલ ',
+    nameGu: 'કોલ્ડ પ્રેસ્ડ દિવેલ તેલ',
     category: { _id: 'cat7', name: 'Castor Oil' },
-    image: new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href,
-    images: [new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href],
+    image: CA_1L,
+    images: [CA_1L, CA_BACK],
+
     description: `🌿 Cold Pressed Castor Oil
 
 Pure. Intensive. Deeply Restorative.
@@ -645,6 +658,7 @@ Helps in detoxifying and purifying naturally
 
 🟡 Powerful & Long-Lasting
 Highly concentrated, so a small amount is enough`,
+
     descriptionGu: `🌿 કોલ્ડ પ્રેસ્ડ અરીંડાનું તેલ (Castor Oil)
 
 શુદ્ધ. તીવ્ર પોષણ. ઊંડું પુનઃસ્થાપન.
@@ -667,54 +681,48 @@ Highly concentrated, so a small amount is enough`,
 
 🟡 શક્તિશાળી અને લાંબા સમય સુધી ચાલે
 થોડી માત્રામાં વધુ અસરકારક`,
+
     benefits: 'Hair growth stimulator|Skin hydration|Joint pain relief|Natural laxative|Anti-fungal',
     benefitsGu: 'વાળ વૃદ્ધિ|ત્વચા hydration|સાંધા|કબજિયાત|Anti-fungal',
     uses: 'Hair care|Skin care|Joint massage|Ayurvedic medicine',
     usesGu: 'વાળ|ત્વચા|સાંધા|આયુર્વેદ',
-     sizes: [
-       { size: '1 Litre', price: 250, 
-        images: new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/castor/ca1l.jpeg', import.meta.url).href,
-      new URL('../assets/product all/castor/back.jpeg', import.meta.url).href,
-      
-    ],
+
+    sizes: [
+      {
+        size: '250 ML',
+        price: 70,
+        image: CA_250,
+        images: [CA_250, CA_BACK],
       },
-      
-      { size: '500 ML', price: 130, 
-         images: new URL('../assets/product all/castor/500ml.jpeg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/castor/500ml.jpeg', import.meta.url).href, 
-      new URL('../assets/product all/castor/back.jpeg', import.meta.url).href,
-      
-    ],
+      {
+        size: '500 ML',
+        price: 130,
+        image: CA_500,
+        images: [CA_500, CA_BACK],
       },
-       { size: '250 ML', price: 70, 
-         images: new URL('../assets/product all/castor/250ml.jpeg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/castor/250ml.jpeg', import.meta.url).href, 
-      new URL('../assets/product all/castor/back.jpeg', import.meta.url).href,
-      
-    ],
+      {
+        size: '1 Litre',
+        price: 250,
+        image: CA_1L,
+        images: [CA_1L, CA_BACK],
       },
-      
     ],
+
     inStock: true,
     featured: false,
   },
-   
 
-  // ──────── GIR COW GHEE ────────
+  // ════════════════════════════════════════════
+  // 8. GIR COW GHEE
+  // ════════════════════════════════════════════
   {
     _id: 'p8',
-    name: 'Gir Cow Ghee ',
-    nameGu: 'ગીર ગાય ઘી ',
+    name: 'Gir Cow Ghee',
+    nameGu: 'ગીર ગાય ઘી',
     category: { _id: 'cat8', name: 'Gir Cow Ghee' },
-    image: new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href,
-    images: [
-      new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href,
-     
-    ],
+    image: GH_1L,
+    images: [GH_1L],
+
     description: `🌿 Gir Cow Ghee (Bilona Method)
 
 Pure. Sacred. Traditionally Nourishing.
@@ -737,6 +745,7 @@ Improves metabolism and helps better absorption of nutrients
 
 🟡 Holistic Wellness
 Highly valued in Ayurveda for balance, strength, and vitality`,
+
     descriptionGu: `🌿 ગીર ગાયનું ઘી 
 
 શુદ્ધ. પવિત્ર. પરંપરાગત પોષણ.
@@ -759,36 +768,35 @@ A2 દૂધમાંથી બનેલું, જે સરળ પચન અ�
 
 🟡 આયુર્વેદિક લાભ
 આયુર્વેદમાં સંતુલન અને તંદુરસ્તી માટે મહત્વપૂર્ણ માનવામાં આવે છે`,
+
     benefits: 'A2 protein|Boosts immunity|Improves digestion|Rich in vitamins|Traditional Bilona method',
     benefitsGu: 'A2 protein|Immunity|Digestion|Vitamins|Bilona method',
     uses: 'Cooking|Dal tadka|Chapati|Ayurvedic medicine|Baby food',
     usesGu: 'રસોઈ|Dal tadka|ચપાટી|આયુર્વેદ|Baby food',
+
     sizes: [
-       { size: '1 KG', price: 2400, 
-        images: new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href,
-     
-    ],
+      {
+        size: '500 GRAM',
+        price: 1250,
+        image: GH_500,
+        images: [GH_500],
       },
-      
-      { size: '500 GRAM', price: 1250, 
-         images: new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href, 
-      new URL('../assets/product all/GIR COW/1l.png', import.meta.url).href,
-      
-    ],
+      {
+        size: '1 KG',
+        price: 2400,
+        image: GH_1L,
+        images: [GH_1L],
       },
-      
     ],
+
     inStock: true,
     featured: false,
   },
-
 ];
 
-// Helper: WhatsApp order message
+// ──────────────────────────────────────────────
+// HELPER: WhatsApp order URL
+// ──────────────────────────────────────────────
 export const getWhatsAppOrderUrl = (product, size, quantity = 1) => {
   const msg = `Hello! I want to order:\n*${product.name}*\nSize: ${size?.size || ''}\nPrice: ₹${size?.price || product.sizes?.[0]?.price}\nQty: ${quantity}\n\nPlease confirm my order.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
