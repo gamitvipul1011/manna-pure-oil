@@ -23,7 +23,7 @@ const slides = [
     desktopImage: family2Desktop,
     mobileImage: family2Mobile
   },
-  { 
+  {
     desktopImage: family3Desktop,
     mobileImage: family3Mobile
   }
@@ -38,28 +38,24 @@ const HeroBanner = () => {
         pagination={{ clickable: true }}
         loop
         speed={900}
-        // ડેસ્કટોપમાં height 85vh રહેશે અને મોબાઈલમાં auto રહેશે 
-        className="w-full h-auto md:h-[85vh]"
+        className="w-full"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            {/* Flex નો ઉપયોગ કર્યો છે જેથી ઈમેજ સેન્ટરમાં રહે */}
-            <div className="relative w-full h-full flex justify-center items-center">
+            <div className="relative w-full flex items-center justify-center bg-white">
 
-              {/* DESKTOP IMAGE */}
+              {/* DESKTOP IMAGE - only for large desktop */}
               <img
                 src={slide.desktopImage}
                 alt="banner desktop"
-                className="hidden md:block w-full h-full object-cover object-center"
+                className="hidden lg:block w-full h-[85vh] object-cover object-center"
               />
 
-              {/* MOBILE IMAGE */}
+              {/* MOBILE IMAGE - mobile, tablet, desktop mode on mobile */}
               <img
                 src={slide.mobileImage}
                 alt="banner mobile"
-                // max-h-[60vh] થી ઈમેજ બહુ મોટી નહિ થાય
-                // object-contain થી ઈમેજ જરાય ક્રોપ નહિ થાય (આખી દેખાશે)
-                className="block md:hidden w-full h-auto max-h-[60vh] object-contain"
+                className="block lg:hidden w-full h-auto max-h-[70vh] object-contain"
               />
 
             </div>
