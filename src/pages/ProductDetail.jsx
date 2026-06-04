@@ -10,510 +10,390 @@ import { products, getWhatsAppOrderUrl } from "../data/products";
 import ProductCard from "../components/ProductCard";
 
 const ProductDetail = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
+  const { i18n } = useTranslation();
+  const isGu = i18n.language === "gu";
 
-const { id } = useParams();
-const navigate = useNavigate();
-const { addToCart } = useCart();
-const { i18n } = useTranslation();
-const isGu = i18n.language === "gu";
+  const [product, setProduct] = useState(null);
+  const [related, setRelated] = useState([]);
+  const [selectedSizeIdx, setSelectedSizeIdx] = useState(0);
+  const [selectedImageIdx, setSelectedImageIdx] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [activeTab, setActiveTab] = useState("description");
+  const [addedAnim, setAddedAnim] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false); // ✅ આ add કર્યું
 
-const [product, setProduct] = useState(null);
-const [related, setRelated] = useState([]);
-const [selectedSizeIdx, setSelectedSizeIdx] = useState(0);
-const [selectedImageIdx, setSelectedImageIdx] = useState(0);
-const [quantity, setQuantity] = useState(1);
-const [activeTab, setActiveTab] = useState("description");
-const [addedAnim, setAddedAnim] = useState(false);
+  useEffect(() => {
+    const p = products.find((x) => x._id === id);
 
-useEffect(() => {
+    if (!p) {
+      toast.error("Product not found");
+      navigate("/products");
+      return;
+    }
 
-const p = products.find(x => x._id === id);
+    setProduct(p);
+    setImgLoaded(false); // ✅ product બદલે ત્યારે reset
 
-if (!p) {
-toast.error("Product not found");
-navigate("/products");
-return;
-}
+    let relatedProducts = products.filter(
+      (x) => x._id !== id && x.category._id === p.category._id
+    );
 
-setProduct(p);
+    if (relatedProducts.length === 0) {
+      relatedProducts = products.filter((x) => x._id !== id);
+    }
 
-let relatedProducts = products.filter(
-x => x._id !== id && x.category._id === p.category._id
-);
+    setRelated(relatedProducts.slice(0, 4));
+    window.scrollTo(0, 0);
+  }, [id]);
 
-if (relatedProducts.length === 0) {
-relatedProducts = products.filter(x => x._id !== id);
-}
+  // ✅ Image બદલે ત્યારે loader reset
+  useEffect(() => {
+    setImgLoaded(false);
+  }, [selectedImageIdx, selectedSizeIdx]);
 
-setRelated(relatedProducts.slice(0,4));
-window.scrollTo(0,0);
+  if (!product)
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-purple-600"></div>
+      </div>
+    );
 
-}, [id]);
+  const selectedSize = product.sizes?.[selectedSizeIdx] || null;
 
-if (!product)
-return (
-<div className="min-h-screen flex items-center justify-center">
-<div className="animate-spin rounded-full h-16 w-16 border-t-4 border-purple-600"></div>
-</div>
-);
+  const currentImages =
+    selectedSize?.images?.length
+      ? selectedSize.images
+      : product.images?.length
+      ? product.images
+      : [product.image];
 
-const selectedSize = product.sizes?.[selectedSizeIdx] || null;
+  const displayImage = currentImages[selectedImageIdx] || product.image;
 
-const currentImages =
-selectedSize?.images?.length
-? selectedSize.images
-: product.images?.length
-? product.images
-: [product.image];
+  const handleAddToCart = () => {
+    if (!selectedSize) {
+      toast.error("Please select size");
+      return;
+    }
 
-const displayImage = currentImages[selectedImageIdx] || product.image;
+    addToCart(
+      { ...product, price: selectedSize.price, size: selectedSize.size },
+      quantity
+    );
 
-const handleAddToCart = () => {
+    setAddedAnim(true);
+    setTimeout(() => setAddedAnim(false), 1200);
+    toast.success(isGu ? "કાર્ટ માં ઉમેરાયું!" : "Added to cart!");
+  };
 
-if (!selectedSize) {
-toast.error("Please select size");
-return;
-}
+  const parseLines = (text) =>
+    text ? text.split(/\n|\|/).map((s) => s.trim()).filter(Boolean) : [];
 
-addToCart(
-{ ...product, price: selectedSize.price, size: selectedSize.size },
-quantity
-);
+  const tabs = [
+    { key: "description", en: "Description", gu: "વર્ણન" },
+    { key: "benefits", en: "Benefits", gu: "ફાયદા" },
+    { key: "uses", en: "Uses", gu: "ઉપયોગ" },
+  ];
 
-setAddedAnim(true);
-setTimeout(() => setAddedAnim(false), 1200);
-
-toast.success(isGu ? "કાર્ટ માં ઉમેરાયું!" : "Added to cart!");
-
-};
-
-const parseLines = (text) =>
-text ? text.split(/\n|\|/).map(s => s.trim()).filter(Boolean) : [];
-
-const tabs = [
-{ key: "description", en: "Description", gu: "વર્ણન" },
-{ key: "benefits", en: "Benefits", gu: "ફાયદા" },
-{ key: "uses", en: "Uses", gu: "ઉપયોગ" },
-];
-
-return (
-
-<div className="min-h-screen bg-gradient-purple overflow-x-hidden">
-
-<div className="max-w-7xl mx-auto px-4 pt-8">
-
-<button
-onClick={() => navigate("/products")}
-className="flex items-center gap-2 text-orange-100 hover:text-orange-400 transition font-semibold group mb-6"
->
-<FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-{isGu ? "ઉત્પાદનો પર જાઓ" : "Back to Products"}
-</button>
-
-</div>
-
-<div className="max-w-7xl mx-auto px-4 pb-16">
-
-<div className="grid lg:grid-cols-2 gap-10">
-
-{/* IMAGE SECTION */}
-
-<div className="space-y-4">
-
-  {/* MAIN IMAGE */}
-  <div className="relative flex justify-center items-center w-full">
-
-    {/* Glow Background */}
-    <div
-      className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-pink-400/10 to-purple-400/20 blur-3xl"
-      style={{
-        borderRadius: "35px",
-      }}
-    />
-
-    {/* Image Container */}
-    <div
-      className="relative flex items-center justify-center overflow-hidden"
-      style={{
-        borderRadius: "28px",
-        width: "fit-content",
-        maxWidth: "100%",
-      }}
-    >
-      {/* Loader */}
-      {!imgLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
-        </div>
-      )}
-
-      {/* Main Image */}
-      <img
-        src={displayImage}
-        alt={product.name}
-        onLoad={() => setImgLoaded(true)}
-        className={`transition-all duration-500 hover:scale-[1.02]
-        object-contain
-        w-auto max-w-full
-        h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px]
-        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
-      />
-    </div>
-  </div>
-
-  {/* THUMBNAILS */}
-  {currentImages.length > 1 && (
-    <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
-      {currentImages.map((img, idx) => (
+  return (
+    <div className="min-h-screen bg-gradient-purple overflow-x-hidden">
+      {/* Back Button */}
+      <div className="max-w-7xl mx-auto px-4 pt-8">
         <button
-          key={idx}
-          onClick={() => {
-            setSelectedImageIdx(idx);
-            setImgLoaded(false);
-          }}
-          className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-300 ${
-            selectedImageIdx === idx
-              ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-105"
-              : "border-purple-300/30 hover:border-orange-300"
-          }`}
-          style={{ borderRadius: "16px" }}
+          onClick={() => navigate("/products")}
+          className="flex items-center gap-2 text-orange-100 hover:text-orange-400 transition font-semibold group mb-6"
         >
-          <img
-            src={img}
-            alt=""
-            className="w-full h-full object-contain"
-          />
+          <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+          {isGu ? "ઉત્પાદનો પર જાઓ" : "Back to Products"}
         </button>
-      ))}
-    </div>
-  )}
-</div>
+      </div>
 
-{/* PRODUCT INFO */}
+      <div className="max-w-7xl mx-auto px-4 pb-16">
+        <div className="grid lg:grid-cols-2 gap-10">
 
-<div className="space-y-6">
+          {/* ── IMAGE SECTION ── */}
+          <div className="space-y-4">
 
-<div>
+            {/* Main Image */}
+            <div className="relative flex justify-center items-center w-full">
+              <div
+                className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-pink-400/10 to-purple-400/20 blur-3xl"
+                style={{ borderRadius: "35px" }}
+              />
 
-<span className="text-xs font-semibold text-purple-300 uppercase tracking-widest">
-{isGu
-? product.category.nameGu || product.category.name
-: product.category.name}
-</span>
+              <div
+                className="relative flex items-center justify-center overflow-hidden"
+                style={{ borderRadius: "28px", width: "fit-content", maxWidth: "100%" }}
+              >
+                {/* ✅ Loader */}
+                {!imgLoaded && (
+                  <div className="absolute inset-0 flex items-center justify-center z-10 bg-purple-900/20">
+                    <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
+                  </div>
+                )}
 
-<h1 className="text-3xl md:text-4xl font-extrabold text-white mt-1">
-{isGu && product.nameGu ? product.nameGu : product.name}
-</h1>
+                {/* ✅ Image */}
+                <img
+                  src={displayImage}
+                  alt={isGu && product.nameGu ? product.nameGu : product.name}
+                  onLoad={() => setImgLoaded(true)}
+                  onError={() => setImgLoaded(true)} // ✅ error આવે તો loader stuck ન થાય
+                  className={`transition-all duration-500 hover:scale-[1.02]
+                    object-contain w-auto max-w-full
+                    h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px]
+                    ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+                />
+              </div>
+            </div>
 
-<div className="flex items-center gap-1 mt-2">
+            {/* Thumbnails */}
+            {currentImages.length > 1 && (
+              <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
+                {currentImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setSelectedImageIdx(idx);
+                      setImgLoaded(false);
+                    }}
+                    className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 
+                      overflow-hidden border-2 transition-all duration-300 ${
+                        selectedImageIdx === idx
+                          ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-105"
+                          : "border-purple-300/30 hover:border-orange-300"
+                      }`}
+                    style={{ borderRadius: "16px" }}
+                  >
+                    <img src={img} alt="" className="w-full h-full object-contain" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
-{[...Array(5)].map((_, i) => (
-<FaStar key={i} className="text-yellow-400 text-sm" />
-))}
+          {/* ── PRODUCT INFO ── */}
+          <div className="space-y-6">
 
-<span className="text-sm text-purple-200 ml-1">(4.8)</span>
+            {/* Name & Rating */}
+            <div>
+              <span className="text-xs font-semibold text-purple-300 uppercase tracking-widest">
+                {isGu
+                  ? product.category.nameGu || product.category.name
+                  : product.category.name}
+              </span>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-white mt-1">
+                {isGu && product.nameGu ? product.nameGu : product.name}
+              </h1>
+              <div className="flex items-center gap-1 mt-2">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} className="text-yellow-400 text-sm" />
+                ))}
+                <span className="text-sm text-purple-200 ml-1">(4.8)</span>
+              </div>
+            </div>
 
-</div>
+            {/* Price */}
+            <div className="bg-[#D0F0C0] rounded-3xl p-6 shadow-xl">
+              <p className="text-5xl font-extrabold text-purple-700">
+                ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
+              </p>
+              <p className="text-sm text-gray-500 mt-1">{selectedSize?.size}</p>
+            </div>
 
-</div>
+            {/* Size */}
+            {product.sizes?.length > 0 && (
+              <div>
+                <p className="font-semibold text-purple-100 mb-3">
+                  {isGu ? "સાઈઝ પસંદ કરો" : "Select Size"}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {product.sizes.map((sv, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        setSelectedSizeIdx(idx);
+                        setSelectedImageIdx(0);
+                      }}
+                      className={`px-5 py-2 rounded-xl border ${
+                        selectedSizeIdx === idx
+                          ? "bg-emerald-500 text-white"
+                          : "bg-[#D0F0C0]"
+                      }`}
+                    >
+                      {sv.size}
+                      <span className="block text-xs">₹{sv.price}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
-{/* PRICE */}
+            {/* Quantity */}
+            <div className="flex items-center gap-4">
+              <p className="font-semibold text-purple-100">
+                {isGu ? "જથ્થો" : "Quantity"}
+              </p>
+              <div className="flex items-center border rounded-xl bg-[#D0F0C0]">
+                <button
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  className="px-4 py-2 font-bold"
+                >
+                  -
+                </button>
+                <span className="px-4">{quantity}</span>
+                <button
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="px-4 py-2 font-bold"
+                >
+                  +
+                </button>
+              </div>
+            </div>
 
-<div className="bg-[#D0F0C0] rounded-3xl p-6 shadow-xl">
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <button
+                onClick={handleAddToCart}
+                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-purple-600 text-white font-semibold"
+              >
+                <FaShoppingCart />
+                {addedAnim
+                  ? isGu ? "ઉમેરાયું!" : "Added!"
+                  : isGu ? "કાર્ટ માં ઉમેરો" : "Add To Cart"}
+              </button>
 
-<p className="text-5xl font-extrabold text-purple-700">
-₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
-</p>
+              <button
+                onClick={() => { handleAddToCart(); navigate("/cart"); }}
+                className="flex-1 py-3 rounded-xl bg-orange-500 text-white font-semibold"
+              >
+                {isGu ? "હમણાં ખરીદો" : "Buy Now"}
+              </button>
+            </div>
 
-<p className="text-sm text-gray-500 mt-1">
-{selectedSize?.size}
-</p>
+            {/* WhatsApp */}
+            <a
+              href={getWhatsAppOrderUrl(product, selectedSize, quantity)}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-3 w-full py-3 rounded-xl text-white bg-green-500 font-semibold"
+            >
+              <FaWhatsapp />
+              {isGu ? "WhatsApp પર ઓર્ડર કરો" : "Order on WhatsApp"}
+            </a>
 
-</div>
-
-{/* SIZE */}
-
-{product.sizes?.length > 0 && (
-
-<div>
-
-<p className="font-semibold text-purple-100 mb-3">
-{isGu ? "સાઈઝ પસંદ કરો" : "Select Size"}
-</p>
-
-<div className="flex flex-wrap gap-3">
-
-{product.sizes.map((sv, idx) => (
-
-<button
-key={idx}
-onClick={() => {
-setSelectedSizeIdx(idx);
-setSelectedImageIdx(0);
-}}
-className={`px-5 py-2 rounded-xl border ${
-selectedSizeIdx === idx
-? "bg-emerald-500 text-white"
-: "bg-[#D0F0C0]"
-}`}
->
-
-{sv.size}
-<span className="block text-xs">
-₹{sv.price}
-</span>
-
-</button>
-
-))}
-
-</div>
-
-</div>
-
-)}
-
-{/* QUANTITY */}
-
-<div className="flex items-center gap-4">
-
-<p className="font-semibold text-purple-100">
-{isGu ? "જથ્થો" : "Quantity"}
-</p>
-
-<div className="flex items-center border rounded-xl bg-[#D0F0C0]">
-
-<button
-onClick={() => setQuantity(Math.max(1, quantity - 1))}
-className="px-4 py-2"
->
--
-</button>
-
-<span className="px-4">{quantity}</span>
-
-<button
-onClick={() => setQuantity(quantity + 1)}
-className="px-4 py-2"
->
-+
-</button>
-
-</div>
-
-</div>
-
-{/* BUTTONS */}
-
-<div className="flex gap-3">
-
-<button
-onClick={handleAddToCart}
-className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-purple-600 text-white"
->
-
-<FaShoppingCart />
-
-{addedAnim
-? (isGu ? "ઉમેરાયું!" : "Added!")
-: (isGu ? "કાર્ટ માં ઉમેરો" : "Add To Cart")}
-
-</button>
-
-<button
-onClick={() => {
-handleAddToCart();
-navigate("/cart");
-}}
-className="flex-1 py-3 rounded-xl bg-orange-500 text-white"
->
-
-{isGu ? "હમણાં ખરીદો" : "Buy Now"}
-
-</button>
-
-</div>
-
-{/* WHATSAPP */}
-
-<a
-href={getWhatsAppOrderUrl(product, selectedSize, quantity)}
-target="_blank"
-rel="noreferrer"
-className="flex items-center justify-center gap-3 w-full py-3 rounded-xl text-white bg-green-500"
->
-
-<FaWhatsapp />
-
-{isGu
-? "WhatsApp પર ઓર્ડર કરો"
-: "Order on WhatsApp"}
-
-</a>
-  <div className="grid grid-cols-3 gap-3">
+            {/* Badges */}
+            <div className="grid grid-cols-3 gap-3">
               {[
                 { icon: "🌿", en: "100% Natural", gu: "100% Natural" },
-                { icon: "🏭", en: "Cold Pressed",  gu: "Cold Pressed" },
+                { icon: "🏭", en: "Cold Pressed", gu: "Cold Pressed" },
                 { icon: "✅", en: "FSSAI Certified", gu: "સર્ટિફાઇડ" },
               ].map((b, i) => (
-                <div key={i} className="flex flex-col items-center bg-green-50 rounded-xl p-3 text-center">
+                <div
+                  key={i}
+                  className="flex flex-col items-center bg-green-50 rounded-xl p-3 text-center"
+                >
                   <span className="text-2xl mb-1">{b.icon}</span>
-                  <span className="text-xs font-semibold text-green-700">{isGu ? b.gu : b.en}</span>
-
-          
+                  <span className="text-xs font-semibold text-green-700">
+                    {isGu ? b.gu : b.en}
+                  </span>
                 </div>
-
-               
               ))}
             </div>
           </div>
         </div>
 
+        {/* ── TABS ── */}
+        <div className="mt-16">
+          <div className="flex gap-2 border-b overflow-x-auto">
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`px-6 py-3 font-bold whitespace-nowrap ${
+                  activeTab === tab.key
+                    ? "bg-white text-green-700"
+                    : "text-gray-400"
+                }`}
+              >
+                {isGu ? tab.gu : tab.en}
+              </button>
+            ))}
+          </div>
 
+          <div className="bg-[#D0F0C0] rounded-b-3xl shadow-xl p-4 md:p-8">
 
-{/* TABS */}
+            {/* Description */}
+            {activeTab === "description" && (
+              <div className="flex gap-4">
+                <GiOilDrum className="text-purple-700 text-xl flex-shrink-0 mt-1" />
+                <div>
+                  {(isGu && product.descriptionGu
+                    ? product.descriptionGu
+                    : product.description || ""
+                  )
+                    .split("\n")
+                    .map((line, i) => (
+                      <p
+                        key={i}
+                        className={`text-gray-700 text-sm md:text-base ${
+                          line.includes("✨") || line.includes("🌿")
+                            ? "mt-6 font-bold text-lg"
+                            : "mt-2"
+                        }`}
+                      >
+                        {line}
+                      </p>
+                    ))}
+                </div>
+              </div>
+            )}
 
-<div className="mt-16">
+            {/* Benefits */}
+            {activeTab === "benefits" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {parseLines(isGu ? product.benefitsGu : product.benefits).map(
+                  (b, i) => (
+                    <div key={i} className="flex gap-2 p-4 bg-emerald-50 rounded-xl">
+                      <FaLeaf className="text-emerald-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm">{b}</span>
+                    </div>
+                  )
+                )}
+              </div>
+            )}
 
-<div className="flex gap-2 border-b overflow-x-auto">
+            {/* Uses */}
+            {activeTab === "uses" && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {parseLines(isGu ? product.usesGu : product.uses).map((u, i) => (
+                  <div key={i} className="flex gap-2 p-4 bg-amber-50 rounded-xl">
+                    <span className="font-bold">{i + 1}.</span>
+                    <span className="text-sm">{u}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
 
-{tabs.map(tab => (
-
-<button
-key={tab.key}
-onClick={() => setActiveTab(tab.key)}
-className={`px-6 py-3 font-bold ${
-activeTab === tab.key
-? "bg-white text-green-700"
-: "text-gray-400"
-}`}
->
-
-{isGu ? tab.gu : tab.en}
-
-</button>
-
-))}
-
-</div>
-
-<div className="bg-[#D0F0C0] rounded-b-3xl shadow-xl p-4 md:p-8">
-
-{/* DESCRIPTION */}
-
-{activeTab === "description" && (
-
-<div className="flex gap-4">
-
-<GiOilDrum className="text-purple-700 text-xl"/>
-
-<div>
-
-{(isGu && product.descriptionGu
-? product.descriptionGu
-: product.description)
-.split("\n")
-.map((line, i) => (
-
-<p
-  key={i}
-  className={`text-gray-700 text-sm md:text-base ${
-    line.includes("✨") || line.includes("🌿")
-      ? "mt-6 font-bold text-lg"
-      : "mt-2"
-  }`}
->
-  {line}
-</p>
-
-))}
-
-</div>
-
-</div>
-
-)}
-
-{/* BENEFITS */}
-
-{activeTab === "benefits" && (
-
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-{parseLines(isGu ? product.benefitsGu : product.benefits).map((b, i) => (
-
-<div key={i} className="flex gap-2 p-4 bg-emerald-50 rounded-xl">
-
-<FaLeaf className="text-emerald-500"/>
-
-<span className="text-sm">{b}</span>
-
-</div>
-
-))}
-
-</div>
-
-)}
-
-{/* USES */}
-
-{activeTab === "uses" && (
-
-<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-{parseLines(isGu ? product.usesGu : product.uses).map((u, i) => (
-
-<div key={i} className="flex gap-2 p-4 bg-amber-50 rounded-xl">
-
-<span className="font-bold">{i+1}.</span>
-
-<span className="text-sm">{u}</span>
-
-</div>
-
-))}
-
-</div>
-
-)}
-
-</div>
-
-</div>
-
-{/* RELATED PRODUCTS */}
-
-{related.length > 0 && (
-
-<div className="mt-16">
-
-<h2 className="text-3xl font-bold text-white mb-8">
-
-{isGu
-? "સંબંધિત ઉત્પાદનો"
-: "Related Products"}
-
-</h2>
-
-<div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-
-{related.map(item => (
-<ProductCard key={item._id} product={item} />
-))}
-
-</div>
-
-</div>
-
-)}
-
-</div>
-
-</div>
-
-);
-
+        {/* ── RELATED PRODUCTS ── */}
+        {related.length > 0 && (
+          <div className="mt-16">
+            <h2 className="text-3xl font-bold text-white mb-8">
+              {isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}
+            </h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+              {related.map((item) => (
+                <ProductCard key={item._id} product={item} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default ProductDetail;
