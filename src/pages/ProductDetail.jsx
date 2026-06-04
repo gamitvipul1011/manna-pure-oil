@@ -151,8 +151,11 @@ onClick={() => {
 setSelectedImageIdx(idx);
 setImgLoaded(false);
 }}
-className={w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 ${ selectedImageIdx === idx ? "border-orange-500 shadow-lg scale-105" : "border-purple-300/30 hover:border-orange-300" } rounded-xl}
->
+className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 ${
+  selectedImageIdx === idx
+    ? "border-orange-500 shadow-lg scale-105"
+    : "border-purple-300/30 hover:border-orange-300"
+} rounded-xl`}
 <img src={img} alt="" className="w-full h-full object-contain" />
 </button>
 ))}
