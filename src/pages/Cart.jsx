@@ -59,7 +59,6 @@ const Cart = () => {
   if (cartItems.length === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center py-20 relative overflow-hidden">
-        {/* Background decorations */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -86,7 +85,6 @@ const Cart = () => {
   // ========== CART WITH ITEMS ==========
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 py-12 relative overflow-hidden">
-      {/* Background decorations */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
       <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
@@ -127,7 +125,7 @@ const Cart = () => {
 
               return (
                 <div
-                  key={item._id}
+                  key={item.uniqueKey || `${item._id}_${item.size}`}
                   className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 group"
                 >
                   {/* Image */}
@@ -158,11 +156,11 @@ const Cart = () => {
                     </p>
                   </div>
 
-                  {/* Quantity */}
+                  {/* Quantity - size pass karo */}
                   <div className="flex flex-col items-center gap-4">
                     <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full overflow-hidden border border-white/20">
                       <button
-                        onClick={() => updateQuantity(item._id, item.quantity - 1)}
+                        onClick={() => updateQuantity(item._id, item.size, item.quantity - 1)}
                         className="px-4 py-3 text-white hover:bg-white/20 transition"
                       >
                         <FaMinus className="text-sm" />
@@ -171,15 +169,16 @@ const Cart = () => {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => updateQuantity(item._id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item._id, item.size, item.quantity + 1)}
                         className="px-4 py-3 text-white hover:bg-white/20 transition"
                       >
                         <FaPlus className="text-sm" />
                       </button>
                     </div>
 
+                    {/* Remove - size pass karo */}
                     <button
-                      onClick={() => removeFromCart(item._id)}
+                      onClick={() => removeFromCart(item._id, item.size)}
                       className="text-red-300 hover:text-red-400 flex items-center gap-2 text-sm font-semibold transition"
                     >
                       <FaTrash />
@@ -206,13 +205,11 @@ const Cart = () => {
               <p className="text-purple-200 text-sm mb-6">ઓર્ડર સારાંશ</p>
 
               <div className="space-y-4 mb-6">
-                {/* Subtotal */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200">{t('subtotal')} / પેટા-કુલ</span>
                   <span className="font-semibold text-white">₹{subtotal.toFixed(2)}</span>
                 </div>
 
-                {/* Total Weight */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200 flex items-center gap-2">
                     <FaWeight className="text-sm" /> Total Weight / કુલ વજન
@@ -220,7 +217,6 @@ const Cart = () => {
                   <span className="font-semibold text-white">{totalWeight.toFixed(2)} kg</span>
                 </div>
 
-                {/* Shipping */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200 flex items-center gap-2">
                     <FaTruck className="text-sm" /> Shipping / ડિલિવરી
@@ -234,18 +230,15 @@ const Cart = () => {
                   )}
                 </div>
 
-                {/* Shipping info */}
                 <div className="bg-white/5 rounded-lg px-4 py-2 text-sm text-purple-300 border border-white/10">
                   ₹20 per kg × {totalWeight.toFixed(2)} kg = ₹{shippingCharge.toFixed(2)}
                 </div>
 
-                {/* Tax */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200">Tax / GST</span>
                   <span className="font-semibold text-green-400">Included in price</span>
                 </div>
 
-                {/* Divider + Final Total */}
                 <div className="border-t border-white/20 pt-4">
                   <div className="flex justify-between text-2xl font-bold">
                     <span className="text-white">{t('total')}</span>
@@ -256,12 +249,10 @@ const Cart = () => {
                 </div>
               </div>
 
-              {/* Checkout Button */}
               <button className="w-full px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 transition-all transform hover:scale-105 hover:-translate-y-1 mb-4">
                 {t('checkout')} / ચૂકવણી
               </button>
 
-              {/* Continue Shopping */}
               <Link
                 to="/products"
                 className="block text-center text-purple-200 hover:text-white font-semibold transition"
@@ -269,7 +260,6 @@ const Cart = () => {
                 {t('continueShopping')}
               </Link>
 
-              {/* Trust Badges */}
               <div className="mt-8 pt-6 border-t border-white/10 space-y-3 text-sm text-purple-200">
                 <div className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
                   <FaShieldAlt className="text-green-400 text-lg" />
