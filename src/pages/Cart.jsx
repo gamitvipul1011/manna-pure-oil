@@ -12,6 +12,7 @@ import {
   FaTruck,
   FaUndoAlt,
   FaWeight,
+  FaGift,
 } from 'react-icons/fa';
 import { useCart } from '../context/CartContext';
 
@@ -19,6 +20,8 @@ const Cart = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, getCartCount } = useCart();
+
+  const FREE_DELIVERY_THRESHOLD = 999; // ₹999 thi upar free delivery
 
   const getItemWeightInKg = (item) => {
     if (item.weightInKg !== undefined && item.weightInKg !== null) {
@@ -52,7 +55,13 @@ const Cart = () => {
     return total + itemWeight * item.quantity;
   }, 0);
 
-  const shippingCharge = totalWeight > 0 ? totalWeight * 20 : 0;
+  // ✅ Free delivery logic
+  const isFreeDelivery = subtotal >= FREE_DELIVERY_THRESHOLD;
+  const calculatedShipping = totalWeight > 0 ? totalWeight * 20 : 0;
+  const shippingCharge = isFreeDelivery ? 0 : calculatedShipping;
+  const shippingDiscount = isFreeDelivery ? calculatedShipping : 0;
+  const amountNeededForFree = Math.max(0, FREE_DELIVERY_THRESHOLD - subtotal);
+
   const finalTotal = subtotal + shippingCharge;
 
   // ========== EMPTY CART ==========
@@ -115,6 +124,60 @@ const Cart = () => {
           </button>
         </div>
 
+        {/* ✅ FREE DELIVERY PROGRESS BAR */}
+        {!isFreeDelivery && (
+          <div className="mb-8 bg-white/10 backdrop-blur-xl rounded-2xl p-5 border border-white/20">
+            <div className="flex items-center gap-3 mb-3">
+              <FaGift className="text-yellow-400 text-xl animate-bounce" />
+              <p className="text-white font-semibold">
+                Add <span className="text-yellow-400 text-lg">₹{amountNeededForFree.toFixed(2)}</span> more for{' '}
+                <span className="text-green-400 font-bold">FREE Delivery!</span>
+              </p>
+            </div>
+            <p className="text-purple-300 text-sm mb-3">
+              ₹{amountNeededForFree.toFixed(2)} વધુ ઉમેરો અને ફ્રી ડિલિવરી મેળવો!
+            </p>
+            {/* Progress bar */}
+            <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full transition-all duration-700 ease-out"
+                style={{
+                  width: `${Math.min((subtotal / FREE_DELIVERY_THRESHOLD) * 100, 100)}%`,
+                }}
+              ></div>
+            </div>
+            <div className="flex justify-between mt-2 text-xs text-purple-300">
+              <span>₹0</span>
+              <span>₹{FREE_DELIVERY_THRESHOLD} (Free Delivery)</span>
+            </div>
+          </div>
+        )}
+
+        {/* ✅ FREE DELIVERY UNLOCKED BANNER */}
+        {isFreeDelivery && (
+          <div className="mb-8 bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl rounded-2xl p-5 border border-green-400/30">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-green-500/30 rounded-full flex items-center justify-center">
+                <FaTruck className="text-green-400 text-xl" />
+              </div>
+              <div>
+                <p className="text-green-400 font-bold text-lg flex items-center gap-2">
+                  🎉 Free Delivery Unlocked!
+                </p>
+                <p className="text-green-300 text-sm">
+                  ફ્રી ડિલિવરી મળશે! તમે ₹{FREE_DELIVERY_THRESHOLD} થી ઉપર ખરીદી કરી છે.
+                </p>
+              </div>
+              {shippingDiscount > 0 && (
+                <div className="ml-auto text-right">
+                  <p className="text-green-300 text-sm">You saved</p>
+                  <p className="text-green-400 font-bold text-lg">₹{shippingDiscount.toFixed(2)}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* ========== CART ITEMS ========== */}
           <div className="lg:col-span-2 space-y-5">
@@ -156,7 +219,7 @@ const Cart = () => {
                     </p>
                   </div>
 
-                  {/* Quantity - size pass karo */}
+                  {/* Quantity */}
                   <div className="flex flex-col items-center gap-4">
                     <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full overflow-hidden border border-white/20">
                       <button
@@ -176,7 +239,6 @@ const Cart = () => {
                       </button>
                     </div>
 
-                    {/* Remove - size pass karo */}
                     <button
                       onClick={() => removeFromCart(item._id, item.size)}
                       className="text-red-300 hover:text-red-400 flex items-center gap-2 text-sm font-semibold transition"
@@ -205,11 +267,13 @@ const Cart = () => {
               <p className="text-purple-200 text-sm mb-6">ઓર્ડર સારાંશ</p>
 
               <div className="space-y-4 mb-6">
+                {/* Subtotal */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200">{t('subtotal')} / પેટા-કુલ</span>
                   <span className="font-semibold text-white">₹{subtotal.toFixed(2)}</span>
                 </div>
 
+                {/* Total Weight */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200 flex items-center gap-2">
                     <FaWeight className="text-sm" /> Total Weight / કુલ વજન
@@ -217,28 +281,49 @@ const Cart = () => {
                   <span className="font-semibold text-white">{totalWeight.toFixed(2)} kg</span>
                 </div>
 
+                {/* Shipping */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200 flex items-center gap-2">
                     <FaTruck className="text-sm" /> Shipping / ડિલિવરી
                   </span>
-                  {shippingCharge > 0 ? (
+                  {isFreeDelivery ? (
+                    <div className="text-right">
+                      <span className="text-gray-400 line-through text-sm mr-2">
+                        ₹{calculatedShipping.toFixed(2)}
+                      </span>
+                      <span className="font-bold text-green-400">FREE</span>
+                    </div>
+                  ) : (
                     <span className="font-semibold text-orange-400">
                       ₹{shippingCharge.toFixed(2)}
                     </span>
-                  ) : (
-                    <span className="font-semibold text-green-400">Free</span>
                   )}
                 </div>
 
-                <div className="bg-white/5 rounded-lg px-4 py-2 text-sm text-purple-300 border border-white/10">
-                  ₹20 per kg × {totalWeight.toFixed(2)} kg = ₹{shippingCharge.toFixed(2)}
-                </div>
+                {/* Shipping info */}
+                {!isFreeDelivery && (
+                  <div className="bg-white/5 rounded-lg px-4 py-2 text-sm text-purple-300 border border-white/10">
+                    ₹20 per kg × {totalWeight.toFixed(2)} kg = ₹{shippingCharge.toFixed(2)}
+                  </div>
+                )}
 
+                {/* Free delivery savings */}
+                {isFreeDelivery && shippingDiscount > 0 && (
+                  <div className="bg-green-500/10 rounded-lg px-4 py-2 text-sm text-green-400 border border-green-500/20 flex items-center gap-2">
+                    <FaGift className="text-green-400" />
+                    You saved ₹{shippingDiscount.toFixed(2)} on delivery!
+                    <br />
+                    ડિલિવરી પર ₹{shippingDiscount.toFixed(2)} બચાવ્યા!
+                  </div>
+                )}
+
+                {/* Tax */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200">Tax / GST</span>
                   <span className="font-semibold text-green-400">Included in price</span>
                 </div>
 
+                {/* Final Total */}
                 <div className="border-t border-white/20 pt-4">
                   <div className="flex justify-between text-2xl font-bold">
                     <span className="text-white">{t('total')}</span>
@@ -249,10 +334,12 @@ const Cart = () => {
                 </div>
               </div>
 
+              {/* Checkout Button */}
               <button className="w-full px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 transition-all transform hover:scale-105 hover:-translate-y-1 mb-4">
                 {t('checkout')} / ચૂકવણી
               </button>
 
+              {/* Continue Shopping */}
               <Link
                 to="/products"
                 className="block text-center text-purple-200 hover:text-white font-semibold transition"
@@ -260,14 +347,15 @@ const Cart = () => {
                 {t('continueShopping')}
               </Link>
 
+              {/* Trust Badges */}
               <div className="mt-8 pt-6 border-t border-white/10 space-y-3 text-sm text-purple-200">
                 <div className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
                   <FaShieldAlt className="text-green-400 text-lg" />
                   <span>Secure Payment / સુરક્ષિત ચૂકવણી</span>
                 </div>
-                <div className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
-                  <FaTruck className="text-blue-400 text-lg" />
-                  <span>Shipping ₹20 per kg / ₹20 પ્રતિ કિલો</span>
+                <div className="flex items-center gap-3 bg-green-500/10 rounded-lg px-4 py-3 border border-green-500/20">
+                  <FaTruck className="text-green-400 text-lg" />
+                  <span>Free Delivery above ₹{FREE_DELIVERY_THRESHOLD} / ₹{FREE_DELIVERY_THRESHOLD} ઉપર ફ્રી ડિલિવરી</span>
                 </div>
                 <div className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
                   <FaUndoAlt className="text-orange-400 text-lg" />
