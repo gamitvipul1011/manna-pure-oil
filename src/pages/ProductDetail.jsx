@@ -348,13 +348,12 @@ const ProductDetail = () => {
     {selectedSize?.size}
   </p>
 
-  {/* ફ્રી ડિલિવરી માટેનો નવો વિભાગ */}
+  {/* ફ્રી ડિલિવરી મેસેજ - ભાષા પ્રમાણે (Condition) */}
   <div className="mt-4 p-3 bg-white/50 rounded-2xl border border-dashed border-purple-400">
     <p className="text-sm font-bold text-purple-800">
-      🚚 ₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે
-    </p>
-    <p className="text-xs text-purple-600 font-medium mt-1">
-      Free delivery on orders above ₹999
+      🚚 {language === 'gu' 
+           ? "₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે" 
+           : "Free delivery on orders above ₹999"}
     </p>
   </div>
 </div>
