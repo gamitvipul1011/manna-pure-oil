@@ -7,6 +7,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const testimonials = [
+  {
+nameGu: "હાર્દિક બોરીચા",
+nameEn: "Hardik Boricha",
+image: "/images/Mehul.jpg",
+textGu: "મન્ના પ્યોર તેલનું મગફળીનું તેલ ખૂબ જ સારી ગુણવત્તાનું છે. રસોઈ અને સ્વાસ્થ્ય માટે પરફેક્ટ. જાઓ અને પ્રકૃતિનો સ્વાદ માણો😊 .",
+textEn: "It is Groundnut Oil from Manna Pure Oil is of very good quality. Perfect for cooking and health. Go and test the nature😊.."
+},
 {
 nameGu: "મેહુલ વસાવા",
 nameEn: "Mehul Vasava",
