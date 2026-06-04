@@ -431,26 +431,3 @@ export const getWhatsAppOrderUrl = (product, size, quantity = 1) => {
   const msg = `Hello! I want to order:\n*${product.name}*\nSize: ${size?.size || ''}\nPrice: ₹${size?.price}\nQty: ${quantity}\n\nPlease confirm my order.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 };
-```
-
----
-
-### આ Code ને કેવી રીતે વાપરવું?
-
-**Product Card માં આ રીતે img ટેગ વાપરો** (આ ખૂબ જરૂરી છે load speed માટે):
-
-```jsx
-<img
-  src={product.image}
-  alt={product.name}
-  loading="lazy"
-  decoding="async"
-  width="280"
-  height="280"
-  style={{ objectFit: 'cover' }}
-/>
-```
-
-જો તમે આ પણ જોઈએ તો હું **OptimizedImage Component** પણ આપી શકું છું.
-
-કોઈ પ્રોબ્લેમ હોય તો કહેજો!
