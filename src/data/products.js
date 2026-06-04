@@ -5,6 +5,7 @@
 // ============================================================
 
 export const WHATSAPP_NUMBER = '917874239595';
+const asset = (path) => new URL(path, import.meta.url).href;
 
 export const categories = [
   { _id: 'cat1', name: 'Groundnut Oil',    nameGu: 'મગફળી તેલ',    image: '../assets/catagory/g1.png' },
