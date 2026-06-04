@@ -111,13 +111,9 @@ const ProductDetail = () => {
 
 
 {/* ========== IMAGE SECTION ========== */}
-
-
- {/* ========== IMAGE SECTION ========== */}
 <div className="space-y-4">
-
   {/* MAIN IMAGE */}
-  <div className="relative mx-auto flex items-center justify-center max-w-[500px]">
+  <div className="relative mx-auto flex items-center justify-center max-w-[480px]">
 
     {/* Glow */}
     <div
@@ -141,9 +137,9 @@ const ProductDetail = () => {
         src={displayImage}
         alt={product.name}
         onLoad={() => setImgLoaded(true)}
-        className={`transition-all duration-500 hover:scale-[1.02]
-        object-contain w-full
-        h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]
+        className={`transition-all duration-500 hover:scale-105
+        object-contain w-auto max-w-full
+        h-[280px] sm:h-[350px] md:h-[420px] lg:h-[460px]
         ${imgLoaded ? "opacity-100" : "opacity-0"}`}
       />
     </div>
@@ -161,7 +157,7 @@ const ProductDetail = () => {
           }}
           className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
             selectedImageIdx === idx
-              ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-105"
+              ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-110"
               : "border-purple-300/30 hover:border-orange-300"
           }`}
           style={{ borderRadius: "16px" }}
@@ -170,6 +166,34 @@ const ProductDetail = () => {
             src={img}
             alt=""
             className="w-full h-full object-contain"
+          />
+        </button>
+      ))}
+    </div>
+  )}
+</div>
+
+  {/* THUMBNAILS */}
+  {currentImages.length > 1 && (
+    <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
+      {currentImages.map((img, idx) => (
+        <button
+          key={idx}
+          onClick={() => {
+            setSelectedImageIdx(idx);
+            setImgLoaded(false);
+          }}
+          className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 bg-white/10 backdrop-blur-sm ${
+            selectedImageIdx === idx
+              ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-110"
+              : "border-purple-300/30 hover:border-orange-300"
+          }`}
+          style={{ borderRadius: "16px" }}
+        >
+          <img
+            src={img}
+            alt=""
+            className="w-full h-full object-cover"
           />
         </button>
       ))}
