@@ -78,7 +78,7 @@ const ProductDetail = () => {
 
   const displayImage = currentImages[selectedImageIdx] || product.image;
 
-  // ✅ Boolean return કરે છે
+  // ✅ Add to cart - Boolean return
   const handleAddToCart = () => {
     if (!selectedSize) {
       toast.error("Please select size");
@@ -96,17 +96,17 @@ const ProductDetail = () => {
     return true;
   };
 
-  // ✅ Correct regex - newline અથવા || થી split
+  // ✅ newline, ||, અથવા | થી split
   const parseLines = (text) =>
     text
       ? text
-          .split(/\n|\|\|/)
+          .split(/\n|\|\||\|/)
           .map((s) => s.trim())
           .filter(Boolean)
       : [];
 
-  // ✅ Numbered list render - description style
-  const renderNumberedList = (content, bgClass = "bg-emerald-50") => {
+  // ✅ Numbered list render
+  const renderNumberedList = (content, bgClass = "bg-white") => {
     const items = parseLines(content);
 
     if (items.length === 0) {
@@ -122,11 +122,11 @@ const ProductDetail = () => {
         {items.map((item, i) => (
           <div
             key={i}
-            className={`flex items-start gap-3 p-4 rounded-[20px] ${bgClass}`}
+            className={`flex items-start gap-3 p-4 rounded-[20px] ${bgClass} shadow-sm`}
           >
             {/* Number Badge */}
             <div
-              className="min-w-[32px] h-[32px] rounded-full bg-white
+              className="min-w-[32px] h-[32px] rounded-full bg-purple-100
               text-purple-700 font-bold text-sm flex items-center
               justify-center shadow flex-shrink-0"
             >
@@ -135,7 +135,6 @@ const ProductDetail = () => {
 
             {/* Text */}
             <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-              {/* જો data માં already 1. 2. 3. હોય તો remove કરો */}
               {item.replace(/^\d+[\.\)]\s*/, "")}
             </p>
           </div>
@@ -352,7 +351,7 @@ const ProductDetail = () => {
                   : "Add To Cart"}
               </button>
 
-              {/* Buy Now - ✅ only navigate if added */}
+              {/* Buy Now */}
               <button
                 onClick={() => {
                   const added = handleAddToCart();
@@ -448,7 +447,7 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {/* ── Benefits ── ✅ Numbered list style */}
+            {/* ── Benefits ── */}
             {activeTab === "benefits" && (
               <div>
                 <div className="flex items-center gap-2 mb-4">
@@ -464,7 +463,7 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {/* ── Uses ── ✅ Numbered list style */}
+            {/* ── Uses ── */}
             {activeTab === "uses" && (
               <div>
                 <div className="flex items-center gap-2 mb-4">
