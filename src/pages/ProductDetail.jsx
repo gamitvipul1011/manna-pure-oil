@@ -324,23 +324,33 @@ const ProductDetail = () => {
             </div>
 
             {/* ✅ FIXED: Price Card */}
-            <div className="bg-[#D0F0C0] rounded-3xl p-6 shadow-xl">
-              <p className="text-5xl font-extrabold text-purple-700">
-                ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
-              </p>
-              <p className="text-sm text-gray-500 mt-1">
-                {selectedSize?.size}
-              </p>
+            {/* Price */}
+<div>
+  <div className="bg-[#D0F0C0] rounded-3xl px-6 py-5 shadow-xl w-fit min-w-[220px]">
+    <p className="text-4xl md:text-5xl font-extrabold text-purple-700 leading-none">
+      ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
+    </p>
 
-              {/* ✅ FIXED: isGu use કર્યું - language નહીં */}
-              <div className="mt-4 p-3 bg-white/50 rounded-2xl border border-dashed border-purple-400">
-                <p className="text-sm font-bold text-purple-800">
-                  🚚 {isGu
-                    ? "₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે"
-                    : "Free delivery on orders above ₹999"}
-                </p>
-              </div>
-            </div>
+    {(selectedSize?.size || product.sizes?.[0]?.size) && (
+      <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200">
+        <span className="text-xs font-medium text-gray-600">
+          {isGu ? "સાઇઝ" : "Size"}
+        </span>
+        <span className="text-sm font-bold text-purple-700">
+          {selectedSize?.size || product.sizes?.[0]?.size}
+        </span>
+      </div>
+    )}
+  </div>
+
+  <div className="mt-3 p-3 bg-white/60 rounded-2xl border border-dashed border-purple-400 shadow-sm">
+    <p className="text-sm md:text-[15px] font-bold text-purple-800">
+      🚚 {isGu
+        ? "₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે"
+        : "Free delivery on orders above ₹999"}
+    </p>
+  </div>
+</div>
 
             {/* Size Buttons */}
             {product.sizes?.length > 0 && (
