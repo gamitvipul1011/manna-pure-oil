@@ -144,8 +144,8 @@ const Footer = () => {
 
               <p className="text-sm text-[#FFFBEB]">
                 {isGu
-                  ? "લાકડાની ઘાણીથી કઢેલું શુદ્ધ કોલ્ડ-પ્રેસ્ડ તેલ — ૧૦૦% કુદરતી, કોઈ રસાયણ નહીં."
-                  : "Wood-pressed cold extracted pure oil — 100% natural, no chemicals, no heat."}
+                  ? "કોલ્ડ પ્રેસ્ડ થી કઢેલું શુદ્ધ કોલ્ડ-પ્રેસ્ડ તેલ — ૧૦૦% કુદરતી, કોઈ રસાયણ નહીં."
+                  : "Cold Pressed Oil extracted pure oil — 100% natural, no chemicals, no heat."}
               </p>
 
               <FooterSubscribe isGu={isGu} />
