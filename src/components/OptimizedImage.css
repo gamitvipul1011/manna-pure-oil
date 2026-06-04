@@ -66,4 +66,43 @@
 .image-error p {
   margin: 0;
   font-size: 12px;
+  
+/* ──── Product Detail Page Specific ──── */
+.main-product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  background: transparent;
+  border-radius: 28px;
+}
+
+.main-product-image .image-placeholder {
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(251, 191, 36, 0.1) 0%,
+    rgba(217, 119, 6, 0.1) 100%
+  );
+}
+
+.main-product-image .placeholder-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(251, 191, 36, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .main-product-image {
+    min-height: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-product-image {
+    min-height: 560px;
+  }
 }
