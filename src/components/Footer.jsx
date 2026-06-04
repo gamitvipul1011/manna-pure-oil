@@ -114,8 +114,8 @@ const Footer = () => {
 
   return (
     <footer className="w-full">
-      {/* TOP SECTION */}
       <div className="bg-[#c3dbd5]">
+        {/* TOP INFORMATION */}
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5 lg:pt-6 pb-6">
           <div className="grid grid-cols-1 gap-6 items-start sm:grid-cols-2 md:grid-cols-4 lg:gap-8">
             {/* COL 1 */}
@@ -233,12 +233,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* WARLI IMAGE BOTTOM */}
-        <div className="w-full pointer-events-none">
+        {/* FULL WARLI IMAGE BELOW INFORMATION */}
+        <div className="w-full mt-4 pointer-events-none">
           <img
             src={warli}
             alt="Warli Pattern"
-            className="w-full h-[90px] object-cover object-bottom sm:h-[120px] lg:h-[150px]"
+            className="block w-full h-auto object-contain"
           />
         </div>
       </div>
