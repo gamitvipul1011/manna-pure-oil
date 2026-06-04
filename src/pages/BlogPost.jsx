@@ -13,13 +13,15 @@ import blog7 from "../assets/Bilona Ghee 1600 x 900 .jpg";
 
 const blogData = [
   {
-  id: 1,
-  title: 'Cold Pressed Oil Benefits: Why Every Indian Kitchen is Switching Today',
-  titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલના ફાયદા: કેમ દરેક ભારતીય રસોડું આજે બદલાઈ રહ્યું છે',
-  image: blog1,
-  date: '06 Apr 2026',
-  category: 'Health / સ્વાસ્થ્ય',
-  content: `In today’s fast-moving world, Indian families are slowly returning to natural and healthier choices. One major shift is the use of cold pressed oils in daily cooking.
+    id: 1,
+    title: 'Cold Pressed Oil Benefits: Why Every Indian Kitchen is Switching Today',
+    titleGu: 'ઠંડા દબાણના તેલના ફાયદા: કેમ આજે દરેક ભારતીય રસોડું તેની તરફ વળી રહ્યું છે',
+    image: blog1,
+    date: '06 Apr 2026',
+    dateGu: '૦૬ એપ્રિલ ૨૦૨૬',
+    category: 'Health',
+    categoryGu: 'આરોગ્ય',
+    content: `In today's fast-moving world, Indian families are slowly returning to natural and healthier choices. One major shift is the use of cold pressed oils in daily cooking.
 At Manna Pure Oil, we believe what you cook with matters as much as what you cook.
 
 **What is Cold Pressed Oil?**
@@ -117,116 +119,115 @@ Switching to cold pressed oil means:
 - Better lifestyle
 
 Make the smart choice today.`,
-  
-  contentGu: `આજના ઝડપી સમયમાં ભારતીય પરિવારો ફરીથી કુદરતી અને સ્વસ્થ પસંદગી તરફ વળી રહ્યા છે. તેમાં સૌથી મોટો બદલાવ છે cold pressed oil નો ઉપયોગ.
 
-Manna Pure Oil માં અમે માનીએ છીએ કે તમે શું બનાવો છો એટલું જ મહત્વનું છે કે તમે કયા તેલથી બનાવો છો.
+    contentGu: `આજના ઝડપી જીવનમાં ભારતીય પરિવારો ફરીથી કુદરતી અને વધુ આરોગ્યપ્રદ પસંદગીઓ તરફ વળી રહ્યા છે. રોજિંદી રસોઈમાં ઠંડા દબાણનું તેલ વાપરવાનો વધતો વલણ એમાંનો એક મોટો બદલાવ છે.
 
-**Cold Pressed Oil શું છે?**
+મન્ના પ્યોર ઓઇલમાં અમે માનીએ છીએ કે તમે શું રાંધો છો એટલું જ મહત્વનું છે કે તમે કયા તેલમાં રાંધો છો.
 
-Cold pressed oil low temperature પર heat અને chemical વગર બનાવવામાં આવે છે:
+**ઠંડા દબાણનું તેલ શું છે?**
 
-- કોઈ refining નહીં
-- કોઈ chemical નહીં
-- કોઈ nutrient loss નહીં
+ઠંડા દબાણનું તેલ નીચા તાપમાને, ઉષ્ણતા અને રસાયણ વગર કાઢવામાં આવે છે:
 
-👉 તેલને શુદ્ધ અને કુદરતી રાખે છે
+- કોઈ શુદ્ધિકરણ નહીં
+- કોઈ રસાયણ નહીં
+- પોષક તત્ત્વોની હાનિ નહીં
 
-**1. Nutrients અને Antioxidants થી ભરપૂર**
+👉 તેલને કુદરતી, શુદ્ધ અને પૌષ્ટિક રાખે છે
 
-Cold pressed oil માં હોય છે:
+**૧. પોષક તત્ત્વો અને ઑક્સીકરણ વિરોધી તત્ત્વોથી ભરપૂર**
 
-- Vitamin E
-- Omega fatty acids
-- Natural antioxidants
+ઠંડા દબાણના તેલમાં હોય છે:
+
+- વિટામિન ઇ
+- ઓમેગા ચરબીય અમ્લો
+- કુદરતી ઑક્સીકરણ વિરોધી તત્ત્વો
 
 ફાયદા:
-- Immunity વધારે
-- Skin health સુધારે
-- Heart health માટે સારું
+- રોગપ્રતિકારક શક્તિ વધારે
+- ત્વચા આરોગ્ય સુધારે
+- હૃદય આરોગ્યને ટેકો આપે
 
-👉 દરેક બુંદ શક્તિશાળી અને શુદ્ધ
+👉 દરેક બુંદમાં શુદ્ધ શક્તિ સમાયેલી છે
 
-**2. Heart Health માટે સારું**
+**૨. હૃદય આરોગ્યને ટેકો આપે છે**
 
-Cold pressed oil માં good fats (MUFA & PUFA) હોય છે:
+ઠંડા દબાણના તેલમાં સારા ચરબીય તત્ત્વો હોય છે જે:
 
-- Bad cholesterol ઘટાડે
-- Good cholesterol વધારે
-- Blood circulation સુધારે
+- હાનિકારક કોલેસ્ટેરોલ ઘટાડે
+- લાભદાયક કોલેસ્ટેરોલ વધારવામાં મદદ કરે
+- રક્તપ્રવાહ સુધારે
 
-👉 સ્વસ્થ હૃદય માટે સરળ પગલું
+👉 સ્વસ્થ હૃદય તરફનું એક સરળ પગલું
 
-**3. Chemical-Free**
+**૩. હાનિકારક રસાયણોથી મુક્ત**
 
-Refined oil માં chemicals વપરાય છે.
+શુદ્ધિકૃત તેલમાં રસાયણિક પ્રક્રિયા થતી હોય છે.
 
-Cold pressed oil:
-- Chemical-free
-- Preservative-free
-- Natural process
+ઠંડા દબાણનું તેલ હોય છે:
+- રસાયણમુક્ત
+- સંરક્ષકમુક્ત
+- કુદરતી રીતે તૈયાર થયેલું
 
-👉 સંપૂર્ણ સુરક્ષિત
+👉 ખાવા માટે વધુ સુરક્ષિત અને શુદ્ધ
 
-**4. પરિવાર માટે સુરક્ષિત**
+**૪. તમારા પરિવાર માટે સુરક્ષિત**
 
-Cold pressed oil:
+ઠંડા દબાણનું તેલ:
+- બાળકો માટે સુરક્ષિત
+- સહેલાઈથી પચી જાય એવું
+- સમગ્ર આરોગ્યને ટેકો આપનાર
 
-- બાળકો માટે safe
-- સરળ પચન
-- Overall health સુધારે
+👉 તમારા પ્રિયજનોને રોજ પોષણ આપતું
 
-👉 પરિવારને પોષણ આપે
+**૫. સ્વાદ અને સુગંધ વધારે છે**
 
-**5. Taste અને Aroma વધારે**
+ઠંડા દબાણનું તેલ ભોજનમાં અસલી લહેજો લાવે છે:
 
-Cold pressed oil:
+- કુદરતી સુગંધ
+- સમૃદ્ધ સ્વાદ
+- ભારતીય રસોઈ માટે ઉત્તમ
 
-- Natural સુગંધ
-- Rich taste
-- Indian cooking માટે ઉત્તમ
+👉 દરેક વાનગીને વધુ સ્વાદિષ્ટ બનાવે છે
 
-👉 ભોજન વધુ સ્વાદિષ્ટ બને
+**૬. પર્યાવરણમૈત્રી પસંદગી**
 
-**6. Eco-Friendly પસંદગી**
+ઠંડા દબાણના તેલ:
+- ઓછી પ્રક્રિયા ધરાવે છે
+- ઊર્જાનો બચતભર્યો ઉપયોગ કરે છે
+- સ્થાનિક ખેડૂતોને સહારો આપે છે
 
-Cold pressed oil:
-
-- ઓછું processing
-- Energy efficient
-- ખેડૂતોને support કરે
-
-👉 પર્યાવરણ માટે સારું
+👉 તમારા માટે પણ સારું અને પર્યાવરણ માટે પણ
 
 **લોકો કેમ બદલાઈ રહ્યા છે**
 
-આજે લોકો પસંદ કરે છે:
+આજે લોકો પસંદ કરી રહ્યા છે:
+- પ્રક્રિયિત વસ્તુઓ કરતાં કુદરતી વસ્તુઓ
+- સહેલાઈ કરતાં પોષણ
+- ટૂંકા રસ્તા કરતાં આરોગ્ય
 
-- Natural over processed
-- Nutrition over convenience
-- Health over shortcuts
-
-👉 Cold pressed oil જરૂરી બની રહ્યું છે
+👉 ઠંડા દબાણનું તેલ હવે આવશ્યક બનતું જાય છે
 
 **અંતિમ વિચાર**
 
-તમે જે તેલ વાપરો છો તે તમારા સ્વાસ્થ્ય પર અસર કરે છે.
+તમે રસોઈમાં જે તેલ વાપરો છો તે રોજ તમારા આરોગ્ય પર અસર કરે છે.
 
-Cold pressed oil તરફ બદલાવ એટલે:
-- સારું સ્વાસ્થ્ય
-- સારું સ્વાદ
-- સારું જીવન
+ઠંડા દબાણનું તેલ અપનાવવાનો અર્થ:
+- વધુ સારું આરોગ્ય
+- વધુ સારો સ્વાદ
+- વધુ સારી જીવનશૈલી
 
-આજે જ સમજદારીથી પસંદ કરો.`,
-},
- {
-  id: 2,
-  title: 'Cold Pressed Oil vs Refined Oil: What You Must Know',
-  titleGu: 'કોલ્ડ-પ્રેસ્ડ તેલ vs રિફાઇન્ડ તેલ: શું જાણવું જરૂરી છે',
-  image: blog2,
-  date: '06 Apr 2026',
-  category: 'Awareness / જાગૃતિ',
-  content: `In today’s health-conscious world, choosing the right cooking oil is very important. Many Indian households are now becoming aware of what they consume daily.
+આજે જ સમજદારીભરી પસંદગી કરો.`,
+  },
+  {
+    id: 2,
+    title: 'Cold Pressed Oil vs Refined Oil: What You Must Know',
+    titleGu: 'ઠંડા દબાણનું તેલ અને શુદ્ધિકૃત તેલ: શું જાણવું જરૂરી છે',
+    image: blog2,
+    date: '06 Apr 2026',
+    dateGu: '૦૬ એપ્રિલ ૨૦૨૬',
+    category: 'Awareness',
+    categoryGu: 'જાગૃતિ',
+    content: `In today's health-conscious world, choosing the right cooking oil is very important. Many Indian households are now becoming aware of what they consume daily.
 
 The biggest question is: Cold Pressed Oil vs Refined Oil.
 
@@ -332,125 +333,126 @@ Choose wisely:
 - Traditional vs Industrial
 
 Make the switch to cold pressed oils for a healthier life.`,
-  
-  contentGu: `આજના health-conscious સમયમાં યોગ્ય રસોઈ તેલ પસંદ કરવું ખૂબ જ મહત્વનું છે. ઘણા ભારતીય પરિવારો હવે તેઓ શું ખાય છે તેની જાગૃતિ રાખી રહ્યા છે.
 
-મુખ્ય પ્રશ્ન છે: Cold Pressed Oil vs Refined Oil.
+    contentGu: `આજના આરોગ્યજાગૃત સમયમાં યોગ્ય રસોઈ તેલ પસંદ કરવું ખૂબ જ મહત્વનું બની ગયું છે. ઘણા ભારતીય પરિવારો હવે તેઓ રોજ શું ખાય છે તેની વધુ જાગૃતિ રાખવા લાગ્યા છે.
 
-**Cold Pressed Oil શું છે?**
+સૌથી મોટો પ્રશ્ન છે: ઠંડા દબાણનું તેલ કે શુદ્ધિકૃત તેલ?
 
-Cold pressed oil પરંપરાગત લાકડાની ઘાણી અથવા મશીન દ્વારા low temperature પર બનાવવામાં આવે છે:
+**ઠંડા દબાણનું તેલ શું છે?**
 
-- કોઈ heat નહીં
-- કોઈ chemical નહીં
-- કોઈ refining નહીં
+ઠંડા દબાણનું તેલ પરંપરાગત લાકડાની ઘાણી અથવા યાંત્રિક દબાણ પદ્ધતિથી નીચા તાપમાને કાઢવામાં આવે છે:
 
-👉 આ તેલને શુદ્ધ અને કુદરતી રાખે છે
+- કોઈ ઉષ્ણતા નહીં
+- કોઈ રસાયણ નહીં
+- કોઈ શુદ્ધિકરણ નહીં
 
-**Refined Oil શું છે?**
+👉 આ તેલને શુદ્ધ, કુદરતી અને પૌષ્ટિક રાખે છે
 
-Refined oil industrial processમાંથી પસાર થાય છે:
+**શુદ્ધિકૃત તેલ શું છે?**
 
-- High heat
-- Chemical processing
-- Bleaching અને deodorizing
+શુદ્ધિકૃત તેલ ઔદ્યોગિક પ્રક્રિયામાંથી પસાર થાય છે:
 
-👉 Shelf life વધે છે પરંતુ ગુણવત્તા ઘટે છે
+- ઊંચા તાપ પર પ્રક્રિયા
+- રસાયણિક પ્રક્રિયા
+- રંગ અને ગંધ દૂર કરવાની પ્રક્રિયા
 
-**મુખ્ય તફાવત**
+👉 તેનો સંગ્રહકાળ વધે છે, પરંતુ ગુણવત્તા ઘટે છે
 
-**1. Nutritional Value**
+**મુખ્ય તફાવતો**
 
-Cold Pressed Oil:
-- Vitamins અને antioxidants થી ભરપૂર
-- Natural nutrients જળવાય
-- Healthy fats હોય
+**૧. પોષણમૂલ્ય**
 
-Refined Oil:
-- Nutrients નો ઘટાડો
-- ઓછું પોષણ
+ઠંડા દબાણનું તેલ:
+- વિટામિન અને ઑક્સીકરણ વિરોધી તત્ત્વોથી સમૃદ્ધ
+- કુદરતી પોષક તત્ત્વો જાળવી રાખે છે
+- સારા ચરબીય તત્ત્વો ધરાવે છે
 
-**2. Health Impact**
+શુદ્ધિકૃત તેલ:
+- પ્રક્રિયા દરમ્યાન પોષક તત્ત્વોમાં ઘટાડો થાય છે
+- પોષણમૂલ્ય ઓછું રહે છે
 
-Cold Pressed Oil:
-- Heart health માટે સારું
-- Cholesterol balance કરે
-- Immunity વધારે
+**૨. આરોગ્ય પર અસર**
 
-Refined Oil:
-- Bad cholesterol વધારી શકે
-- Lifestyle diseases સાથે જોડાયેલ
+ઠંડા દબાણનું તેલ:
+- હૃદય આરોગ્યને ટેકો આપે છે
+- કોલેસ્ટેરોલનું સંતુલન જાળવવામાં મદદ કરે છે
+- રોગપ્રતિકારક શક્તિ વધારે છે
 
-**3. Processing Method**
+શુદ્ધિકૃત તેલ:
+- હાનિકારક કોલેસ્ટેરોલ વધારી શકે છે
+- જીવનશૈલી સંબંધિત રોગો સાથે જોડાઈ શકે છે
 
-Cold Pressed Oil:
-- ઓછું processing
-- Traditional method
+**૩. બનાવવાની પદ્ધતિ**
 
-Refined Oil:
-- Heavy industrial process
-- Chemicals નો ઉપયોગ
+ઠંડા દબાણનું તેલ:
+- ઓછી પ્રક્રિયા ધરાવે છે
+- પરંપરાગત રીતે કાઢવામાં આવે છે
 
-**4. Taste & Aroma**
+શુદ્ધિકૃત તેલ:
+- ભારે ઔદ્યોગિક પ્રક્રિયામાંથી પસાર થાય છે
+- રસાયણોનો ઉપયોગ થાય છે
 
-Cold Pressed Oil:
-- Natural સુગંધ
-- Food નો સ્વાદ વધારે
+**૪. સ્વાદ અને સુગંધ**
 
-Refined Oil:
-- સુગંધ વગર
-- Natural taste ઓછું
+ઠંડા દબાણનું તેલ:
+- કુદરતી સુગંધ ધરાવે છે
+- ભોજનનો સ્વાદ વધારે છે
 
-**5. Environmental Impact**
+શુદ્ધિકૃત તેલ:
+- લગભગ ગંધરહિત અને સ્વાદરહિત હોય છે
+- અસલી લહેજો ઓછો આપે છે
 
-Cold Pressed Oil:
-- Eco-friendly
-- ખેડૂતોને support કરે
+**૫. પર્યાવરણ પર અસર**
 
-Refined Oil:
-- વધુ energy use
-- Industrial અસર
+ઠંડા દબાણનું તેલ:
+- પર્યાવરણમૈત્રી છે
+- ખેડૂતોને સહારો આપે છે
 
-**Refined Oil વિશે સત્ય**
+શુદ્ધિકૃત તેલ:
+- વધુ ઊર્જાનો ઉપયોગ કરે છે
+- ઔદ્યોગિક અસર વધારે પાડે છે
 
-ઘણા લોકો માને છે કે refined oil healthy છે, પરંતુ:
+**શુદ્ધિકૃત તેલ વિશેનું છુપાયેલું સત્ય**
 
-- Chemical residues રહી શકે
-- Natural nutrients નષ્ટ થાય
-- લાંબા ગાળે નુકસાનકારક
+ઘણા લોકો માને છે કે શુદ્ધિકૃત તેલ વધુ સારું હોય છે, પરંતુ:
+
+- તેમાં રસાયણના અશેષ અંશો રહી શકે છે
+- કુદરતી પોષક તત્ત્વો નષ્ટ થાય છે
+- લાંબા ગાળે તે આરોગ્યને નુકસાન પહોંચાડી શકે છે
 
 **લોકો કેમ બદલાઈ રહ્યા છે**
 
-આજે લોકો પસંદ કરે છે:
+આધુનિક પરિવારો હવે પસંદ કરી રહ્યા છે:
 
-- શુદ્ધતા over processing
-- પોષણ over દેખાવ
-- સ્વાસ્થ્ય over convenience
+- પ્રક્રિયા કરતાં શુદ્ધતા
+- દેખાવ કરતાં પોષણ
+- સહેલાઈ કરતાં આરોગ્ય
 
-👉 Cold pressed oil વધુ પસંદ બની રહ્યું છે
+👉 ઠંડા દબાણના તેલો હવે વધુ પસંદ બન્યા છે
 
 **અંતિમ વિચાર**
 
-રસોઈ તેલ રોજની health decision છે.
+રસોઈનું તેલ રોજનું આરોગ્ય સંબંધિત એક મહત્વપૂર્ણ નિર્ણય છે.
 
 સમજદારીથી પસંદ કરો:
-- Natural vs Processed
-- Nourishing vs Empty
-- Traditional vs Industrial
+- કુદરતી કે પ્રક્રિયિત
+- પોષક કે ખાલી
+- પરંપરાગત કે ઔદ્યોગિક
 
-આજે જ cold pressed oil તરફ બદલાવ લાવો.`,
-},
- 
+વધુ આરોગ્યપ્રદ જીવન માટે આજે જ ઠંડા દબાણના તેલ તરફ વળો.`,
+  },
   {
-  id: 3,
-  title: 'From Seed to Bottle: The Journey of Wooden Cold-Pressed Oils',
-  titleGu: 'બીજથી બોટલ સુધી: લાકડાની ઘાણીના કોલ્ડ-પ્રેસ્ડ તેલની સફર',
-  image: blog3,
-  date: '06 Apr 2026',
-  category: 'Process / પ્રક્રિયા',
-  content: `Every drop of oil you use tells a story — a story of nature, care, and tradition.
+    id: 3,
+    title: 'From Seed to Bottle: The Journey of Wooden Cold-Pressed Oils',
+    titleGu: 'બીજથી બોટલ સુધી: લાકડાની ઘાણીમાં બનેલા ઠંડા દબાણના તેલની સફર',
+    image: blog3,
+    date: '06 Apr 2026',
+    dateGu: '૦૬ એપ્રિલ ૨૦૨૬',
+    category: 'Process',
+    categoryGu: 'પ્રક્રિયા',
+    content: `Every drop of oil you use tells a story — a story of nature, care, and tradition.
 
-In today, s world of fast processing, wooden cold-pressed oils stand as a symbol of purity and authenticity.
+In today's world of fast processing, wooden cold-pressed oils stand as a symbol of purity and authenticity.
 
 At Manna Pure Oil, we bring this journey to your kitchen — just the way it was meant to be.
 
@@ -542,110 +544,112 @@ Choosing the right oil means:
 From seed to bottle, every step matters.
 
 Choosing cold-pressed oil means choosing purity, health, and tradition.`,
-  
-  contentGu: `તમે જે તેલ વાપરો છો તેની દરેક બુંદ એક વાર્તા કહે છે — કુદરત, કાળજી અને પરંપરાની વાર્તા.
 
-આજના ઝડપી સમયમાં લાકડાની ઘાણીનું કોલ્ડ-પ્રેસ્ડ તેલ શુદ્ધતા અને વિશ્વાસનું પ્રતિક છે.
+    contentGu: `તમે જે તેલ વાપરો છો તેની દરેક બુંદ એક વાર્તા કહે છે — કુદરત, કાળજી અને પરંપરાની વાર્તા.
 
-Manna Pure Oil આ સફરને તમારા રસોડા સુધી પહોંચાડે છે — જેમ હોવું જોઈએ તેમ.
+આજની ઝડપી પ્રક્રિયાવાળી દુનિયામાં લાકડાની ઘાણીમાં બનેલું ઠંડા દબાણનું તેલ શુદ્ધતા અને અસલિયતનું પ્રતિક છે.
 
-**Step 1: શ્રેષ્ઠ બીજની પસંદગી**
+મન્ના પ્યોર ઓઇલ આ સફર તમારા રસોડા સુધી લાવે છે — જેમ તે ખરેખર હોવું જોઈએ તેમ.
 
-સફર શરૂ થાય છે ઉત્તમ ગુણવત્તાવાળા બીજથી:
+**પગલું ૧: શ્રેષ્ઠ બીજની પસંદગી**
 
-- સિંગ, તલ, સરસવ, નાળિયેર વગેરે
-- શુદ્ધતા અને તાજગી માટે પસંદ કરેલ
-- વિશ્વસનીય ખેડૂતો પાસેથી મેળવેલ
+આ સફર ઊંચી ગુણવત્તાવાળા કુદરતી બીજોની પસંદગીથી શરૂ થાય છે:
 
-👉 સારું તેલ હંમેશા સારા બીજથી બને છે
+- મગફળી, તલ, સરસવ, નાળિયેર અને બીજા બીજ
+- તાજગી અને શુદ્ધતા માટે કાળજીપૂર્વક પસંદ કરેલા
+- વિશ્વસનીય ખેડૂતો પાસેથી મેળવેલા
 
-**Step 2: સફાઈ અને કુદરતી તૈયારી**
+👉 સારું તેલ હંમેશાં સારા બીજોથી જ બને છે
 
-Extraction પહેલા:
+**પગલું ૨: સફાઈ અને કુદરતી તૈયારી**
 
-- ધૂળ અને ગંદકી દૂર કરવામાં આવે છે
-- કુદરતી રીતે સૂર્યપ્રકાશમાં સુકવાય છે
-- કોઈ chemical નો ઉપયોગ નથી
+તેલ કાઢતાં પહેલાં બીજોને યોગ્ય રીતે તૈયાર કરવામાં આવે છે:
 
-👉 શરૂઆતથી જ શુદ્ધતા જળવાય
+- ધૂળ અને અશુદ્ધિઓ દૂર કરવામાં આવે છે
+- કુદરતી રીતે સૂર્યપ્રકાશમાં સુકવવામાં આવે છે
+- કોઈ રસાયણનો ઉપયોગ થતો નથી
 
-**Step 3: લાકડાની ઘાણી (Cold Press Method)**
+👉 શરૂઆતથી જ શુદ્ધતા જાળવવામાં આવે છે
 
-મુખ્ય પ્રક્રિયા:
+**પગલું ૩: લાકડાની ઘાણીમાં ઠંડું દબાણ**
 
-- લાકડાની ઘાણીમાં ધીમે દબાવવામાં આવે છે
-- કોઈ heat ઉત્પન્ન થતો નથી
-- કોઈ chemical નો ઉપયોગ નથી
-- ધીમું અને કુદરતી extraction
+આ સૌથી મહત્વપૂર્ણ પગલું છે:
 
-👉 Nutrients, સુગંધ અને સ્વાદ જળવાય
+- બીજને લાકડાની ઘાણીમાં ધીમે ધીમે દબાવવામાં આવે છે
+- વધારાની ઉષ્ણતા ઉત્પન્ન થતી નથી
+- કોઈ રસાયણ ઉમેરાતું નથી
+- ધીમી અને કુદરતી રીતે તેલ બહાર કાઢવામાં આવે છે
 
-**Step 4: કુદરતી સેટલિંગ અને ફિલ્ટરિંગ**
+👉 આ રીતે પોષક તત્ત્વો, સુગંધ અને સ્વાદ જળવાઈ રહે છે
 
-Extraction પછી:
+**પગલું ૪: કુદરતી સ્થિરતા અને ગાળણી**
+
+તેલ કાઢ્યા પછી:
 
 - તેલને કુદરતી રીતે સ્થિર થવા દેવામાં આવે છે
-- અશુદ્ધિઓ અલગ થાય છે
-- હળવું ફિલ્ટરિંગ થાય છે
+- અશુદ્ધિઓ રસાયણ વગર અલગ પડે છે
+- સ્વચ્છતા માટે હળવી ગાળણી કરવામાં આવે છે
 
-👉 કોઈ refining નહીં, ફક્ત શુદ્ધ તેલ
+👉 કોઈ શુદ્ધિકરણ નહીં, ફક્ત શુદ્ધ તેલ
 
-**Step 5: સ્વચ્છ પેકેજિંગ**
+**પગલું ૫: સ્વચ્છ અને સુરક્ષિત ભરણ**
 
-છેલ્લું સ્ટેપ:
+છેલ્લું પગલું સુરક્ષા સુનિશ્ચિત કરે છે:
 
-- Food-safe બોટલમાં ભરી શકાય છે
-- Contamination થી સુરક્ષિત
-- Freshness માટે સીલ કરવામાં આવે છે
+- ખાદ્યપદાર્થ માટે સુરક્ષિત બોટલોમાં ભરવામાં આવે છે
+- પ્રદૂષણથી સુરક્ષિત રાખવામાં આવે છે
+- તાજગી જાળવવા માટે સીલ કરવામાં આવે છે
 
 👉 એ જ શુદ્ધતા તમારા ઘરે પહોંચે છે
 
-**Cold Pressed Oil કેમ ખાસ છે?**
+**ઠંડા દબાણનું તેલ વિશેષ કેમ છે?**
 
-- Natural nutrients જળવાય
-- Healthy fats થી ભરપૂર
-- Natural સુગંધ અને સ્વાદ
-- Chemical-free અને unrefined
+- કુદરતી પોષક તત્ત્વો જળવાઈ રહે છે
+- સારા ચરબીય તત્ત્વોથી સમૃદ્ધ હોય છે
+- તેજસ્વી સુગંધ અને અસલી સ્વાદ ધરાવે છે
+- રસાયણમુક્ત અને શુદ્ધિકરણ વિના હોય છે
 
-👉 આ શુદ્ધ સ્વાસ્થ્ય છે
+👉 આ આરોગ્યનું સૌથી શુદ્ધ સ્વરૂપ છે
 
-**Traditional vs Modern Oil**
+**પરંપરાગત અને આધુનિક તેલ વચ્ચેનો ફરક**
 
-લાકડાની ઘાણીનું તેલ:
-- ધીમું અને કુદરતી process
-- Nutrient-rich
-- કોઈ chemical નહીં
+લાકડાની ઘાણીમાં બનેલું ઠંડા દબાણનું તેલ:
+- કુદરતી અને ધીમી પ્રક્રિયા
+- પોષક તત્ત્વોથી સમૃદ્ધ
+- કોઈ રસાયણ નહીં
 - સંપૂર્ણ સ્વાદ
 
-Refined Oil:
-- High heat process
-- Chemical treatment
-- Nutrients નો ઘટાડો
-- Artificial ફેરફાર
+શુદ્ધિકૃત તેલ:
+- ઊંચા તાપની પ્રક્રિયા
+- રસાયણિક ઉપચાર
+- પોષક તત્ત્વોની હાનિ
+- કૃત્રિમ ફેરફારો
 
 **આ કેમ મહત્વનું છે**
 
-યોગ્ય તેલ પસંદ કરવાથી:
+યોગ્ય તેલ પસંદ કરવાનો અર્થ:
 
-- સ્વાસ્થ્ય સુધરે
-- સુરક્ષિત રસોઈ
+- વધુ સારું આરોગ્ય
+- વધુ સુરક્ષિત રસોઈ
 - કુદરતી પોષણ
 - પરંપરા સાથે જોડાણ
 
 **અંતિમ વિચાર**
 
-બીજથી બોટલ સુધી દરેક સ્ટેપ મહત્વનો છે.
+બીજથી બોટલ સુધી દરેક પગલું મહત્વ ધરાવે છે.
 
-Cold pressed oil પસંદ કરવું એટલે શુદ્ધતા, સ્વાસ્થ્ય અને પરંપરા પસંદ કરવી.`,
-},
-{
-  id: 4,
-  title: 'The History of Indian Cooking Oils: From Tradition to Today',
-  titleGu: 'ભારતીય રસોઈ તેલનો ઇતિહાસ: પરંપરાથી આજ સુધી',
-  image: blog4,
-  date: '06 Apr 2026',
-  category: 'Awareness / જાગૃતિ',
-  content: `In every Indian kitchen, oil is not just an ingredient—it’s a story of culture, tradition, health, and generations of wisdom.
+ઠંડા દબાણનું તેલ પસંદ કરવાનો અર્થ છે શુદ્ધતા, આરોગ્ય અને પરંપરા પસંદ કરવી.`,
+  },
+  {
+    id: 4,
+    title: 'The History of Indian Cooking Oils: From Tradition to Today',
+    titleGu: 'ભારતીય રસોઈના તેલોનો ઇતિહાસ: પરંપરાથી આજ સુધી',
+    image: blog4,
+    date: '06 Apr 2026',
+    dateGu: '૦૬ એપ્રિલ ૨૦૨૬',
+    category: 'Awareness',
+    categoryGu: 'જાગૃતિ',
+    content: `In every Indian kitchen, oil is not just an ingredient—it's a story of culture, tradition, health, and generations of wisdom.
 
 **Ancient India: The Beginning of Pure Oils**
 
@@ -660,7 +664,7 @@ These oils were extracted using traditional wood-pressed methods, preserving pur
 
 **Traditional Wisdom: Regional Oils**
 
-India’s diversity influenced oil choices based on climate and lifestyle:
+India's diversity influenced oil choices based on climate and lifestyle:
 
 - South India → Coconut Oil for cooling
 - North India → Mustard Oil for warmth
@@ -700,71 +704,73 @@ The oil you use daily impacts your health:
 India always had healthy cooking solutions.
 
 Sometimes, the best way forward is to go back.`,
-  
-  contentGu: `દરેક ભારતીય રસોડામાં તેલ માત્ર એક ingredient નથી — તે સંસ્કૃતિ, પરંપરા, સ્વાસ્થ્ય અને પેઢીઓની સમજણની વાર્તા છે.
+
+    contentGu: `દરેક ભારતીય રસોડામાં તેલ માત્ર એક ઘટક નથી — તે સંસ્કૃતિ, પરંપરા, આરોગ્ય અને પેઢીઓની સમજણની જીવંત વાર્તા છે.
 
 **પ્રાચીન ભારત: શુદ્ધ તેલની શરૂઆત**
 
-હજારો વર્ષ પહેલાં ભારતીય રસોઈ આયુર્વેદ અને કુદરતી જીવન પર આધારિત હતી. તેલનો ઉપયોગ માત્ર રસોઈમાં નહીં પરંતુ સારવાર અને ધાર્મિક વિધિમાં પણ થતો હતો.
+હજારો વર્ષ પહેલાં ભારતીય રસોઈ આયુર્વેદ અને કુદરતી જીવનશૈલી પર આધારિત હતી. તેલનો ઉપયોગ માત્ર રસોઈ માટે જ નહીં, પરંતુ આરોગ્યલાભ અને ધાર્મિક વિધિઓ માટે પણ થતો હતો.
 
-- સિંગ તેલ પશ્ચિમ ભારતમાં તેના સ્વાદ અને high heat માટે જાણીતું હતું
-- સરસવ તેલ ઉત્તર અને પૂર્વ ભારતમાં લોકપ્રિય હતું
-- તલ તેલ પવિત્ર માનવામાં આવતું અને વિધિમાં વપરાતું
-- નાળિયેર તેલ દક્ષિણ ભારતના વિસ્તારોમાં મુખ્ય હતું
+- મગફળીનું તેલ પશ્ચિમ ભારતમાં તેના સમૃદ્ધ સ્વાદ અને ઊંચા તાપને સહન કરવાની ક્ષમતા માટે લોકપ્રિય હતું
+- સરસવનું તેલ ઉત્તર અને પૂર્વ ભારતના વિસ્તારોમાં તેના તીવ્ર સ્વાદ માટે વ્યાપકપણે વપરાતું હતું
+- તલનું તેલ પવિત્ર માનવામાં આવતું અને રસોઈ સાથે વિધિમાં પણ વપરાતું હતું
+- નાળિયેરનું તેલ દક્ષિણના દરિયાકાંઠા વિસ્તારોમાં મુખ્ય સ્થાન ધરાવતું હતું
 
-આ તેલો traditional wood press (ઘાણી) વડે બનાવવામાં આવતા હતા, જેથી purity અને nutrition જળવાતું.
+આ બધાં તેલ પરંપરાગત લાકડાની ઘાણીની પદ્ધતિથી કાઢવામાં આવતા હતા, જેથી શુદ્ધતા અને પોષણ જળવાતું.
 
-**પરંપરાગત સમજ: વિસ્તાર મુજબ તેલ**
+**વિસ્તાર મુજબ તેલની પસંદગી**
 
-ભારતની વિવિધતા પ્રમાણે તેલ પસંદ કરાતાં:
+ભારતની વિવિધતા પ્રમાણે હવામાન, જીવનશૈલી અને પરંપરા મુજબ તેલ પસંદ થતું હતું:
 
-- દક્ષિણ ભારત → નાળિયેર તેલ (cooling માટે)
-- ઉત્તર ભારત → સરસવ તેલ (ગરમી માટે)
-- મધ્ય અને પશ્ચિમ ભારત → સિંગ અને તલ તેલ (balance માટે)
+- દક્ષિણ ભારત → નાળિયેરનું તેલ શીતળતા માટે
+- ઉત્તર ભારત → સરસવનું તેલ ઉષ્ણતા માટે
+- મધ્ય અને પશ્ચિમ ભારત → મગફળી અને તલનું તેલ સંતુલન માટે
 
-આ બધું વૈજ્ઞાનિક રીતે યોગ્ય હતું.
+આ કોઈ આળસ ન હતી — આ પરંપરા દ્વારા સમર્થિત વિજ્ઞાન હતું.
 
-**Refined Oil નો પ્રભાવ**
+**શુદ્ધિકૃત તેલ તરફનો વળાંક**
 
-Industrialization પછી refined oils popular બન્યા.
+ઔદ્યોગિકીકરણ પછી શુદ્ધિકૃત તેલો વધુ લોકપ્રિય બન્યા, કારણ કે તેઓ લાંબા સમય સુધી ટકી શકતા અને મોટા પાયે બનતા હતા.
 
-પણ તેમાં નુકસાન થયું:
-- Nutrients નો ઘટાડો
-- Chemicals અને high heat processing
-- પરંપરાથી દુરાવ
+પરંતુ તેના કારણે આ નુકસાન થયું:
+- પોષક તત્ત્વોમાં ઘટાડો
+- રસાયણો અને ઊંચા તાપનો ઉપયોગ
+- પરંપરાગત પદ્ધતિઓથી દૂરાવ
 
-**Cold Pressed Oil ની વાપસી**
+**ઠંડા દબાણના તેલનો પુનરાગમન**
 
-આજે લોકો ફરીથી cold pressed oils તરફ વળી રહ્યા છે.
+આજે લોકો ફરીથી ઠંડા દબાણના તેલ તરફ વળી રહ્યા છે.
 
-**Cold Pressed Oil કેમ પસંદ કરવું?**
-- Natural nutrients જળવાય
-- કોઈ chemical નથી
-- Digestion અને health માટે સારું
-- Natural taste આપે
+**ઠંડા દબાણનું તેલ કેમ પસંદ કરવું?**
+- કુદરતી પોષક તત્ત્વો જળવાઈ રહે છે
+- રસાયણ અને શુદ્ધિકરણ વગર બને છે
+- પાચન અને આરોગ્યને ટેકો આપે છે
+- અસલી સ્વાદ અને સુગંધ આપે છે
 
 **આ કેમ મહત્વનું છે**
 
-તમે જે તેલ વાપરો છો તે તમારા સ્વાસ્થ્ય પર સીધી અસર કરે છે:
+તમે રોજ જે તેલ વાપરો છો તે તમારા આરોગ્ય પર સીધી અસર કરે છે:
 
-- Heart health સુધરે
-- Immunity વધે
-- Natural lifestyle મળે
+- વધુ સારું હૃદય આરોગ્ય
+- વધુ મજબૂત રોગપ્રતિકારક શક્તિ
+- વધુ કુદરતી જીવનશૈલી
 
 **અંતિમ વિચાર**
 
-ભારત પાસે હંમેશા healthy cooking solutions હતા.
+ભારત પાસે હંમેશાં આરોગ્યપ્રદ રસોઈના સારા માર્ગો હતા.
 
-ક્યારેક આગળ વધવાનો શ્રેષ્ઠ રસ્તો… પાછા ફરવામાં હોય છે.`,
-},
- {
-  id: 5,
-  title: 'Understanding Good Fats vs Bad Fats in Cooking Oil',
-  titleGu: 'રસોઈ તેલમાં સારા ફેટ્સ અને ખરાબ ફેટ્સ સમજીએ',
-  image: blog5,
-  date: '06 Apr 2026',
-  category: 'Health / સ્વાસ્થ્ય',
-  content: `In every Indian kitchen, oil is the foundation of every meal. But not all fats are the same. Understanding good fats and bad fats can improve your family’s health.
+ક્યારેક આગળ વધવાનો શ્રેષ્ઠ રસ્તો એ હોય છે કે આપણે સારા મૂળ તરફ ફરી પાછા વળીએ.`,
+  },
+  {
+    id: 5,
+    title: 'Understanding Good Fats vs Bad Fats in Cooking Oil',
+    titleGu: 'રસોઈના તેલમાં સારા અને હાનિકારક ચરબીય તત્ત્વોને સમજીએ',
+    image: blog5,
+    date: '06 Apr 2026',
+    dateGu: '૦૬ એપ્રિલ ૨૦૨૬',
+    category: 'Health',
+    categoryGu: 'આરોગ્ય',
+    content: `In every Indian kitchen, oil is the foundation of every meal. But not all fats are the same. Understanding good fats and bad fats can improve your family's health.
 
 **What Are Fats in Cooking Oil?**
 
@@ -858,113 +864,112 @@ Choose wisely:
 - Bad fats → Health risks
 
 Make the switch to healthier oils today.`,
-  
-  contentGu: `દરેક ભારતીય રસોડામાં તેલ દરેક ભોજનનો આધાર છે. પરંતુ બધા ફેટ્સ એકસરખા નથી. સારા અને ખરાબ ફેટ્સ સમજવાથી પરિવારનું સ્વાસ્થ્ય સુધરી શકે છે.
 
-**રસોઈ તેલમાં ફેટ્સ શું છે?**
+    contentGu: `દરેક ભારતીય રસોડામાં તેલ દરેક ભોજનનો આધાર છે. પરંતુ બધી ચરબી એકસરખી નથી. સારા અને હાનિકારક ચરબીય તત્ત્વોને સમજવાથી તમારા પરિવારનું આરોગ્ય વધુ સારું બની શકે છે.
 
-ફેટ્સ શરીર માટે જરૂરી પોષક તત્વો છે:
+**રસોઈના તેલમાં ચરબી શું છે?**
 
-- Energy માટે
-- Cell growth માટે
-- Nutrient absorption માટે
+ચરબી એ શરીરને જરૂરી પોષક તત્ત્વ છે, જે માટે મદદરૂપ બને છે:
 
-👉 તમે કયો ફેટ લો છો તે મહત્વનું છે
+- ઊર્જા
+- કોષોની વૃદ્ધિ
+- બીજા પોષક તત્ત્વોના શોષણમાં
 
-**સારા ફેટ્સ શું છે?**
+👉 સૌથી મહત્વનું એ છે કે તમે કઈ ચરબી લો છો
 
-સારા ફેટ્સ શરીરને મદદ કરે છે અને સ્વાસ્થ્ય સુધારે છે.
+**સારા ચરબીય તત્ત્વો શું છે?**
 
-**સારા ફેટ્સના પ્રકાર**
+સારા ચરબીય તત્ત્વો સમગ્ર આરોગ્યને ટેકો આપે છે.
 
-Monounsaturated Fats (MUFA):
-- Bad cholesterol ઘટાડે
-- Heart health સુધારે
-- સિંગ તેલ અને સરસવ તેલમાં મળે
+**સારા ચરબીય તત્ત્વોના પ્રકાર**
 
-Polyunsaturated Fats (PUFA):
-- Omega-3 અને Omega-6 થી ભરપૂર
-- Brain function માટે સારું
-- Body development માં મદદરૂપ
+એકલ અસંતૃપ્ત ચરબી:
+- હાનિકારક કોલેસ્ટેરોલ ઘટાડવામાં મદદ કરે છે
+- હૃદય આરોગ્યને ટેકો આપે છે
+- મગફળીના તેલ અને સરસવના તેલમાં મળે છે
 
-**સારા ફેટ્સના ફાયદા**
+બહુલ અસંતૃપ્ત ચરબી:
+- ઓમેગા-૩ અને ઓમેગા-૬ ધરાવે છે
+- મગજની કાર્યક્ષમતાને ટેકો આપે છે
+- શરીરના વિકાસમાં મદદ કરે છે
 
-- Heart healthy રાખે
-- Cholesterol balance સુધારે
-- Immunity વધારે
-- Skin અને hair માટે સારું
+**સારા ચરબીય તત્ત્વોના ફાયદા**
 
-👉 Cold pressed oils માં આ ફેટ્સ ભરપૂર હોય છે
+- હૃદયને તંદુરસ્ત રાખે છે
+- કોલેસ્ટેરોલનું સંતુલન સુધારે છે
+- રોગપ્રતિકારક શક્તિ વધારે છે
+- ત્વચા અને વાળ માટે લાભદાયક છે
 
-**ખરાબ ફેટ્સ શું છે?**
+👉 ઠંડા દબાણના તેલમાં આવા સારા ચરબીય તત્ત્વો વધુ હોય છે
 
-ખરાબ ફેટ્સ શરીરને નુકસાન પહોંચાડે છે.
+**હાનિકારક ચરબીય તત્ત્વો શું છે?**
 
-**ખરાબ ફેટ્સના પ્રકાર**
+હાનિકારક ચરબીય તત્ત્વોનું નિયમિત સેવન આરોગ્યને નુકસાન પહોંચાડી શકે છે.
 
-Trans Fats:
-- Processed અને refined oil માં મળે
-- Industrial processing દરમિયાન બને
+**હાનિકારક ચરબીય તત્ત્વોના પ્રકાર**
 
-Excess Saturated Fats:
-- Bad cholesterol વધારે
-- Heart problems સાથે જોડાયેલ
+કૃત્રિમ રૂપાંતરિત ચરબી:
+- પ્રક્રિયિત અને શુદ્ધિકૃત તેલમાં મળી શકે છે
+- ઔદ્યોગિક પ્રક્રિયા દરમિયાન બને છે
 
-**ખરાબ ફેટ્સના અસર**
+અતિશય સંતૃપ્ત ચરબી:
+- હાનિકારક કોલેસ્ટેરોલ વધારી શકે છે
+- હૃદય સંબંધિત સમસ્યાઓ સાથે જોડાયેલી છે
 
-- Heart disease નો જોખમ વધારે
-- LDL cholesterol વધારે
-- Weight gain કરે
-- Lifestyle diseases લાવે
+**હાનિકારક ચરબીના પ્રભાવ**
 
-**Cold Pressed vs Refined Oil**
+- હૃદયરોગનો જોખમ વધારે છે
+- હાનિકારક કોલેસ્ટેરોલ વધારે છે
+- વજન વધારો કરે છે
+- જીવનશૈલી સંબંધિત રોગોને પ્રોત્સાહન આપે છે
 
-Cold Pressed Oil:
-- કુદરતી રીતે બને
-- Nutrients અને antioxidants જળવાય
-- Good fats થી ભરપૂર
-- Chemical-free
+**ઠંડા દબાણનું તેલ અને શુદ્ધિકૃત તેલ**
 
-Refined Oil:
-- Chemicals થી process થાય
-- Nutrients નો ઘટાડો
-- Trans fats હોઈ શકે
-- Natural value ઓછી
+ઠંડા દબાણનું તેલ:
+- કુદરતી રીતે કાઢવામાં આવે છે
+- પોષક તત્ત્વો અને ઑક્સીકરણ વિરોધી તત્ત્વો જાળવી રાખે છે
+- સારા ચરબીય તત્ત્વોથી સમૃદ્ધ હોય છે
+- રસાયણમુક્ત હોય છે
+
+શુદ્ધિકૃત તેલ:
+- રસાયણોથી પ્રક્રિયિત થાય છે
+- પોષક તત્ત્વોમાં ઘટાડો થાય છે
+- હાનિકારક ચરબી ઉત્પન્ન થઈ શકે છે
+- કુદરતી મૂલ્ય ઓછું રહે છે
 
 **આ કેમ મહત્વનું છે**
 
-તેલ દરરોજ cooking, frying અને dressing માં વપરાય છે.
+તેલનો ઉપયોગ રોજ રસોઈ, તળવા અને બીજી ઘણી વાનગીઓમાં થાય છે.
 
-👉 નાનું બદલાવ પણ લાંબા ગાળે મોટો ફરક પાડે છે
+👉 તેલમાં કરેલો નાનો બદલાવ પણ લાંબા ગાળે આરોગ્યમાં મોટો ફેરફાર લાવી શકે છે
 
-**યોગ્ય તેલ પસંદ કરવા માટે ટિપ્સ**
+**યોગ્ય તેલ પસંદ કરવાની સૂચનાઓ**
 
-- Cold pressed oil પસંદ કરો
-- Refined oil ટાળો
-- સંતુલિત માત્રામાં વાપરો
-- Oil rotation કરો
+- ઠંડા દબાણનું તેલ પસંદ કરો
+- શુદ્ધિકૃત તેલ ટાળો
+- સંતુલિત પ્રમાણમાં વાપરો
+- વધુ સારા પોષણ માટે તેલ ફેરવીને વાપરો
 
 **અંતિમ વિચાર**
 
-બધા ફેટ્સ ખરાબ નથી — સાચા ફેટ્સ જરૂરી છે.
+બધી ચરબી નુકસાનકારક નથી — યોગ્ય ચરબી શરીર માટે જરૂરી છે.
 
 સમજદારીથી પસંદ કરો:
-- સારા ફેટ્સ → સારું સ્વાસ્થ્ય
-- ખરાબ ફેટ્સ → જોખમ
+- સારા ચરબીય તત્ત્વો → વધુ સારું આરોગ્ય
+- હાનિકારક ચરબીય તત્ત્વો → આરોગ્ય જોખમ
 
-આજે જ health માટે યોગ્ય પસંદગી કરો.`,
-},
- 
- 
-
-{
-  id: 6,
-  title: 'Different Uses of Oils: Choose the Right Oil for the Right Purpose',
-  titleGu: 'વિવિધ તેલનો ઉપયોગ: યોગ્ય કામ માટે યોગ્ય તેલ પસંદ કરો',
-  image: blog6,
-  date: '06 Apr 2026',
-  category: 'Guide / માર્ગદર્શન',
-  content: `In every Indian kitchen, oil is not just an ingredient — it plays a key role in taste, nutrition, and tradition. Each oil has unique properties and specific uses.
+આજે જ વધુ આરોગ્યપ્રદ તેલ પસંદ કરો.`,
+  },
+  {
+    id: 6,
+    title: 'Different Uses of Oils: Choose the Right Oil for the Right Purpose',
+    titleGu: 'વિવિધ તેલોના ઉપયોગ: યોગ્ય કામ માટે યોગ્ય તેલ પસંદ કરો',
+    image: blog6,
+    date: '06 Apr 2026',
+    dateGu: '૦૬ એપ્રિલ ૨૦૨૬',
+    category: 'Guide',
+    categoryGu: 'માર્ગદર્શન',
+    content: `In every Indian kitchen, oil is not just an ingredient — it plays a key role in taste, nutrition, and tradition. Each oil has unique properties and specific uses.
 
 At Manna Pure Oil, we help you choose the right oil for the right purpose.
 
@@ -1083,136 +1088,137 @@ Choose:
 - Right oil
 - Right use
 - Right health`,
-  
-  contentGu: `દરેક ભારતીય રસોડામાં તેલ માત્ર ingredient નથી — તે સ્વાદ, પોષણ અને પરંપરાનો મહત્વનો ભાગ છે. દરેક તેલની પોતાની ખાસિયત અને ઉપયોગ હોય છે.
 
-Manna Pure Oil તમને યોગ્ય કામ માટે યોગ્ય તેલ પસંદ કરવામાં મદદ કરે છે.
+    contentGu: `દરેક ભારતીય રસોડામાં તેલ માત્ર એક ઘટક નથી — તે સ્વાદ, પોષણ અને પરંપરાનો મહત્વપૂર્ણ ભાગ છે. દરેક તેલની પોતાની વિશેષતા અને યોગ્ય ઉપયોગ હોય છે.
 
-**Cold Pressed Groundnut Oil**
+મન્ના પ્યોર ઓઇલ તમને યોગ્ય કામ માટે યોગ્ય તેલ પસંદ કરવામાં મદદ કરે છે.
 
-ખાસિયત:
-- Healthy fats થી ભરપૂર
-- Mild સ્વાદ
-- High heat માટે સારું
+**ઠંડા દબાણનું મગફળીનું તેલ**
 
-ઉપયોગ:
-- Deep frying
+એને ખાસ શું બનાવે છે:
+- સારા ચરબીય તત્ત્વોથી સમૃદ્ધ
+- મધ્યમ સ્વાદ
+- ઊંચા તાપમાં સ્થિર રહે છે
+
+કયા ઉપયોગ માટે યોગ્ય:
+- ઊંડું તળવું
 - રોજિંદી રસોઈ
-- Snacks
+- નાસ્તા અને નમકીન
 
-👉 સર્વોત્તમ all-rounder oil
+👉 દરેક કામ માટે ઉપયોગી તેલ
 
-**Cold Pressed Sunflower Oil**
+**ઠંડા દબાણનું સૂર્યમુખી તેલ**
 
-ખાસિયત:
-- હલકું અને સરળ પચન
-- Vitamin E થી ભરપૂર
-- Neutral taste
+એને ખાસ શું બનાવે છે:
+- હળવું અને સહેલાઈથી પચાય એવું
+- વિટામિન ઇથી સમૃદ્ધ
+- સૌમ્ય સ્વાદ
 
-ઉપયોગ:
+કયા ઉપયોગ માટે યોગ્ય:
 - રોજિંદી રસોઈ
-- Light frying
-- Baking
+- હળવું તળવું
+- ભઠ્ઠીમાં બનતી વાનગીઓ
 
-👉 હલકા ભોજન માટે ઉત્તમ
+👉 હળવા ભોજન માટે ઉત્તમ
 
-**Cold Pressed Mustard Oil**
+**ઠંડા દબાણનું સરસવનું તેલ**
 
-ખાસિયત:
-- Strong સ્વાદ
-- Antibacterial ગુણ
-- Omega fats થી ભરપૂર
+એને ખાસ શું બનાવે છે:
+- તીવ્ર કુદરતી સ્વાદ
+- જંતુનિવારક ગુણધર્મો
+- ઓમેગા ચરબીય અમ્લોથી સમૃદ્ધ
 
-ઉપયોગ:
-- Traditional cooking
-- અથાણાં
-- Frying અને tadka
+કયા ઉપયોગ માટે યોગ્ય:
+- પરંપરાગત રસોઈ
+- અથાણા
+- તળવું અને વઘાર
 
-👉 Desi સ્વાદ માટે ઉત્તમ
+👉 અસલી સ્વાદ માટે ઉત્તમ
 
-**Cold Pressed Coconut Oil**
+**ઠંડા દબાણનું નાળિયેર તેલ**
 
-ખાસિયત:
-- Healthy fats
-- Natural સુગંધ
-- Cooling properties
+એને ખાસ શું બનાવે છે:
+- આરોગ્યપ્રદ સંતૃપ્ત ચરબી
+- કુદરતી સુગંધ
+- શીતળતા આપનાર ગુણ
 
-ઉપયોગ:
-- South Indian dishes
-- Light cooking
-- Desserts
+કયા ઉપયોગ માટે યોગ્ય:
+- દક્ષિણ ભારતીય વાનગીઓ
+- હળવી રસોઈ
+- મીઠાઈ અને ભઠ્ઠીમાં બનતી વાનગીઓ
 
-👉 Skin અને hair માટે પણ સારું
+👉 ત્વચા અને વાળ માટે પણ લાભદાયક
 
-**Cold Pressed White Sesame Oil**
+**ઠંડા દબાણનું સફેદ તલનું તેલ**
 
-ખાસિયત:
-- Mild nutty flavor
-- Calcium અને antioxidants થી ભરપૂર
-- હલકું texture
+એને ખાસ શું બનાવે છે:
+- હળવો દાણા જેવો સ્વાદ
+- કેલ્શિયમ અને ઑક્સીકરણ વિરોધી તત્ત્વોથી સમૃદ્ધ
+- હળવું ગાઢપણ
 
-ઉપયોગ:
-- Salad dressing
-- Light cooking
-- Fusion dishes
+કયા ઉપયોગ માટે યોગ્ય:
+- સલાડ પર વાપરવા
+- હળવી રસોઈ
+- મિશ્ર સ્વાદવાળી વાનગીઓ
 
-👉 હળવો સ્વાદ આપે
+👉 ભોજનમાં નાજુક લહેજો ઉમેરે છે
 
-**Cold Pressed Black Sesame Oil**
+**ઠંડા દબાણનું કાળા તલનું તેલ**
 
-ખાસિયત:
-- Strong aroma
-- Nutrient-rich
-- Traditional મહત્વ
+એને ખાસ શું બનાવે છે:
+- ગાઢ સુગંધ
+- પોષક તત્ત્વોથી સમૃદ્ધ
+- પરંપરાગત રીતે ખૂબ માન્ય
 
-ઉપયોગ:
-- Traditional recipes
-- Wellness use
-- Seasonal cooking
+કયા ઉપયોગ માટે યોગ્ય:
+- પરંપરાગત વાનગીઓ
+- આરોગ્યલક્ષી ઉપયોગ
+- ઋતુ અનુસાર બનતી રસોઈ
 
-👉 ઊંડું પોષણ આપે
+👉 ઊંડું પોષણ આપે છે
 
-**વિવિધ તેલનો ઉપયોગ કેમ જરૂરી છે**
+**વિવિધ તેલ વાપરવું કેમ જરૂરી છે**
 
-- દરેક તેલ અલગ nutrients આપે
-- સ્વાદમાં variety આવે
-- Balanced nutrition મળે
+- દરેક તેલ અલગ પ્રકારના પોષક તત્ત્વો આપે છે
+- સ્વાદમાં વૈવિધ્ય લાવે છે
+- સંતુલિત પોષણને ટેકો આપે છે
 
-👉 Oil rotation જરૂરી છે
+👉 તેલ ફેરવીને વાપરવાની ટેવ આરોગ્યપ્રદ છે
 
-**Smart Kitchen Tips**
+**સમજદારીભરી રસોડાની રીત**
 
-- Frying માટે groundnut oil
-- Light cooking માટે sunflower oil
-- Traditional માટે mustard oil
-- Special dishes માટે coconut oil
-- Flavor માટે sesame oil
+- તળવા માટે મગફળીનું તેલ વાપરો
+- હળવી રસોઈ માટે સૂર્યમુખી તેલ વાપરો
+- પરંપરાગત વાનગીઓ માટે સરસવનું તેલ વાપરો
+- ખાસ વાનગીઓ માટે નાળિયેર તેલ વાપરો
+- સ્વાદ અને આરોગ્ય માટે તલના તેલો વાપરો
 
-**Manna Pure Oil કેમ પસંદ કરવું?**
+**મન્ના પ્યોર ઓઇલ કેમ પસંદ કરવું?**
 
-- 100% cold pressed oils
-- કોઈ chemical નહીં
-- Natural nutrients થી ભરપૂર
-- કાળજીપૂર્વક બનાવેલ
+- સો ટકા ઠંડા દબાણના તેલો
+- કોઈ રસાયણ અથવા શુદ્ધિકરણ નહીં
+- કુદરતી પોષક તત્ત્વોથી સમૃદ્ધ
+- કાળજીપૂર્વક બનાવેલા
 
 **અંતિમ વિચાર**
 
-દરેક તેલની પોતાની શક્તિ છે — તેને યોગ્ય રીતે વાપરવું મહત્વનું છે.
+દરેક તેલની પોતાની ખાસ શક્તિ છે — એને યોગ્ય રીતે વાપરશો તો સાચો લાભ મળશે.
 
 પસંદ કરો:
 - યોગ્ય તેલ
 - યોગ્ય ઉપયોગ
-- યોગ્ય સ્વાસ્થ્ય`,
-},
-
-{
-  id: 7,
-  title: 'Why Gir Cow Bilona Ghee is the Healthiest Choice for Your Family',
-  titleGu: 'ગિર ગાયનું બિલોના ઘી કેમ તમારા પરિવાર માટે સૌથી સ્વસ્થ પસંદગી છે',
-  image: blog7,
-  date: '06 Apr 2026',
-  category: 'Health / સ્વાસ્થ્ય',
-  content: `In every Indian household, ghee is more than just an ingredient — it represents health, tradition, and care.
+- યોગ્ય આરોગ્ય`,
+  },
+  {
+    id: 7,
+    title: 'Why Gir Cow Bilona Ghee is the Healthiest Choice for Your Family',
+    titleGu: 'ગીર ગાયનું બિલોના ઘી તમારા પરિવાર માટે સૌથી આરોગ્યપ્રદ પસંદગી કેમ છે',
+    image: blog7,
+    date: '06 Apr 2026',
+    dateGu: '૦૬ એપ્રિલ ૨૦૨૬',
+    category: 'Health',
+    categoryGu: 'આરોગ્ય',
+    content: `In every Indian household, ghee is more than just an ingredient — it represents health, tradition, and care.
 
 But the real question is:
 Is the ghee you use truly healthy?
@@ -1318,115 +1324,114 @@ Bilona ghee offers:
 - Better lifestyle
 
 👉 A true return to purity and tradition`,
-  
-  contentGu: `દરેક ભારતીય ઘરમાં ઘી માત્ર એક ingredient નથી — તે સ્વાસ્થ્ય, પરંપરા અને પ્રેમનું પ્રતિક છે.
 
-પરંતુ મુખ્ય પ્રશ્ન છે:
-શું તમે જે ઘી વાપરો છો તે ખરેખર સ્વસ્થ છે?
+    contentGu: `દરેક ભારતીય ઘરમાં ઘી માત્ર એક ઘટક નથી — તે આરોગ્ય, પરંપરા અને કાળજીનું પ્રતિક છે.
+
+પરંતુ સાચો પ્રશ્ન એ છે:
+શું તમે જે ઘી વાપરો છો તે ખરેખર આરોગ્યપ્રદ છે?
 
 જવાબ બે બાબતો પર આધારિત છે:
-- દૂધની ગુણવત્તા (ગિર ગાયનું A2 દૂધ)
-- બનાવવાની રીત (બિલોના પદ્ધતિ)
+- દૂધની ગુણવત્તા
+- બનાવવાની રીત
 
-👉 આ બંને સાથે મળે ત્યારે શુદ્ધ બિલોના ઘી બને છે
+👉 આ બંને મળીને શુદ્ધ અને પૌષ્ટિક બિલોના ઘી બનાવે છે
 
-**Gir Cow Bilona Ghee શું છે?**
+**ગીર ગાયનું બિલોના ઘી શું છે?**
 
-- ગિર ગાયના A2 દૂધથી બનેલું
-- પરંપરાગત બિલોના પદ્ધતિથી બનાવેલું
-- કુદરતી અને chemical-free
+- ગીર ગાયના ઉત્તમ દૂધથી બનેલું
+- પરંપરાગત બિલોના પદ્ધતિથી તૈયાર થયેલું
+- કુદરતી, રસાયણમુક્ત અને અસલી
 
-👉 સામાન્ય ઘી કરતા વધુ ફાયદાકારક
+👉 સામાન્ય ઘી કરતાં વધુ લાભદાયક
 
 **બિલોના પદ્ધતિ શું છે?**
 
 - દૂધમાંથી દહીં બનાવવામાં આવે છે
-- દહીંને લાકડાની રવડીથી મથવામાં આવે છે
-- માખણને ધીમે ગરમ કરીને ઘી બનાવવામાં આવે છે
+- દહીંને લાકડાની રવડીથી મથીને માખણ કાઢવામાં આવે છે
+- માખણને ધીમે તાપે ગરમ કરીને ઘી બનાવવામાં આવે છે
 
-👉 ધીમું process વધુ nutrition આપે છે
+👉 ધીમી પ્રક્રિયા વધુમાં વધુ પોષણ જાળવી રાખે છે
 
-**1. A2 Nutrition થી ભરપૂર**
+**૧. પૌષ્ટિક ગુણોથી સમૃદ્ધ**
 
-- A2 protein પચવામાં સરળ
-- Metabolism સુધારે
-- દરેક વય માટે યોગ્ય
+- સહેલાઈથી પચાય એવું બને છે
+- શરીરની ક્રિયાશક્તિને ટેકો આપે છે
+- દરેક વયના લોકો માટે યોગ્ય છે
 
-**2. વધુ Nutrients જળવાય**
+**૨. વધુમાં વધુ પોષક તત્ત્વો જળવાય છે**
 
-- Vitamins A, D, E, K જળવાય
-- Antioxidants રહે
-- Machine ghee કરતાં વધુ પોષણ
+- વિટામિન એ, ડી, ઇ અને કે જાળવી રાખે છે
+- ઑક્સીકરણ વિરોધી તત્ત્વો અખંડિત રહે છે
+- યાંત્રિક રીતે બનેલા ઘી કરતાં વધુ પૌષ્ટિક હોય છે
 
-**3. પાચન સુધારે**
+**૩. પાચન સુધારે છે**
 
+- ક્રીમમાંથી નહીં પરંતુ દહીંમાંથી બને છે
+- આંતરડાંના આરોગ્યને ટેકો આપે છે
+- પોષક તત્ત્વોનું શોષણ સુધારે છે
+
+**૪. રોગપ્રતિકારક શક્તિ વધારે છે**
+
+- શરીરની રક્ષણશક્તિ મજબૂત કરે છે
+- સામાન્ય બીમારીઓ સામે લડવામાં મદદ કરે છે
+- સમગ્ર આરોગ્યને ટેકો આપે છે
+
+**૫. મગજના વિકાસને ટેકો આપે છે**
+
+- આરોગ્યપ્રદ ચરબી મગજને પોષણ આપે છે
+- યાદશક્તિ અને એકાગ્રતા સુધારે છે
+- બાળકો માટે ખાસ લાભદાયક છે
+
+**૬. મર્યાદિત પ્રમાણમાં હૃદયમૈત્રી**
+
+- સંતુલિત ચરબી ધરાવે છે
+- કોલેસ્ટેરોલનું સંતુલન જાળવવામાં મદદ કરે છે
+- ઘણા ઔદ્યોગિક વિકલ્પો કરતાં વધુ સારો વિકલ્પ છે
+
+**૭. સો ટકા કુદરતી**
+
+- કોઈ સંરક્ષક નથી
+- કોઈ શુદ્ધિકરણ નથી
+- રોજિંદા ઉપયોગ માટે સુરક્ષિત છે
+
+**૮. સમૃદ્ધ સ્વાદ અને સુગંધ**
+
+- અસલી સ્વાદ
+- કુદરતી સુવાસ
+- પરંપરાગત લહેજો
+
+**બિલોના ઘી અને સામાન્ય ઘી**
+
+બિલોના ઘી:
 - દહીંમાંથી બનેલું
-- Gut health માટે સારું
-- Nutrient absorption વધારે
+- પોષક તત્ત્વોથી સમૃદ્ધ
+- સહેલાઈથી પચાય એવું
+- પરંપરાગત પ્રક્રિયા
 
-**4. Immunity વધારે**
+સામાન્ય ઘી:
+- ક્રીમમાંથી બનેલું
+- ઓછી પોષકતા
+- પચવામાં ભારે
+- ઔદ્યોગિક પ્રક્રિયા
 
-- શરીરની રક્ષણ શક્તિ વધારે
-- બીમારીઓ સામે લડે
-- Overall health સુધારે
+**મન્ના પ્યોર ઓઇલ કેમ પસંદ કરવું?**
 
-**5. Brain Development માટે સારું**
-
-- Brain cells ને પોષણ આપે
-- Memory અને focus સુધારે
-- બાળકો માટે લાભદાયક
-
-**6. Heart-Friendly (મર્યાદામાં)**
-
-- સંતુલિત ફેટ્સ
-- Cholesterol balance રાખે
-- Refined oil કરતા સારું
-
-**7. 100% Natural**
-
-- કોઈ preservatives નહીં
-- કોઈ refining નહીં
-- દૈનિક ઉપયોગ માટે સુરક્ષિત
-
-**8. સ્વાદ અને સુગંધ**
-
-- Authentic taste
-- Natural સુગંધ
-- Traditional flavor
-
-**Bilona Ghee vs Regular Ghee**
-
-Bilona Ghee:
-- દહીંથી બનેલું
-- Nutrient-rich
-- સરળ પચન
-- Traditional process
-
-Regular Ghee:
-- ક્રીમથી બનેલું
-- ઓછું પોષણ
-- ભારે પચન
-- Industrial process
-
-**Manna Pure Oil કેમ પસંદ કરવું?**
-
-- ગિર ગાયના A2 દૂધથી બનેલું
-- સાચી બિલોના પદ્ધતિ
-- કોઈ chemical નહીં
-- કાળજીપૂર્વક બનાવેલું
+- ઉત્તમ ગુણવત્તાવાળા દૂધથી બનાવેલું
+- અસલી બિલોના પદ્ધતિથી તૈયાર થયેલું
+- કોઈ રસાયણ અથવા ટૂંકા માર્ગ વગર બનાવેલું
+- કાળજીપૂર્વક તૈયાર કરેલું
 
 **અંતિમ વિચાર**
 
-યોગ્ય ઘી પસંદ કરવું એટલે સ્વસ્થ જીવન પસંદ કરવું.
+યોગ્ય ઘી પસંદ કરવાનો અર્થ છે વધુ સારું આરોગ્ય પસંદ કરવું.
 
-Bilona ghee આપે:
-- વધુ પોષણ
-- સારું પાચન
-- સારું જીવન
+બિલોના ઘી આપે છે:
+- વધુ સારું પોષણ
+- વધુ સારું પાચન
+- વધુ સારું જીવન
 
-👉 શુદ્ધતા અને પરંપરાની સાચી ઓળખ`,
-},
-    
+👉 આ છે શુદ્ધતા અને પરંપરાની સાચી ઓળખ`,
+  },
 ];
 
 const BlogPost = () => {
@@ -1440,24 +1445,50 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <div className="text-6xl mb-4">📄</div>
-        <h1 className="text-2xl font-bold text-brand-purple-800 mb-4">Blog not found</h1>
-        <Link to="/blogs" className="text-brand-orange-500 hover:underline font-semibold">← Back to Blogs</Link>
+        <h1 className="text-2xl font-bold text-brand-purple-800 mb-4">
+          {isGu ? 'બ્લોગ મળ્યો નથી' : 'Blog not found'}
+        </h1>
+        <Link
+          to="/blogs"
+          className="text-brand-orange-500 hover:underline font-semibold"
+        >
+          {isGu ? '← બ્લોગ્સ પર પાછા જાઓ' : '← Back to Blogs'}
+        </Link>
       </div>
     );
   }
 
-  const contentToShow = isGu && blog.contentGu ? blog.contentGu : blog.content;
+  const contentToShow =
+    isGu && blog.contentGu ? blog.contentGu : blog.content;
 
   const renderContent = (text) => {
     return text.split('\n').map((line, i) => {
       if (line.startsWith('**') && line.endsWith('**')) {
-        return <h3 key={i} className="text-xl font-bold text-brand-purple-800 mt-6 mb-2">{line.replace(/\*\*/g, '')}</h3>;
+        return (
+          <h3
+            key={i}
+            className="text-xl font-bold text-brand-purple-800 mt-6 mb-2"
+          >
+            {line.replace(/\*\*/g, '')}
+          </h3>
+        );
       }
       if (line.startsWith('- ')) {
-        return <li key={i} className="text-gray-700 ml-4 list-disc leading-relaxed">{line.slice(2)}</li>;
+        return (
+          <li
+            key={i}
+            className="text-gray-700 ml-4 list-disc leading-relaxed"
+          >
+            {line.slice(2)}
+          </li>
+        );
       }
       if (line.trim() === '') return <br key={i} />;
-      return <p key={i} className="text-gray-700 leading-relaxed mb-2">{line}</p>;
+      return (
+        <p key={i} className="text-gray-700 leading-relaxed mb-2">
+          {line}
+        </p>
+      );
     });
   };
 
@@ -1466,27 +1497,34 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-gradient-purple py-12">
       <div className="max-w-4xl mx-auto px-6">
-        {/* Back */}
-        <Link to="/blogs" className="inline-flex items-center gap-2 text-white hover:text-brand-orange-500 font-semibold mb-8 transition">
-          <FaArrowLeft /> {isGu ? 'blogs ઉppar jaao' : 'Back to Blogs'}
+
+        {/* Back Button */}
+        <Link
+          to="/blogs"
+          className="inline-flex items-center gap-2 text-white hover:text-brand-orange-500 font-semibold mb-8 transition"
+        >
+          <FaArrowLeft />
+          {isGu ? 'બ્લોગ્સ પર પાછા જાઓ' : 'Back to Blogs'}
         </Link>
 
         {/* Hero Image */}
-       <div className="rounded-3xl overflow-hidden shadow-xl mb-8 bg-gray-100 flex items-center justify-center">
-  <img
-    src={blog.image}
-    alt={blog.title}
-    className="w-full h-full object-fil"
-  />
-</div>
+        <div className="rounded-3xl overflow-hidden shadow-xl mb-8 bg-gray-100 flex items-center justify-center">
+          <img
+            src={blog.image}
+            alt={isGu ? blog.titleGu : blog.title}
+            className="w-full h-full object-fill"
+          />
+        </div>
 
         {/* Meta */}
         <div className="flex flex-wrap items-center gap-4 mb-6">
           <span className="flex items-center gap-1 text-brand-orange-500 font-semibold text-sm">
-            <FaTag /> {blog.category}
+            <FaTag />
+            {isGu ? blog.categoryGu : blog.category}
           </span>
           <span className="flex items-center gap-1 text-gray-500 text-sm">
-            <FaCalendar /> {blog.date}
+            <FaCalendar />
+            {isGu ? blog.dateGu : blog.date}
           </span>
         </div>
 
@@ -1497,20 +1535,30 @@ const BlogPost = () => {
 
         {/* Content */}
         <div className="bg-[#D0F0C0] rounded-3xl shadow-md p-8 mb-10">
-          <ul className="list-none p-0">{renderContent(contentToShow)}</ul>
+          <div className="p-0">{renderContent(contentToShow)}</div>
         </div>
 
-        {/* Related */}
+        {/* Related Blogs */}
         <div>
           <h2 className="text-2xl font-bold text-white mb-6">
-            {isGu ? 'અন્ય Blogs' : 'More Blogs'}
+            {isGu ? 'અન્ય બ્લોગ્સ' : 'More Blogs'}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {otherBlogs.map((b) => (
-              <Link key={b.id} to={`/blog/${b.id}`} className="bg-[#D0F0C0] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition group">
-                <img src={b.image} alt={b.title} className="w-full h-40 object-cover group-hover:scale-105 transition duration-500" />
+              <Link
+                key={b.id}
+                to={`/blog/${b.id}`}
+                className="bg-[#D0F0C0] rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition group"
+              >
+                <img
+                  src={b.image}
+                  alt={isGu ? b.titleGu : b.title}
+                  className="w-full h-40 object-cover group-hover:scale-105 transition duration-500"
+                />
                 <div className="p-4">
-                  <span className="text-xs text-brand-orange-500 font-semibold">{b.category}</span>
+                  <span className="text-xs text-brand-orange-500 font-semibold">
+                    {isGu ? b.categoryGu : b.category}
+                  </span>
                   <h3 className="font-bold text-brand-purple-800 mt-1 group-hover:text-brand-orange-500 transition">
                     {isGu ? b.titleGu : b.title}
                   </h3>
@@ -1519,6 +1567,7 @@ const BlogPost = () => {
             ))}
           </div>
         </div>
+
       </div>
     </div>
   );
