@@ -18,12 +18,17 @@ export const CartProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const { user, isAuthenticated } = useUserAuth();
 
+  // ✅ Unique key generate karva mate helper
+  // product id + size combine kariye to unique thase
+  const getUniqueKey = (productId, size) => {
+    return `${productId}_${(size || '').toLowerCase().trim()}`;
+  };
+
   // Load cart from backend when user logs in
   useEffect(() => {
     if (isAuthenticated && user) {
       loadCartFromBackend();
     } else {
-      // Clear cart if not logged in
       setCartItems([]);
       setLoading(false);
     }
@@ -34,33 +39,32 @@ export const CartProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await cartAPI.getCart();
-       const BASE_URL = "http://localhost:5000";
-      
+      const BASE_URL = "http://localhost:5000";
+
       if (response.data.success && response.data.cart) {
-        // Transform backend cart format to frontend format
         const items = response.data.cart.items.map(item => ({
-  _id: item.product._id,
-  name: item.product.name,
-  price: item.price,        // 👈 size price
-   image: item.product?.image
-          ? `${BASE_URL}${item.product.image}`
-          : null,
-  description: item.product.description,
-  size: item.size,          // 👈 ADD THIS
-  quantity: item.quantity
-}));
+          _id: item.product._id,
+          name: item.product.name,
+          price: item.price,
+          image: item.product?.image
+            ? `${BASE_URL}${item.product.image}`
+            : null,
+          description: item.product.description,
+          size: item.size,
+          quantity: item.quantity,
+          // ✅ Unique key store karo
+          uniqueKey: getUniqueKey(item.product._id, item.size),
+        }));
 
         setCartItems(items);
       }
     } catch (error) {
       console.error('Error loading cart:', error);
-      // If error, try loading from localStorage as fallback
       const savedCart = localStorage.getItem('maanaCart');
       if (savedCart) {
         try {
           const localCart = JSON.parse(savedCart);
           setCartItems(localCart);
-          // Sync local cart to backend
           syncLocalCartToBackend(localCart);
         } catch (e) {
           console.error('Error parsing local cart:', e);
@@ -76,11 +80,11 @@ export const CartProvider = ({ children }) => {
     try {
       const items = localCartItems.map(item => ({
         productId: item._id,
-        quantity: item.quantity
+        quantity: item.quantity,
+        size: item.size,
       }));
-      
+
       await cartAPI.syncCart({ items });
-      // Clear local storage after successful sync
       localStorage.removeItem('maanaCart');
     } catch (error) {
       console.error('Error syncing cart to backend:', error);
@@ -106,82 +110,97 @@ export const CartProvider = ({ children }) => {
     return true;
   };
 
-  // Add item to cart (with backend sync)
+  // ✅ Add item to cart - same id + same size hoy to quantity vadharo
+  // same id + different size hoy to new item add karo
   const addToCart = async (product, quantity = 1) => {
-  if (!checkAuth()) {
-    return false;
-  }
+    if (!checkAuth()) {
+      return false;
+    }
 
-  try {
-    // Optimistic update (with size support)
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(
-        item =>
-          item._id === product._id &&
-          item.size === product.size
-      );
-
-      if (existingItem) {
-        return prevItems.map(item =>
-          item._id === product._id &&
-          item.size === product.size
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
-      }
-
-      return [...prevItems, { ...product, quantity }];
-    });
-
-    // ✅ IMPORTANT: Send size to backend
-    await cartAPI.addToCart({
-      productId: product._id,
-      quantity: quantity,
-      size: product.size   // 👈 ADD THIS
-    });
-
-    toast.success(`${product.name} added to cart!`, {
-      position: "top-right",
-      autoClose: 2000,
-      icon: "🛒",
-    });
-
-    return true;
-
-  } catch (error) {
-    console.error('Error adding to cart:', error);
-
-    await loadCartFromBackend();
-
-    toast.error('Failed to add item to cart. Please try again.', {
-      position: "top-right",
-      autoClose: 3000,
-    });
-
-    return false;
-  }
-};
-
-
-  // Remove item from cart (with backend sync)
-  const removeFromCart = async (productId, productName) => {
     try {
+      const productUniqueKey = getUniqueKey(product._id, product.size);
+
       // Optimistic update
-      setCartItems(prevItems => prevItems.filter(item => item._id !== productId));
+      setCartItems(prevItems => {
+        const existingItem = prevItems.find(
+          item => getUniqueKey(item._id, item.size) === productUniqueKey
+        );
+
+        if (existingItem) {
+          // Same product + same size already exist - quantity vadharo
+          return prevItems.map(item =>
+            getUniqueKey(item._id, item.size) === productUniqueKey
+              ? { ...item, quantity: item.quantity + quantity }
+              : item
+          );
+        }
+
+        // New product or different size - new item add karo
+        return [...prevItems, {
+          ...product,
+          quantity,
+          uniqueKey: productUniqueKey,
+        }];
+      });
 
       // Sync with backend
-      await cartAPI.removeFromCart(productId);
+      await cartAPI.addToCart({
+        productId: product._id,
+        quantity: quantity,
+        size: product.size,
+      });
 
-      toast.info(`${productName || 'Item'} removed from cart`, {
+      toast.success(`${product.name} (${product.size}) added to cart!`, {
         position: "top-right",
         autoClose: 2000,
+        icon: "🛒",
       });
+
+      return true;
+
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      await loadCartFromBackend();
+
+      toast.error('Failed to add item to cart. Please try again.', {
+        position: "top-right",
+        autoClose: 3000,
+      });
+
+      return false;
+    }
+  };
+
+  // ✅ Remove from cart - only specific size remove thase
+  // removeFromCart(productId, size) -> fakat ej size ni item remove thase
+  const removeFromCart = async (productId, size) => {
+    try {
+      const removeKey = getUniqueKey(productId, size);
+
+      // Find item name for toast
+      const removedItem = cartItems.find(
+        item => getUniqueKey(item._id, item.size) === removeKey
+      );
+
+      // Optimistic update - fakat matching id + size remove karo
+      setCartItems(prevItems =>
+        prevItems.filter(item => getUniqueKey(item._id, item.size) !== removeKey)
+      );
+
+      // Sync with backend - size pan moklo
+      await cartAPI.removeFromCart(productId, size);
+
+      toast.info(
+        `${removedItem?.name || 'Item'} (${size || ''}) removed from cart`,
+        {
+          position: "top-right",
+          autoClose: 2000,
+        }
+      );
     } catch (error) {
       console.error('Error removing from cart:', error);
-      
-      // Revert optimistic update
       await loadCartFromBackend();
-      
+
       toast.error('Failed to remove item. Please try again.', {
         position: "top-right",
         autoClose: 3000,
@@ -189,33 +208,36 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // Update quantity (with backend sync)
-  const updateQuantity = async (productId, quantity) => {
+  // ✅ Update quantity - only specific size ni quantity update thase
+  // updateQuantity(productId, size, newQuantity)
+  const updateQuantity = async (productId, size, quantity) => {
     if (quantity < 1) {
-      const item = cartItems.find(i => i._id === productId);
-      await removeFromCart(productId, item?.name);
+      await removeFromCart(productId, size);
       return;
     }
 
     try {
-      // Optimistic update
+      const updateKey = getUniqueKey(productId, size);
+
+      // Optimistic update - fakat matching id + size update karo
       setCartItems(prevItems =>
         prevItems.map(item =>
-          item._id === productId ? { ...item, quantity } : item
+          getUniqueKey(item._id, item.size) === updateKey
+            ? { ...item, quantity }
+            : item
         )
       );
 
-      // Sync with backend
+      // Sync with backend - size pan moklo
       await cartAPI.updateCart({
         productId,
-        quantity
+        quantity,
+        size,
       });
     } catch (error) {
       console.error('Error updating quantity:', error);
-      
-      // Revert optimistic update
       await loadCartFromBackend();
-      
+
       toast.error('Failed to update quantity. Please try again.', {
         position: "top-right",
         autoClose: 3000,
@@ -226,11 +248,9 @@ export const CartProvider = ({ children }) => {
   // Clear cart (with backend sync)
   const clearCart = async () => {
     try {
-      // Optimistic update
       setCartItems([]);
       localStorage.removeItem('maanaCart');
 
-      // Sync with backend
       await cartAPI.clearCart();
 
       toast.info('Cart cleared', {
@@ -239,10 +259,8 @@ export const CartProvider = ({ children }) => {
       });
     } catch (error) {
       console.error('Error clearing cart:', error);
-      
-      // Revert optimistic update
       await loadCartFromBackend();
-      
+
       toast.error('Failed to clear cart. Please try again.', {
         position: "top-right",
         autoClose: 3000,
@@ -252,7 +270,10 @@ export const CartProvider = ({ children }) => {
 
   // Calculate cart total
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    return cartItems.reduce(
+      (total, item) => total + (item.price * item.quantity),
+      0
+    );
   };
 
   // Get cart item count
@@ -271,7 +292,7 @@ export const CartProvider = ({ children }) => {
         clearCart,
         getCartTotal,
         getCartCount,
-        refreshCart: loadCartFromBackend
+        refreshCart: loadCartFromBackend,
       }}
     >
       {children}
