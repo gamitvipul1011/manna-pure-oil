@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { useCart } from "../context/CartContext";
 import { products, getWhatsAppOrderUrl } from "../data/products";
 import ProductCard from "../components/ProductCard";
+import OptimizedImage from "../components/OptimizedImage";  // ✅ ADD THIS
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -23,7 +24,8 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("description");
   const [addedAnim, setAddedAnim] = useState(false);
-  const [imgLoaded, setImgLoaded] = useState(false);
+  // ❌ REMOVED: const [imgLoaded, setImgLoaded] = useState(false);
+  // OptimizedImage component handles loading internally
 
   useEffect(() => {
     const p = products.find((x) => x._id === id);
@@ -43,7 +45,6 @@ const ProductDetail = () => {
     setSelectedSizeIdx(0);
     setSelectedImageIdx(0);
     setQuantity(1);
-    setImgLoaded(false);
     window.scrollTo(0, 0);
   }, [id, navigate]);
 
@@ -109,68 +110,62 @@ const ProductDetail = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
 
+          {/* ========== IMAGE SECTION - OPTIMIZED ========== */}
+          <div className="space-y-4">
 
-{/* ========== IMAGE SECTION ========== */}
-<div className="space-y-4">
+            {/* MAIN IMAGE */}
+            <div className="relative flex justify-center items-center">
 
-  {/* MAIN IMAGE */}
-  <div className="relative flex justify-center items-center">
+              {/* Glow */}
+              <div
+                className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-pink-400/10 to-purple-400/20 blur-3xl"
+                style={{ borderRadius: "30px" }}
+              />
 
-    {/* Glow */}
-    <div
-      className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-pink-400/10 to-purple-400/20 blur-3xl"
-      style={{ borderRadius: "30px" }}
-    />
+              {/* ✅ OPTIMIZED Main Image */}
+              <div className="relative inline-flex justify-center items-center overflow-hidden rounded-[28px]">
+                <OptimizedImage
+                  src={displayImage}
+                  alt={product.name}
+                  width="100%"
+                  height="auto"
+                  className="main-product-image"
+                  imgClassName="object-contain max-w-full h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px] w-auto transition-all duration-500 hover:scale-[1.02]"
+                  priority={true}
+                  fallbackSrc="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400"
+                />
+              </div>
+            </div>
 
-    {/* Image Wrapper */}
-    <div className="relative inline-flex justify-center items-center overflow-hidden rounded-[28px]">
+            {/* ✅ OPTIMIZED THUMBNAILS */}
+            {currentImages.length > 1 && (
+              <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
+                {currentImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setSelectedImageIdx(idx);
+                    }}
+                    className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 ${
+                      selectedImageIdx === idx
+                        ? "border-orange-500 shadow-lg scale-105"
+                        : "border-purple-300/30 hover:border-orange-300"
+                    } rounded-xl`}
+                  >
+                    <OptimizedImage
+                      src={img}
+                      alt={`${product.name} view ${idx + 1}`}
+                      width="100%"
+                      height="100%"
+                      imgClassName="w-full h-full object-contain"
+                      priority={true}
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
-      {!imgLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
-        </div>
-      )}
-
-      <img
-        src={displayImage}
-        alt={product.name}
-        onLoad={() => setImgLoaded(true)}
-        className={`transition-all duration-500 hover:scale-[1.02]
-        object-contain
-        max-w-full
-        h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px]
-        w-auto
-        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
-      />
-    </div>
-  </div>
-
-  {/* THUMBNAILS */}
-  {currentImages.length > 1 && (
-    <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
-      {currentImages.map((img, idx) => (
-        <button
-          key={idx}
-          onClick={() => {
-            setSelectedImageIdx(idx);
-            setImgLoaded(false);
-          }}
-          className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 ${
-            selectedImageIdx === idx
-              ? "border-orange-500 shadow-lg scale-105"
-              : "border-purple-300/30 hover:border-orange-300"
-          } rounded-xl`}
-        >
-          <img
-            src={img}
-            alt=""
-            className="w-full h-full object-contain"
-          />
-        </button>
-      ))}
-    </div>
-  )}
-</div>
           {/* ========== PRODUCT INFO ========== */}
           <div className="space-y-5 sm:space-y-6">
             {/* CATEGORY & NAME */}
@@ -214,7 +209,6 @@ const ProductDetail = () => {
                       onClick={() => {
                         setSelectedSizeIdx(idx);
                         setSelectedImageIdx(0);
-                        setImgLoaded(false);
                       }}
                       className={`px-4 sm:px-5 py-2 rounded-lg sm:rounded-xl border transition-all duration-200 text-sm sm:text-base ${
                         selectedSizeIdx === idx
@@ -335,7 +329,6 @@ const ProductDetail = () => {
           </div>
 
           <div className="bg-[#D0F0C0] rounded-b-2xl sm:rounded-b-3xl shadow-xl p-4 sm:p-6 md:p-8">
-            {/* DESCRIPTION TAB */}
             {activeTab === "description" && (
               <div className="flex gap-3 sm:gap-4">
                 <GiOilDrum className="text-purple-700 text-lg sm:text-xl flex-shrink-0 mt-1" />
@@ -361,7 +354,6 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {/* BENEFITS TAB */}
             {activeTab === "benefits" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {parseLines(
@@ -378,7 +370,6 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {/* USES TAB */}
             {activeTab === "uses" && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {parseLines(isGu ? product.usesGu : product.uses).map(
