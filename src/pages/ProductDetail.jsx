@@ -120,49 +120,76 @@ className="flex items-center gap-2 text-orange-100 hover:text-orange-400 transit
 
 <div className="space-y-4">
 
-<div className="rounded-3xl shadow-lg overflow-hidden mx-auto w-full flex justify-center">
+  {/* MAIN IMAGE */}
+  <div className="relative flex justify-center items-center w-full">
 
-<img
-src={displayImage}
-alt={product.name}
-className="max-h-[380px] w-full object-contain transition duration-300 hover:scale-105"
-/>
+    {/* Glow Background */}
+    <div
+      className="absolute inset-0 bg-gradient-to-br from-orange-400/15 via-pink-400/10 to-purple-400/15 blur-3xl"
+      style={{
+        borderRadius: "40px",
+      }}
+    />
 
+    {/* Image Container */}
+    <div
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{
+        borderRadius: "28px",
+        width: "100%",
+        minHeight: "320px",
+      }}
+    >
+      {/* Loader */}
+      {!imgLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="animate-spin rounded-full h-10 w-10 border-t-4 border-orange-400"></div>
+        </div>
+      )}
+
+      {/* Main Image */}
+      <img
+        src={displayImage}
+        alt={product.name}
+        onLoad={() => setImgLoaded(true)}
+        className={`transition-all duration-500 hover:scale-[1.02]
+        object-contain
+        w-full
+        h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px]
+        ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+      />
+    </div>
+  </div>
+
+  {/* THUMBNAILS */}
+  {currentImages.length > 1 && (
+    <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
+      {currentImages.map((img, idx) => (
+        <button
+          key={idx}
+          onClick={() => {
+            setSelectedImageIdx(idx);
+            setImgLoaded(false);
+          }}
+          className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-300 ${
+            selectedImageIdx === idx
+              ? "border-orange-500 shadow-lg shadow-orange-400/50 scale-105"
+              : "border-purple-300/30 hover:border-orange-300"
+          }`}
+          style={{ borderRadius: "16px" }}
+        >
+          <img
+            src={img}
+            alt=""
+            className="w-full h-full object-contain"
+          />
+        </button>
+      ))}
+    </div>
+  )}
 </div>
 
-{/* THUMBNAILS */}
 
-{currentImages.length > 1 && (
-
-<div className="flex gap-3 overflow-x-auto pb-2 justify-center">
-
-{currentImages.map((img, idx) => (
-
-<button
-key={idx}
-onClick={() => setSelectedImageIdx(idx)}
-className={`w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden border-2 ${
-selectedImageIdx === idx
-? "border-orange-500"
-: "border-gray-200"
-}`}
->
-
-<img
-src={img}
-alt=""
-className="w-full h-full object-contain bg-amber-50"
-/>
-
-</button>
-
-))}
-
-</div>
-
-)}
-
-</div>
 
 {/* PRODUCT INFO */}
 
