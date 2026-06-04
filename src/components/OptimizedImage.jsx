@@ -5,19 +5,27 @@ const OptimizedImage = ({
   src,
   alt = '',
   className = '',
-  width,
-  height,
+  imgClassName = '',
+  width = '100%',
+  height = '100%',
   onClick,
-  priority = false, // hero/first image માટે true
+  priority = false,
+  fallbackSrc = '',
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(priority);
+  const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
   const imgRef = useRef(null);
 
-  // Intersection Observer - image viewport માં આવે ત્યારે જ load કરો
   useEffect(() => {
-    if (priority) return; // priority image તરત load થશે
+    setImgSrc(src);
+    setHasError(false);
+    setIsLoaded(false);
+  }, [src]);
+
+  useEffect(() => {
+    if (priority) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -26,7 +34,7 @@ const OptimizedImage = ({
           observer.disconnect();
         }
       },
-      { rootMargin: '200px' } // 200px પહેલાથી load શરૂ
+      { rootMargin: '200px' }
     );
 
     if (imgRef.current) {
@@ -41,6 +49,10 @@ const OptimizedImage = ({
   };
 
   const handleError = () => {
+    if (fallbackSrc && imgSrc !== fallbackSrc) {
+      setImgSrc(fallbackSrc);
+      return;
+    }
     setHasError(true);
     setIsLoaded(true);
   };
@@ -52,14 +64,12 @@ const OptimizedImage = ({
       style={{ width, height }}
       onClick={onClick}
     >
-      {/* Placeholder - image load થાય ત્યાં સુધી */}
       {!isLoaded && !hasError && (
         <div className="image-placeholder">
           <div className="placeholder-shimmer"></div>
         </div>
       )}
 
-      {/* Error State */}
       {hasError && (
         <div className="image-error">
           <span>📷</span>
@@ -67,17 +77,18 @@ const OptimizedImage = ({
         </div>
       )}
 
-      {/* Actual Image */}
       {isInView && !hasError && (
         <img
-          src={src}
+          src={imgSrc}
           alt={alt}
-          className={`optimized-image ${isLoaded ? 'loaded' : 'loading'}`}
+          className={`optimized-image ${imgClassName} ${
+            isLoaded ? 'loaded' : 'loading'
+          }`}
           onLoad={handleLoad}
           onError={handleError}
           loading={priority ? 'eager' : 'lazy'}
           decoding={priority ? 'sync' : 'async'}
-          fetchpriority={priority ? 'high' : 'auto'}
+          fetchPriority={priority ? 'high' : 'auto'}
         />
       )}
     </div>
