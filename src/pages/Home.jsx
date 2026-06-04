@@ -157,7 +157,7 @@ const Home = () => {
 
       <ProductBannerSection />
 
-      <section className="py-16 bg-gradient-purple">
+      <section className="py-16 bg-[#9B7BC9]">
         <div className="max-w-5xl mx-auto px-4">
           <TestimonialsSection />
         </div>
