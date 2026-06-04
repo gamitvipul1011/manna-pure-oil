@@ -145,23 +145,24 @@ className="flex items-center gap-2 text-orange-100 hover:text-orange-400 transit
 </div>
 </div>
 {/* THUMBNAILS */}
-{currentImages.length > 1 && (
-<div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 justify-center px-2">
 {currentImages.map((img, idx) => (
-<button
-key={idx}
-onClick={() => {
-setSelectedImageIdx(idx);
-setImgLoaded(false);
-}}
-className={w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 overflow-hidden border-2 transition-all duration-200 ${ selectedImageIdx === idx ? "border-orange-500 shadow-lg scale-105" : "border-purple-300/30 hover:border-orange-300" } rounded-xl}
->
-<img src={img} alt="" className="w-full h-full object-contain" />
-</button>
+  <button
+    key={idx}
+    onClick={() => {
+      setSelectedImageIdx(idx);
+      setImgLoaded(false);
+    }}
+    className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 
+      flex-shrink-0 overflow-hidden border-2 transition-all 
+      duration-200 rounded-xl ${
+        selectedImageIdx === idx
+          ? "border-orange-500 shadow-lg scale-105"
+          : "border-purple-300/30 hover:border-orange-300"
+      }`}
+  >
+    <img src={img} alt="" className="w-full h-full object-contain" />
+  </button>
 ))}
-</div>
-)}
-
 </div> {/* ========== PRODUCT INFO ========== */} <div className="space-y-5 sm:space-y-6"> {/* CATEGORY & NAME */} <div> <span className="text-xs font-semibold text-purple-300 uppercase tracking-widest"> {isGu ? product.category.nameGu || product.category.name : product.category.name} </span> <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mt-1 leading-tight"> {isGu && product.nameGu ? product.nameGu : product.name} </h1> <div className="flex items-center gap-1 mt-2"> {[...Array(5)].map((_, i) => ( <FaStar key={i} className="text-yellow-400 text-sm" /> ))} <span className="text-sm text-purple-200 ml-1">(4.8)</span> </div> </div>
 
 
