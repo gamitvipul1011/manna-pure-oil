@@ -25,13 +25,13 @@ export const products = [
   name: 'Cold Pressed Groundnut Oil',
   nameGu: 'કોલ્ડ પ્રેસ્ડ મગફળી તેલ',
   category: { _id: 'cat1', name: 'Groundnut Oil' },
+   image: asset('../assets/product all/groundnut/1l.jpg'),
+    images: [
+      asset('../assets/product all/groundnut/1l.jpg'),
+      asset('../assets/product all/groundnut/1lbac.jpg'),
+    ],
 
-  image: new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
-
-  images: [
-    new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
-    new URL('../assets/product all/groundnut/1lbac.jpg', import.meta.url).href,
-  ],
+ 
 
  description: `🌿 Cold Pressed Groundnut Oil
 
@@ -110,48 +110,37 @@ Easy to digest, perfect for everyday family meals
   usesGu:
     'દૈનિક રસોઈ|તળવું અને સાંતળવું|પરંપરાગત વાનગીઓ|સ્કિન કેર|હેર કેર',
 
-  sizes: [
-    {
-      size: '1 Litre',
-      price: 300,
-       image: new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
-      images: [
-        new URL('../assets/product all/groundnut/1l.jpg', import.meta.url).href,
-        new URL('../assets/product all/groundnut/1lbac.jpg', import.meta.url).href,
-      ],
-      
-    },
-    
-        {
-      size: '5 Litre',
-      price: 1350,
-      images: 
-        new URL('../assets/product all/groundnut/GO5LF.jpeg', import.meta.url).href,
+ sizes: [
+      {
+        size: '1 Litre',
+        price: 300,
+        image: asset('../assets/product all/groundnut/1l.jpg'),
         images: [
-           new URL('../assets/product all/groundnut/GO5LF.jpeg', import.meta.url).href,
-        new URL('../assets/product all/groundnut/5lb.jpg', import.meta.url).href,
-        
-      ],
-      
-    },
-    {
-      size: '15 Litre',
-      price: 3750,
-      images: 
-        new URL('../assets/product all/groundnut/15l.jpg', import.meta.url).href,
-         images: [
-        new URL('../assets/product all/groundnut/15l.jpg', import.meta.url).href,
-        
-      ],
-       
-      
-    },
-  ],
-
-  inStock: true,
-  featured: true,
-},
-  
+          asset('../assets/product all/groundnut/1l.jpg'),
+          asset('../assets/product all/groundnut/1lbac.jpg'),
+        ],
+      },
+      {
+        size: '5 Litre',
+        price: 1350,
+        image: asset('../assets/product all/groundnut/GO5LF.jpeg'),
+        images: [
+          asset('../assets/product all/groundnut/GO5LF.jpeg'),
+          asset('../assets/product all/groundnut/5lb.jpg'),
+        ],
+      },
+      {
+        size: '15 Litre',
+        price: 3750,
+        image: asset('../assets/product all/groundnut/15l.jpg'),
+        images: [
+          asset('../assets/product all/groundnut/15l.jpg'),
+        ],
+      },
+    ],
+    inStock: true,
+    featured: true,
+  },
 
   // ──────── COCONUT OIL ────────
   {
@@ -529,11 +518,10 @@ Stimulates appetite and supports better digestion`,
     name: 'Cold Pressed Sunflower Oil',
     nameGu: 'કોલ્ડ પ્રેસ્ડ સૂરજમુખી તેલ',
     category: { _id: 'cat6', name: 'Sunflower Oil' },
-    image: new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href,
+   image: asset('../assets/product all/SUNFLOWER/1l.jpg'),
     images: [
-      new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/SUNFLOWER/back.jpg', import.meta.url).href,
-     
+      asset('../assets/product all/SUNFLOWER/1l.jpg'),
+      asset('../assets/product all/SUNFLOWER/back.jpg'),
     ],
      description: `🌿 Cold Pressed Sunflower Oil
 
@@ -583,33 +571,32 @@ Perfect for everyday cooking without heaviness`,
     benefitsGu: 'Vitamin E ભરપૂર|Light texture|High smoke point|હૃદય|Chemical free',
     uses: 'Daily cooking|Frying|Salad dressing|Skin care',
     usesGu: 'રોજ રસોઈ|Frying|Salad|ત્વચા',
-    sizes: [
-       { size: '1 Litre', price: 270, 
-        images: new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/SUNFLOWER/1l.jpg', import.meta.url).href,
-      new URL('../assets/product all/SUNFLOWER/back.jpg', import.meta.url).href,
-      
-    ],
+    size: '1 Litre',
+        price: 270,
+        image: asset('../assets/product all/SUNFLOWER/1l.jpg'),
+        images: [
+          asset('../assets/product all/SUNFLOWER/1l.jpg'),
+          asset('../assets/product all/SUNFLOWER/back.jpg'),
+        ],
       },
-      
-      { size: '5 Litre', price: 1230, 
-         images: new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-      new URL('../assets/product all/SUNFLOWER/back5.jpg', import.meta.url).href,
-      
-    ],
+      {
+        size: '5 Litre',
+        price: 1230,
+        image: asset('../assets/product all/SUNFLOWER/5l.jpg'),
+        images: [
+          asset('../assets/product all/SUNFLOWER/5l.jpg'),
+          asset('../assets/product all/SUNFLOWER/back5.jpg'),
+        ],
       },
-       { size: '15 Litre', price: 3450, 
-         images: new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-         images: [
-          new URL('../assets/product all/SUNFLOWER/5l.jpg', import.meta.url).href, 
-      new URL('../assets/product all/SUNFLOWER/back5.jpg', import.meta.url).href,
-      
-    ],
+      {
+        size: '15 Litre',
+        price: 3450,
+        image: asset('../assets/product all/SUNFLOWER/5l.jpg'),
+        images: [
+          asset('../assets/product all/SUNFLOWER/5l.jpg'),
+          asset('../assets/product all/SUNFLOWER/back5.jpg'),
+        ],
       },
-      
     ],
     inStock: true,
     featured: false,
