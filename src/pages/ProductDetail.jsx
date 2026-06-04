@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaArrowLeft, FaStar } from "react-icons/fa";
 import { GiOilDrum } from "react-icons/gi";
@@ -14,7 +14,9 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const { i18n } = useTranslation();
-  const isGu = i18n.language === "gu";
+  
+  // ✅ FIXED: language safe check
+  const isGu = i18n.language?.startsWith("gu");
 
   const [product, setProduct] = useState(null);
   const [related, setRelated] = useState([]);
@@ -23,8 +25,6 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("description");
   const [addedAnim, setAddedAnim] = useState(false);
-
-  // ✅ NEW: image loading states
   const [imgLoading, setImgLoading] = useState(false);
   const [loadedImages, setLoadedImages] = useState({});
 
@@ -58,7 +58,7 @@ const ProductDetail = () => {
     window.scrollTo(0, 0);
   }, [id, navigate]);
 
-  // ✅ NEW: Product ની બધી images preload કરવી
+  // ✅ Product ની બધી images preload કરવી
   useEffect(() => {
     if (!product) return;
 
@@ -101,27 +101,21 @@ const ProductDetail = () => {
 
   const displayImage = currentImages[selectedImageIdx] || product.image;
 
-  // ✅ NEW: Smart image change — same image હોય તો loader skip
+  // ✅ Smart image change
   const smartChangeImage = (nextImage) => {
     if (!nextImage) return;
-
-    // same image છે — loader ના બતાવો
     if (nextImage === displayImage) {
       setImgLoading(false);
       return;
     }
-
-    // image પહેલેથી loaded છે — loader ના બતાવો
     if (loadedImages[nextImage]) {
       setImgLoading(false);
       return;
     }
-
-    // new image — loader બતાવો
     setImgLoading(true);
   };
 
-  // ✅ NEW: Size change handler
+  // ✅ Size change handler
   const handleSizeChange = (idx) => {
     const newSize = product.sizes?.[idx];
     const newImages =
@@ -132,20 +126,15 @@ const ProductDetail = () => {
         : [product.image];
 
     const nextImage = newImages[0] || product.image;
-
-    // ✅ Smart check — same image or already loaded
     smartChangeImage(nextImage);
-
     setSelectedSizeIdx(idx);
     setSelectedImageIdx(0);
   };
 
-  // ✅ NEW: Thumbnail click handler
+  // ✅ Thumbnail click handler
   const handleThumbnailClick = (idx) => {
     const nextImage = currentImages[idx] || product.image;
-
     smartChangeImage(nextImage);
-
     setSelectedImageIdx(idx);
   };
 
@@ -233,6 +222,7 @@ const ProductDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 pb-16">
         <div className="grid lg:grid-cols-2 gap-10">
+          
           {/* ── IMAGE SECTION ── */}
           <div className="space-y-4">
             {/* Main Image */}
@@ -242,7 +232,6 @@ const ProductDetail = () => {
                 via-pink-400/10 to-purple-400/20 blur-3xl"
                 style={{ borderRadius: "35px" }}
               />
-
               <div
                 className="relative flex items-center justify-center overflow-hidden"
                 style={{
@@ -251,7 +240,6 @@ const ProductDetail = () => {
                   maxWidth: "100%",
                 }}
               >
-                {/* ✅ FIXED: Smart Loader */}
                 {imgLoading && (
                   <div
                     className="absolute inset-0 flex items-center justify-center
@@ -263,8 +251,6 @@ const ProductDetail = () => {
                     ></div>
                   </div>
                 )}
-
-                {/* ✅ FIXED: key removed, smart loading */}
                 <img
                   src={displayImage}
                   alt={isGu && product.nameGu ? product.nameGu : product.name}
@@ -275,9 +261,7 @@ const ProductDetail = () => {
                     }));
                     setImgLoading(false);
                   }}
-                  onError={() => {
-                    setImgLoading(false);
-                  }}
+                  onError={() => setImgLoading(false)}
                   className={`transition-all duration-500 hover:scale-[1.02]
                     object-contain w-auto max-w-full
                     h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px]
@@ -286,7 +270,7 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* ✅ FIXED: Thumbnails */}
+            {/* Thumbnails */}
             {currentImages.length > 1 && (
               <div
                 className="flex gap-2 sm:gap-3 overflow-x-auto pb-2
@@ -339,26 +323,26 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Price */}
-         <div className="bg-[#D0F0C0] rounded-3xl p-6 shadow-xl">
-  <p className="text-5xl font-extrabold text-purple-700">
-    ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
-  </p>
-  <p className="text-sm text-gray-500 mt-1">
-    {selectedSize?.size}
-  </p>
+            {/* ✅ FIXED: Price Card */}
+            <div className="bg-[#D0F0C0] rounded-3xl p-6 shadow-xl">
+              <p className="text-5xl font-extrabold text-purple-700">
+                ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
+              </p>
+              <p className="text-sm text-gray-500 mt-1">
+                {selectedSize?.size}
+              </p>
 
-  {/* ફ્રી ડિલિવરી મેસેજ - ભાષા પ્રમાણે (Condition) */}
-  <div className="mt-4 p-3 bg-white/50 rounded-2xl border border-dashed border-purple-400">
-    <p className="text-sm font-bold text-purple-800">
-      🚚 {language === 'gu' 
-           ? "₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે" 
-           : "Free delivery on orders above ₹999"}
-    </p>
-  </div>
-</div>
+              {/* ✅ FIXED: isGu use કર્યું - language નહીં */}
+              <div className="mt-4 p-3 bg-white/50 rounded-2xl border border-dashed border-purple-400">
+                <p className="text-sm font-bold text-purple-800">
+                  🚚 {isGu
+                    ? "₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે"
+                    : "Free delivery on orders above ₹999"}
+                </p>
+              </div>
+            </div>
 
-            {/* ✅ FIXED: Size Buttons */}
+            {/* Size Buttons */}
             {product.sizes?.length > 0 && (
               <div>
                 <p className="font-semibold text-purple-100 mb-3">
@@ -419,12 +403,8 @@ const ProductDetail = () => {
               >
                 <FaShoppingCart />
                 {addedAnim
-                  ? isGu
-                    ? "ઉમેરાયું!"
-                    : "Added!"
-                  : isGu
-                  ? "કાર્ટ માં ઉમેરો"
-                  : "Add To Cart"}
+                  ? isGu ? "ઉમેરાયું!" : "Added!"
+                  : isGu ? "કાર્ટ માં ઉમેરો" : "Add To Cart"}
               </button>
 
               <button
