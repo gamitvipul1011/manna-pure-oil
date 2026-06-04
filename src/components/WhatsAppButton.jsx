@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
   const { t } = useTranslation();
   const phoneNumber = '917874239595'; // Replace with actual number
   const message = encodeURIComponent(
-    'Hello! I want to know more about Maana Pure Oil products.'
+    'Hello! I want to know more about Manna Pure Oil products.'
   );
 
   return (
