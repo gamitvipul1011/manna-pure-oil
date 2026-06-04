@@ -340,14 +340,24 @@ const ProductDetail = () => {
             </div>
 
             {/* Price */}
-            <div className="bg-[#D0F0C0] rounded-3xl p-6 shadow-xl">
-              <p className="text-5xl font-extrabold text-purple-700">
-                ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
-              </p>
-              <p className="text-sm text-gray-500 mt-1">
-                {selectedSize?.size}
-              </p>
-            </div>
+         <div className="bg-[#D0F0C0] rounded-3xl p-6 shadow-xl">
+  <p className="text-5xl font-extrabold text-purple-700">
+    ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
+  </p>
+  <p className="text-sm text-gray-500 mt-1">
+    {selectedSize?.size}
+  </p>
+
+  {/* ફ્રી ડિલિવરી માટેનો નવો વિભાગ */}
+  <div className="mt-4 p-3 bg-white/50 rounded-2xl border border-dashed border-purple-400">
+    <p className="text-sm font-bold text-purple-800">
+      🚚 ₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે
+    </p>
+    <p className="text-xs text-purple-600 font-medium mt-1">
+      Free delivery on orders above ₹999
+    </p>
+  </div>
+</div>
 
             {/* ✅ FIXED: Size Buttons */}
             {product.sizes?.length > 0 && (
