@@ -86,7 +86,7 @@ className="max-w-3xl mx-auto ">
 
 <SwiperSlide key={index}>
 
-<div className="bg-[#D0F0C0] px-10 py-12 rounded-3xl shadow-xl max-w-3xl mx-auto
+<div className="bg-[#9B7BC9] px-10 py-12 rounded-3xl shadow-xl max-w-3xl mx-auto
 hover:scale-[1.03] transition duration-300 ">
 
 {/* IMAGE */}
