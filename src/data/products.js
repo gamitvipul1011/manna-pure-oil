@@ -707,8 +707,8 @@ Highly concentrated, so a small amount is enough`,
   // ──────── GIR COW GHEE ────────
   {
     _id: 'p8',
-    name: 'Gir Cow Ghee (A2)',
-    nameGu: 'ગીર ગાય ઘી (A2)',
+    name: 'Gir Cow Ghee ',
+    nameGu: 'ગીર ગાય ઘી ',
     category: { _id: 'cat8', name: 'Gir Cow Ghee' },
     image: new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href,
     images: [
