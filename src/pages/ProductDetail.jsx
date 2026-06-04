@@ -309,79 +309,86 @@ className="flex items-center gap-2 text-orange-100 hover:text-orange-400 transit
     </div>
 
     {/* ── TABS ── */}
-    <div className="mt-16">
-      <div className="flex gap-2 border-b overflow-x-auto">
-        {tabs.map((tab) => (
-          <button
-            key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
-            className={`px-6 py-3 font-bold whitespace-nowrap ${
-              activeTab === tab.key
-                ? "bg-white text-green-700"
-                : "text-gray-400"
-            }`}
+
+<div className="mt-16">
+  <div className="flex gap-3 overflow-x-auto pb-2">
+    {tabs.map((tab) => (
+      <button
+        key={tab.key}
+        onClick={() => setActiveTab(tab.key)}
+        className={`px-6 py-3 font-bold whitespace-nowrap transition-all duration-300 border-2 rounded-full ${
+          activeTab === tab.key
+            ? "bg-white text-green-700 border-white shadow-lg scale-105"
+            : "text-white border-white/20 bg-white/10 hover:bg-white/20"
+        }`}
+      >
+        {isGu ? tab.gu : tab.en}
+      </button>
+    ))}
+  </div>
+
+  {/* Round Content Box */}
+  <div className="bg-[#D0F0C0] rounded-[35px] shadow-xl p-5 md:p-8 mt-4">
+
+    {/* Description */}
+    {activeTab === "description" && (
+      <div className="flex gap-4">
+        <GiOilDrum className="text-purple-700 text-xl flex-shrink-0 mt-1" />
+        <div>
+          {(isGu && product.descriptionGu
+            ? product.descriptionGu
+            : product.description || ""
+          )
+            .split("\n")
+            .map((line, i) => (
+              <p
+                key={i}
+                className={`text-gray-700 text-sm md:text-base ${
+                  line.includes("✨") || line.includes("🌿")
+                    ? "mt-6 font-bold text-lg"
+                    : "mt-2"
+                }`}
+              >
+                {line}
+              </p>
+            ))}
+        </div>
+      </div>
+    )}
+
+    {/* Benefits */}
+    {activeTab === "benefits" && (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {parseLines(isGu ? product.benefitsGu : product.benefits).map(
+          (b, i) => (
+            <div
+              key={i}
+              className="flex gap-2 p-4 bg-emerald-50 rounded-[25px]"
+            >
+              <FaLeaf className="text-emerald-500 flex-shrink-0 mt-0.5" />
+              <span className="text-sm">{b}</span>
+            </div>
+          )
+        )}
+      </div>
+    )}
+
+    {/* Uses */}
+    {activeTab === "uses" && (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {parseLines(isGu ? product.usesGu : product.uses).map((u, i) => (
+          <div
+            key={i}
+            className="flex gap-2 p-4 bg-amber-50 rounded-[25px]"
           >
-            {isGu ? tab.gu : tab.en}
-          </button>
+            <span className="font-bold">{i + 1}.</span>
+            <span className="text-sm">{u}</span>
+          </div>
         ))}
       </div>
-
-      <div className="bg-[#D0F0C0] rounded-b-3xl shadow-xl p-4 md:p-8">
-
-        {/* Description */}
-        {activeTab === "description" && (
-          <div className="flex gap-4">
-            <GiOilDrum className="text-purple-700 text-xl flex-shrink-0 mt-1" />
-            <div>
-              {(isGu && product.descriptionGu
-                ? product.descriptionGu
-                : product.description || ""
-              )
-                .split("\n")
-                .map((line, i) => (
-                  <p
-                    key={i}
-                    className={`text-gray-700 text-sm md:text-base ${
-                      line.includes("✨") || line.includes("🌿")
-                        ? "mt-6 font-bold text-lg"
-                        : "mt-2"
-                    }`}
-                  >
-                    {line}
-                  </p>
-                ))}
-            </div>
-          </div>
-        )}
-
-        {/* Benefits */}
-        {activeTab === "benefits" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {parseLines(isGu ? product.benefitsGu : product.benefits).map(
-              (b, i) => (
-                <div key={i} className="flex gap-2 p-4 bg-emerald-50 rounded-xl">
-                  <FaLeaf className="text-emerald-500 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">{b}</span>
-                </div>
-              )
-            )}
-          </div>
-        )}
-
-        {/* Uses */}
-        {activeTab === "uses" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {parseLines(isGu ? product.usesGu : product.uses).map((u, i) => (
-              <div key={i} className="flex gap-2 p-4 bg-amber-50 rounded-xl">
-                <span className="font-bold">{i + 1}.</span>
-                <span className="text-sm">{u}</span>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-
+    )}
+  </div>
+</div>
     {/* ── RELATED PRODUCTS ── */}
     {related.length > 0 && (
       <div className="mt-16">
