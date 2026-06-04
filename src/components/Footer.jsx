@@ -1,80 +1,9 @@
-import React, { useState } from "react";
-import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaArrowRight,
-} from "react-icons/fa";
-
-import logoImg from "../assets/logo5.jpeg";
-import warli from "../assets/warli011.jpeg";
-
-const FooterSubscribe = ({ isGu }) => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSub = (e) => {
-    e.preventDefault();
-
-    if (!email || !email.includes("@")) {
-      toast.error(isGu ? "માન્ય ઈમેલ દાખલ કરો" : "Enter a valid email");
-      return;
-    }
-
-    setLoading(true);
-
-    setTimeout(() => {
-      toast.success(
-        isGu
-          ? "સફળતાપૂર્વક સબ્સ્ક્રાઇબ થયું!"
-          : "Subscribed successfully!"
-      );
-      setEmail("");
-      setLoading(false);
-    }, 800);
-  };
-
-  return (
-    <div className="mt-5">
-      <p className="mb-2 text-sm font-semibold text-[#FDE68A]">
-        {isGu
-          ? "નવી માહિતી માટે સબ્સ્ક્રાઇબ કરો"
-          : "Subscribe for latest updates"}
-      </p>
-
-      <form
-        onSubmit={handleSub}
-        className="flex overflow-hidden rounded-full border border-yellow-300/40 bg-white/10 shadow-lg backdrop-blur-sm"
-      >
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder={isGu ? "તમારો ઈમેલ" : "Enter your email"}
-          className="w-full bg-white/95 px-4 py-2.5 text-sm text-black focus:outline-none"
-        />
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="bg-[#F59E0B] px-4 text-white transition-all duration-300 hover:bg-[#EA580C] disabled:opacity-70 sm:px-5"
-        >
-          {loading ? "..." : <FaArrowRight />}
-        </button>
-      </form>
-    </div>
-  );
-};
-
 const Footer = () => {
   const { i18n } = useTranslation();
   const isGu = i18n.language === "gu";
+
+  const cardClass =
+    "rounded-2xl border border-[#FACC15]/15 bg-[#17382E]/45 p-4 shadow-lg backdrop-blur-sm sm:p-5";
 
   const links = [
     { en: "Home", gu: "હોમ", path: "/" },
@@ -114,12 +43,12 @@ const Footer = () => {
 
   return (
     <footer className="w-full">
-      <div className="bg-[#c3dbd5]">
+      <div className="bg-gradient-to-b from-[#2D5A4A] via-[#6F8A6D] to-[#DDD0AF]">
         {/* TOP INFORMATION */}
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-4 sm:pt-5 lg:pt-6 pb-6">
           <div className="grid grid-cols-1 gap-6 items-start sm:grid-cols-2 md:grid-cols-4 lg:gap-8">
             {/* COL 1 */}
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-4 shadow-lg backdrop-blur-[2px] sm:p-5">
+            <div className={cardClass}>
               <div className="mb-4 flex items-center gap-2.5">
                 <img
                   src={logoImg}
@@ -150,7 +79,7 @@ const Footer = () => {
             </div>
 
             {/* QUICK LINKS */}
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-4 shadow-lg sm:p-5">
+            <div className={cardClass}>
               <h3 className="mb-4 text-base font-bold text-[#FACC15]">
                 {isGu ? "ઝડપી લિંક્સ" : "Quick Links"}
               </h3>
@@ -170,7 +99,7 @@ const Footer = () => {
             </div>
 
             {/* POLICIES */}
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-4 shadow-lg sm:p-5">
+            <div className={cardClass}>
               <h3 className="mb-4 text-base font-bold text-[#FACC15]">
                 {isGu ? "નીતિઓ" : "Policies"}
               </h3>
@@ -190,7 +119,7 @@ const Footer = () => {
             </div>
 
             {/* CONTACT */}
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-4 shadow-lg sm:p-5">
+            <div className={cardClass}>
               <h3 className="mb-4 text-base font-bold text-[#FACC15]">
                 {isGu ? "સંપર્ક કરો" : "Contact Us"}
               </h3>
@@ -244,7 +173,7 @@ const Footer = () => {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="w-full border-t border-yellow-300/20 bg-[#064E3B]">
+      <div className="w-full border-t border-yellow-300/20 bg-[#12382F]">
         <p className="px-4 py-3 text-center text-[11px] font-bold text-[#FACC15] sm:text-sm">
           © {new Date().getFullYear()} Manna Pure Oil{" "}
           {isGu ? "| સર્વ અધિકાર સુરક્ષિત." : "| All Rights Reserved."}
@@ -253,5 +182,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;
