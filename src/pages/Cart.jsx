@@ -17,11 +17,12 @@ import {
 import { useCart } from '../context/CartContext';
 
 const Cart = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, getCartCount } = useCart();
 
-  const FREE_DELIVERY_THRESHOLD = 999; // ₹999 thi upar free delivery
+  const FREE_DELIVERY_THRESHOLD = 999;
+  const isGuj = i18n.language === 'gu';
 
   const getItemWeightInKg = (item) => {
     if (item.weightInKg !== undefined && item.weightInKg !== null) {
@@ -55,7 +56,6 @@ const Cart = () => {
     return total + itemWeight * item.quantity;
   }, 0);
 
-  // ✅ Free delivery logic
   const isFreeDelivery = subtotal >= FREE_DELIVERY_THRESHOLD;
   const calculatedShipping = totalWeight > 0 ? totalWeight * 20 : 0;
   const shippingCharge = isFreeDelivery ? 0 : calculatedShipping;
@@ -76,14 +76,19 @@ const Cart = () => {
           <div className="w-40 h-40 mx-auto mb-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20">
             <FaShoppingCart className="text-7xl text-white/60" />
           </div>
-          <h2 className="text-5xl font-bold text-white mb-3">{t('cartEmpty')}</h2>
-          <p className="text-purple-200 text-xl mb-2">ખરીદી કાર્ટ ખાલી છે</p>
-          <p className="text-lg text-purple-300 mb-10">Add some products to get started!</p>
+          <h2 className="text-5xl font-bold text-white mb-3">
+            {isGuj ? 'કાર્ટ ખાલી છે' : 'Cart is Empty'}
+          </h2>
+          <p className="text-xl text-purple-300 mb-10">
+            {isGuj
+              ? 'શરૂ કરવા માટે કેટલીક પ્રોડક્ટ્સ ઉમેરો!'
+              : 'Add some products to get started!'}
+          </p>
           <Link
             to="/products"
             className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 transition-all transform hover:scale-105 hover:-translate-y-1"
           >
-            <span>{t('startShopping')}</span>
+            <span>{isGuj ? 'ખરીદી શરૂ કરો' : 'Start Shopping'}</span>
             <FaArrowRight />
           </Link>
         </div>
@@ -103,14 +108,20 @@ const Cart = () => {
         {/* HEADER */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10 gap-4">
           <div>
-            <h1 className="text-5xl font-bold text-white mb-2">{t('cart')}</h1>
-            <p className="text-purple-200 text-lg">ખરીદી કાર્ટ</p>
+            <h1 className="text-5xl font-bold text-white mb-2">
+              {isGuj ? 'ખરીદી કાર્ટ' : 'Shopping Cart'}
+            </h1>
+            <p className="text-purple-200 text-lg">
+              {isGuj
+                ? `તમારી કાર્ટમાં ${getCartCount()} વસ્તુઓ છે`
+                : `${getCartCount()} items in your cart`}
+            </p>
             <div className="flex items-center gap-2 mt-2">
               <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-1.5 rounded-full border border-white/20">
-                {getCartCount()} items
+                {getCartCount()} {isGuj ? 'વસ્તુઓ' : 'items'}
               </span>
               <span className="bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-1.5 rounded-full border border-white/20 flex items-center gap-1">
-                <FaWeight className="text-xs" /> {totalWeight.toFixed(2)} kg
+                <FaWeight className="text-xs" /> {totalWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'}
               </span>
             </div>
           </div>
@@ -120,7 +131,9 @@ const Cart = () => {
             className="flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all"
           >
             <FaArrowLeft />
-            <span className="font-semibold">{t('continueShopping')}</span>
+            <span className="font-semibold">
+              {isGuj ? 'ખરીદી ચાલુ રાખો' : 'Continue Shopping'}
+            </span>
           </button>
         </div>
 
@@ -130,14 +143,19 @@ const Cart = () => {
             <div className="flex items-center gap-3 mb-3">
               <FaGift className="text-yellow-400 text-xl animate-bounce" />
               <p className="text-white font-semibold">
-                Add <span className="text-yellow-400 text-lg">₹{amountNeededForFree.toFixed(2)}</span> more for{' '}
-                <span className="text-green-400 font-bold">FREE Delivery!</span>
+                {isGuj ? (
+                  <>
+                    <span className="text-yellow-400 text-lg">₹{amountNeededForFree.toFixed(2)}</span> વધુ ઉમેરો અને{' '}
+                    <span className="text-green-400 font-bold">ફ્રી ડિલિવરી</span> મેળવો!
+                  </>
+                ) : (
+                  <>
+                    Add <span className="text-yellow-400 text-lg">₹{amountNeededForFree.toFixed(2)}</span> more for{' '}
+                    <span className="text-green-400 font-bold">FREE Delivery!</span>
+                  </>
+                )}
               </p>
             </div>
-            <p className="text-purple-300 text-sm mb-3">
-              ₹{amountNeededForFree.toFixed(2)} વધુ ઉમેરો અને ફ્રી ડિલિવરી મેળવો!
-            </p>
-            {/* Progress bar */}
             <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full transition-all duration-700 ease-out"
@@ -148,7 +166,7 @@ const Cart = () => {
             </div>
             <div className="flex justify-between mt-2 text-xs text-purple-300">
               <span>₹0</span>
-              <span>₹{FREE_DELIVERY_THRESHOLD} (Free Delivery)</span>
+              <span>₹{FREE_DELIVERY_THRESHOLD} ({isGuj ? 'ફ્રી ડિલિવરી' : 'Free Delivery'})</span>
             </div>
           </div>
         )}
@@ -162,15 +180,19 @@ const Cart = () => {
               </div>
               <div>
                 <p className="text-green-400 font-bold text-lg flex items-center gap-2">
-                  🎉 Free Delivery Unlocked!
+                  🎉 {isGuj ? 'ફ્રી ડિલિવરી મળશે!' : 'Free Delivery Unlocked!'}
                 </p>
                 <p className="text-green-300 text-sm">
-                  ફ્રી ડિલિવરી મળશે! તમે ₹{FREE_DELIVERY_THRESHOLD} થી ઉપર ખરીદી કરી છે.
+                  {isGuj
+                    ? `તમે ₹${FREE_DELIVERY_THRESHOLD} થી ઉપર ખરીદી કરી છે.`
+                    : `You have shopped above ₹${FREE_DELIVERY_THRESHOLD}.`}
                 </p>
               </div>
               {shippingDiscount > 0 && (
                 <div className="ml-auto text-right">
-                  <p className="text-green-300 text-sm">You saved</p>
+                  <p className="text-green-300 text-sm">
+                    {isGuj ? 'તમે બચાવ્યા' : 'You saved'}
+                  </p>
                   <p className="text-green-400 font-bold text-lg">₹{shippingDiscount.toFixed(2)}</p>
                 </div>
               )}
@@ -210,7 +232,7 @@ const Cart = () => {
                       {itemWeight > 0 && (
                         <span className="bg-blue-500/30 text-blue-100 text-sm px-3 py-1 rounded-full border border-blue-400/30 flex items-center gap-1">
                           <FaWeight className="text-xs" />
-                          {itemWeight.toFixed(2)} kg × {item.quantity} = {totalItemWeight.toFixed(2)} kg
+                          {itemWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'} × {item.quantity} = {totalItemWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'}
                         </span>
                       )}
                     </div>
@@ -244,13 +266,15 @@ const Cart = () => {
                       className="text-red-300 hover:text-red-400 flex items-center gap-2 text-sm font-semibold transition"
                     >
                       <FaTrash />
-                      {t('removeItem')}
+                      {isGuj ? 'કાઢી નાખો' : 'Remove'}
                     </button>
                   </div>
 
                   {/* Total */}
                   <div className="text-center sm:text-right">
-                    <p className="text-sm text-purple-200 mb-1">{t('total')} / કુલ</p>
+                    <p className="text-sm text-purple-200 mb-1">
+                      {isGuj ? 'કુલ' : 'Total'}
+                    </p>
                     <p className="text-3xl font-bold text-white">
                       ₹{itemTotal.toFixed(2)}
                     </p>
@@ -263,35 +287,47 @@ const Cart = () => {
           {/* ========== ORDER SUMMARY ========== */}
           <div className="lg:col-span-1">
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 sticky top-24 border border-white/20 shadow-2xl">
-              <h2 className="text-2xl font-bold text-white mb-1">Order Summary</h2>
-              <p className="text-purple-200 text-sm mb-6">ઓર્ડર સારાંશ</p>
+              <h2 className="text-2xl font-bold text-white mb-1">
+                {isGuj ? 'ઓર્ડર સારાંશ' : 'Order Summary'}
+              </h2>
+              <p className="text-purple-200 text-sm mb-6">
+                {isGuj ? 'તમારા ઓર્ડરની વિગતો' : 'Your order details'}
+              </p>
 
               <div className="space-y-4 mb-6">
                 {/* Subtotal */}
                 <div className="flex justify-between text-lg">
-                  <span className="text-purple-200">{t('subtotal')} / પેટા-કુલ</span>
+                  <span className="text-purple-200">
+                    {isGuj ? 'પેટા-કુલ' : 'Subtotal'}
+                  </span>
                   <span className="font-semibold text-white">₹{subtotal.toFixed(2)}</span>
                 </div>
 
                 {/* Total Weight */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200 flex items-center gap-2">
-                    <FaWeight className="text-sm" /> Total Weight / કુલ વજન
+                    <FaWeight className="text-sm" />
+                    {isGuj ? 'કુલ વજન' : 'Total Weight'}
                   </span>
-                  <span className="font-semibold text-white">{totalWeight.toFixed(2)} kg</span>
+                  <span className="font-semibold text-white">
+                    {totalWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'}
+                  </span>
                 </div>
 
                 {/* Shipping */}
                 <div className="flex justify-between text-lg">
                   <span className="text-purple-200 flex items-center gap-2">
-                    <FaTruck className="text-sm" /> Shipping / ડિલિવરી
+                    <FaTruck className="text-sm" />
+                    {isGuj ? 'ડિલિવરી' : 'Shipping'}
                   </span>
                   {isFreeDelivery ? (
                     <div className="text-right">
                       <span className="text-gray-400 line-through text-sm mr-2">
                         ₹{calculatedShipping.toFixed(2)}
                       </span>
-                      <span className="font-bold text-green-400">FREE</span>
+                      <span className="font-bold text-green-400">
+                        {isGuj ? 'ફ્રી' : 'FREE'}
+                      </span>
                     </div>
                   ) : (
                     <span className="font-semibold text-orange-400">
@@ -300,33 +336,41 @@ const Cart = () => {
                   )}
                 </div>
 
-                {/* Shipping info */}
+                {/* Shipping calculation info */}
                 {!isFreeDelivery && (
                   <div className="bg-white/5 rounded-lg px-4 py-2 text-sm text-purple-300 border border-white/10">
-                    ₹20 per kg × {totalWeight.toFixed(2)} kg = ₹{shippingCharge.toFixed(2)}
+                    ₹20 {isGuj ? 'પ્રતિ કિલો' : 'per kg'} × {totalWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'} = ₹{shippingCharge.toFixed(2)}
                   </div>
                 )}
 
                 {/* Free delivery savings */}
                 {isFreeDelivery && shippingDiscount > 0 && (
                   <div className="bg-green-500/10 rounded-lg px-4 py-2 text-sm text-green-400 border border-green-500/20 flex items-center gap-2">
-                    <FaGift className="text-green-400" />
-                    You saved ₹{shippingDiscount.toFixed(2)} on delivery!
-                    <br />
-                    ડિલિવરી પર ₹{shippingDiscount.toFixed(2)} બચાવ્યા!
+                    <FaGift className="text-green-400 flex-shrink-0" />
+                    <span>
+                      {isGuj
+                        ? `ડિલિવરી પર ₹${shippingDiscount.toFixed(2)} બચાવ્યા!`
+                        : `You saved ₹${shippingDiscount.toFixed(2)} on delivery!`}
+                    </span>
                   </div>
                 )}
 
                 {/* Tax */}
                 <div className="flex justify-between text-lg">
-                  <span className="text-purple-200">Tax / GST</span>
-                  <span className="font-semibold text-green-400">Included in price</span>
+                  <span className="text-purple-200">
+                    {isGuj ? 'ટેક્સ / GST' : 'Tax / GST'}
+                  </span>
+                  <span className="font-semibold text-green-400">
+                    {isGuj ? 'કિંમતમાં સમાવિષ્ટ' : 'Included in price'}
+                  </span>
                 </div>
 
                 {/* Final Total */}
                 <div className="border-t border-white/20 pt-4">
                   <div className="flex justify-between text-2xl font-bold">
-                    <span className="text-white">{t('total')}</span>
+                    <span className="text-white">
+                      {isGuj ? 'કુલ' : 'Total'}
+                    </span>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400">
                       ₹{finalTotal.toFixed(2)}
                     </span>
@@ -336,7 +380,7 @@ const Cart = () => {
 
               {/* Checkout Button */}
               <button className="w-full px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-lg rounded-full shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 transition-all transform hover:scale-105 hover:-translate-y-1 mb-4">
-                {t('checkout')} / ચૂકવણી
+                {isGuj ? 'ચૂકવણી કરો' : 'Proceed to Checkout'}
               </button>
 
               {/* Continue Shopping */}
@@ -344,22 +388,30 @@ const Cart = () => {
                 to="/products"
                 className="block text-center text-purple-200 hover:text-white font-semibold transition"
               >
-                {t('continueShopping')}
+                {isGuj ? 'ખરીદી ચાલુ રાખો' : 'Continue Shopping'}
               </Link>
 
               {/* Trust Badges */}
               <div className="mt-8 pt-6 border-t border-white/10 space-y-3 text-sm text-purple-200">
                 <div className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
-                  <FaShieldAlt className="text-green-400 text-lg" />
-                  <span>Secure Payment / સુરક્ષિત ચૂકવણી</span>
+                  <FaShieldAlt className="text-green-400 text-lg flex-shrink-0" />
+                  <span>
+                    {isGuj ? 'સુરક્ષિત ચૂકવણી' : 'Secure Payment'}
+                  </span>
                 </div>
                 <div className="flex items-center gap-3 bg-green-500/10 rounded-lg px-4 py-3 border border-green-500/20">
-                  <FaTruck className="text-green-400 text-lg" />
-                  <span>Free Delivery above ₹{FREE_DELIVERY_THRESHOLD} / ₹{FREE_DELIVERY_THRESHOLD} ઉપર ફ્રી ડિલિવરી</span>
+                  <FaTruck className="text-green-400 text-lg flex-shrink-0" />
+                  <span>
+                    {isGuj
+                      ? `₹${FREE_DELIVERY_THRESHOLD} ઉપર ફ્રી ડિલિવરી`
+                      : `Free Delivery above ₹${FREE_DELIVERY_THRESHOLD}`}
+                  </span>
                 </div>
                 <div className="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
-                  <FaUndoAlt className="text-orange-400 text-lg" />
-                  <span>Easy 7-day Returns / 7 દિવસમાં પરત</span>
+                  <FaUndoAlt className="text-orange-400 text-lg flex-shrink-0" />
+                  <span>
+                    {isGuj ? '7 દિવસમાં સરળ રિટર્ન' : 'Easy 7-day Returns'}
+                  </span>
                 </div>
               </div>
             </div>
