@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaArrowLeft, FaStar } from "react-icons/fa";
 import { GiOilDrum } from "react-icons/gi";
@@ -23,7 +23,10 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("description");
   const [addedAnim, setAddedAnim] = useState(false);
-  const [imgLoaded, setImgLoaded] = useState(false);
+
+  // ✅ NEW: image loading states
+  const [imgLoading, setImgLoading] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   // ✅ Product change effect
   useEffect(() => {
@@ -36,11 +39,12 @@ const ProductDetail = () => {
     }
 
     setProduct(p);
-    setImgLoaded(false);
     setSelectedSizeIdx(0);
     setSelectedImageIdx(0);
     setQuantity(1);
     setActiveTab("description");
+    setImgLoading(false);
+    setLoadedImages({});
 
     let relatedProducts = products.filter(
       (x) => x._id !== id && x.category._id === p.category._id
@@ -54,10 +58,28 @@ const ProductDetail = () => {
     window.scrollTo(0, 0);
   }, [id, navigate]);
 
-  // ✅ Image change થાય ત્યારે loader reset
+  // ✅ NEW: Product ની બધી images preload કરવી
   useEffect(() => {
-    setImgLoaded(false);
-  }, [selectedImageIdx, selectedSizeIdx]);
+    if (!product) return;
+
+    const allImages = new Set();
+
+    if (product.image) allImages.add(product.image);
+    (product.images || []).forEach((img) => img && allImages.add(img));
+
+    (product.sizes || []).forEach((size) => {
+      if (size.image) allImages.add(size.image);
+      (size.images || []).forEach((img) => img && allImages.add(img));
+    });
+
+    allImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        setLoadedImages((prev) => ({ ...prev, [src]: true }));
+      };
+    });
+  }, [product]);
 
   // ✅ Loading spinner
   if (!product)
@@ -69,6 +91,7 @@ const ProductDetail = () => {
 
   const selectedSize = product.sizes?.[selectedSizeIdx] || null;
 
+  // ✅ Current gallery images
   const currentImages =
     selectedSize?.images?.length
       ? selectedSize.images
@@ -78,7 +101,55 @@ const ProductDetail = () => {
 
   const displayImage = currentImages[selectedImageIdx] || product.image;
 
-  // ✅ Add to cart - Boolean return
+  // ✅ NEW: Smart image change — same image હોય તો loader skip
+  const smartChangeImage = (nextImage) => {
+    if (!nextImage) return;
+
+    // same image છે — loader ના બતાવો
+    if (nextImage === displayImage) {
+      setImgLoading(false);
+      return;
+    }
+
+    // image પહેલેથી loaded છે — loader ના બતાવો
+    if (loadedImages[nextImage]) {
+      setImgLoading(false);
+      return;
+    }
+
+    // new image — loader બતાવો
+    setImgLoading(true);
+  };
+
+  // ✅ NEW: Size change handler
+  const handleSizeChange = (idx) => {
+    const newSize = product.sizes?.[idx];
+    const newImages =
+      newSize?.images?.length
+        ? newSize.images
+        : product.images?.length
+        ? product.images
+        : [product.image];
+
+    const nextImage = newImages[0] || product.image;
+
+    // ✅ Smart check — same image or already loaded
+    smartChangeImage(nextImage);
+
+    setSelectedSizeIdx(idx);
+    setSelectedImageIdx(0);
+  };
+
+  // ✅ NEW: Thumbnail click handler
+  const handleThumbnailClick = (idx) => {
+    const nextImage = currentImages[idx] || product.image;
+
+    smartChangeImage(nextImage);
+
+    setSelectedImageIdx(idx);
+  };
+
+  // ✅ Add to cart
   const handleAddToCart = () => {
     if (!selectedSize) {
       toast.error("Please select size");
@@ -124,7 +195,6 @@ const ProductDetail = () => {
             key={i}
             className={`flex items-start gap-3 p-4 rounded-[20px] ${bgClass} shadow-sm`}
           >
-            {/* Number Badge */}
             <div
               className="min-w-[32px] h-[32px] rounded-full bg-purple-100
               text-purple-700 font-bold text-sm flex items-center
@@ -132,8 +202,6 @@ const ProductDetail = () => {
             >
               {i + 1}
             </div>
-
-            {/* Text */}
             <p className="text-sm md:text-base text-gray-700 leading-relaxed">
               {item.replace(/^\d+[\.\)]\s*/, "")}
             </p>
@@ -151,7 +219,6 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-purple overflow-x-hidden">
-
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 pt-8">
         <button
@@ -166,10 +233,8 @@ const ProductDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 pb-16">
         <div className="grid lg:grid-cols-2 gap-10">
-
           {/* ── IMAGE SECTION ── */}
           <div className="space-y-4">
-
             {/* Main Image */}
             <div className="relative flex justify-center items-center w-full">
               <div
@@ -186,8 +251,8 @@ const ProductDetail = () => {
                   maxWidth: "100%",
                 }}
               >
-                {/* Loader */}
-                {!imgLoaded && (
+                {/* ✅ FIXED: Smart Loader */}
+                {imgLoading && (
                   <div
                     className="absolute inset-0 flex items-center justify-center
                     z-10 bg-purple-900/20"
@@ -199,21 +264,29 @@ const ProductDetail = () => {
                   </div>
                 )}
 
-                {/* Image */}
+                {/* ✅ FIXED: key removed, smart loading */}
                 <img
                   src={displayImage}
                   alt={isGu && product.nameGu ? product.nameGu : product.name}
-                  onLoad={() => setImgLoaded(true)}
-                  onError={() => setImgLoaded(true)}
+                  onLoad={() => {
+                    setLoadedImages((prev) => ({
+                      ...prev,
+                      [displayImage]: true,
+                    }));
+                    setImgLoading(false);
+                  }}
+                  onError={() => {
+                    setImgLoading(false);
+                  }}
                   className={`transition-all duration-500 hover:scale-[1.02]
                     object-contain w-auto max-w-full
                     h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px]
-                    ${imgLoaded ? "opacity-100" : "opacity-0"}`}
+                    ${imgLoading ? "opacity-30" : "opacity-100"}`}
                 />
               </div>
             </div>
 
-            {/* Thumbnails */}
+            {/* ✅ FIXED: Thumbnails */}
             {currentImages.length > 1 && (
               <div
                 className="flex gap-2 sm:gap-3 overflow-x-auto pb-2
@@ -221,11 +294,8 @@ const ProductDetail = () => {
               >
                 {currentImages.map((img, idx) => (
                   <button
-                    key={idx}
-                    onClick={() => {
-                      setSelectedImageIdx(idx);
-                      setImgLoaded(false);
-                    }}
+                    key={`thumb-${idx}`}
+                    onClick={() => handleThumbnailClick(idx)}
                     className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20
                       flex-shrink-0 overflow-hidden border-2 transition-all
                       duration-300 ${
@@ -248,7 +318,6 @@ const ProductDetail = () => {
 
           {/* ── PRODUCT INFO ── */}
           <div className="space-y-6">
-
             {/* Name & Rating */}
             <div>
               <span
@@ -275,10 +344,12 @@ const ProductDetail = () => {
               <p className="text-5xl font-extrabold text-purple-700">
                 ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
               </p>
-              <p className="text-sm text-gray-500 mt-1">{selectedSize?.size}</p>
+              <p className="text-sm text-gray-500 mt-1">
+                {selectedSize?.size}
+              </p>
             </div>
 
-            {/* Size */}
+            {/* ✅ FIXED: Size Buttons */}
             {product.sizes?.length > 0 && (
               <div>
                 <p className="font-semibold text-purple-100 mb-3">
@@ -288,10 +359,7 @@ const ProductDetail = () => {
                   {product.sizes.map((sv, idx) => (
                     <button
                       key={idx}
-                      onClick={() => {
-                        setSelectedSizeIdx(idx);
-                        setSelectedImageIdx(0);
-                      }}
+                      onClick={() => handleSizeChange(idx)}
                       className={`px-5 py-2 rounded-xl border transition-all ${
                         selectedSizeIdx === idx
                           ? "bg-emerald-500 text-white border-emerald-500 scale-105"
@@ -334,7 +402,6 @@ const ProductDetail = () => {
 
             {/* Buttons */}
             <div className="flex gap-3">
-              {/* Add to Cart */}
               <button
                 onClick={handleAddToCart}
                 className="flex-1 flex items-center justify-center gap-2 py-3
@@ -351,7 +418,6 @@ const ProductDetail = () => {
                   : "Add To Cart"}
               </button>
 
-              {/* Buy Now */}
               <button
                 onClick={() => {
                   const added = handleAddToCart();
@@ -418,10 +484,7 @@ const ProductDetail = () => {
             ))}
           </div>
 
-          {/* Tab Content Box */}
           <div className="bg-[#D0F0C0] rounded-[35px] shadow-xl p-5 md:p-8 mt-4">
-
-            {/* ── Description ── */}
             {activeTab === "description" && (
               <div className="flex gap-4">
                 <GiOilDrum className="text-purple-700 text-xl flex-shrink-0 mt-1" />
@@ -447,7 +510,6 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {/* ── Benefits ── */}
             {activeTab === "benefits" && (
               <div>
                 <div className="flex items-center gap-2 mb-4">
@@ -463,7 +525,6 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {/* ── Uses ── */}
             {activeTab === "uses" && (
               <div>
                 <div className="flex items-center gap-2 mb-4">
