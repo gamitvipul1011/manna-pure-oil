@@ -26,7 +26,7 @@ const Products = () => {
   });
 
   return (
-    <div className="bg-gradient-purple min-h-screen">
+    <div className="bg-[#A855F7] min-h-screen">
 
   {/* Banner */}
  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
