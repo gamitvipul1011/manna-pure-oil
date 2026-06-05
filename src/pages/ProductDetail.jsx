@@ -544,30 +544,30 @@ const ProductDetail = () => {
           </div>
         </div>
 
-      {/* ── RELATED PRODUCTS ── */}
-{related.length > 0 && (
-  <section className="mt-24 border-t border-white/10 pt-16">
-    <div className="flex flex-col mb-10">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
-        {isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}
-      </h2>
-      {/* નીચેની લાઈન ડિઝાઇનને પ્રીમિયમ બનાવશે */}
-      <div className="h-1 w-20 bg-blue-600 rounded-full"></div>
-    </div>
+             {/* ── RELATED PRODUCTS ── */}
+        {related.length > 0 && (
+          <section className="mt-24 border-t border-white/10 pt-16">
+            <div className="flex flex-col mb-10">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+                {isGu ? "સંબંધિત ઉત્પાદનો" : "Related Products"}
+              </h2>
+              <div className="h-1 w-20 bg-blue-600 rounded-full"></div>
+            </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      {related.map((item) => (
-        <div 
-          key={item._id} 
-          className="transition-transform duration-300 hover:-translate-y-2"
-        >
-          <ProductCard product={item} />
-        </div>
-      ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {related.map((item) => (
+                <div
+                  key={item._id}
+                  className="transition-transform duration-300 hover:-translate-y-2"
+                >
+                  <ProductCard product={item} />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </div>
-  </section>
-)}
-
   );
 };
 
