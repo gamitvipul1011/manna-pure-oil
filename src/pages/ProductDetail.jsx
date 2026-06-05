@@ -544,7 +544,7 @@ const ProductDetail = () => {
           </div>
         </div>
 
-       {/* ── RELATED PRODUCTS ── */}
+      {/* ── RELATED PRODUCTS ── */}
 {related.length > 0 && (
   <section className="mt-24 border-t border-white/10 pt-16">
     <div className="flex flex-col mb-10">
@@ -566,6 +566,7 @@ const ProductDetail = () => {
       ))}
     </div>
   </section>
+)}
 
   );
 };
