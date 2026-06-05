@@ -325,31 +325,34 @@ const ProductDetail = () => {
 
             {/* ✅ FIXED: Price Card */}
             {/* Price */}
-<div>
-  <div className="bg-[#D0F0C0] rounded-3xl px-6 py-5 shadow-xl w-fit min-w-[220px]">
-    <p className="text-4xl md:text-5xl font-extrabold text-purple-700 leading-none">
-      ₹{selectedSize?.price || product.sizes?.[0]?.price || 0}
+<div className="w-full max-w-md"> {/* આખા કન્ટેનરની સાઇઝ કંટ્રોલ કરવા */}
+  
+  {/* Price Container (લાંબુ કરવા માટે w-full ઉમેર્યું છે) */}
+  <div className="bg-[#D0F0C0] rounded-3xl px-6 py-5 shadow-xl w-full"> 
+    <p className="text-4xl md:text-5xl font-extrabold text-purple-700 leading-none"> 
+      ₹{selectedSize?.price || product.sizes?.[0]?.price || 0} 
     </p>
 
+    {/* Size Badge (સારો લાગે તેવો નવો ડાર્ક કલર) */}
     {(selectedSize?.size || product.sizes?.[0]?.size) && (
-      <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 border border-purple-200">
-        <span className="text-xs font-medium text-gray-600">
+      <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-700 shadow-md border border-purple-800">
+        <span className="text-xs font-medium text-purple-200 tracking-wide">
           {isGu ? "સાઇઝ" : "Size"}
         </span>
-        <span className="text-sm font-bold text-purple-700">
+        <span className="text-sm font-bold text-white">
           {selectedSize?.size || product.sizes?.[0]?.size}
         </span>
       </div>
     )}
-  </div>
+  </div> 
 
-  <div className="mt-3 p-3 bg-white/60 rounded-2xl border border-dashed border-purple-400 shadow-sm">
-    <p className="text-sm md:text-[15px] font-bold text-purple-800">
-      🚚 {isGu
-        ? "₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે"
-        : "Free delivery on orders above ₹999"}
-    </p>
-  </div>
+  {/* Delivery Message Container (Light Green બેકગ્રાઉન્ડ) */}
+  <div className="mt-3 p-3 bg-green-100 rounded-2xl border border-dashed border-green-500 shadow-sm w-full"> 
+    <p className="text-sm md:text-[15px] font-bold text-green-800"> 
+      🚚 {isGu ? "₹999 કે તેથી વધુની ખરીદી પર ફ્રી ડિલિવરી મળશે" : "Free delivery on orders above ₹999"} 
+    </p> 
+  </div> 
+
 </div>
 
             {/* Size Buttons */}
