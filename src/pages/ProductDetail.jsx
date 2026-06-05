@@ -446,7 +446,7 @@ const ProductDetail = () => {
             </a>
 
             {/* Badges */}
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-3 bg-[#D0F0C0]">
               {[
                 { icon: "🌿", en: "100% Natural", gu: "100% Natural" },
                 { icon: "🏭", en: "Cold Pressed", gu: "Cold Pressed" },
