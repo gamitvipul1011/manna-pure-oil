@@ -36,8 +36,8 @@ const About = () => {
     icon: <FaSeedling />,
     title: isGu ? "પરંપરા" : "Tradition",
     desc: isGu
-      ? "પેઢી દર પેઢી ચાલતી લાકડાની ઘાણી પદ્ધતિ"
-      : "Wood-Pressed Method Passed Through Generations",
+      ? "પેઢીઓથી પસાર થતી કોલ્ડ પ્રેસ્ડ પદ્ધતિ"
+      : "Cold Pressed Method Passed Through Generations",
   },
   {
     icon: <FaHandHoldingHeart />,
@@ -77,7 +77,7 @@ const About = () => {
 
   return (
   
-   <div className="bg-gradient-purple min-h-screen ">
+   <div className="bg-[#A855F7] min-h-screen ">
 
   {/* Banner */}
  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
@@ -106,7 +106,7 @@ const About = () => {
   
 
       {/* STORY */}
-      <section className="pt-8 md:pt-24 pb-24 bg-gradient-purple">
+      <section className="pt-8 md:pt-24 pb-24 bg-[#A855F7]">
 
        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
 
