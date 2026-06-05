@@ -67,7 +67,7 @@ const Cart = () => {
   // ========== EMPTY CART ==========
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-[#9B7BC9] flex items-center justify-center py-20 relative overflow-hidden">
+      <div className="min-h-screen bg-[#A855F7] via-purple-800 to-indigo-900 flex items-center justify-center py-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -158,7 +158,7 @@ const Cart = () => {
             </div>
             <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
               <div
-                className="h-full  bg-[#D0F0C0] rounded-full transition-all duration-700 ease-out"
+                className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 rounded-full transition-all duration-700 ease-out"
                 style={{
                   width: `${Math.min((subtotal / FREE_DELIVERY_THRESHOLD) * 100, 100)}%`,
                 }}
@@ -211,7 +211,7 @@ const Cart = () => {
               return (
                 <div
                   key={item.uniqueKey || `${item._id}_${item.size}`}
-                  className=" bg-[#D0F0C0] backdrop-blur-xl rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 group"
+                  className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-6 border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 group"
                 >
                   {/* Image */}
                   <div className="w-32 h-32 flex-shrink-0 bg-gradient-to-br from-amber-200 to-amber-300 rounded-xl flex items-center justify-center p-3 shadow-lg group-hover:shadow-amber-500/20 transition-all">
@@ -226,7 +226,7 @@ const Cart = () => {
                   <div className="flex-1 text-center sm:text-left">
                     <h3 className="text-2xl font-bold text-white mb-1">{item.name}</h3>
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-2">
-                      <span className=" bg-[#D0F0C0] text-purple-100 text-sm px-3 py-1 rounded-full border border-purple-400/30">
+                      <span className="bg-purple-500/30 text-purple-100 text-sm px-3 py-1 rounded-full border border-purple-400/30">
                         {item.size}
                       </span>
                       {itemWeight > 0 && (
@@ -286,7 +286,7 @@ const Cart = () => {
 
           {/* ========== ORDER SUMMARY ========== */}
           <div className="lg:col-span-1">
-            <div className=" bg-[#D0F0C0] backdrop-blur-xl rounded-2xl p-8 sticky top-24 border border-white/20 shadow-2xl">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 sticky top-24 border border-white/20 shadow-2xl">
               <h2 className="text-2xl font-bold text-white mb-1">
                 {isGuj ? 'ઓર્ડર સારાંશ' : 'Order Summary'}
               </h2>
