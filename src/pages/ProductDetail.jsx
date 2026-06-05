@@ -446,7 +446,7 @@ const ProductDetail = () => {
             </a>
 
             {/* Badges */}
-            <div className="grid grid-cols-3 gap-3 bg-[#D0F0C0]">
+            <div className="grid grid-cols-3 gap-3 ">
               {[
                 { icon: "🌿", en: "100% Natural", gu: "100% Natural" },
                 { icon: "🏭", en: "Cold Pressed", gu: "Cold Pressed" },
@@ -454,7 +454,7 @@ const ProductDetail = () => {
               ].map((b, i) => (
                 <div
                   key={i}
-                  className="flex flex-col items-center bg-green-50
+                  className="flex flex-col items-center bg-[#D0F0C0]
                   rounded-xl p-3 text-center"
                 >
                   <span className="text-2xl mb-1">{b.icon}</span>
