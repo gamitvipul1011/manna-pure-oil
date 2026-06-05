@@ -181,7 +181,7 @@ const PrivacyPolicy = () => {
   ];
 
   return (
-    <div className="bg-gradient-purple min-h-screen py-16">
+    <div className="bg-[#A855F7] min-h-screen py-16">
       <div className="max-w-5xl mx-auto px-6">
 
         <div className="text-center mb-12">
