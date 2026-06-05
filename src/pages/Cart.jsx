@@ -67,7 +67,7 @@ const Cart = () => {
   // ========== EMPTY CART ==========
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-[#A855F7] via-purple-800 to-indigo-900 flex items-center justify-center py-20 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 flex items-center justify-center py-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -98,7 +98,7 @@ const Cart = () => {
 
   // ========== CART WITH ITEMS ==========
   return (
-    <div className="min-h-screen bg-[#A855F7] via-purple-800 to-indigo-900 py-12 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 py-12 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
       <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
