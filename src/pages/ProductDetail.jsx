@@ -207,7 +207,7 @@ const ProductDetail = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#A855F7] overflow-x-hidden">
+    <div className="min-h-screen bg-[#9B7BC9] overflow-x-hidden">
       {/* Back Button */}
       <div className="max-w-7xl mx-auto px-4 pt-8">
         <button
