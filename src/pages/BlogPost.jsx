@@ -1321,7 +1321,7 @@ Choosing the right ghee is not just about taste — it’s about your family’s
 
 ✨ It’s not just ghee — it’s a return to purity and tradition.`,
 
-    contentGu: 🌿 પ્રસ્તાવના
+    contentGu: ` 🌿 પ્રસ્તાવના
 
 દરેક ભારતીય ઘરમાં, ઘી એ માત્ર એક સામગ્રી નથી — તે સ્વાસ્થ્ય, પરંપરા અને પ્રેમનું પ્રતીક છે.
 
