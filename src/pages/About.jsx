@@ -77,7 +77,7 @@ const About = () => {
 
   return (
   
-   <div className="bg-[#A855F7] min-h-screen ">
+   <div className="bg-[#9B7BC9] min-h-screen ">
 
   {/* Banner */}
  <div className="relative w-full h-[180px] sm:h-[260px] md:h-[380px] lg:h-[500px] overflow-hidden">
@@ -106,7 +106,7 @@ const About = () => {
   
 
       {/* STORY */}
-      <section className="pt-8 md:pt-24 pb-24 bg-[#A855F7]">
+      <section className="pt-8 md:pt-24 pb-24 bg-[#9B7BC9]">
 
        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
 
