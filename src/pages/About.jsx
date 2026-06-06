@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import banner1 from "../assets/about_coco.jpg";
 import mo_banner from "../assets/mo_ab1.jpeg";
 import aboutImg from "../assets/Father son 756 x 540.jpg";
-import warliBg from "../assets/warli011.jpeg"; 
+import warliBg from "../assets/warli011.jpeg";// 
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -64,11 +64,12 @@ const About = () => {
     <div
       className="min-h-screen relative"
       style={{
-        backgroundImage: `linear-gradient(rgba(155, 123, 201, 0.55), rgba(155, 123, 201, 0.75)), url(${warliBg})`,
-        backgroundRepeat: "repeat-y",
-        backgroundSize: "cover",
+        backgroundImage: `url(${warliBg})`,
+        backgroundRepeat: "repeat",
+        backgroundSize: "contain",
         backgroundAttachment: "fixed",
-        backgroundPosition: "center",
+        backgroundPosition: "top center",
+        backgroundColor: "#E8F5D8",
       }}
     >
       {/* Banner */}
@@ -106,7 +107,7 @@ const About = () => {
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-[#D0F0C0]/95 backdrop-blur-xl p-10 rounded-3xl shadow-xl border border-green-100"
+            className="bg-white/90 backdrop-blur-xl p-10 rounded-3xl shadow-2xl border border-green-200"
           >
             <h2 className="text-4xl font-bold text-green-800 mb-6">
               {isGu ? "અમારી કહાની" : "Our Story"}
@@ -169,11 +170,11 @@ const About = () => {
       {/* ABOUT DETAILS */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white mb-6 drop-shadow-lg">
+          <h2 className="text-3xl font-bold text-green-900 mb-6 drop-shadow-md">
             🌿 {isGu ? "અમારા વિશે" : "About Us"}
           </h2>
 
-          <p className="bg-[#D0F0C0]/95 p-6 rounded-2xl font-medium text-black mb-10 shadow-xl leading-relaxed">
+          <p className="bg-white/90 p-6 rounded-2xl font-medium text-black mb-10 shadow-2xl leading-relaxed border border-green-200">
             {isGu ? (
               <>
                 <span className="block font-semibold text-black mb-2">
@@ -244,7 +245,7 @@ const About = () => {
       {/* VISION & MISSION */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10">
-          <div className="bg-[#D0F0C0]/95 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition">
+          <div className="bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-2xl hover:shadow-2xl transition border border-green-200">
             <h3 className="text-2xl font-bold text-green-800 mb-4">
               🌿 {isGu ? "વિઝન" : "Vision"}
             </h3>
@@ -255,7 +256,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-[#D0F0C0]/95 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition">
+          <div className="bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-2xl hover:shadow-2xl transition border border-green-200">
             <h3 className="text-2xl font-bold text-green-900 mb-4">
               🎯 {isGu ? "મિશન" : "Mission"}
             </h3>
@@ -271,14 +272,14 @@ const About = () => {
       {/* PROCESS */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-12 drop-shadow-lg">
+          <h2 className="text-4xl font-bold text-green-900 mb-12 drop-shadow-md">
             {isGu ? "પ્રક્રિયા" : "Process"}
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             {process.map((p, i) => (
               <div
                 key={i}
-                className="bg-[#D0F0C0]/95 backdrop-blur-md p-6 rounded-xl shadow-xl hover:scale-105 hover:-translate-y-2 transition"
+                className="bg-white/90 backdrop-blur-md p-6 rounded-xl shadow-2xl hover:scale-105 hover:-translate-y-2 transition border border-green-200"
               >
                 <FaSeedling className="text-green-600 text-3xl mb-3 mx-auto" />
                 <h3 className="font-bold">{p.title}</h3>
@@ -292,14 +293,14 @@ const About = () => {
       {/* VALUES */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-12 drop-shadow-lg">
+          <h2 className="text-4xl font-bold text-green-900 mb-12 drop-shadow-md">
             {isGu ? "અમારી મૂલ્યો" : "Our Values"}
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             {values.map((v, i) => (
               <div
                 key={i}
-                className="bg-[#D0F0C0]/95 backdrop-blur-md p-6 rounded-xl shadow-xl hover:scale-105 hover:-translate-y-2 transition"
+                className="bg-white/90 backdrop-blur-md p-6 rounded-xl shadow-2xl hover:scale-105 hover:-translate-y-2 transition border border-green-200"
               >
                 <div className="text-3xl text-green-600 mb-3 flex justify-center">
                   {v.icon}
@@ -320,10 +321,10 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">
+            <h2 className="text-4xl font-bold text-green-900 mb-4 drop-shadow-md">
               🏆 {isGu ? "પ્રમાણપત્રો" : "Our Certifications"}
             </h2>
-            <p className="text-gray-100 max-w-2xl mx-auto mb-14 text-lg">
+            <p className="text-green-900 max-w-2xl mx-auto mb-14 text-lg font-medium">
               {isGu
                 ? "સરકારી માન્યતા અને વિશ્વાસ સાથે ગુણવત્તા પ્રત્યે અમારી પ્રતિબદ્ધતા."
                 : "Our commitment to quality backed by trusted government certifications."}
@@ -343,7 +344,7 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 + i * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-[#D0F0C0]/95 rounded-3xl overflow-hidden shadow-2xl border border-green-100"
+                className="bg-white/95 rounded-3xl overflow-hidden shadow-2xl border border-green-200"
               >
                 <div className="h-64 flex items-center justify-center bg-white p-6">
                   <img
