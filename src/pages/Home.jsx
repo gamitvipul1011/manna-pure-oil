@@ -8,7 +8,7 @@ import ProductBannerSection from '../components/ProductBannerSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import { categories } from '../data/products';
 
-// Category images from assets
+// Category images
 import groundnutImg  from '../assets/catagory/g1.png';
 import coconutImg    from '../assets/catagory/co1.png';
 import whiteSesamImg from '../assets/catagory/w1.png';
@@ -19,6 +19,9 @@ import castorImg     from '../assets/catagory/cos04.png';
 import gheeImg       from '../assets/catagory/gh2.png';
 import honey         from '../assets/catagory/ho.png';
 
+// 🎨 Warli Painting Image
+import warliBorder   from '../assets/warli-border.png';
+
 const catImages = {
   cat1: groundnutImg,
   cat2: coconutImg,
@@ -28,19 +31,19 @@ const catImages = {
   cat6: sunflowerImg,
   cat7: castorImg,
   cat8: gheeImg,
-  cat9:honey,
+  cat9: honey,
 };
 
 const pastelBg = [
- "bg-gradient-to-b from-[#00AEEF] via-[#00AEEF] to-[#0072BC]",  
+  "bg-gradient-to-b from-[#00AEEF] via-[#00AEEF] to-[#0072BC]",  
   "bg-[#38BDF8]",
   "bg-gradient-to-b from-[#FFC107] via-[#FFC107] to-[#FFC107]",
   "bg-gradient-to-b from-[#2C2C2C] via-[#1A1A1A] to-[#000000]",
   "bg-gradient-to-b from-[#7C2D12] via-[#F97316] to-[#7C2D12]",
   "bg-gradient-to-b from-[#166534] via-[#15803d] to-[#14532d]",
   "bg-gradient-to-b from-[#8C5E34] via-[#A67C52] to-[#593A21]",
-  "bg-[#8EE000] ",
-  "bg-[#FFD700] ",
+  "bg-[#8EE000]",
+  "bg-[#FFD700]",
 ];
 
 const Home = () => {
@@ -74,21 +77,43 @@ const Home = () => {
             {benefits.map((b, i) => (
               <div key={i} className="flex items-center justify-center gap-3 py-1">
                 <span className="text-3xl">{b.icon}</span>
-                <p className="font-bold text-gray-700 text-sm">{isGu ? b.gu : b.en}</p>
+                <p className="font-bold text-white text-sm">{isGu ? b.gu : b.en}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
-      <section className="py-20 bg-[#9B7BC9]">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* WHY CHOOSE - with Warli Side Borders */}
+      <section className="relative py-20 bg-[#9B7BC9] overflow-hidden">
+        {/* Left Warli Border */}
+        <div
+          className="hidden lg:block absolute left-0 top-0 bottom-0 w-32 xl:w-44 opacity-25 pointer-events-none"
+          style={{
+            backgroundImage: `url(${warliBorder})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'left center',
+            backgroundRepeat: 'no-repeat',
+            transform: 'scaleX(-1)',
+          }}
+        />
+        {/* Right Warli Border */}
+        <div
+          className="hidden lg:block absolute right-0 top-0 bottom-0 w-32 xl:w-44 opacity-25 pointer-events-none"
+          style={{
+            backgroundImage: `url(${warliBorder})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'right center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-3">
               {isGu ? 'માના કેમ પસંદ કરવો?' : 'Why Choose Manna?'}
             </h2>
-            <p className="text-purple-200">{isGu ? 'અમારી વિશેષતા' : 'Our Specialties'}</p>
+            <p className="text-purple-100">{isGu ? 'અમારી વિશેષતા' : 'Our Specialties'}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((f, i) => (
@@ -103,14 +128,47 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CATEGORIES */}
-      <section className="py-16 bg-[#D0F0C0]">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* CATEGORIES - with Warli Side Borders */}
+      <section className="relative py-16 bg-[#A8E063] overflow-hidden">
+        {/* Left Warli Border */}
+        <div
+          className="hidden md:block absolute left-0 top-0 bottom-0 w-28 lg:w-40 xl:w-52 opacity-40 pointer-events-none"
+          style={{
+            backgroundImage: `url(${warliBorder})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'left center',
+            backgroundRepeat: 'no-repeat',
+            transform: 'scaleX(-1)',
+          }}
+        />
+        {/* Right Warli Border */}
+        <div
+          className="hidden md:block absolute right-0 top-0 bottom-0 w-28 lg:w-40 xl:w-52 opacity-40 pointer-events-none"
+          style={{
+            backgroundImage: `url(${warliBorder})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'right center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+
+        {/* Bottom Warli Strip - full width */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-20 md:h-28 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage: `url(${warliBorder})`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'bottom center',
+            backgroundRepeat: 'repeat-x',
+          }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 z-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-3">
               {isGu ? 'અમારા પ્રાકૃતિક તેલ' : 'Explore Our Natural Oils'}
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-gray-700 text-lg font-semibold">
               {isGu ? 'શુદ્ધ • કોલ્ડ પ્રેસ્ડ • સ્વસ્થ જીવન' : 'Pure • Cold Pressed • Healthy Living'}
             </p>
           </div>
@@ -138,14 +196,14 @@ const Home = () => {
                       </button>
                     </div>
                     <div className="w-32 h-32 flex items-center justify-center flex-shrink-0">
-  <img
-    src={img}
-    alt={cat.name}
-    className={`max-w-full max-h-full object-contain drop-shadow-md transition-all duration-500 ${
-      isHovered ? "scale-125 " : "scale-100"
-    }`}
-  />
-</div>
+                      <img
+                        src={img}
+                        alt={cat.name}
+                        className={`max-w-full max-h-full object-contain drop-shadow-md transition-all duration-500 ${
+                          isHovered ? "scale-125" : "scale-100"
+                        }`}
+                      />
+                    </div>
                   </div>
                   <div className={`h-0.5 bg-gradient-to-r from-orange-400 to-green-500 transition-all duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
                 </div>
