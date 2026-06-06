@@ -1488,7 +1488,7 @@ const BlogPost = () => {
   const otherBlogs = blogData.filter((b) => b.id !== blog.id);
 
   return (
-    <div className="min-h-screen bg-[#9B7BC9] py-12">
+    <div className="min-h-screen bg-gradient-purple py-12">
       <div className="max-w-4xl mx-auto px-6">
 
         {/* Back Button */}
