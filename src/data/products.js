@@ -247,7 +247,7 @@ Gentle on the stomach, perfect for daily use`,
     sizes: [
       {
         size: '250ml',
-        price: 170,
+        price: 180,
         image: CO_250,
         images: [CO_250, CO_1LB],
       },
@@ -690,7 +690,7 @@ Highly concentrated, so a small amount is enough`,
     sizes: [
       {
         size: '250 ML',
-        price: 70,
+        price: 80,
         image: CA_250,
         images: [CA_250, CA_BACK],
       },
