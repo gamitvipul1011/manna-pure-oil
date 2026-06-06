@@ -36,8 +36,8 @@ const About = () => {
     icon: <FaSeedling />,
     title: isGu ? "પરંપરા" : "Tradition",
     desc: isGu
-      ? "પેઢી દર પેઢી ચાલતી લાકડાની ઘાણી પદ્ધતિ"
-      : "Wood-Pressed Method Passed Through Generations",
+      ? "પેઢી દર પેઢી ચાલતી કોલ્ડ-પ્રેસ્ડ ઘાણી પદ્ધતિ"
+      : "Cold-Pressed Method Passed Through Generations",
   },
   {
     icon: <FaHandHoldingHeart />,
