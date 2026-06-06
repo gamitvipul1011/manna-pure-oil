@@ -20,7 +20,7 @@ import gheeImg       from '../assets/catagory/gh2.png';
 import honey         from '../assets/catagory/ho.png';
 
 // 🎨 Warli Painting Image
-import warliBorder   from '../assets/warli-border.png';
+import warliBorder   from "../assets/warli011.jpeg";
 
 const catImages = {
   cat1: groundnutImg,
