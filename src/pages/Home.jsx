@@ -68,7 +68,7 @@ const Home = () => {
       <HeroBanner />
 
       {/* BENEFITS STRIP */}
-      <section className="bg-from-purple-600 to-purple-500 py-4 shadow border-b border-gray-100">
+      <section className="bg-[#9B7BC9] py-4 shadow border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {benefits.map((b, i) => (
@@ -82,7 +82,7 @@ const Home = () => {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="py-20 "bg-from-purple-600 to-purple-500">
+      <section className="py-20 bg-from-purple-600 to-purple-500">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-3">
