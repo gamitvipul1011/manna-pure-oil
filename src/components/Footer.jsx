@@ -106,7 +106,7 @@ const Footer = () => {
     {
       icon: <FaInstagram />,
       link:
-        "https://www.instagram.com/mannapureoil?igsh=MXFlems3Ynd2a2pldg==",
+        "https://www.instagram.com/maannapureoil?igsh=MXFlems3Ynd2a2pldg==",
     },
     {
       icon: <FaYoutube />,
