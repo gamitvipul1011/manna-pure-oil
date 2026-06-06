@@ -59,7 +59,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#9B7BC9] py-16">
+    <div className="min-h-screen bg-gradient-purple py-16">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-100 rounded-full mb-4">
