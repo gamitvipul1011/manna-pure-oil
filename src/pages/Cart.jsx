@@ -32,7 +32,8 @@ const Cart = () => {
   const isGuj = i18n.language === 'gu';
 
   // WhatsApp number - CHANGE THIS TO YOUR BUSINESS NUMBER
-  const WHATSAPP_NUMBER = '919876543210'; // Replace with your WhatsApp number with country code
+ // ✅ Your Business WhatsApp Number
+const WHATSAPP_NUMBER = '917874239595';
 
   // Checkout form state
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
