@@ -29,11 +29,11 @@ const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, getCartCount, clearCart } = useCart();
 
   const FREE_DELIVERY_THRESHOLD = 999;
+  const SHIPPING_PER_KG_SLAB = 20; // ₹20 per kg slab
   const isGuj = i18n.language === 'gu';
 
-  // WhatsApp number - CHANGE THIS TO YOUR BUSINESS NUMBER
- // ✅ Your Business WhatsApp Number
-const WHATSAPP_NUMBER = '917874239595';
+  // ✅ Your Business WhatsApp Number
+  const WHATSAPP_NUMBER = '917874239595';
 
   // Checkout form state
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
@@ -72,6 +72,23 @@ const WHATSAPP_NUMBER = '917874239595';
     return 0;
   };
 
+  // ✅ NEW: Slab-based shipping calculation
+  // 0-1kg = ₹20, 1.001-2kg = ₹40, 2.001-3kg = ₹60, etc.
+  const calculateShipping = (weightInKg) => {
+    if (weightInKg <= 0) return 0;
+    const slabs = Math.ceil(weightInKg); // Round UP to next whole kg
+    return slabs * SHIPPING_PER_KG_SLAB;
+  };
+
+  // ✅ Get slab info for display
+  const getSlabInfo = (weightInKg) => {
+    if (weightInKg <= 0) return { slabs: 0, minKg: 0, maxKg: 0 };
+    const slabs = Math.ceil(weightInKg);
+    const minKg = slabs - 1;
+    const maxKg = slabs;
+    return { slabs, minKg, maxKg };
+  };
+
   const subtotal = Number(getCartTotal()) || 0;
 
   const totalWeight = cartItems.reduce((total, item) => {
@@ -80,10 +97,11 @@ const WHATSAPP_NUMBER = '917874239595';
   }, 0);
 
   const isFreeDelivery = subtotal >= FREE_DELIVERY_THRESHOLD;
-  const calculatedShipping = totalWeight > 0 ? totalWeight * 20 : 0;
+  const calculatedShipping = calculateShipping(totalWeight);
   const shippingCharge = isFreeDelivery ? 0 : calculatedShipping;
   const shippingDiscount = isFreeDelivery ? calculatedShipping : 0;
   const amountNeededForFree = Math.max(0, FREE_DELIVERY_THRESHOLD - subtotal);
+  const slabInfo = getSlabInfo(totalWeight);
 
   const finalTotal = subtotal + shippingCharge;
 
@@ -168,6 +186,7 @@ const WHATSAPP_NUMBER = '917874239595';
       message += `💰 *બિલ સારાંશ:*\n`;
       message += `• પેટા-કુલ: ₹${subtotal.toFixed(2)}\n`;
       message += `• કુલ વજન: ${totalWeight.toFixed(2)} કિલો\n`;
+      message += `• શિપિંગ સ્લેબ: ${slabInfo.slabs} kg (₹${SHIPPING_PER_KG_SLAB}/kg સ્લેબ)\n`;
 
       if (isFreeDelivery) {
         message += `• ડિલિવરી: ~~₹${calculatedShipping.toFixed(2)}~~ *ફ્રી* ✅\n`;
@@ -221,6 +240,7 @@ const WHATSAPP_NUMBER = '917874239595';
       message += `💰 *Bill Summary:*\n`;
       message += `• Subtotal: ₹${subtotal.toFixed(2)}\n`;
       message += `• Total Weight: ${totalWeight.toFixed(2)} kg\n`;
+      message += `• Shipping Slab: ${slabInfo.slabs} kg (₹${SHIPPING_PER_KG_SLAB}/kg slab)\n`;
 
       if (isFreeDelivery) {
         message += `• Delivery: ~~₹${calculatedShipping.toFixed(2)}~~ *FREE* ✅\n`;
@@ -249,10 +269,7 @@ const WHATSAPP_NUMBER = '917874239595';
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
-    // Open WhatsApp
     window.open(whatsappURL, '_blank');
-
-    // Close modal
     setShowCheckoutModal(false);
   };
 
@@ -260,7 +277,6 @@ const WHATSAPP_NUMBER = '917874239595';
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCustomerInfo((prev) => ({ ...prev, [name]: value }));
-    // Clear error when typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -539,10 +555,52 @@ const WHATSAPP_NUMBER = '917874239595';
                     )}
                   </div>
 
-                  {/* Shipping calculation info */}
-                  {!isFreeDelivery && (
-                    <div className="bg-white/5 rounded-lg px-4 py-2 text-sm text-purple-300 border border-white/10">
-                      ₹20 {isGuj ? 'પ્રતિ કિલો' : 'per kg'} × {totalWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'} = ₹{shippingCharge.toFixed(2)}
+                  {/* ✅ NEW: Slab-based shipping calculation info */}
+                  {!isFreeDelivery && totalWeight > 0 && (
+                    <div className="bg-white/5 rounded-xl px-4 py-3 border border-white/10 space-y-2">
+                      <p className="text-sm text-purple-300 font-semibold flex items-center gap-2">
+                        📦 {isGuj ? 'શિપિંગ ગણતરી:' : 'Shipping Calculation:'}
+                      </p>
+                      <div className="text-sm text-purple-300 space-y-1">
+                        <div className="flex justify-between">
+                          <span>{isGuj ? 'કુલ વજન' : 'Total Weight'}:</span>
+                          <span>{totalWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>{isGuj ? 'સ્લેબ (છત)' : 'Slab (ceil)'}:</span>
+                          <span>{slabInfo.slabs} {isGuj ? 'કિલો' : 'kg'}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>{isGuj ? 'દર' : 'Rate'}:</span>
+                          <span>₹{SHIPPING_PER_KG_SLAB}/{isGuj ? 'કિલો સ્લેબ' : 'kg slab'}</span>
+                        </div>
+                        <div className="border-t border-white/10 pt-1 flex justify-between font-semibold text-orange-400">
+                          <span>{isGuj ? 'શિપિંગ' : 'Shipping'}:</span>
+                          <span>{slabInfo.slabs} × ₹{SHIPPING_PER_KG_SLAB} = ₹{shippingCharge.toFixed(2)}</span>
+                        </div>
+                      </div>
+
+                      {/* ✅ Slab visual table */}
+                      <div className="mt-2 bg-white/5 rounded-lg p-2 text-xs text-purple-400">
+                        <p className="font-semibold mb-1">{isGuj ? 'સ્લેબ ચાર્ટ:' : 'Slab Chart:'}</p>
+                        <div className="grid grid-cols-2 gap-1">
+                          {[1, 2, 3, 4, 5].map((kg) => (
+                            <div
+                              key={kg}
+                              className={`flex justify-between px-2 py-1 rounded ${
+                                slabInfo.slabs === kg
+                                  ? 'bg-orange-500/20 text-orange-300 font-bold'
+                                  : ''
+                              }`}
+                            >
+                              <span>
+                                {kg === 1 ? '0' : kg - 1}.001-{kg} {isGuj ? 'કિલો' : 'kg'}
+                              </span>
+                              <span>₹{kg * SHIPPING_PER_KG_SLAB}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   )}
 
@@ -677,11 +735,11 @@ const WHATSAPP_NUMBER = '917874239595';
             <div className="mx-8 mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-purple-200 text-sm">
-                  {getCartCount()} {isGuj ? 'વસ્તુઓ' : 'items'}
+                  {getCartCount()} {isGuj ? 'વસ્તુઓ' : 'items'} • {totalWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'}
                 </span>
                 <span className="text-white font-bold text-lg">₹{finalTotal.toFixed(2)}</span>
               </div>
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-1 mb-2">
                 {cartItems.map((item, i) => (
                   <span
                     key={i}
@@ -690,6 +748,19 @@ const WHATSAPP_NUMBER = '917874239595';
                     {item.name} ×{item.quantity}
                   </span>
                 ))}
+              </div>
+              {/* Shipping info in modal */}
+              <div className="flex justify-between text-xs text-purple-300 border-t border-white/10 pt-2">
+                <span>{isGuj ? 'ડિલિવરી' : 'Delivery'}:</span>
+                {isFreeDelivery ? (
+                  <span className="text-green-400 font-semibold">
+                    {isGuj ? 'ફ્રી' : 'FREE'} 🎉
+                  </span>
+                ) : (
+                  <span className="text-orange-400">
+                    ₹{shippingCharge.toFixed(2)} ({slabInfo.slabs}{isGuj ? ' કિલો સ્લેબ' : 'kg slab'})
+                  </span>
+                )}
               </div>
             </div>
 
@@ -832,6 +903,11 @@ const WHATSAPP_NUMBER = '917874239595';
                     ₹{finalTotal.toFixed(2)}
                   </span>
                 </div>
+                {!isFreeDelivery && totalWeight > 0 && (
+                  <p className="text-green-400/60 text-xs mt-1 text-right">
+                    ({isGuj ? 'ડિલિવરી સહિત' : 'incl. delivery'} ₹{shippingCharge.toFixed(2)})
+                  </p>
+                )}
               </div>
 
               {/* Send to WhatsApp Button */}
