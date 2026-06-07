@@ -254,7 +254,7 @@ const Cart = () => {
       message += `• Tax/GST: Included in price\n`;
       message += `\n🔥 *Total Payable: ₹${finalTotal.toFixed(2)}*\n`;
       message += `\n━━━━━━━━━━━━━━━━━━━━\n`;
-      message += `📌 *Payment Method:* Cash on Delivery (COD) / Online\n`;
+      message += `📌 *Payment Method:* Online\n`;
       message += `\n🙏 Thank you for your order!`;
     }
 
