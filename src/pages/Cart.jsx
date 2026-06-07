@@ -556,29 +556,7 @@ const Cart = () => {
                   </div>
 
                   {/* ✅ NEW: Slab-based shipping calculation info */}
-                  {!isFreeDelivery && totalWeight > 0 && (
-                    <div className="bg-white/5 rounded-xl px-4 py-3 border border-white/10 space-y-2">
-                      <p className="text-sm text-purple-300 font-semibold flex items-center gap-2">
-                        📦 {isGuj ? 'શિપિંગ ગણતરી:' : 'Shipping Calculation:'}
-                      </p>
-                      <div className="text-sm text-purple-300 space-y-1">
-                        <div className="flex justify-between">
-                          <span>{isGuj ? 'કુલ વજન' : 'Total Weight'}:</span>
-                          <span>{totalWeight.toFixed(2)} {isGuj ? 'કિલો' : 'kg'}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>{isGuj ? 'સ્લેબ (છત)' : 'Slab (ceil)'}:</span>
-                          <span>{slabInfo.slabs} {isGuj ? 'કિલો' : 'kg'}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>{isGuj ? 'દર' : 'Rate'}:</span>
-                          <span>₹{SHIPPING_PER_KG_SLAB}/{isGuj ? 'કિલો સ્લેબ' : 'kg slab'}</span>
-                        </div>
-                        <div className="border-t border-white/10 pt-1 flex justify-between font-semibold text-orange-400">
-                          <span>{isGuj ? 'શિપિંગ' : 'Shipping'}:</span>
-                          <span>{slabInfo.slabs} × ₹{SHIPPING_PER_KG_SLAB} = ₹{shippingCharge.toFixed(2)}</span>
-                        </div>
-                      </div>
+                  
 
                       {/* ✅ Slab visual table */}
                       <div className="mt-2 bg-white/5 rounded-lg p-2 text-xs text-purple-400">
