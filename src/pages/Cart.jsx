@@ -559,28 +559,7 @@ const Cart = () => {
                   
 
                       {/* ✅ Slab visual table */}
-                      <div className="mt-2 bg-white/5 rounded-lg p-2 text-xs text-purple-400">
-                        <p className="font-semibold mb-1">{isGuj ? 'સ્લેબ ચાર્ટ:' : 'Slab Chart:'}</p>
-                        <div className="grid grid-cols-2 gap-1">
-                          {[1, 2, 3, 4, 5].map((kg) => (
-                            <div
-                              key={kg}
-                              className={`flex justify-between px-2 py-1 rounded ${
-                                slabInfo.slabs === kg
-                                  ? 'bg-orange-500/20 text-orange-300 font-bold'
-                                  : ''
-                              }`}
-                            >
-                              <span>
-                                {kg === 1 ? '0' : kg - 1}.001-{kg} {isGuj ? 'કિલો' : 'kg'}
-                              </span>
-                              <span>₹{kg * SHIPPING_PER_KG_SLAB}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                     
 
                   {/* Free delivery savings */}
                   {isFreeDelivery && shippingDiscount > 0 && (
