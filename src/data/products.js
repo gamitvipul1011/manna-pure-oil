@@ -75,7 +75,7 @@ const GH_500     = new URL('../assets/product all/GIR COW/1l.png',  import.meta.
 
 // Honey1.jpeg
 const HN_250      = new URL('../assets/product all/Honey/Honey1.jpeg', import.meta.url).href;
-const HN_500l      = new URL('../assets/product all/Honey/Honey1.jpeg', import.meta.url).href;
+const HN_500L     = new URL('../assets/product all/Honey/Honey1.jpeg', import.meta.url).href;
 
 // ──────────────────────────────────────────────
 // PRODUCTS
