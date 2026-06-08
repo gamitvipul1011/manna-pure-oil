@@ -73,6 +73,10 @@ const CA_250     = new URL('../assets/product all/castor/250ml.jpeg', import.met
 const GH_1L      = new URL('../assets/product all/GIR COW/1l.jpeg', import.meta.url).href;
 const GH_500     = new URL('../assets/product all/GIR COW/1l.png',  import.meta.url).href;
 
+// Honey1.jpeg
+const HN_250      = new URL('../assets/product all/Honey/Honey1.jpeg', import.meta.url).href;
+const HN_500l      = new URL('../assets/product all/Honey/Honey1.jpeg', import.meta.url).href;
+
 // ──────────────────────────────────────────────
 // PRODUCTS
 // ──────────────────────────────────────────────
@@ -792,6 +796,89 @@ A2 દૂધમાંથી બનેલું, જે સરળ પચન અ�
     inStock: true,
     featured: false,
   },
+];
+ // ════════════════════════════════════════════
+// 9. Pure Natural Honey
+// ════════════════════════════════════════════
+{
+  _id: 'p9',
+  name: 'Pure Natural Honey',
+  nameGu: 'મન્ના શુદ્ધ કુદરતી મધ',
+  category: { _id: 'cat9', name: 'Pure Natural Honey' },
+
+  image: HN_250,
+  images: [HN_500L],
+
+  description: `🍯Pure Natural Honey
+
+Pure. Natural. Unfiltered Goodness.
+
+Harvested with care and minimally processed to preserve its natural nutrients, Manna Pure Raw Honey brings you the authentic sweetness of nature. Unheated, unfiltered, and free from additives, it retains its rich flavor, natural enzymes, and wholesome goodness—just as the bees intended.
+
+✨ Why Choose It
+
+🟡 100% Pure & Natural
+Collected from trusted sources without added sugar, preservatives, or artificial ingredients
+
+🟡 Rich in Natural Nutrients
+Contains naturally occurring enzymes, antioxidants, vitamins, and minerals
+
+🟡 Supports Daily Wellness
+Helps promote overall health and supports a balanced lifestyle
+
+🟡 Natural Energy Source
+Provides a quick and natural source of energy for active days
+
+🟡 Soothes & Nourishes
+Traditionally valued for its soothing properties and everyday wellness benefits`,
+
+  descriptionGu: `🍯 મન્ના શુદ્ધ કુદરતી મધ
+
+શુદ્ધ. કુદરતી. ગાળણ વગરની સારી ગુણવત્તાની મીઠાશ.
+
+કાળજીપૂર્વક એકત્રિત કરાયેલ અને તેના કુદરતી પોષક તત્વો જળવાઈ રહે તે માટે ઓછામાં ઓછું પ્રોસેસ કરાયેલ મન્ના શુદ્ધ કાચું મધ તમને કુદરતની અસલી મીઠાશ આપે છે. તેને ગરમ કરવામાં આવ્યું નથી, ગાળવામાં આવ્યું નથી અને તેમાં કોઈપણ ઉમેરણો નથી. તેથી તેનો ગાઢ સ્વાદ, કુદરતી એન્ઝાઇમ્સ અને પૌષ્ટિક ગુણધર્મો યથાવત્ રહે છે — બિલકુલ જેમ મધમાખીઓએ બનાવ્યું હોય તેમ.
+
+✨ શા માટે પસંદ કરશો?
+
+🟡 100% શુદ્ધ અને કુદરતી
+વિશ્વસનીય સ્ત્રોતોમાંથી મેળવેલું, જેમાં વધારાની ખાંડ, પ્રિઝર્વેટિવ્સ અથવા કૃત્રિમ ઘટકો નથી
+
+🟡 કુદરતી પોષક તત્વોથી ભરપૂર
+કુદરતી એન્ઝાઇમ્સ, એન્ટીઓક્સિડન્ટ્સ, વિટામિન્સ અને ખનિજ તત્વો ધરાવે છે
+
+🟡 રોજિંદી તંદુરસ્તીને સહારો
+સંતુલિત જીવનશૈલી અને સામાન્ય સુખાકારીમાં મદદરૂપ
+
+🟡 કુદરતી ઊર્જાનો સ્ત્રોત
+સક્રિય દિવસોમાં ઝડપી અને કુદરતી ઊર્જા આપે છે
+
+🟡 શાંતિદાયક અને પોષક
+પરંપરાગત રીતે ગળાને શાંતિ આપવા અને રોજિંદી આરોગ્ય માટે ઉપયોગી માનવામાં આવે છે`,
+
+  benefits: '100% Pure & Natural|Rich in antioxidants|Natural enzymes|Supports daily wellness|Natural energy source',
+  benefitsGu: '100% શુદ્ધ અને કુદરતી|એન્ટીઓક્સિડન્ટથી ભરપૂર|કુદરતી એન્ઝાઇમ્સ|રોજિંદી તંદુરસ્તી|કુદરતી ઊર્જા',
+
+  uses: 'Warm water & lemon|Tea & milk|Breakfast & desserts|Healthy recipes|Natural sweetener',
+  usesGu: 'ગરમ પાણી અને લીંબુ|ચા અને દૂધ|નાસ્તો અને ડેઝર્ટ|હેલ્ધી રેસીપી|કુદરતી મીઠાસ',
+
+  sizes: [
+    {
+      size: '250 GRAM',
+      price: 350, // update price
+      image: HN_250,
+      images: [HN_250],
+    },
+    {
+      size: '500 GRAM',
+      price: 650, // update price
+      image: HN_500L,
+      images: [HN_500L],
+    },
+  ],
+
+  inStock: true,
+  featured: false,
+},
 ];
 
 // ──────────────────────────────────────────────
